@@ -78,12 +78,13 @@ def merge_item(items: dict[str, dict], new: dict) -> bool:
         items[new["id"]] = new
         return True
     incoming = new["source"]
+    new["tags"] = sorted(set(old.get("tags", [])) | set(new.get("tags", [])))  # tags/sources only ever grow
     if old.get("source") != incoming:
-        # same paper from another source: keep first-seen date/source, union tags, keep the richer abstract
-        new["date"], new["source"] = old["date"], old["source"]
-        new["tags"] = sorted(set(old.get("tags", [])) | set(new.get("tags", [])))
-        if len(old.get("excerpt", "")) >= len(new.get("excerpt", "")):
-            new["excerpt"] = old.get("excerpt", "")
+        # same paper from another source: keep first-seen date/source/title, keep the richer abstract
+        for k in ("date", "source", "title", "authors"):
+            new[k] = old.get(k, new.get(k))
+    if (old.get("source") != incoming or "paper" in new["tags"]) and len(old.get("excerpt", "")) >= len(new.get("excerpt", "")):
+        new["excerpt"] = old.get("excerpt", "")  # papers: abstracts differ in truncation across sources; keep the fuller one
     new["sources"] = sorted(set(old.get("sources", [old["source"]])) | {incoming})
     for k in MANUAL_FIELDS:
         if k in old:

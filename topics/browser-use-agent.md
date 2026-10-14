@@ -32,3 +32,9 @@ _HF blog 2026-07 → 2026-10 无直接相关文章。_
   - **安全参考架构**：Meta Muse 浏览器子 agent 只看 AX 快照、不能执行 JS，由独立 broker 持有 CDP。
   - **检索即环境**：Mistral Agentic Search 的 search / open / navigate / read / grep。
   - 纯 BUA 研究型官方 post 很少；浏览器正成为模型分发入口（Firefox × Mistral、Chrome auto browse）。
+
+### 近期论文（2026-09-14 → 10-14，详见 [papers review](../reviews/2026-10-14_papers.md)）
+- [AdvSim2Real](https://arxiv.org/abs/2610.08773)：web world model 中三方共进化，训练抗自适应 prompt injection
+- [Trace2Env](https://arxiv.org/abs/2610.06100)：从历史 trace 重建有状态的网站环境替身，并检验回放到真实环境的一致性
+- WebArena-Lite 人工审计（NeurIPS workshop）：自动 evaluator 漏判 5.45–8.49pp · HyperBrowseComp（MBZUAI）· MisVisAgentBench（误导性图表使成功率降 34pp 以上）
+- [AREX-2](https://arxiv.org/abs/2609.38288)（BAAI）：长程反思轨迹，BrowseComp 84.0（27B；缺同底座消融）

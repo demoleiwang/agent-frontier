@@ -43,3 +43,9 @@
 
 - 2026-08-10 · [Muse Glimmer](https://huggingface.co/blog/muse-glimmer)（Meta，30B dense，Apache 2.0）— 主打本地 agentic + 多模态 tool calling，2B Perception Encoder 偏大，值得测 GUI grounding。
 - 2026-07-15 · [Inkling](https://huggingface.co/blog/thinkingmachines-inkling)（Thinking Machines，975B/41B MoE，1M ctx）— 图/文/音原生多模态，另有 276B Inkling-Small。
+
+### 近期论文（2026-09-14 → 10-14，详见 [papers review](../reviews/2026-10-14_papers.md) §3.1）
+- **环境**：[RecreationWorld](https://arxiv.org/abs/2609.22000)（Qwen，参考 app 当 oracle）· [SoftwareGym](https://arxiv.org/abs/2610.12611)（SJTU，合成原生应用，Pass@3）· [AutoGUIWorld](https://arxiv.org/abs/2610.01215)（混元，视觉 world model，无执行验证）· DeskForge
+- **训练**：[HybridCUA](https://arxiv.org/abs/2609.38008)（ZJU，GUI+CLI 统一动作 + CLI-aware RL，9B 模型 OSWorld 53.6%）
+- **评测**：[OSWorld-Pro](https://arxiv.org/abs/2609.24890)（NVIDIA，过程式，2,800+ 子目标）· OSWorld-Science · CUA-SWE（CMU）
+- **安全**：[HazardAuditor](https://arxiv.org/abs/2609.15134)（蚂蚁，基于执行轨迹的 guard）

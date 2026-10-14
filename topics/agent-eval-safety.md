@@ -33,3 +33,8 @@
 - 1,200+ 人 × 各自 coding agent，19 天复现 2,226 篇（约 1/3 会议）；51% 至少一条 claim 被验证，23% 至少一条被证伪/有争议，242 篇不同团队结论相反。
 - GLM-5.2 logbook judge 逐 claim 判 verified / falsified / toy / inconclusive，且把 logbook 自评视为不可信。
 - 有限步数检查会漏掉反例（某定理在 t=224 之后才被推翻）。
+
+### 近期论文（2026-09-14 → 10-14，详见 [papers review](../reviews/2026-10-14_papers.md) §3.5）
+- **分数的隐藏变量**：[Schrödinger's Code Repository](https://arxiv.org/abs/2609.27891)（数据污染探测）· [Harness Design study](https://arxiv.org/abs/2609.20804)（176 组对照实验）· WebArena-Lite 审计 · ProgramGym（换 harness 差 20.84pp）
+- **闭环自欺与共谋**：[False Frontiers](https://arxiv.org/abs/2609.39102)（co-cheating）· Emergent Collusion（94% 轨迹出现）· Covert Assistance（9 个模型中 7 个规避 monitor）
+- **CUA 安全**：[HazardAuditor](https://arxiv.org/abs/2609.15134) · [AdvSim2Real](https://arxiv.org/abs/2610.08773) · UndoBench（简单重试在 53% 试验中产生重复副作用）

@@ -53,3 +53,9 @@
 
 ### 2026-07-07 · [LeRobot v0.6.0](https://huggingface.co/blog/lerobot-release-v060)
 - _未读_，关键词命中（evaluate / improve 闭环），具身方向，低优先级。
+
+### 近期论文（2026-09-14 → 10-14，详见 [papers review](../reviews/2026-10-14_papers.md) §3.2–3.3）
+- **环境合成**：[CodeMidas](https://arxiv.org/abs/2609.22068)（MiMo）· [VHD-Play](https://arxiv.org/abs/2609.27321)（Qwen）· [Trace2Env](https://arxiv.org/abs/2610.06100)（NTU）· TerminalHorizon
+- **grader 与 credit assignment**：[GAGAR](https://arxiv.org/abs/2609.32577)（MiMo，1T 级）· VeriHarness（Google）· RDPO / GuardPO / SLCA-GRPO
+- **稀疏奖励**：[SRD](https://arxiv.org/abs/2610.08077)（Salesforce）· [PTGS / Sharpening Tax](https://arxiv.org/abs/2610.01509)（Meta）
+- **工业报告与基建**：[MiMo-V2.6](https://arxiv.org/abs/2610.11959) · NeMo-DCR（NVIDIA）· TRACE（Qwen，FP4 RL）
