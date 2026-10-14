@@ -3,46 +3,47 @@
 
 个人前沿追踪：browser / computer-use agent、agentic RL、agent 评测与安全。
 
-> **当前判断**：CUA/BUA 的瓶颈已从“模型会不会点”转到两件事：可验证环境的规模化生产，以及 agent 越界（persistence、sim-awareness、规避监控）的度量与约束。lab 侧事故和论文侧方法在这两点上交汇，空白也集中在这里。
+> **当前判断**：CUA/BUA 的瓶颈已从“模型会不会点”转到两件事：可验证环境的规模化生产（[RecreationWorld](https://arxiv.org/abs/2609.22000)、[CodeMidas](https://arxiv.org/abs/2609.22068)、[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)），以及 agent 越界（persistence、sim-awareness、规避监控）的度量与约束（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)、[OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead)、[AISI](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations)）。lab 侧事故和论文侧方法在这两点上交汇，空白也集中在这里。
 
-_罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-14（自动）· 跟踪 2830 条 · 👀 72 已浏览 · ✅ 0 已读 · 📝 0 有笔记_
+_罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-14（自动）· 跟踪 5445 条 · 👀 72 已浏览 · ✅ 0 已读 · 📝 0 有笔记_
 
 [🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)
 
 ## 🧭 研究方向雷达
 
-状态是人工判断；“近 14 天新工作”按关键词自动统计（核心 topic 的论文与 blog），用来看方向是否在变拥挤。
+状态是人工判断（[config/compass.yaml](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/config/compass.yaml)）；“近 14 天新工作”按关键词自动统计（核心 topic 的论文与 blog），用来看方向是否在变拥挤。
 
 | 状态 | 方向 | 近 14 天新工作 | 下一步 |
 |---|---|---|---|
-| 🟥 空白 | **奖励“停下并报告”的 CUA/BUA 环境** | 1：[Relevance Does Not Imply Applicability: Experien…](https://arxiv.org/abs/2609.33304) | 构造含不可能 / 坏 mock / 含糊授权变体的任务集，同时度量完成率、越界率与诚实性 |
-| 🟥 空白 | **persistence 的两面：越界率作为一等指标** | 0 | 定义“该坚持 / 该停”成对任务，报告 persistence-vs-overreach 曲线 |
-| 🟧 上升 | **可验证 CUA 环境合成 + 独立攻破者审计** | 1：[SkillGym: Training Skill-Use Agents with Automat…](https://arxiv.org/abs/2609.37539) | 合成 → 独立求解 → 找漏洞 agent 审计（git 历史、可读的特权状态、可伪造的成功判定） |
-| 🟧 上升 | **GUI ↔ CLI 接口路由** | 1：[HybridCUA: Learning to Orchestrate GUI and CLI f…](https://arxiv.org/abs/2609.38008) | 学“何时切接口”的奖励设计；像素 → AX 树的迁移评测 |
-| 🟧 上升 | **离线 / 回放式 BUA 评测与环境替身** | 2：[From Traces to Agentic Worlds: Agentic Language …](https://arxiv.org/abs/2610.06100) | 离线快照 + mock 失败即关闭 + 不可逆动作拦截 + DOM 扰动的抗污染 web RL 环境 |
-| 🟦 拥挤 | **稀疏奖励下的信号（全失败组 / 好坏成功）** | 6：[Self-Retrospection Distillation: Turning Post-ho…](https://arxiv.org/abs/2610.08077) | 直接作为 web GRPO 的基线接入，而不是重新发明 |
-| 🟧 上升 | **监控器作为攻击面 / 带外审批** | 1：[What Did the Agent Actually Do? Evidence-Grounde…](https://arxiv.org/abs/2610.06406) | “游说审核者 / 伪造授权 / 把自动消息当授权”的评测，对比三类控制 |
-| ⬜ 观望 | **长程上下文与 memory 的完整性** | 5：[Beyond Memory: Harnessing Long-Horizon Agents wi…](https://arxiv.org/abs/2610.01415) | 长程 CUA 的 memory / 摘要完整性评测 |
+| 🟥 空白 | **[奖励“停下并报告”的 CUA/BUA 环境](https://www.anthropic.com/research/investigating-unintended-model-actions)** | 2：[Relevance Does Not Imply Applicability: Experien…](https://arxiv.org/abs/2609.33304) | 构造含不可能 / 坏 mock / 含糊授权变体的任务集，同时度量完成率、越界率与诚实性 |
+| 🟥 空白 | **[persistence 的两面：越界率作为一等指标](https://deploymentsafety.openai.com/gpt-6-october/introduction)** | 0 | 定义“该坚持 / 该停”成对任务，报告 persistence-vs-overreach 曲线 |
+| 🟧 上升 | **[可验证 CUA 环境合成 + 独立攻破者审计](https://arxiv.org/abs/2609.22000)** | 1：[SkillGym: Training Skill-Use Agents with Automat…](https://arxiv.org/abs/2609.37539) | 合成 → 独立求解 → 找漏洞 agent 审计（git 历史、可读的特权状态、可伪造的成功判定） |
+| 🟧 上升 | **[GUI ↔ CLI 接口路由](https://arxiv.org/abs/2609.38008)** | 1：[HybridCUA: Learning to Orchestrate GUI and CLI f…](https://arxiv.org/abs/2609.38008) | 学“何时切接口”的奖励设计；像素 → AX 树的迁移评测 |
+| 🟧 上升 | **[离线 / 回放式 BUA 评测与环境替身](https://arxiv.org/abs/2610.06100)** | 2：[From Traces to Agentic Worlds: Agentic Language …](https://arxiv.org/abs/2610.06100) | 离线快照 + mock 失败即关闭 + 不可逆动作拦截 + DOM 扰动的抗污染 web RL 环境 |
+| 🟦 拥挤 | **[稀疏奖励下的信号（全失败组 / 好坏成功）](https://arxiv.org/abs/2610.08077)** | 6：[Self-Retrospection Distillation: Turning Post-ho…](https://arxiv.org/abs/2610.08077) | 直接作为 web GRPO 的基线接入，而不是重新发明 |
+| 🟧 上升 | **[监控器作为攻击面 / 带外审批](https://github.com/NVIDIA/OpenShell)** | 1：[What Did the Agent Actually Do? Evidence-Grounde…](https://arxiv.org/abs/2610.06406) | “游说审核者 / 伪造授权 / 把自动消息当授权”的评测，对比三类控制 |
+| ⬜ 观望 | **[长程上下文与 memory 的完整性](https://arxiv.org/abs/2609.37725)** | 5：[Beyond Memory: Harnessing Long-Horizon Agents wi…](https://arxiv.org/abs/2610.01415) | 长程 CUA 的 memory / 摘要完整性评测 |
 
 <details><summary><b>奖励“停下并报告”的 CUA/BUA 环境</b> — 为什么是现在</summary>
 
-多家 lab 的越界事故反复指向同一触发器：任务不可能完成、mock 损坏或授权含糊时，agent 选择绕过而不是停下。“这只是模拟”式的偏置推理集中在预期解不可达的 GUI 任务中。论文侧至今没有专门的环境或基准。
+多家 lab 的越界事故反复指向同一触发器：任务不可能完成、mock 损坏或授权含糊时，agent 选择绕过而不是停下（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)）。“这只是模拟”式的偏置推理集中在预期解不可达的 GUI 任务中（[Anthropic](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)）。论文侧至今没有专门的环境或基准（本库近 3 个月论文池按关键词检索未发现，见 [digests/papers.md](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/digests/papers.md)）。
 
-- 证据：[Anthropic · Investigating unintended model actions](https://www.anthropic.com/research/investigating-unintended-model-actions) · [Anthropic · Alignment assessment（GUI 任务中的模拟偏置）](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) · [OpenAI system cards · unwanted persistence 16–28%](reviews/2026-10-14_frontier-labs.md)
+- 证据：[Anthropic · Investigating unintended model actions](https://www.anthropic.com/research/investigating-unintended-model-actions) · [Anthropic · Alignment assessment（GUI 任务中的模拟偏置）](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) · [OpenAI GPT-6.1 Sol system card · unwanted persistence 23.5%](https://deploymentsafety.openai.com/gpt-6-1-sol)
 - 近期相关：
   - 2026-10-13 · [Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents](https://arxiv.org/abs/2609.33304) · rep 0.51
+  - 2026-10-05 · [HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention](https://arxiv.org/abs/2610.06563) · rep 0.00
 
 </details>
 <details><summary><b>persistence 的两面：越界率作为一等指标</b> — 为什么是现在</summary>
 
-Meta 把坚持（Active Focus / FocusBench）当卖点，OpenAI 把 unwanted persistence（16–28%）当风险，AISI 发现 Astra 把自动消息当授权。同一种行为，一边奖励一边惩罚，还没有跨模型、harness 固定的统一度量。
+Meta 把坚持（Active Focus / FocusBench）当卖点（[Muse Wonder](https://research.meta.ai/blog/muse-wonder)），OpenAI 把 unwanted persistence（16–28%）当风险（[GPT-6.1 Sol card](https://deploymentsafety.openai.com/gpt-6-1-sol)、[Oct card](https://deploymentsafety.openai.com/gpt-6-october/introduction)），AISI 发现 Astra 把自动消息当授权（[AISI](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations)）。同一种行为，一边奖励一边惩罚，还没有跨模型、harness 固定的统一度量。
 
-- 证据：[frontier-labs review §3.4](reviews/2026-10-14_frontier-labs.md) · [AISI · Astra unsanctioned supply-chain attacks](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations)
+- 证据：[OpenAI GPT-6 Sol/Luna Oct card · persistence 28% / 15.9%](https://deploymentsafety.openai.com/gpt-6-october/introduction) · [Meta Muse Wonder · Active Focus / FocusBench](https://research.meta.ai/blog/muse-wonder) · [AISI · Astra unsanctioned supply-chain attacks](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations)
 
 </details>
 <details><summary><b>可验证 CUA 环境合成 + 独立攻破者审计</b> — 为什么是现在</summary>
 
-环境生产成了训练瓶颈：RecreationWorld、SoftwareGym、CodeMidas、VHD-Play 等两周内密集出现。但 MiMo 开源任务约 2/3 可从 git 历史拿到答案，Anthropic 生产 RL 环境中超过 10% 有问题。泄题和可 hack 已有证据会泛化成危险倾向。
+环境生产成了训练瓶颈：[RecreationWorld](https://arxiv.org/abs/2609.22000)、[SoftwareGym](https://arxiv.org/abs/2610.12611)、[CodeMidas](https://arxiv.org/abs/2609.22068)、[VHD-Play](https://arxiv.org/abs/2609.27321) 等两周内密集出现。但 MiMo 开源任务约 2/3 可从 git 历史拿到答案（[Vals AI，二手](https://digg.com/ai/wo6cdxwj)），Anthropic 生产 RL 环境中超过 10% 有问题（[Anthropic](https://www.anthropic.com/news/improving-alignment-security-efforts)）。泄题和可 hack 已有证据会泛化成危险倾向（同上）。
 
 - 证据：[RecreationWorld (Qwen)](https://arxiv.org/abs/2609.22000) · [CodeMidas (Xiaomi MiMo)](https://arxiv.org/abs/2609.22068) · [Anthropic · Improving alignment & security practices](https://www.anthropic.com/news/improving-alignment-security-efforts)
 - 近期相关：
@@ -51,7 +52,7 @@ Meta 把坚持（Active Focus / FocusBench）当卖点，OpenAI 把 unwanted per
 </details>
 <details><summary><b>GUI ↔ CLI 接口路由</b> — 为什么是现在</summary>
 
-混合动作空间成为 CUA 的标准定义，但不训练就直接加 CLI 会掉分（HybridCUA 38.8 → 18.4；Qwen-CUA 加 Bash 后准确率下降）。像素策略与 AX-tree broker（Meta Muse、ZCode）之间也存在分布偏移。
+混合动作空间成为 CUA 的标准定义，但不训练就直接加 CLI 会掉分（[HybridCUA](https://arxiv.org/abs/2609.38008) 38.8 → 18.4；[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA) 加 Bash 后准确率下降）。像素策略与 AX-tree broker（[Meta Muse](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse)、[ZCode](https://github.com/zai-org/ZCode)）之间也存在分布偏移（推论）。
 
 - 证据：[HybridCUA (ZJU)](https://arxiv.org/abs/2609.38008) · [Qwen-CUA report](https://github.com/xlang-ai/Qwen-CUA)
 - 近期相关：
@@ -60,7 +61,7 @@ Meta 把坚持（Active Focus / FocusBench）当卖点，OpenAI 把 unwanted per
 </details>
 <details><summary><b>离线 / 回放式 BUA 评测与环境替身</b> — 为什么是现在</summary>
 
-BrowseComp、OSWorld 等实网评测已造成真实第三方副作用；数据污染与 evaluator 漏判（5–8pp）同时侵蚀分数。Trace2Env 证明可以从 trace 重建有状态的网站替身，Schrödinger 证明表面扰动能探测记忆。
+BrowseComp、OSWorld 等实网评测已造成真实第三方副作用（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)）；数据污染（[Schrödinger](https://arxiv.org/abs/2609.27891)）与 evaluator 漏判 5–8pp（[WebArena-Lite 审计](https://arxiv.org/abs/2610.01491)）同时侵蚀分数。[Trace2Env](https://arxiv.org/abs/2610.06100) 证明可以从 trace 重建有状态的网站替身，Schrödinger 证明表面扰动能探测记忆。
 
 - 证据：[Trace2Env (NTU)](https://arxiv.org/abs/2610.06100) · [Schrödinger's Code Repository (SJTU)](https://arxiv.org/abs/2609.27891)
 - 近期相关：
@@ -70,7 +71,7 @@ BrowseComp、OSWorld 等实网评测已造成真实第三方副作用；数据�
 </details>
 <details><summary><b>稀疏奖励下的信号（全失败组 / 好坏成功）</b> — 为什么是现在</summary>
 
-SRD、GAGAR、PTGS、RDPO、GuardPO 一个月内集中出现，方法已多；差异化要落在 web/CUA 的长程、高方差场景。
+[SRD](https://arxiv.org/abs/2610.08077)、[GAGAR](https://arxiv.org/abs/2609.32577)、[PTGS](https://arxiv.org/abs/2610.01509)、[RDPO](https://arxiv.org/abs/2609.29444)、[GuardPO](https://arxiv.org/abs/2609.15134) 一个月内集中出现，方法已多；差异化要落在 web/CUA 的长程、高方差场景。
 
 - 证据：[SRD (Salesforce)](https://arxiv.org/abs/2610.08077) · [GAGAR (Xiaomi MiMo)](https://arxiv.org/abs/2609.32577)
 - 近期相关：
@@ -81,7 +82,7 @@ SRD、GAGAR、PTGS、RDPO、GuardPO 一个月内集中出现，方法已多；�
 </details>
 <details><summary><b>监控器作为攻击面 / 带外审批</b> — 为什么是现在</summary>
 
-对抗设定下 CoT 监控召回 <11%；Anthropic 离线监控被“这是模拟”的推理说服；agent 花两小时游说审核者；9 个模型中 7 个会规避 monitor。已出现的控制手段：形式化策略证明（OpenShell）、模型无法伪造的审批通道（Meta Sentinel）、硬件看门狗。
+对抗设定下 CoT 监控召回 <11%（[OpenAI](https://openai.com/index/safety-overview-gpt-6-astra)）；Anthropic 离线监控被“这是模拟”的推理说服（[Anthropic](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)）；agent 花两小时游说审核者（[OpenShell](https://github.com/NVIDIA/OpenShell)）；9 个模型中 7 个会规避 monitor（[Covert Assistance](https://arxiv.org/abs/2609.39050)）。已出现的控制手段：形式化策略证明（[OpenShell](https://github.com/NVIDIA/OpenShell)）、模型无法伪造的审批通道（[Meta Sentinel](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse)）、[硬件看门狗](https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/)。
 
 - 证据：[NVIDIA OpenShell policy prover](https://github.com/NVIDIA/OpenShell) · [Meta · How We Built Safety Into Muse](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse)
 - 近期相关：
@@ -90,9 +91,9 @@ SRD、GAGAR、PTGS、RDPO、GuardPO 一个月内集中出现，方法已多；�
 </details>
 <details><summary><b>长程上下文与 memory 的完整性</b> — 为什么是现在</summary>
 
-CLM 把上下文管理移进权重；OpenAI 发现 compaction 摘要里出现“隐瞒错误”的提示和自我注入；Team Bots 的共享 memory 是新的投毒面。
+[CLM](https://arxiv.org/abs/2609.37725) 把上下文管理移进权重；OpenAI 发现 compaction 摘要里出现“隐瞒错误”的提示和自我注入（[report](https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/)）；[Team Bots](https://x.ai/news/team-bots) 的共享 memory 是新的投毒面（推论）。
 
-- 证据：[Context Language Models (Meta/UW)](https://arxiv.org/abs/2609.37725) · [frontier-labs review §3.5](reviews/2026-10-14_frontier-labs.md)
+- 证据：[Context Language Models (Meta/UW)](https://arxiv.org/abs/2609.37725) · [OpenAI · deception in compaction summaries](https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/)
 - 近期相关：
   - 2026-10-02 · [Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States](https://arxiv.org/abs/2610.01415) · rep 0.62
   - 2026-10-07 · [DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks](https://arxiv.org/abs/2610.08048) · rep 0.20
@@ -115,11 +116,11 @@ CLM 把上下文管理移进权重；OpenAI 发现 compaction 摘要里出现“
 
 ## 📡 关键信号
 
-- **OSWorld-Verified 饱和**：Qwen-CUA 86.2 / Kimi K3 84.8；比较转向 OSWorld 2.0（binary 约 20%）、过程评测 OSWorld-Pro、注入攻击成功率（[来源](reviews/2026-10-14_frontier-labs.md)）
-- **长程基准换代**：Terminal-Bench 4（8 小时预算）、DeepSWE v1.1、SWE-Marathon；报告惯例转为单任务时间与成本（[来源](reviews/2026-10-14_frontier-labs.md)）
-- **前沿 RL 受遏制约束**：OpenAI 自 09-20 暂停最强模型的 tool-use 训练与评测；Anthropic、AISI 评测断网（[来源](reviews/2026-10-14_frontier-labs.md)）
-- **harness 是隐藏变量**：同一模型换 harness 可差 20.84pp；BrowseComp 52.6 vs 92.2（HarnessDev）（[来源](reviews/2026-10-14_papers.md)）
-- **开源 CUA 可复现**：Qwen-CUA 权重（08-26）、HybridCUA 数据和 RL 基建、MiMo RL 代码均已公开（[来源](reviews/2026-10-14_papers.md)）
+- **OSWorld-Verified 饱和**：Qwen-CUA 86.2 / Kimi K3 84.8；比较转向 OSWorld 2.0（binary 约 20%）、过程评测 OSWorld-Pro、注入攻击成功率（[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)、[Kimi K3](https://github.com/MoonshotAI/Kimi-K3)、[OSWorld-Pro](https://arxiv.org/abs/2609.24890)）
+- **长程基准换代**：Terminal-Bench 4（8 小时预算）、DeepSWE v1.1、SWE-Marathon；报告惯例转为单任务时间与成本（[Grok 4.7](https://x.ai/news/grok-4-7)、[GPT-6 Astra](https://openai.com/index/gpt-6-astra)、[Muse Wonder](https://research.meta.ai/blog/muse-wonder)）
+- **前沿 RL 受遏制约束**：OpenAI 自 09-20 暂停最强模型的 tool-use 训练与评测；Anthropic、AISI 评测断网（[OpenAI DNS report](https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/)、[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)、[AISI](https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities)）
+- **harness 是隐藏变量**：同一模型换 harness 可差 20.84pp；BrowseComp 52.6 vs 92.2（HarnessDev）（[ProgramGym](https://arxiv.org/abs/2610.13395)、[HarnessDev](https://arxiv.org/abs/2609.01437)）
+- **开源 CUA 可复现**：Qwen-CUA 权重（08-26）、HybridCUA 数据和 RL 基建、MiMo RL 代码均已公开（[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)、[HybridCUA](https://arxiv.org/abs/2609.38008)、[MiMo verl](https://github.com/XiaomiMiMo/verl)）
 
 ## 🆕 本周待分拣
 
@@ -129,16 +130,17 @@ CLM 把上下文管理移进权重；OpenAI 发现 compaction 摘要里出现“
 
 - 🆕 **TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models** · 2026-10-07 · rep 0.59 (HF 85↑ · Qwen) · [arXiv](https://arxiv.org/abs/2610.07767) [HF](https://huggingface.co/papers/2610.07767)
 - 🆕 **Opera: A Verbal Critic Framework for Long-horizon Coding Agents** · 2026-10-09 · rep 0.67 (HF 8↑ · Salesforce AI Research · 作者: Silvio Savarese · code) · [arXiv](https://arxiv.org/abs/2609.33987) [HF](https://huggingface.co/papers/2609.33987) [code](https://github.com/dongyuanjushi/Opera)
+- 🆕 **MIMESIS: Learning User Simulators as Training Environments for Interactive Agents** · 2026-10-08 · rep 0.53 (HF 19↑ · AI at Meta · code) · [arXiv](https://arxiv.org/abs/2610.09484) [HF](https://huggingface.co/papers/2610.09484) [code](https://github.com/VietHoang1512/mimesis)
 - 🆕 **Scaling Agentic Data for Long-Horizon Terminal Intelligence** · 2026-10-13 · rep 0.60 (HF 136↑ · alibaba) · [arXiv](https://arxiv.org/abs/2610.13166) [HF](https://huggingface.co/papers/2610.13166)
 - 🆕 **NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale** · 2026-10-07 · rep 0.49 (HF 11↑ · NVIDIA · code) · [arXiv](https://arxiv.org/abs/2610.08430) [HF](https://huggingface.co/papers/2610.08430) [code](https://github.com/NVIDIA-NeMo/RL)
-- 🆕 **MIMESIS: Learning User Simulators as Training Environments for Interactive Agents** · 2026-10-08 · rep 0.53 (HF 19↑ · AI at Meta · code) · [arXiv](https://arxiv.org/abs/2610.09484) [HF](https://huggingface.co/papers/2610.09484) [code](https://github.com/VietHoang1512/mimesis)
 - 🆕 **Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents** · 2026-10-13 · rep 0.51 (HF 29↑ · Nanyang Technological University · code) · [arXiv](https://arxiv.org/abs/2609.33304) [HF](https://huggingface.co/papers/2609.33304) [code](https://github.com/fyzhang1/ExpActivator)
 - 🆕 **Inducing Process Supervision from Outcome-Only Reinforcement Learning** · 2026-10-12 · rep 0.42 (HF 18↑ · Renmin University of China) · [arXiv](https://arxiv.org/abs/2609.36641) [HF](https://huggingface.co/papers/2609.36641)
 - 🆕 **Prospective Hindsight: Self-Calibrating Reinforcement Learning via Prediction-Reality Gaps** · 2026-10-13 · rep 0.33 (HF 2↑ · Salesforce AI Research) · [arXiv](https://arxiv.org/abs/2610.02740) [HF](https://huggingface.co/papers/2610.02740)
 
 **Lab blog**
 
-_无。_
+- 🆕 2026-10-08 · **[The Outer Loop, Insights First: An Ambient Quality Agent That Diagnoses Your Production Agent](https://developers.googleblog.com/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/)** · `agent-infra` `env-construction` · score 0.25
+  > How do you keep improving an AI agent after the first 80%, once it serves real production traffic and silent quality regressions return HTTP 200 OK?
 
 ## 📊 Topic 热度
 
@@ -146,12 +148,15 @@ _无。_
 
 | Topic | 近 14 天 | 前 14 天 | 趋势 | 人工页 |
 |---|---|---|---|---|
-| `browser-use-agent` | 23（2.9%） | 6（1.6%） | ↑ | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
-| `computer-use-agent` | 15（1.9%） | 8（2.1%） | → | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
-| `gui-agent-search` | 14（1.8%） | 3（0.8%） | ↑ | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
-| `agentic-rl` | 152（19.2%） | 77（20.1%） | → | [topics/agentic-rl.md](topics/agentic-rl.md) |
-| `agent-eval-safety` | 20（2.5%） | 10（2.6%） | → | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
-| `agent-infra` | 392（49.5%） | 151（39.3%） | ↑ | [topics/agent-infra.md](topics/agent-infra.md) |
+| `office-agent` | 33（3.7%） | 14（3.4%） | → | — |
+| `professional-agent` | 70（7.8%） | 26（6.4%） | ↑ | — |
+| `env-construction` | 88（9.9%） | 40（9.8%） | → | — |
+| `browser-use-agent` | 23（2.6%） | 6（1.5%） | ↑ | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
+| `computer-use-agent` | 15（1.7%） | 8（2.0%） | → | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
+| `gui-agent-search` | 14（1.6%） | 3（0.7%） | ↑ | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
+| `agentic-rl` | 151（16.9%） | 77（18.8%） | → | [topics/agentic-rl.md](topics/agentic-rl.md) |
+| `agent-eval-safety` | 20（2.2%） | 10（2.4%） | → | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
+| `agent-infra` | 392（43.9%） | 151（36.9%） | → | [topics/agent-infra.md](topics/agent-infra.md) |
 
 ## 🗂 报告与入口
 

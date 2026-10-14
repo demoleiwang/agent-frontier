@@ -16,13 +16,13 @@
 | 2026-10-07 | [GPT-6 and Intelligent UI for everyone](https://openai.com/index/gpt-6-for-everyone) | Product |  |
 | 2026-10-07 | [Radisson Hotel Group brings hotel discovery into ChatGPT](https://openai.com/index/radisson) |  |  |
 | 2026-10-07 | [Helping teens learn, plan, and shape the future of AI](https://openai.com/index/teens-learn-and-plan) | Product |  |
-| 2026-10-06 | 🎯 [Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad) | Publication | `computer-use-agent` `agent-infra` |
+| 2026-10-06 | 🎯 [Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad) | Publication | `computer-use-agent` `professional-agent` `agent-infra` |
 | 2026-10-06 | [Atlassian and OpenAI expand partnership to turn enterprise knowledge into action](https://openai.com/index/atlassian-partnership) | Company |  |
 | 2026-10-06 | [How Jump Trading is scaling quant research with ChatGPT](https://openai.com/index/jump-trading) |  |  |
 | 2026-10-06 | [Sharing AI progress in mathematics](https://openai.com/index/sharing-ai-progress-in-mathematics) | Research |  |
 | 2026-10-05 | [Our approach to EU text provenance rules](https://openai.com/index/eu-text-provenance) | Safety |  |
 | 2026-10-05 | [Building advertising for the way people use AI](https://openai.com/index/new-chatgpt-ads-format-and-measurement) | Product |  |
-| 2026-10-02 | [Chatham scales its capital markets expertise with OpenAI](https://openai.com/index/chatham-financial) |  |  |
+| 2026-10-02 | 🎯 [Chatham scales its capital markets expertise with OpenAI](https://openai.com/index/chatham-financial) |  | `professional-agent` |
 | 2026-10-02 | [A model guide for the GPT-6 family](https://openai.com/index/practical-guide-building-gpt-6) | Product |  |
 | 2026-10-01 | [How Albertsons Companies is reimagining retail from the inside out](https://openai.com/index/albertsons-reimagining-retail) | Company |  |
 | 2026-10-01 | [The Den frees up 10-15 hours a week to grow with ChatGPT Work](https://openai.com/index/the-den-family-social) |  |  |
@@ -58,7 +58,7 @@
 | 2026-09-21 | [Building standards for the next phase of AI](https://openai.com/index/building-standards-next-phase-ai) | Global Affairs |  |
 | 2026-09-21 | [Expanding OpenAI Academy with new learning paths](https://openai.com/index/expanding-openai-academy-with-new-learning-paths) | Company |  |
 | 2026-09-18 | [Introducing the Australian Youth Safety Blueprint](https://openai.com/index/australian-youth-safety-blueprint) | Company |  |
-| 2026-09-17 | [Introducing Astra for Law](https://openai.com/index/astra-for-law) | Company |  |
+| 2026-09-17 | 🎯 [Introducing Astra for Law](https://openai.com/index/astra-for-law) | Company | `professional-agent` |
 | 2026-09-17 | [How Cooley is accelerating IPO work with ChatGPT](https://openai.com/index/cooley-gopublic) |  |  |
 | 2026-09-16 | [Helping older adults use AI in everyday life](https://openai.com/index/helping-older-adults-use-ai-in-everyday-life) | Global Affairs |  |
 | 2026-09-16 | [How to connect AI usage to business value](https://openai.com/index/how-to-connect-ai-usage-to-business-value) | Product |  |
@@ -151,24 +151,24 @@
 | 2026-10-06 | 🎯 [Expanding the Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program) |  | `agent-eval-safety` |
 | 2026-10-02 | [Claude Frontier Academy: $100M to train 10,000 engineers](https://www.anthropic.com/news/claude-frontier-academy) |  |  |
 | 2026-10-01 | [Barclays scales Claude to upgrade operations and improve client experience](https://www.anthropic.com/news/barclays-scales-claude) |  |  |
-| 2026-10-01 | 🎯 [Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science) |  | `agent-infra` |
+| 2026-10-01 | 🎯 [Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science) |  | `professional-agent` `agent-infra` |
 | 2026-09-30 | [Can we predict the jobs robots will do?](https://www.anthropic.com/research/what-work-can-robots-do) |  |  |
 | 2026-09-29 | 🎯 [GLM-5.3 and the spread of advanced cyber capabilities](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities) |  | `agent-eval-safety` |
 | 2026-09-29 | [What do you want from AI?](https://www.anthropic.com/research/your-thoughts-on-ai) |  |  |
 | 2026-09-25 | [Claude computes a nine-loop amplitude in N=4 super-Yang-Mills](https://www.anthropic.com/research/yes-claude-can-do-nine-loops) |  |  |
-| 2026-09-24 | 🎯 [Project Swap: What happens when agents trade for us?](https://www.anthropic.com/research/project-swap) |  | `agent-infra` |
-| 2026-09-23 | 🎯 [Claude discovers a novel enzyme system](https://www.anthropic.com/news/claude-discovers-novel-enzyme-system) |  | `agent-infra` |
+| 2026-09-24 | 🎯 [Project Swap: What happens when agents trade for us?](https://www.anthropic.com/research/project-swap) |  | `agent-infra` `office-agent` |
+| 2026-09-23 | 🎯 [Claude discovers a novel enzyme system](https://www.anthropic.com/news/claude-discovers-novel-enzyme-system) |  | `professional-agent` `agent-infra` |
 | 2026-09-18 | [Partnering with Accenture on embedded evaluation](https://www.anthropic.com/news/accenture-embedded-evaluation) |  |  |
 | 2026-09-17 | [Introducing the Life Sciences Verification Program](https://www.anthropic.com/news/life-sciences-verification-program) |  |  |
 | 2026-09-17 | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |  |  |
 | 2026-09-10 | [Measuring AI capabilities in intelligence targeting and conventional weapons](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |  |  |
 | 2026-09-09 | 🎯 [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |  | `agent-eval-safety` `gui-agent-search` `agentic-rl` `agent-infra` |
 | 2026-09-04 | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |  |  |
-| 2026-09-01 | 🎯 [Developing Enterprise Frontier Safeguards with our customers](https://www.anthropic.com/news/enterprise-frontier-safeguards) |  | `agent-infra` |
+| 2026-09-01 | 🎯 [Developing Enterprise Frontier Safeguards with our customers](https://www.anthropic.com/news/enterprise-frontier-safeguards) |  | `professional-agent` `agent-infra` |
 | 2026-08-31 | 🎯 [Improving our alignment and security practices](https://www.anthropic.com/news/improving-alignment-security-efforts) |  | `agent-eval-safety` |
 | 2026-08-28 | 🎯 [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) |  | `agent-eval-safety` |
 | 2026-08-27 | [Expanding our support for scientists](https://www.anthropic.com/news/expanding-support-for-scientists) |  |  |
-| 2026-08-27 | 🎯 [Previewing the Model Hardware Standard](https://www.anthropic.com/news/model-hardware-standard-research-preview) |  | `agent-infra` |
+| 2026-08-27 | 🎯 [Previewing the Model Hardware Standard](https://www.anthropic.com/news/model-hardware-standard-research-preview) |  | `env-construction` `agent-infra` |
 | 2026-08-26 | [Enabling independent research on how people use Claude](https://www.anthropic.com/research/enabling-independent-research) |  |  |
 | 2026-08-25 | [Funding better evaluations of AI’s impact on wellbeing](https://www.anthropic.com/news/wellbeing-research-grants) |  |  |
 | 2026-08-18 | [Claude accelerates protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design) |  |  |
@@ -180,7 +180,7 @@
 | 2026-10-13 | [Gemini 4 Argon for Robotics](https://developers.googleblog.com/gemini-4-argon-for-robotics/) | AI |  |
 | 2026-10-13 | 🎯 [Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/) | Gemini | `agent-infra` |
 | 2026-10-08 | [ML Drift: Next-Gen GPU AI/ML Inference at the Edge](https://developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge/) | Mobile |  |
-| 2026-10-08 | 🎯 [The Outer Loop, Insights First: An Ambient Quality Agent That Diagnoses Your Production Agent](https://developers.googleblog.com/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/) | AI | `agent-infra` |
+| 2026-10-08 | 🎯 [The Outer Loop, Insights First: An Ambient Quality Agent That Diagnoses Your Production Agent](https://developers.googleblog.com/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/) | AI | `agent-infra` `env-construction` |
 | 2026-10-07 | 🎯 [Supercharge your development with the Google Developer Knowledge API ecosystem](https://developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem/) | AI | `agent-infra` |
 | 2026-10-06 | [EmbeddingGemma 2: The Developer Guide](https://developers.googleblog.com/embeddinggemma-2-the-developer-guide/) | AI |  |
 | 2026-10-06 | [Bring multimodal semantic search to the edge with EmbeddingGemma 2](https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/) | Mobile |  |
@@ -237,7 +237,7 @@
 |---|---|---|---|
 | 2026-10-08 | 🎯 [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern) | ml-intern, datasets | `agent-infra` |
 | 2026-09-30 | [Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning](https://huggingface.co/blog/open-tts-leaderboard) | audio, speech |  |
-| 2026-09-28 | 🎯 [Welcome RL Environments to the hub](https://huggingface.co/blog/rl-environments) | rl, datasets | `agentic-rl` `agent-infra` |
+| 2026-09-28 | 🎯 [Welcome RL Environments to the hub](https://huggingface.co/blog/rl-environments) | rl, datasets | `env-construction` `agentic-rl` `agent-infra` |
 | 2026-09-22 | 🎯 [How UK AISI and EvalEval Are Making Benchmark Results Reproducible](https://huggingface.co/blog/evaleval-aisi) | evaluation, research | `agent-eval-safety` |
 | 2026-09-22 | [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) | mlx, open-source |  |
 | 2026-09-22 | 🎯 [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) | transformers, gguf | `agent-infra` |

@@ -6,7 +6,7 @@
 | 2026-10-13 | [Gemini 4 Argon for Robotics](https://developers.googleblog.com/gemini-4-argon-for-robotics/) | — | 0.00 | 🆕 new | AI |
 | 2026-10-13 | [Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/) | `agent-infra` | 0.17 | 👀 skimmed | Gemini |
 | 2026-10-08 | [ML Drift: Next-Gen GPU AI/ML Inference at the Edge](https://developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge/) | — | 0.00 | 🆕 new | Mobile |
-| 2026-10-08 | [The Outer Loop, Insights First: An Ambient Quality Agent That Diagnoses Your Production Agent](https://developers.googleblog.com/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/) | `agent-infra` | 0.25 | 🆕 new | AI |
+| 2026-10-08 | [The Outer Loop, Insights First: An Ambient Quality Agent That Diagnoses Your Production Agent](https://developers.googleblog.com/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/) | `agent-infra` `env-construction` | 0.25 | 🆕 new | AI |
 | 2026-10-07 | [Supercharge your development with the Google Developer Knowledge API ecosystem](https://developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem/) | `agent-infra` | 0.25 | 🆕 new | AI |
 | 2026-10-06 | [EmbeddingGemma 2: The Developer Guide](https://developers.googleblog.com/embeddinggemma-2-the-developer-guide/) | — | 0.00 | 🆕 new | AI |
 | 2026-10-06 | [Bring multimodal semantic search to the edge with EmbeddingGemma 2](https://developers.googleblog.com/google-ai-edge-with-embeddinggemma-2/) | — | 0.00 | 🆕 new | Mobile |

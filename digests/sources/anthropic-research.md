@@ -8,12 +8,12 @@
 | 2026-10-09 | [Investigating unintended model actions in our evaluations and internal use](https://www.anthropic.com/research/investigating-unintended-model-actions) | `agent-eval-safety` | 0.53 | 👀 skimmed |  |
 | 2026-10-08 | [An opt-in vulnerability-finding service for open-source software](https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source) | — | 0.00 | 👀 skimmed |  |
 | 2026-10-08 | [Using Claude Science to produce the first complete map of the sky in UV light](https://www.anthropic.com/research/the-missing-map-of-the-sky) | — | 0.00 | 🆕 new |  |
-| 2026-10-01 | [Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science) | `agent-infra` | 0.17 | 🆕 new |  |
+| 2026-10-01 | [Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science) | `professional-agent` `agent-infra` | 0.17 | 🆕 new |  |
 | 2026-09-30 | [Can we predict the jobs robots will do?](https://www.anthropic.com/research/what-work-can-robots-do) | — | 0.00 | 🆕 new |  |
 | 2026-09-29 | [GLM-5.3 and the spread of advanced cyber capabilities](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities) | `agent-eval-safety` | 0.40 | 👀 skimmed |  |
 | 2026-09-29 | [What do you want from AI?](https://www.anthropic.com/research/your-thoughts-on-ai) | — | 0.00 | 🆕 new |  |
 | 2026-09-25 | [Claude computes a nine-loop amplitude in N=4 super-Yang-Mills](https://www.anthropic.com/research/yes-claude-can-do-nine-loops) | — | 0.00 | 🆕 new |  |
-| 2026-09-24 | [Project Swap: What happens when agents trade for us?](https://www.anthropic.com/research/project-swap) | `agent-infra` | 0.50 | 👀 skimmed |  |
+| 2026-09-24 | [Project Swap: What happens when agents trade for us?](https://www.anthropic.com/research/project-swap) | `agent-infra` `office-agent` | 0.50 | 👀 skimmed |  |
 | 2026-09-17 | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) | — | 0.00 | 🆕 new |  |
 | 2026-09-10 | [Measuring AI capabilities in intelligence targeting and conventional weapons](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) | — | 0.00 | 🆕 new |  |
 | 2026-09-09 | [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) | `agent-eval-safety` `gui-agent-search` `agentic-rl` `agent-infra` | 0.80 | 👀 skimmed |  |

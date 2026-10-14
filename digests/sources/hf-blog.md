@@ -5,7 +5,7 @@
 |---|---|---|---|---|---|
 | 2026-10-08 | [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern) | `agent-infra` | 0.17 | 👀 skimmed | ml-intern, datasets, spaces, models, inference-providers, huggingchat, gradio |
 | 2026-09-30 | [Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning](https://huggingface.co/blog/open-tts-leaderboard) | — | 0.00 | 🆕 new | audio, speech, leaderboard, datasets, evaluation |
-| 2026-09-28 | [Welcome RL Environments to the hub](https://huggingface.co/blog/rl-environments) | `agentic-rl` `agent-infra` | 1.00 | 👀 skimmed | rl, datasets, hub |
+| 2026-09-28 | [Welcome RL Environments to the hub](https://huggingface.co/blog/rl-environments) | `env-construction` `agentic-rl` `agent-infra` | 1.00 | 👀 skimmed | rl, datasets, hub |
 | 2026-09-22 | [How UK AISI and EvalEval Are Making Benchmark Results Reproducible](https://huggingface.co/blog/evaleval-aisi) | `agent-eval-safety` | 0.53 | 👀 skimmed | evaluation, research, community, open-source-collab |
 | 2026-09-22 | [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) | — | 0.00 | 🆕 new | mlx, open-source, community, llm |
 | 2026-09-22 | [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) | `agent-infra` | 0.17 | 🆕 new | transformers, gguf, kernels, inference, local |
@@ -26,10 +26,10 @@
 | 2026-08-13 | [What We Learned by Reproducing 2,200 papers from ICML](https://huggingface.co/blog/icml-2026-open-reproductions) | `agent-infra` `agent-eval-safety` | 0.42 | 👀 skimmed | research, community, agents |
 | 2026-08-10 | [Meta is back with Muse Glimmer: local, agentic, multimodal, and open source](https://huggingface.co/blog/muse-glimmer) | `agent-infra` | 0.50 | 👀 skimmed | llms, vlms, meta, muse, llama.cpp, vllm, hub |
 | 2026-08-06 | [Baseten on Hugging Face Inference Providers 🔥](https://huggingface.co/blog/baseten) | — | 0.00 | 🆕 new | llms, inference-providers, baseten, enterprise, partnerships, hub |
-| 2026-07-27 | [Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident](https://huggingface.co/blog/agent-intrusion-technical-timeline) | `agent-eval-safety` `agent-infra` | 0.80 | 👀 skimmed | security |
+| 2026-07-27 | [Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident](https://huggingface.co/blog/agent-intrusion-technical-timeline) | `agent-eval-safety` `agent-infra` `env-construction` | 0.80 | 👀 skimmed | security |
 | 2026-07-23 | [Bringing Nunchaku 4-bit Diffusion Inference to Diffusers](https://huggingface.co/blog/nunchaku-diffusers) | — | 0.00 | 🆕 new | guide, diffusers, quantization, diffusion-transformers |
 | 2026-07-21 | [Grabette: an open system to record robot-manipulation data](https://huggingface.co/blog/grabette) | — | 0.00 | 🆕 new | robotics, ai, community, datasets, lerobot |
-| 2026-07-16 | [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026) | `agent-eval-safety` `agent-infra` | 0.40 | 👀 skimmed | security |
+| 2026-07-16 | [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026) | `agent-eval-safety` `agent-infra` `env-construction` | 0.40 | 👀 skimmed | security |
 | 2026-07-15 | [Introducing Real World VoiceEQ: Measuring the human quality of voice AI](https://huggingface.co/blog/real-world-voiceeq) | — | 0.00 | 🆕 new | audio, speech, benchmark, leaderboard, announcement |
 | 2026-07-15 | [Welcome Inkling by Thinking Machines](https://huggingface.co/blog/thinkingmachines-inkling) | `agent-infra` | 0.17 | 👀 skimmed | announcement, multimodal, transformers, inference, open-source |
 | 2026-07-10 | [Profiling in PyTorch (Part 3): Attention is all you profile](https://huggingface.co/blog/torch-attention-profile) | — | 0.00 | 🆕 new | torch, profile, flash, xformers, cudnn |

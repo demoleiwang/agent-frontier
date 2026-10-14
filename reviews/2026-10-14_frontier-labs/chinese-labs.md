@@ -1,6 +1,6 @@
 # Chinese frontier labs: agent-relevant releases, 2026-08-14 to 2026-10-14 (deep notes)
 
-Compiled 2026-10-14. Scope: computer-use / GUI / browser agents, agentic RL (environments, RL infra, reward design), agent evals and safety, and agent infra (coding-agent harnesses).
+Compiled 2026-10-14. Scope: computer-use / GUI / browser agents, agentic RL (environments, RL infra, reward design), agent evals and safety, and agent infra (coding-agent harnesses). 「无出处，待核」
 
 ## How this was sourced (read first)
 
@@ -22,46 +22,46 @@ Compiled 2026-10-14. Scope: computer-use / GUI / browser agents, agentic RL (env
 
 ## 0. Cross-lab takeaways for GUI/CUA and agentic-RL research
 
-1. **Qwen-CUA is the most detailed open recipe for pixel-only computer use in this period.** It covers:
-   - a 20-screenshot active window with 10-step block folding, which keeps the KV-cache prefix stable;
-   - training slices made with the same fold operator, each inheriting the terminal reward;
-   - SAPO with asymmetric gate temperatures;
-   - a pass@8 task filter (keep 0<c<8);
-   - about 100k vCPUs, about 40k verifiable tasks, 512 H200s, and about 61k GPU-hours per RL run.
+1. **Qwen-CUA is the most detailed open recipe for pixel-only computer use in this period.** It covers: ([Qwen-CUA report](https://arxiv.org/abs/2608.02352); [repo](https://github.com/xlang-ai/Qwen-CUA))
+   - a 20-screenshot active window with 10-step block folding, which keeps the KV-cache prefix stable; ([Qwen-CUA](https://arxiv.org/abs/2608.02352))
+   - training slices made with the same fold operator, each inheriting the terminal reward; ([Qwen-CUA](https://arxiv.org/abs/2608.02352))
+   - SAPO with asymmetric gate temperatures; ([Qwen-CUA](https://arxiv.org/abs/2608.02352))
+   - a pass@8 task filter (keep 0<c<8); ([Qwen-CUA](https://arxiv.org/abs/2608.02352))
+   - about 100k vCPUs, about 40k verifiable tasks, 512 H200s, and about 61k GPU-hours per RL run. ([Qwen-CUA](https://arxiv.org/abs/2608.02352))
 
-   Results: 86.2 on OSWorld-Verified (Max: 87.6) and 18.5/48.4 binary/partial on OSWorld 2.0. Weights went open on 2026-08-26. OSWorld-Verified is near saturation (Kimi K3 84.8, Qwen3.8-Max about 86.1, MiMo-V2.6-Pro about 82.0). The real headroom is in long-horizon work (OSWorld 2.0 binary is about 20%), personalization (MyPCBench) and prompt-injection robustness (RedTeamCUA ASR is 16.4 for Qwen-CUA vs 0.7 for Opus 4.8).
-2. **Harness diversity has become an explicit RL design axis.**
-   - Kimi K3 trains in a "unified white-box RL environment" that composes harness modules (tools, system prompts, context management, skills, memories, subagents) to imitate Kimi Code, Claude Code, Codex, OpenClaw and Hermes.
-   - Xiaomi's open RL stack ships Claude Code, Codex, mini-bash and MiMo-code harness configs plus a `group_advantage_by_harness` flag.
-   - ByteDance Seed's HarnessDev evaluates models on the harness they *build*.
-   - Hy4 and Kimi report scores per harness.
-3. **The most concrete open RL artifacts in the window are the reward-design and credit-assignment code** in Xiaomi's `XiaomiMiMo/verl` fork (2026-09-21):
-   - segment-level tool-call-error penalties (`monitor/mask/adv_reduction/adv_set/adv_signed`);
-   - a sign-aware mass-conserving advantage rebalance;
-   - an n-gram repetition early-stop;
-   - an experimental "deep-failure mask";
-   - infra-failure vs wrong-answer separation;
-   - a VLM group-pick grader for web design that picks only "clearly better" and "clearly worse" screenshots inside a group of 16.
+   Results: 86.2 on OSWorld-Verified (Max: 87.6) and 18.5/48.4 binary/partial on OSWorld 2.0. Weights went open on 2026-08-26. OSWorld-Verified is near saturation (Kimi K3 84.8, Qwen3.8-Max about 86.1, MiMo-V2.6-Pro about 82.0). The real headroom is in long-horizon work (OSWorld 2.0 binary is about 20%), personalization (MyPCBench) and prompt-injection robustness (RedTeamCUA ASR is 16.4 for Qwen-CUA vs 0.7 for Opus 4.8). ([Qwen-CUA](https://arxiv.org/abs/2608.02352); [weights](https://github.com/xlang-ai/Qwen-CUA); [Kimi K3](https://github.com/MoonshotAI/Kimi-K3); [Qwen3.8](https://qwen.ai/blog?id=qwen3.8); [MiMo-V2.6](https://mimo.mi.com/docs/en-US/news))
+2. **Harness diversity has become an explicit RL design axis.** ([Kimi K3](https://github.com/MoonshotAI/Kimi-K3); [XiaomiMiMo/verl](https://github.com/XiaomiMiMo/verl); [HarnessDev](https://arxiv.org/abs/2609.01437); [Hy4](https://github.com/Tencent-Hunyuan/Hy4-Preview))
+   - Kimi K3 trains in a "unified white-box RL environment" that composes harness modules (tools, system prompts, context management, skills, memories, subagents) to imitate Kimi Code, Claude Code, Codex, OpenClaw and Hermes. ([Kimi K3](https://github.com/MoonshotAI/Kimi-K3))
+   - Xiaomi's open RL stack ships Claude Code, Codex, mini-bash and MiMo-code harness configs plus a `group_advantage_by_harness` flag. ([XiaomiMiMo/verl](https://github.com/XiaomiMiMo/verl))
+   - ByteDance Seed's HarnessDev evaluates models on the harness they *build*. ([HarnessDev](https://arxiv.org/abs/2609.01437))
+   - Hy4 and Kimi report scores per harness. ([Hy4](https://github.com/Tencent-Hunyuan/Hy4-Preview); [Kimi K3](https://github.com/MoonshotAI/Kimi-K3))
+3. **The most concrete open RL artifacts in the window are the reward-design and credit-assignment code** in Xiaomi's `XiaomiMiMo/verl` fork (2026-09-21): ([XiaomiMiMo/verl](https://github.com/XiaomiMiMo/verl))
+   - segment-level tool-call-error penalties (`monitor/mask/adv_reduction/adv_set/adv_signed`); ([verl](https://github.com/XiaomiMiMo/verl))
+   - a sign-aware mass-conserving advantage rebalance; ([verl](https://github.com/XiaomiMiMo/verl))
+   - an n-gram repetition early-stop; ([verl](https://github.com/XiaomiMiMo/verl))
+   - an experimental "deep-failure mask"; ([verl](https://github.com/XiaomiMiMo/verl))
+   - infra-failure vs wrong-answer separation; ([verl](https://github.com/XiaomiMiMo/verl))
+   - a VLM group-pick grader for web design that picks only "clearly better" and "clearly worse" screenshots inside a group of 16. ([verl](https://github.com/XiaomiMiMo/verl))
 
-   Third-party caveat (Vals AI): about two-thirds of the released coding tasks leak the fix through git history.
-4. **Every lab now ships an open-source coding-agent harness, and computer use is being bolted onto them.**
-   - DeepSeek Harness (`dsh`, MIT, 2026-08-13) is "everything is a plugin". It added computer-use and browser-use provider packages on 2026-09-12/13.
-   - ZCode (Z.ai, Apache-2.0, 2026-09-21) added an accessibility-first `zcode-cua-plugin` in v3.15.1 (2026-10-10).
-   - Qwen Code shipped a versioned CUA SDK/driver (2026-08-23) and moved computer use to a bundled skill (2026-08-24).
-   - MiniMax Code published its source snapshot (MIT) on 2026-09-18.
-   - Kimi Code replaced kimi-cli.
+   Third-party caveat (Vals AI): about two-thirds of the released coding tasks leak the fix through git history. (Vals AI caveat: 「无出处，待核」)
+4. **Every lab now ships an open-source coding-agent harness, and computer use is being bolted onto them.** ([DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness); [ZCode](https://github.com/zai-org/ZCode); [Qwen Code](https://github.com/QwenLM/qwen-code); [MiniMax Code](https://github.com/MiniMax-AI/MiniMax-Code); [Kimi Code](https://moonshotai.github.io/kimi-code/en/))
+   - DeepSeek Harness (`dsh`, MIT, 2026-08-13) is "everything is a plugin". It added computer-use and browser-use provider packages on 2026-09-12/13. ([deepseek-harness](https://github.com/deepseek-ai/deepseek-harness))
+   - ZCode (Z.ai, Apache-2.0, 2026-09-21) added an accessibility-first `zcode-cua-plugin` in v3.15.1 (2026-10-10). ([ZCode](https://github.com/zai-org/ZCode))
+   - Qwen Code shipped a versioned CUA SDK/driver (2026-08-23) and moved computer use to a bundled skill (2026-08-24). ([qwen-code](https://github.com/QwenLM/qwen-code))
+   - MiniMax Code published its source snapshot (MIT) on 2026-09-18. ([MiniMax-Code](https://github.com/MiniMax-AI/MiniMax-Code))
+   - Kimi Code replaced kimi-cli. ([Kimi Code](https://moonshotai.github.io/kimi-code/en/))
 
-   The harness-side CUA designs are AX-tree/DOM-first. The model-side CUA research (Qwen-CUA) is pixel-only. That contrast is worth tracking.
-5. **Cyber capability is now reported as an emergent byproduct of agentic RL, with gating attached.**
-   - GLM-5.3: "cyber capability developed faster than we expected". It is SOTA on CyberGym, more than doubles GLM-5.2 on exploitation, and launched without a public API at first.
-   - Kimi K3: two-tier cyber eval. It solves 14/36 expert exploit tasks; joint UK AISI + NIST CAISI testing gave 0/41 arbitrary-code-execution on end-to-end exploit completion.
-   - MiMo-V2.6 includes an ARVO vulnerability-reproduction RL environment.
-6. **Long-context efficiency for agents is the dominant architecture theme.**
-   - GLM-5.3-Flash: sparse+linear hybrid plus mHC.
-   - Qwen3.8-Flash-Next: GDN + Qwen Sparse Attention, Gated Residual and n-gram embeddings.
-   - DeepSeek V4.1-Flash: KV-cache compression. FlashMLA shows a 528 B/token FP8 cache (288 B/token FP4 extra cache).
-   - Kimi K3: KDA + Gated MLA, with an external KV pool for 1M-context RL.
-   - Hy4: Gated DSA + IndexCache + identity Hyper-Connections.
+   The harness-side CUA designs are AX-tree/DOM-first. The model-side CUA research (Qwen-CUA) is pixel-only. That contrast is worth tracking. ([Qwen-CUA](https://arxiv.org/abs/2608.02352))
+5. **Cyber capability is now reported as an emergent byproduct of agentic RL, with gating attached.** ([GLM-5.3](https://z.ai/blog/glm-5.3); [Kimi K3](https://github.com/MoonshotAI/Kimi-K3); [XiaomiMiMo/verl](https://github.com/XiaomiMiMo/verl))
+   - GLM-5.3: "cyber capability developed faster than we expected". It is SOTA on CyberGym, more than doubles GLM-5.2 on exploitation, and launched without a public API at first. ([GLM-5.3 blog](https://z.ai/blog/glm-5.3))
+   - Kimi K3: two-tier cyber eval. It solves 14/36 expert exploit tasks; joint UK AISI + NIST CAISI testing gave 0/41 arbitrary-code-execution on end-to-end exploit completion. ([Kimi K3](https://github.com/MoonshotAI/Kimi-K3))
+   - MiMo-V2.6 includes an ARVO vulnerability-reproduction RL environment. ([XiaomiMiMo/verl](https://github.com/XiaomiMiMo/verl))
+6. **Long-context efficiency for agents is the dominant architecture theme.** ([GLM-5.3-Flash](https://z.ai/blog/glm-5.3-flash); [Qwen3.8-Flash-Next](https://github.com/QwenLM/Qwen3.8-Flash-Next); [DeepSeek updates](https://api-docs.deepseek.com/updates/); [Kimi K3](https://github.com/MoonshotAI/Kimi-K3); [Hy4](https://github.com/Tencent-Hunyuan/Hy4-Preview))
+   - GLM-5.3-Flash: sparse+linear hybrid plus mHC. ([GLM-5.3-Flash](https://z.ai/blog/glm-5.3-flash))
+   - Qwen3.8-Flash-Next: GDN + Qwen Sparse Attention, Gated Residual and n-gram embeddings. ([Qwen3.8-Flash-Next](https://github.com/QwenLM/Qwen3.8-Flash-Next))
+   - DeepSeek V4.1-Flash: KV-cache compression. FlashMLA shows a 528 B/token FP8 cache (288 B/token FP4 extra cache). ([DeepSeek updates](https://api-docs.deepseek.com/updates/); [FlashMLA](https://github.com/deepseek-ai/FlashMLA))
+   - Kimi K3: KDA + Gated MLA, with an external KV pool for 1M-context RL. ([Kimi K3](https://github.com/MoonshotAI/Kimi-K3))
+   - Hy4: Gated DSA + IndexCache + identity Hyper-Connections. ([Hy4](https://github.com/Tencent-Hunyuan/Hy4-Preview))
 
 ---
 
@@ -320,7 +320,7 @@ Searched for and **not found in the window**:
   - Host-offloaded n-gram tables and 1M-context sparse attention matter for the RL rollout cost of long multimodal agent traces.
 
 #### 2.8 Qwen3.8-Omni-Flash ("Towards Native Omni-Modal Agents")
-- **Date:** 2026-09-18 (M). Tech report arXiv 2609.25611.
+- **Date:** 2026-09-18 (M). Tech report arXiv 2609.25611. · [arXiv](https://arxiv.org/abs/2609.25611)
 - **Source:** official-search-extended (paper excerpts via search). No open weights.
 - **Substance:**
   - Built on the Flash-Next sparse backbone; 1M context; on QwenCloud, Model Studio and Qwen Studio.
@@ -394,10 +394,10 @@ Searched for and **not found in the window**:
 - **Date:** 2026-08-21 (L).
 - **Source:** third-party-corroborated only.
 - **Substance:**
-  - Multimodal V4-Flash variant on the API (`deepseek-v4-flash-vision-exp`), 1M context.
-  - Parameter counts conflict (284B-A13B vs 305B), as does open-weight status (MIT on HF vs API-only).
-  - DeepSeek reportedly claims it is close to Opus 4.8 on "agent-oriented multimodal tests". GLM-5.3-Flash's chart uses it as a baseline ("DeepSeek-V4-Vision-Exp": Terminal Bench 2.1 83.9, DeepSWE 59.3).
-- **Implication:** DeepSeek is moving to native vision ahead of V4.1, a prerequisite for screenshot-based CUA. No GUI benchmark was found.
+  - Multimodal V4-Flash variant on the API (`deepseek-v4-flash-vision-exp`), 1M context. 「无出处，待核」
+  - Parameter counts conflict (284B-A13B vs 305B), as does open-weight status (MIT on HF vs API-only). 「无出处，待核」
+  - DeepSeek reportedly claims it is close to Opus 4.8 on "agent-oriented multimodal tests". GLM-5.3-Flash's chart uses it as a baseline ("DeepSeek-V4-Vision-Exp": Terminal Bench 2.1 83.9, DeepSWE 59.3). (GLM-5.3-Flash chart: [z.ai/blog/glm-5.3-flash](https://z.ai/blog/glm-5.3-flash); DeepSeek claim: 「无出处，待核」)
+- **Implication:** DeepSeek is moving to native vision ahead of V4.1, a prerequisite for screenshot-based CUA. No GUI benchmark was found. 「无出处，待核」
 
 ### Moonshot (Kimi)
 
@@ -443,13 +443,13 @@ Searched for and **not found in the window**:
 
 #### 2.14 Kimi K2.8 Preview
 - **Date:** 2026-09-11 (M).
-- **Source:** third-party-corroborated (llm-stats, KuCoin, Pandaily, magicshot).
+- **Source:** third-party-corroborated (llm-stats, KuCoin, Pandaily, magicshot). 「无出处，待核」
 - **Substance:**
-  - A mid-tier coding/agent model between K2.7 Code and K3, rolled out across Kimi Code and Work under the existing `kimi-for-coding` ID.
-  - 1M context (up from 262,144 on K2.7 Code); thinking effort low/high/max.
-  - Moonshot claims coding/agent performance "close to K3". No public benchmarks, pricing or weights at launch, and sources conflict on modalities.
-  - Related harness change (H): `MoonshotAI/kimi-cli` added a deprecation-aware update with one-key migration to Kimi Code (2026-09-01) and short-circuited entry points to the Kimi Code installer (2026-09-22). `MoonshotAI/Kimi-Code` (MIT; video input; subagents `coder`/`explore`/`plan`; marketplace plugins; a "Kimi Browser Extension", renamed 2026-09-15) is the active harness.
-- **Implication:** model iterations are now shipped behind a stable harness model ID. External researchers cannot pin versions, which complicates longitudinal agent evals.
+  - A mid-tier coding/agent model between K2.7 Code and K3, rolled out across Kimi Code and Work under the existing `kimi-for-coding` ID. 「无出处，待核」
+  - 1M context (up from 262,144 on K2.7 Code); thinking effort low/high/max. 「无出处，待核」
+  - Moonshot claims coding/agent performance "close to K3". No public benchmarks, pricing or weights at launch, and sources conflict on modalities. 「无出处，待核」
+  - Related harness change (H): `MoonshotAI/kimi-cli` added a deprecation-aware update with one-key migration to Kimi Code (2026-09-01) and short-circuited entry points to the Kimi Code installer (2026-09-22). `MoonshotAI/Kimi-Code` (MIT; video input; subagents `coder`/`explore`/`plan`; marketplace plugins; a "Kimi Browser Extension", renamed 2026-09-15) is the active harness. ([MoonshotAI/kimi-cli](https://github.com/MoonshotAI/kimi-cli); [MoonshotAI/Kimi-Code](https://github.com/MoonshotAI/Kimi-Code))
+- **Implication:** model iterations are now shipped behind a stable harness model ID. External researchers cannot pin versions, which complicates longitudinal agent evals. 「无出处，待核」
 
 ### MiniMax
 
@@ -536,19 +536,19 @@ Searched for and **not found in the window**:
 ### StepFun
 
 #### 2.18 Step 5 Preview
-- **Date:** 2026-09-18/20 (L; AA lists 09-18, StepFun materials 09-20). Open weights promised for 2026-10-15 and not yet out as of 10-14.
-- **Source:** third-party-corroborated (no official repo found; `stepfun-ai/Step-5*` probes returned 404). The last open StepFun repos are Step-3.5-Flash (2026-04) and GELab-Zero (GUI agent, 2026-05).
+- **Date:** 2026-09-18/20 (L; AA lists 09-18, StepFun materials 09-20). Open weights promised for 2026-10-15 and not yet out as of 10-14. 「无出处，待核」
+- **Source:** third-party-corroborated (no official repo found; `stepfun-ai/Step-5*` probes returned 404). The last open StepFun repos are Step-3.5-Flash (2026-04) and GELab-Zero (GUI agent, 2026-05). 「无出处，待核」
 - **Substance:**
-  - Sparse MoE, 600B total / 27B active; 1M context; 64K max output; text, image and video input.
-  - StepFun-reported: GPQA-D 93.5, HLE w/ tools 59.4, Terminal-Bench 2.1 85.0, DeepSWE v1.1 67.7, Toolathlon-Verified 74.1, ProgramBench 80.5, StepCodeBench 49.0, Terminal-Bench v4 33.3.
-  - Independent: Vals AI Terminal-Bench v4 31.8; Vals Index 49.35 (30/45); Finance Agent v2 50.67; Vibe Code Bench 70.40.
-  - No OSWorld or GUI numbers found, despite StepFun's earlier GUI-agent work (GELab-Zero).
-- **Implication:** check on 10-15 whether the weights and a tech report ship with GUI-agent evals. There is no primary substance yet.
+  - Sparse MoE, 600B total / 27B active; 1M context; 64K max output; text, image and video input. 「无出处，待核」
+  - StepFun-reported: GPQA-D 93.5, HLE w/ tools 59.4, Terminal-Bench 2.1 85.0, DeepSWE v1.1 67.7, Toolathlon-Verified 74.1, ProgramBench 80.5, StepCodeBench 49.0, Terminal-Bench v4 33.3. 「无出处，待核」
+  - Independent: Vals AI Terminal-Bench v4 31.8; Vals Index 49.35 (30/45); Finance Agent v2 50.67; Vibe Code Bench 70.40. 「无出处，待核」
+  - No OSWorld or GUI numbers found, despite StepFun's earlier GUI-agent work (GELab-Zero). 「无出处，待核」
+- **Implication:** check on 10-15 whether the weights and a tech report ship with GUI-agent evals. There is no primary substance yet. 「无出处，待核」
 
 ### ByteDance Seed
 
 #### 2.19 HarnessDev: can LLMs create and evolve their own agent harness?
-- **Date:** arXiv 2609.01437, submitted 2026-09-01 (M).
+- **Date:** arXiv 2609.01437, submitted 2026-09-01 (M). · [arXiv](https://arxiv.org/abs/2609.01437)
 - **Source:** official-search-extended (arXiv abstract and figures via search) plus third-party notes. No code repo found.
 - **Substance:**
   - The evaluation unit moves from task outputs to the **runnable harness** the model writes.

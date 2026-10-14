@@ -1,6 +1,6 @@
 # OpenAI — deep notes, 2026-08-14 → 2026-10-14
 
-Focus: computer-use / browser-use agents, agentic RL (environments, reward hacking), agent eval & safety (sandbox escapes, containment, monitoring), agent infra (harnesses, APIs, memory).
+Focus: computer-use / browser-use agents, agentic RL (environments, reward hacking), agent eval & safety (sandbox escapes, containment, monitoring), agent infra (harnesses, APIs, memory). (Item list: [Olshansk/rss-feeds](https://github.com/Olshansk/rss-feeds))
 
 ## Method and source labels
 

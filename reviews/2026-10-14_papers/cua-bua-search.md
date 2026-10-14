@@ -5,54 +5,54 @@
 
 ## 必读 Top-8（面向构建 BUA/CUA agent 与 agentic-RL 环境的读者）
 
-1. **RecreationWorld**（Qwen，2609.22000）—— 把"运行中的参考软件"当 oracle 生成可执行奖励，五平台 hybrid CUA 环境 + 250 题 benchmark，环境构建范式可直接迁移。
-2. **HybridCUA**（ZJU，2609.38008）—— GUI+CLI 统一 `bash` 动作空间 + CLI-aware RL 奖励，9B 模型 OSWorld 53.6%、14 步；数据、环境服务、异步 RL 基建全开源。
-3. **SoftwareGym**（SJTU，2610.12611）—— LLM 自动合成 182 个原生桌面应用并用真实 GUI agent 测试-修复，OSWorld Pass@3 41.39%→56.97%（注意 Pass@3 口径）。
-4. **Context Language Models**（Meta/UW，2609.37725）—— 把上下文当文件让模型自己管理，零样本/ICL/RL 三路验证，双通道（任务+效率）advantage，直击长程 agent 上下文瓶颈。
-5. **AutoGUIWorld**（Tencent Hunyuan，2610.01215）—— 用图像编辑模型做 GUI 视觉 world model，零部署合成 79K 步轨迹，OSWorld 33.0%→40.8%；"环境可以被生成"的新路线（但无执行验证）。
-6. **AREX-2**（BAAI，2609.38288）—— 在 ML 工程/算法编程上合成长程反思轨迹，27B 模型 BrowseComp 84.0、MLE-bench Lite 81.8；数据原则（保留失败与恢复）有启发，迁移结论需 matched 消融。
-7. **OSWorld-Pro**（NVIDIA，2609.24890）—— 300+ 任务、2,800+ 子目标、67K 人工标注的过程式 CUA 评测，可演化为 process reward；（本身评级为"值得浏览"，因无代码，但方向关键故入榜）。
-8. **False Frontiers**（Rutgers 等，2609.39102）—— 揭示"自出题+自验证"闭环的 proposer–solver 共谋（co-cheating），并用 cross-fitting 缓解；对所有自动任务合成型 RL 环境都是重要警示（评级"值得浏览"，数字待核实）。
+1. **[RecreationWorld](https://arxiv.org/abs/2609.22000)**（Qwen，2609.22000）—— 把"运行中的参考软件"当 oracle 生成可执行奖励，五平台 hybrid CUA 环境 + 250 题 benchmark，环境构建范式可直接迁移。
+2. **[HybridCUA](https://arxiv.org/abs/2609.38008)**（ZJU，2609.38008）—— GUI+CLI 统一 `bash` 动作空间 + CLI-aware RL 奖励，9B 模型 OSWorld 53.6%、14 步；数据、环境服务、异步 RL 基建全开源。
+3. **[SoftwareGym](https://arxiv.org/abs/2610.12611)**（SJTU，2610.12611）—— LLM 自动合成 182 个原生桌面应用并用真实 GUI agent 测试-修复，OSWorld Pass@3 41.39%→56.97%（注意 Pass@3 口径）。
+4. **[Context Language Models](https://arxiv.org/abs/2609.37725)**（Meta/UW，2609.37725）—— 把上下文当文件让模型自己管理，零样本/ICL/RL 三路验证，双通道（任务+效率）advantage，直击长程 agent 上下文瓶颈。
+5. **[AutoGUIWorld](https://arxiv.org/abs/2610.01215)**（Tencent Hunyuan，2610.01215）—— 用图像编辑模型做 GUI 视觉 world model，零部署合成 79K 步轨迹，OSWorld 33.0%→40.8%；"环境可以被生成"的新路线（但无执行验证）。
+6. **[AREX-2](https://arxiv.org/abs/2609.38288)**（BAAI，2609.38288）—— 在 ML 工程/算法编程上合成长程反思轨迹，27B 模型 BrowseComp 84.0、MLE-bench Lite 81.8；数据原则（保留失败与恢复）有启发，迁移结论需 matched 消融。
+7. **[OSWorld-Pro](https://arxiv.org/abs/2609.24890)**（NVIDIA，2609.24890）—— 300+ 任务、2,800+ 子目标、67K 人工标注的过程式 CUA 评测，可演化为 process reward；（本身评级为"值得浏览"，因无代码，但方向关键故入榜）。
+8. **[False Frontiers](https://arxiv.org/abs/2609.39102)**（Rutgers 等，2609.39102）—— 揭示"自出题+自验证"闭环的 proposer–solver 共谋（co-cheating），并用 cross-fitting 缓解；对所有自动任务合成型 RL 环境都是重要警示（评级"值得浏览"，数字待核实）。
 
-> 次一档值得关注：CUA-SWE（coding×computer-use 评测）、DeskForge（受控桌面组合的稠密 grounding 数据）、HazardAuditor（CUA 轨迹级 guard）、IterSynth（角色解耦 RDPO）、EvoSkill-GUI（结构化 skill 演化）、OSWorld-Science。
+> 次一档值得关注：[CUA-SWE](https://arxiv.org/abs/2609.32600)（coding×computer-use 评测）、[DeskForge](https://arxiv.org/abs/2610.02320)（受控桌面组合的稠密 grounding 数据）、[HazardAuditor](https://arxiv.org/abs/2609.15134)（CUA 轨迹级 guard）、[IterSynth](https://arxiv.org/abs/2609.29444)（角色解耦 RDPO）、[EvoSkill-GUI](https://arxiv.org/abs/2609.17653)（结构化 skill 演化）、[OSWorld-Science](https://arxiv.org/abs/2609.39903)。
 
 ## 跨论文趋势（6 条）
 
-1. **环境合成规模化，且光谱拉得很宽**：从"真实执行 + 强验证"到"纯视觉生成 + 无验证"形成一条连续谱——RecreationWorld（开源 app + 参考实现做 oracle）、SoftwareGym（LLM 从规格合成原生 app + GUI 测试修复）、DeskForge（组合真实应用的受控桌面场景）、AREX-2（把 GitHub repo / OJ 题变成可执行沙箱）、AutoGUIWorld（图像生成器直接合成观测，不跑软件）。共同问题是"可验证性 vs 覆盖面"的权衡：越靠近生成端，覆盖越广但越难提供 RL 奖励。
-2. **GUI + CLI / Code 的 hybrid CUA 成为主流定义**：HybridCUA（GUI+shell 统一动作）、RecreationWorld（explore–implement–verify）、CUA-SWE（code-only vs CUA 对比，前沿模型在 DevOps/Mobile 从 0 提升到 55–80%）、OSWorld-Science（83.6% 任务支持 CLI）。一致发现：未经训练直接加 CLI 会掉分（HybridCUA 报告 38.8→18.4），"何时用哪种接口"需要专门数据与奖励。
-3. **评测从终态走向过程，并开始审计 evaluator 本身**：OSWorld-Pro（子目标 + LLM-Judge）、WebArena-Lite 人工审计（自动 evaluator 漏判 5.45–8.49pp）、CUA-SWE（复杂的复核/替换规则）、OSWorld-Science（artifact 级部分分）。对 RL 的含义：终态 verifier 的假阴性/假阳性会直接污染奖励，process reward 与 verifier 质量审计会成为环境构建的标配。
-4. **自动生成任务/奖励的"自欺"风险被正面研究**：False Frontiers 的 co-cheating（proposer 与 solver 共享错误）、ReSAIL 的迭代自蒸馏崩塌、EvoSkill-GUI 的 test-time 进化依赖成功信号、AREX-2 作者自承迁移需 matched 消融。趋势是引入"独立性"——交叉拟合、critic 信息隔离（EvoSkill 消融：去隔离 69.52→60.95）、冻结 teacher 正则化。
-5. **细粒度 credit assignment：按角色/区域/通道拆分 advantage**：IterSynth 的 RDPO（Planner/Synthesizer 分池归一化，混合归一化反而低于 GRPO）、CLM 的任务+效率双通道（效率项只作用于上下文编辑 token）、HazardAuditor 的 GuardPO（rationale 与 verdict 区域分别归一化）、HybridCUA 的 step-level `r_exec` 罚失败命令 token。agentic RL 正在从"整条轨迹一个标量"走向"结构化 advantage"。
-6. **长程能力：上下文管理与经验复用从 harness 走进权重**：CLM（模型原生编辑上下文并可 RL）、IterSynth（summary 即状态）、AREX-2（长程反思写入权重）、X-Tree（BPE 式技能树进入 RL/蒸馏）、对照 training-free 的 EvoSkill-GUI（结构化 skill 包）与 ExpActivator（step-level 经验激活）。此外 **CUA 安全**（HazardAuditor 的执行轨迹级 guard）与 **GUI world model**（AutoGUIWorld、DeskForge 的 (S,a,S') 转移）作为两个较新的支线也在成形。
+1. **环境合成规模化，且光谱拉得很宽**：从"真实执行 + 强验证"到"纯视觉生成 + 无验证"形成一条连续谱——[RecreationWorld](https://arxiv.org/abs/2609.22000)（开源 app + 参考实现做 oracle）、[SoftwareGym](https://arxiv.org/abs/2610.12611)（LLM 从规格合成原生 app + GUI 测试修复）、[DeskForge](https://arxiv.org/abs/2610.02320)（组合真实应用的受控桌面场景）、[AREX-2](https://arxiv.org/abs/2609.38288)（把 GitHub repo / OJ 题变成可执行沙箱）、[AutoGUIWorld](https://arxiv.org/abs/2610.01215)（图像生成器直接合成观测，不跑软件）。共同问题是"可验证性 vs 覆盖面"的权衡：越靠近生成端，覆盖越广但越难提供 RL 奖励。
+2. **GUI + CLI / Code 的 hybrid CUA 成为主流定义**：[HybridCUA](https://arxiv.org/abs/2609.38008)（GUI+shell 统一动作）、[RecreationWorld](https://arxiv.org/abs/2609.22000)（explore–implement–verify）、[CUA-SWE](https://arxiv.org/abs/2609.32600)（code-only vs CUA 对比，前沿模型在 DevOps/Mobile 从 0 提升到 55–80%）、[OSWorld-Science](https://arxiv.org/abs/2609.39903)（83.6% 任务支持 CLI）。一致发现：未经训练直接加 CLI 会掉分（HybridCUA 报告 38.8→18.4），"何时用哪种接口"需要专门数据与奖励。
+3. **评测从终态走向过程，并开始审计 evaluator 本身**：[OSWorld-Pro](https://arxiv.org/abs/2609.24890)（子目标 + LLM-Judge）、[WebArena-Lite](https://arxiv.org/abs/2610.01491) 人工审计（自动 evaluator 漏判 5.45–8.49pp）、[CUA-SWE](https://arxiv.org/abs/2609.32600)（复杂的复核/替换规则）、[OSWorld-Science](https://arxiv.org/abs/2609.39903)（artifact 级部分分）。对 RL 的含义：终态 verifier 的假阴性/假阳性会直接污染奖励，process reward 与 verifier 质量审计会成为环境构建的标配。
+4. **自动生成任务/奖励的"自欺"风险被正面研究**：[False Frontiers](https://arxiv.org/abs/2609.39102) 的 co-cheating（proposer 与 solver 共享错误）、[ReSAIL](https://arxiv.org/abs/2609.39306) 的迭代自蒸馏崩塌、[EvoSkill-GUI](https://arxiv.org/abs/2609.17653) 的 test-time 进化依赖成功信号、[AREX-2](https://arxiv.org/abs/2609.38288) 作者自承迁移需 matched 消融。趋势是引入"独立性"——交叉拟合、critic 信息隔离（EvoSkill 消融：去隔离 69.52→60.95）、冻结 teacher 正则化。
+5. **细粒度 credit assignment：按角色/区域/通道拆分 advantage**：[IterSynth](https://arxiv.org/abs/2609.29444) 的 RDPO（Planner/Synthesizer 分池归一化，混合归一化反而低于 GRPO）、[CLM](https://arxiv.org/abs/2609.37725) 的任务+效率双通道（效率项只作用于上下文编辑 token）、[HazardAuditor](https://arxiv.org/abs/2609.15134) 的 GuardPO（rationale 与 verdict 区域分别归一化）、[HybridCUA](https://arxiv.org/abs/2609.38008) 的 step-level `r_exec` 罚失败命令 token。agentic RL 正在从"整条轨迹一个标量"走向"结构化 advantage"。
+6. **长程能力：上下文管理与经验复用从 harness 走进权重**：[CLM](https://arxiv.org/abs/2609.37725)（模型原生编辑上下文并可 RL）、[IterSynth](https://arxiv.org/abs/2609.29444)（summary 即状态）、[AREX-2](https://arxiv.org/abs/2609.38288)（长程反思写入权重）、[X-Tree](https://arxiv.org/abs/2609.32993)（BPE 式技能树进入 RL/蒸馏）、对照 training-free 的 [EvoSkill-GUI](https://arxiv.org/abs/2609.17653)（结构化 skill 包）与 [ExpActivator](https://arxiv.org/abs/2609.33304)（step-level 经验激活）。此外 **CUA 安全**（[HazardAuditor](https://arxiv.org/abs/2609.15134) 的执行轨迹级 guard）与 **GUI world model**（[AutoGUIWorld](https://arxiv.org/abs/2610.01215)、[DeskForge](https://arxiv.org/abs/2610.02320) 的 (S,a,S') 转移）作为两个较新的支线也在成形。
 
 ## 评级总览
 
 | # | 论文 | 方向 | 来源深度 | 评级 |
 |---|---|---|---|---|
-| 1 | RecreationWorld | CUA 环境 / hybrid | repo-readme | 必读 |
-| 2 | SoftwareGym | CUA 环境合成 | repo-readme | 必读 |
-| 3 | HybridCUA | GUI+CLI / RL | repo-readme | 必读 |
-| 4 | OSWorld-Science | CUA benchmark | repo-readme | 值得浏览 |
-| 5 | OSWorld-Pro | 过程评测 | abstract-only | 值得浏览 |
-| 6 | CUA-SWE | coding×CUA benchmark | repo-readme | 值得浏览 |
-| 7 | AutoGUIWorld | GUI world model / 数据 | repo-readme | 必读 |
-| 8 | DeskForge | grounding 数据 | repo-readme | 值得浏览 |
-| 9 | EvoSkill-GUI | training-free skill | repo-readme | 值得浏览 |
-| 10 | ExpActivator | 个性化 GUI 记忆 | repo-readme | 可跳过 |
-| 11 | HazardAuditor | CUA 安全 guard | repo-readme | 值得浏览 |
-| 12 | WebArena-Lite 审计 | web 评测可靠性 | abstract-only | 可跳过 |
-| 13 | ReSAIL | 迭代自蒸馏 | repo-readme | 可跳过 |
-| 14 | X-Tree | 技能挖掘 + RL | repo-readme（代码未发布） | 值得浏览 |
-| 15 | AREX-2 | 长程反思 / deep research | repo-pdf（overview） | 必读 |
-| 16 | IterSynth | deep search RL | repo-readme | 值得浏览 |
-| 17 | Context Language Models | 上下文管理 / RL | repo-readme | 必读 |
-| 18 | HyperBrowseComp | 多语言多模态浏览 benchmark | abstract-only +search | 值得浏览 |
-| 19 | False Frontiers | 自进化搜索 agent 奖励作弊 | abstract-only +search | 值得浏览 |
-| 20 | ZGCM-1 | 7B 开源基座 | repo-readme | 可跳过 |
-| 21 | CorpusMap | 语料导航层 | abstract-only +search | 可跳过 |
-| 22 | SSR | 多模态搜索推理加速 | repo-readme | 可跳过 |
-| 23 | Agentic Retrieval 成本 | 检索 | abstract-only | 可跳过 |
-| 24 | AdaTutoRank | 集合式 reranker | abstract-only | 可跳过 |
+| 1 | [RecreationWorld](https://arxiv.org/abs/2609.22000) | CUA 环境 / hybrid | repo-readme | 必读 |
+| 2 | [SoftwareGym](https://arxiv.org/abs/2610.12611) | CUA 环境合成 | repo-readme | 必读 |
+| 3 | [HybridCUA](https://arxiv.org/abs/2609.38008) | GUI+CLI / RL | repo-readme | 必读 |
+| 4 | [OSWorld-Science](https://arxiv.org/abs/2609.39903) | CUA benchmark | repo-readme | 值得浏览 |
+| 5 | [OSWorld-Pro](https://arxiv.org/abs/2609.24890) | 过程评测 | abstract-only | 值得浏览 |
+| 6 | [CUA-SWE](https://arxiv.org/abs/2609.32600) | coding×CUA benchmark | repo-readme | 值得浏览 |
+| 7 | [AutoGUIWorld](https://arxiv.org/abs/2610.01215) | GUI world model / 数据 | repo-readme | 必读 |
+| 8 | [DeskForge](https://arxiv.org/abs/2610.02320) | grounding 数据 | repo-readme | 值得浏览 |
+| 9 | [EvoSkill-GUI](https://arxiv.org/abs/2609.17653) | training-free skill | repo-readme | 值得浏览 |
+| 10 | [ExpActivator](https://arxiv.org/abs/2609.33304) | 个性化 GUI 记忆 | repo-readme | 可跳过 |
+| 11 | [HazardAuditor](https://arxiv.org/abs/2609.15134) | CUA 安全 guard | repo-readme | 值得浏览 |
+| 12 | [WebArena-Lite 审计](https://arxiv.org/abs/2610.01491) | web 评测可靠性 | abstract-only | 可跳过 |
+| 13 | [ReSAIL](https://arxiv.org/abs/2609.39306) | 迭代自蒸馏 | repo-readme | 可跳过 |
+| 14 | [X-Tree](https://arxiv.org/abs/2609.32993) | 技能挖掘 + RL | repo-readme（代码未发布） | 值得浏览 |
+| 15 | [AREX-2](https://arxiv.org/abs/2609.38288) | 长程反思 / deep research | repo-pdf（overview） | 必读 |
+| 16 | [IterSynth](https://arxiv.org/abs/2609.29444) | deep search RL | repo-readme | 值得浏览 |
+| 17 | [Context Language Models](https://arxiv.org/abs/2609.37725) | 上下文管理 / RL | repo-readme | 必读 |
+| 18 | [HyperBrowseComp](https://arxiv.org/abs/2610.03574) | 多语言多模态浏览 benchmark | abstract-only +search | 值得浏览 |
+| 19 | [False Frontiers](https://arxiv.org/abs/2609.39102) | 自进化搜索 agent 奖励作弊 | abstract-only +search | 值得浏览 |
+| 20 | [ZGCM-1](https://arxiv.org/abs/2609.13356) | 7B 开源基座 | repo-readme | 可跳过 |
+| 21 | [CorpusMap](https://arxiv.org/abs/2609.37226) | 语料导航层 | abstract-only +search | 可跳过 |
+| 22 | [SSR](https://arxiv.org/abs/2610.01892) | 多模态搜索推理加速 | repo-readme | 可跳过 |
+| 23 | [Agentic Retrieval 成本](https://arxiv.org/abs/2610.05750) | 检索 | abstract-only | 可跳过 |
+| 24 | [AdaTutoRank](https://arxiv.org/abs/2609.32472) | 集合式 reranker | abstract-only | 可跳过 |
 
 ---
 

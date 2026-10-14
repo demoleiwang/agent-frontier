@@ -11,12 +11,12 @@
 | 2026-10-07 | [GPT-6 and Intelligent UI for everyone](https://openai.com/index/gpt-6-for-everyone) | — | 0.00 | 🆕 new | Product |
 | 2026-10-07 | [Radisson Hotel Group brings hotel discovery into ChatGPT](https://openai.com/index/radisson) | — | 0.00 | 🆕 new |  |
 | 2026-10-07 | [Helping teens learn, plan, and shape the future of AI](https://openai.com/index/teens-learn-and-plan) | — | 0.00 | 🆕 new | Product |
-| 2026-10-06 | [Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad) | `computer-use-agent` `agent-infra` | 0.50 | 👀 skimmed | Publication |
+| 2026-10-06 | [Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad) | `computer-use-agent` `professional-agent` `agent-infra` | 0.50 | 👀 skimmed | Publication |
 | 2026-10-06 | [Atlassian and OpenAI expand partnership to turn enterprise knowledge into action](https://openai.com/index/atlassian-partnership) | — | 0.00 | 🆕 new | Company |
 | 2026-10-06 | [How Jump Trading is scaling quant research with ChatGPT](https://openai.com/index/jump-trading) | — | 0.00 | 🆕 new |  |
 | 2026-10-05 | [Our approach to EU text provenance rules](https://openai.com/index/eu-text-provenance) | — | 0.00 | 🆕 new | Safety |
 | 2026-10-05 | [Building advertising for the way people use AI](https://openai.com/index/new-chatgpt-ads-format-and-measurement) | — | 0.00 | 🆕 new | Product |
-| 2026-10-02 | [Chatham scales its capital markets expertise with OpenAI](https://openai.com/index/chatham-financial) | — | 0.00 | 🆕 new |  |
+| 2026-10-02 | [Chatham scales its capital markets expertise with OpenAI](https://openai.com/index/chatham-financial) | `professional-agent` | 0.17 | 🆕 new |  |
 | 2026-10-02 | [A model guide for the GPT-6 family](https://openai.com/index/practical-guide-building-gpt-6) | — | 0.00 | 🆕 new | Product |
 | 2026-10-01 | [How Albertsons Companies is reimagining retail from the inside out](https://openai.com/index/albertsons-reimagining-retail) | — | 0.00 | 🆕 new | Company |
 | 2026-10-01 | [The Den frees up 10-15 hours a week to grow with ChatGPT Work](https://openai.com/index/the-den-family-social) | — | 0.00 | 🆕 new |  |
@@ -50,7 +50,7 @@
 | 2026-09-21 | [Building standards for the next phase of AI](https://openai.com/index/building-standards-next-phase-ai) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-09-21 | [Expanding OpenAI Academy with new learning paths](https://openai.com/index/expanding-openai-academy-with-new-learning-paths) | — | 0.00 | 🆕 new | Company |
 | 2026-09-18 | [Introducing the Australian Youth Safety Blueprint](https://openai.com/index/australian-youth-safety-blueprint) | — | 0.00 | 🆕 new | Company |
-| 2026-09-17 | [Introducing Astra for Law](https://openai.com/index/astra-for-law) | — | 0.00 | 🆕 new | Company |
+| 2026-09-17 | [Introducing Astra for Law](https://openai.com/index/astra-for-law) | `professional-agent` | 0.17 | 🆕 new | Company |
 | 2026-09-17 | [How Cooley is accelerating IPO work with ChatGPT](https://openai.com/index/cooley-gopublic) | — | 0.00 | 🆕 new |  |
 | 2026-09-16 | [Helping older adults use AI in everyday life](https://openai.com/index/helping-older-adults-use-ai-in-everyday-life) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-09-16 | [How to connect AI usage to business value](https://openai.com/index/how-to-connect-ai-usage-to-business-value) | — | 0.00 | 🆕 new | Product |

@@ -25,6 +25,9 @@ jobs:
       - run: python scripts/classify.py
         env: {LLM_API_KEY: "${{ secrets.LLM_API_KEY }}"}   # Phase 3 才会用到
       - run: python scripts/render.py
+      - name: evidence check (report only)
+        run: python scripts/check_evidence.py README.md
+        continue-on-error: true
       - name: commit
         run: |
           git config user.name "frontier-bot"

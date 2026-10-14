@@ -116,7 +116,7 @@ def render_labs(items, days):
     write(DIGESTS / "labs.md", md)
 
 
-PAPER_TOPICS = ["computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety", "agent-infra"]
+PAPER_TOPICS = ["office-agent", "professional-agent", "env-construction", "computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety", "agent-infra"]
 
 
 def is_paper(it) -> bool:
@@ -163,7 +163,7 @@ def render_papers(items, days, per_topic=25):
 
 
 STATUS_BADGE = {"空白": "🟥 空白", "上升": "🟧 上升", "拥挤": "🟦 拥挤", "观望": "⬜ 观望"}
-CORE_TOPICS = {"computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety"}
+CORE_TOPICS = {"office-agent", "professional-agent", "env-construction", "computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety"}
 
 
 def link(title, url) -> str:
@@ -225,13 +225,15 @@ def render_readme(items, topic_names, days):
     # 1. directions: curated judgement + auto activity count
     dirs = compass.get("directions") or []
     if dirs:
-        md += f"## 🧭 研究方向雷达\n\n状态是人工判断；“近 {days} 天新工作”按关键词自动统计（核心 topic 的论文与 blog），用来看方向是否在变拥挤。\n\n"
+        md += f"## 🧭 研究方向雷达\n\n状态是人工判断（[config/compass.yaml](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/config/compass.yaml)）；“近 {days} 天新工作”按关键词自动统计（核心 topic 的论文与 blog），用来看方向是否在变拥挤。\n\n"
         md += f"| 状态 | 方向 | 近 {days} 天新工作 | 下一步 |\n|---|---|---|---|\n"
         details = ""
         for d in dirs:
             hits = direction_hits(d, items, cutoff)
             top = f"：{link(hits[0]['title'][:48] + ('…' if len(hits[0]['title']) > 48 else ''), hits[0]['url'])}" if hits else ""
-            md += f"| {STATUS_BADGE.get(d.get('status'), d.get('status', ''))} | **{d['name']}** | {len(hits)}{top} | {d.get('next', '')} |\n"
+            ev0 = (d.get("evidence") or [{}])[0].get("url")
+            name = f"**[{d['name']}]({ev0})**" if ev0 else f"**{d['name']}**"
+            md += f"| {STATUS_BADGE.get(d.get('status'), d.get('status', ''))} | {name} | {len(hits)}{top} | {d.get('next', '')} |\n"
             ev = " · ".join(link(e["title"], e["url"]) for e in d.get("evidence", []))
             recent = "".join(f"  - {i['date']} · {link(i['title'], i['url'])}" + (f" · rep {i['rep']:.2f}" if is_paper(i) else "") + "\n" for i in hits[:3])
             details += (f"<details><summary><b>{d['name']}</b> — 为什么是现在</summary>\n\n{d.get('why', '').strip()}\n\n"
@@ -253,7 +255,10 @@ def render_readme(items, topic_names, days):
     # 3. signals
     sig = compass.get("signals") or []
     if sig:
-        md += "## 📡 关键信号\n\n" + "".join(f"- **{x['signal']}**：{x['detail']}（[来源]({x['ref']})）\n" for x in sig) + "\n"
+        def srcs(x):
+            refs = x.get("refs") or ([{"title": "来源", "url": x["ref"]}] if x.get("ref") else [])
+            return "、".join(link(f["title"], f["url"]) for f in refs)
+        md += "## 📡 关键信号\n\n" + "".join(f"- **{x['signal']}**：{x['detail']}（{srcs(x)}）\n" for x in sig) + "\n"
 
     # 4. this week's untriaged: new, core-topic, ranked
     new_papers = sorted((i for i in items if is_paper(i) and i["date"] >= week and i.get("status") == "new"

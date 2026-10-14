@@ -8,23 +8,23 @@
 
 ## 必读 Top-6（按对"做 browser/CUA 的 RL 环境"的价值排序）
 
-1. **CodeMidas**（Xiaomi MiMo，2609.22068）：把环境构建本身做成 agentic pipeline（agent 写 spec → 基于执行写测试 → 重复 rollout 过滤），只需"源代码"这一种输入就扩到 5,545 个任务 / 3,185 个仓库，在 MiMo-V2.5 上用 GRPO 涨了 DeepSWE、ProgramBench、Terminal-Bench。这套"环境合成 + 独立求解验证"的模板可以直接迁移到 web 任务合成。
-2. **GAGAR**（Xiaomi MiMo，2609.32577）：在 1T 量级 MoE 上做的"组内 agentic grader 排序 + 保总和的 advantage 重分配"。它直接回答"二值 outcome reward 下，GRPO 怎么区分好的成功和差的成功"，是 grader 设计里最可落地的一篇。
-3. **Trace2Env**（NTU，2610.06100）：只靠历史交互 trace 重建一个有状态的环境替身（worldbook + world-model agent + harness 校验与提交 state）。论文评测覆盖了 Web 和 Android，还专门测了"在模拟器里学到的动作序列回放到真实环境是否仍然有效"（W2R）。代码完整，对没法 self-host 的网站很有用。
-4. **SRD**（Salesforce，2610.08077）：用 hindsight 监督 foresight，即使组内 reward 全相同（GRPO 拿不到梯度）也能产生 dense 信号。ALFWorld/WebShop 上有增益，基于 miles/slime 栈开源。稀疏 reward 的 web 任务在早期大部分组都是 all-fail，这类场景里 SRD 很关键。
-5. **VHD-Play**（Qwen，2609.27321）：先采样并求解一个数学机制，再把它"渲染"成带状态的工具环境，所以环境 dynamics 和打分 reference 来自同一个已求解模型，天然 verifiable。每个环境只花几美分，Qwen3.6-35B-A3B 的诊断分数从 0.204 提到 0.815。它提供了"先定 reward 再造环境"的反向思路。
-6. **Sharpening Tax + PTGS**（Meta MSL，2610.01509）：在 BFCL/WebShop/ACEBench 上证明 post-training 会把任务推向"总能解"或"永远解不了"两个极端，损失 pass@k coverage。PTGS 是一个按 prompt 难度自适应采样温度的即插即用 sampler（有代码），对决定 RL 训练里怎么做 exploration、怎么挑评测指标都有直接价值。
+1. **[CodeMidas](https://arxiv.org/abs/2609.22068)**（Xiaomi MiMo，2609.22068）：把环境构建本身做成 agentic pipeline（agent 写 spec → 基于执行写测试 → 重复 rollout 过滤），只需"源代码"这一种输入就扩到 5,545 个任务 / 3,185 个仓库，在 MiMo-V2.5 上用 GRPO 涨了 DeepSWE、ProgramBench、Terminal-Bench。这套"环境合成 + 独立求解验证"的模板可以直接迁移到 web 任务合成。
+2. **[GAGAR](https://arxiv.org/abs/2609.32577)**（Xiaomi MiMo，2609.32577）：在 1T 量级 MoE 上做的"组内 agentic grader 排序 + 保总和的 advantage 重分配"。它直接回答"二值 outcome reward 下，GRPO 怎么区分好的成功和差的成功"，是 grader 设计里最可落地的一篇。
+3. **[Trace2Env](https://arxiv.org/abs/2610.06100)**（NTU，2610.06100）：只靠历史交互 trace 重建一个有状态的环境替身（worldbook + world-model agent + harness 校验与提交 state）。论文评测覆盖了 Web 和 Android，还专门测了"在模拟器里学到的动作序列回放到真实环境是否仍然有效"（W2R）。代码完整，对没法 self-host 的网站很有用。
+4. **[SRD](https://arxiv.org/abs/2610.08077)**（Salesforce，2610.08077）：用 hindsight 监督 foresight，即使组内 reward 全相同（GRPO 拿不到梯度）也能产生 dense 信号。ALFWorld/WebShop 上有增益，基于 miles/slime 栈开源。稀疏 reward 的 web 任务在早期大部分组都是 all-fail，这类场景里 SRD 很关键。
+5. **[VHD-Play](https://arxiv.org/abs/2609.27321)**（Qwen，2609.27321）：先采样并求解一个数学机制，再把它"渲染"成带状态的工具环境，所以环境 dynamics 和打分 reference 来自同一个已求解模型，天然 verifiable。每个环境只花几美分，Qwen3.6-35B-A3B 的诊断分数从 0.204 提到 0.815。它提供了"先定 reward 再造环境"的反向思路。
+6. **[Sharpening Tax + PTGS](https://arxiv.org/abs/2610.01509)**（Meta MSL，2610.01509）：在 BFCL/WebShop/ACEBench 上证明 post-training 会把任务推向"总能解"或"永远解不了"两个极端，损失 pass@k coverage。PTGS 是一个按 prompt 难度自适应采样温度的即插即用 sampler（有代码），对决定 RL 训练里怎么做 exploration、怎么挑评测指标都有直接价值。
 
-（第 7–8 名：VeriHarness，适合当长程 workspace 任务的 grader 设计参考；TerminalHorizon，环境合成思路好，但只做了 SFT。）
+（第 7–8 名：[VeriHarness](https://arxiv.org/abs/2610.00972)，适合当长程 workspace 任务的 grader 设计参考；[TerminalHorizon](https://arxiv.org/abs/2610.13166)，环境合成思路好，但只做了 SFT。）
 
 ## 跨论文趋势（4–6 条）
 
-1. **环境合成从"挖开发工件"转向"agentic 构建 + 独立挑战验证"**。CodeMidas（从实现的功能反推 spec/测试）、TerminalHorizon（独立执行发现"构建时被偷偷完成的关键工作"后再重建环境）、Marathoner（把多个任务串成 Multi-Task Chaining）、VHD-Play（先求解机制再渲染环境）。共同模式是：生成器 agent → 独立的求解/挑战 agent → 用重复 rollout 的通过率过滤，避免环境泄题、过易或不可解。这套模板对 web 任务合成同样适用。
-2. **在 GRPO 组内二值 reward 之外"再挖信号"**。GAGAR 在通过的轨迹之间按质量重分配 advantage；SRD 从 reward 完全相同的组里用 hindsight→foresight 蒸馏拿信号；PTGS 用温度把难题的通过率推向 ½，从而制造 mixed group；Marathoner 加了 Later Stage Bonus Reward；Taste-Bench 用"分叉点 + 事后结果"做 step 级标签。核心问题都是 credit assignment 和 reward contrast 稀缺。
-3. **Grader 本身 agent 化，并且越来越重视防 reward hacking**。GAGAR 用的是 SFT 过的 agentic grader，在共享 workspace 里联合检查整组轨迹；VeriHarness 用 disagreement resolver + consensus challenger 从环境取证；MiMo 的开源 rollout 框架 mimoagent 内置 rubric judge-agent、只在打分时才 apply 隐藏测试、截断 git 历史，还带一个可选的 anti-hack 动作拦截器。"LLM-judge 打一个分"正在演变成"带工具、能取证的 grader agent"。
-4. **Hindsight 成为通用监督源**。SRD（hindsight 蒸馏进 foresight）、Taste-Bench（后续轨迹为分叉点打标签）、Trace2Env（历史 trace 变成 worldbook）、PoS（显式 belief + 陷入检测）都在利用"轨迹后半段揭示了前半段该怎么做"这一点。
-5. **万亿级、训推分离的异步 RL 基础设施里，瓶颈转向"训推一致性 + 权重同步"**。NeMo-DCR 做 bit-exact 的稀疏 delta refit（每步约 1% 权重变化），TRACE 让 FP4 rollout 和 FP4 训练的量化取整对齐以压低 train-rollout mismatch。两篇都把 train/rollout 不一致当成一等问题。GAGAR 本身就跑在 310B/1.02T 的 MiMo-V2.6 上，说明工业界 agentic RL 已经进入 T 级参数。
-6. **"长程"的定义升级到小时级 / 上千次工具调用**，但评测越来越依赖自建任务。TerminalHorizon 的 RSI-Exam 每个 case 给 12 小时预算；Marathoner 自称能连续工作 10 小时以上、做 1000+ 次工具调用；Taste-Bench 测的是长程决策品味。主流公开 benchmark 是 Terminal-Bench 2.x、DeepSWE、SWE-bench Pro。自建 benchmark 和合成数据的污染风险需要格外留意。
+1. **环境合成从"挖开发工件"转向"agentic 构建 + 独立挑战验证"**。[CodeMidas](https://arxiv.org/abs/2609.22068)（从实现的功能反推 spec/测试）、[TerminalHorizon](https://arxiv.org/abs/2610.13166)（独立执行发现"构建时被偷偷完成的关键工作"后再重建环境）、[Marathoner](https://arxiv.org/abs/2609.34378)（把多个任务串成 Multi-Task Chaining）、[VHD-Play](https://arxiv.org/abs/2609.27321)（先求解机制再渲染环境）。共同模式是：生成器 agent → 独立的求解/挑战 agent → 用重复 rollout 的通过率过滤，避免环境泄题、过易或不可解。这套模板对 web 任务合成同样适用。
+2. **在 GRPO 组内二值 reward 之外"再挖信号"**。[GAGAR](https://arxiv.org/abs/2609.32577) 在通过的轨迹之间按质量重分配 advantage；[SRD](https://arxiv.org/abs/2610.08077) 从 reward 完全相同的组里用 hindsight→foresight 蒸馏拿信号；[PTGS](https://arxiv.org/abs/2610.01509) 用温度把难题的通过率推向 ½，从而制造 mixed group；[Marathoner](https://arxiv.org/abs/2609.34378) 加了 Later Stage Bonus Reward；[Taste-Bench](https://arxiv.org/abs/2609.25804) 用"分叉点 + 事后结果"做 step 级标签。核心问题都是 credit assignment 和 reward contrast 稀缺。
+3. **Grader 本身 agent 化，并且越来越重视防 reward hacking**。[GAGAR](https://arxiv.org/abs/2609.32577) 用的是 SFT 过的 agentic grader，在共享 workspace 里联合检查整组轨迹；[VeriHarness](https://arxiv.org/abs/2610.00972) 用 disagreement resolver + consensus challenger 从环境取证；MiMo 的开源 rollout 框架 [mimoagent](https://github.com/XiaomiMiMo/mimoagent) 内置 rubric judge-agent、只在打分时才 apply 隐藏测试、截断 git 历史，还带一个可选的 anti-hack 动作拦截器。"LLM-judge 打一个分"正在演变成"带工具、能取证的 grader agent"。
+4. **Hindsight 成为通用监督源**。[SRD](https://arxiv.org/abs/2610.08077)（hindsight 蒸馏进 foresight）、[Taste-Bench](https://arxiv.org/abs/2609.25804)（后续轨迹为分叉点打标签）、[Trace2Env](https://arxiv.org/abs/2610.06100)（历史 trace 变成 worldbook）、[PoS](https://arxiv.org/abs/2610.01415)（显式 belief + 陷入检测）都在利用"轨迹后半段揭示了前半段该怎么做"这一点。
+5. **万亿级、训推分离的异步 RL 基础设施里，瓶颈转向"训推一致性 + 权重同步"**。[NeMo-DCR](https://arxiv.org/abs/2610.08430) 做 bit-exact 的稀疏 delta refit（每步约 1% 权重变化），[TRACE](https://arxiv.org/abs/2610.07767) 让 FP4 rollout 和 FP4 训练的量化取整对齐以压低 train-rollout mismatch。两篇都把 train/rollout 不一致当成一等问题。[GAGAR](https://arxiv.org/abs/2609.32577) 本身就跑在 310B/1.02T 的 MiMo-V2.6 上，说明工业界 agentic RL 已经进入 T 级参数。
+6. **"长程"的定义升级到小时级 / 上千次工具调用**，但评测越来越依赖自建任务。[TerminalHorizon](https://arxiv.org/abs/2610.13166) 的 RSI-Exam 每个 case 给 12 小时预算；[Marathoner](https://arxiv.org/abs/2609.34378) 自称能连续工作 10 小时以上、做 1000+ 次工具调用；[Taste-Bench](https://arxiv.org/abs/2609.25804) 测的是长程决策品味。主流公开 benchmark 是 Terminal-Bench 2.x、DeepSWE、SWE-bench Pro。自建 benchmark 和合成数据的污染风险需要格外留意。
 
 ---
 

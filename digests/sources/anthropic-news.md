@@ -9,12 +9,12 @@
 | 2026-10-06 | [Expanding the Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program) | `agent-eval-safety` | 0.27 | 👀 skimmed |  |
 | 2026-10-02 | [Claude Frontier Academy: $100M to train 10,000 engineers](https://www.anthropic.com/news/claude-frontier-academy) | — | 0.00 | 🆕 new |  |
 | 2026-10-01 | [Barclays scales Claude to upgrade operations and improve client experience](https://www.anthropic.com/news/barclays-scales-claude) | — | 0.00 | 🆕 new |  |
-| 2026-09-23 | [Claude discovers a novel enzyme system](https://www.anthropic.com/news/claude-discovers-novel-enzyme-system) | `agent-infra` | 0.17 | 👀 skimmed |  |
+| 2026-09-23 | [Claude discovers a novel enzyme system](https://www.anthropic.com/news/claude-discovers-novel-enzyme-system) | `professional-agent` `agent-infra` | 0.33 | 👀 skimmed |  |
 | 2026-09-18 | [Partnering with Accenture on embedded evaluation](https://www.anthropic.com/news/accenture-embedded-evaluation) | — | 0.00 | 🆕 new |  |
 | 2026-09-17 | [Introducing the Life Sciences Verification Program](https://www.anthropic.com/news/life-sciences-verification-program) | — | 0.00 | 🆕 new |  |
-| 2026-09-01 | [Developing Enterprise Frontier Safeguards with our customers](https://www.anthropic.com/news/enterprise-frontier-safeguards) | `agent-infra` | 0.25 | 👀 skimmed |  |
+| 2026-09-01 | [Developing Enterprise Frontier Safeguards with our customers](https://www.anthropic.com/news/enterprise-frontier-safeguards) | `professional-agent` `agent-infra` | 0.33 | 👀 skimmed |  |
 | 2026-08-31 | [Improving our alignment and security practices](https://www.anthropic.com/news/improving-alignment-security-efforts) | `agent-eval-safety` | 0.27 | 👀 skimmed |  |
 | 2026-08-27 | [Expanding our support for scientists](https://www.anthropic.com/news/expanding-support-for-scientists) | — | 0.00 | 🆕 new |  |
-| 2026-08-27 | [Previewing the Model Hardware Standard](https://www.anthropic.com/news/model-hardware-standard-research-preview) | `agent-infra` | 0.17 | 👀 skimmed |  |
+| 2026-08-27 | [Previewing the Model Hardware Standard](https://www.anthropic.com/news/model-hardware-standard-research-preview) | `env-construction` `agent-infra` | 0.17 | 👀 skimmed |  |
 | 2026-08-25 | [Funding better evaluations of AI’s impact on wellbeing](https://www.anthropic.com/news/wellbeing-research-grants) | — | 0.00 | 🆕 new |  |
 | 2026-08-14 | [How Claude's text watermarking works](https://www.anthropic.com/news/claude-text-watermark) | — | 0.00 | 🆕 new |  |

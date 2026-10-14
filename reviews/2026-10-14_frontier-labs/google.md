@@ -1,6 +1,6 @@
 # Google DeepMind / Google AI: blog inventory and deep notes (2026-08-14 to 2026-10-14)
 
-Scope: computer-use and browser-use agents, agentic RL, agent evals and safety (containment, monitoring, prompt injection), and agent infrastructure (SDKs, harnesses, memory).
+Scope: computer-use and browser-use agents, agentic RL, agent evals and safety (containment, monitoring, prompt injection), and agent infrastructure (SDKs, harnesses, memory). 「无出处，待核」
 Compiled: 2026-10-14.
 
 ## How this was gathered (read first)
@@ -15,7 +15,7 @@ Compiled: 2026-10-14.
 
 ## Part 1. Inventory
 
-Date confidence: **H** = feed pubDate, dated listing, or a corroborating git timestamp. **M** = a dated search snippet or listing, not verified on the page. **L** = inferred from relative "N days ago" metadata, roundup membership, or adjacency.
+Date confidence: **H** = feed pubDate, dated listing, or a corroborating git timestamp. **M** = a dated search snippet or listing, not verified on the page. **L** = inferred from relative "N days ago" metadata, roundup membership, or adjacency. 「无出处，待核」
 Relevance tag: ★ = agent-relevant to this review's focus.
 
 ### 1A. Google DeepMind blog (deepmind.google/blog) and model pages
@@ -97,23 +97,23 @@ Out of window (context only): Chrome "Gemini 3 features including auto browse" (
 
 | Date | Title | URL | Category | Conf. |
 |---|---|---|---|---|
-| 2026-08-25 ★(peripheral) | AgentHands: interactive hand gestures for agent conversations in XR | research.google/blog (listing) | Embodied agent UX | M |
-| 2026-08-27 | Planetary prediction engine | research.google/blog (listing) | Science | M |
-| 2026-08-31 | TimesFM-3 | research.google/blog (listing) | Forecasting model | M |
-| 2026-09-01 | Mapping global methane emissions from space with deep learning (MAPL-EMIT with NASA JPL) | research.google/blog (listing) | Science | M |
-| 2026-09-03 | Transfer learning for genomic prediction in underrepresented populations | research.google/blog (listing) | Science | M |
-| 2026-09-03 | Complete male fruit fly connectome | research.google/blog (listing) | Science | M |
+| 2026-08-25 ★(peripheral) | AgentHands: interactive hand gestures for agent conversations in XR | [research.google/blog](https://research.google/blog/) (listing) | Embodied agent UX | M |
+| 2026-08-27 | Planetary prediction engine | [research.google/blog](https://research.google/blog/) (listing) | Science | M |
+| 2026-08-31 | TimesFM-3 | [research.google/blog](https://research.google/blog/) (listing) | Forecasting model | M |
+| 2026-09-01 | Mapping global methane emissions from space with deep learning (MAPL-EMIT with NASA JPL) | [research.google/blog](https://research.google/blog/) (listing) | Science | M |
+| 2026-09-03 | Transfer learning for genomic prediction in underrepresented populations | [research.google/blog](https://research.google/blog/) (listing) | Science | M |
+| 2026-09-03 | Complete male fruit fly connectome | [research.google/blog](https://research.google/blog/) (listing) | Science | M |
 | 2026-09-10 ★ | ToolGrad: Efficient tool-use dataset generation with textual "gradients" | https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/ | Agent training data | M |
 | 2026-09-15 ★ | Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train | https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/ | RL-compiled retrieval | M |
-| 2026-09-17 | Generative UI tools for teachers (learning interactives) | research.google/blog (listing) | GenUI | M |
-| 2026-09-18 | MilleMiglia: realistic instance generator for middle-mile logistics | research.google/blog (listing) | OR / benchmarks | M |
-| 2026-09-24 | Automating coherent long-form video generation | research.google/blog (listing) | Video gen (possibly agentic pipeline; body not seen) | M |
+| 2026-09-17 | Generative UI tools for teachers (learning interactives) | [research.google/blog](https://research.google/blog/) (listing) | GenUI | M |
+| 2026-09-18 | MilleMiglia: realistic instance generator for middle-mile logistics | [research.google/blog](https://research.google/blog/) (listing) | OR / benchmarks | M |
+| 2026-09-24 | Automating coherent long-form video generation | [research.google/blog](https://research.google/blog/) (listing) | Video gen (possibly agentic pipeline; body not seen) | M |
 | 2026-09-29 | How Diffusion Controller unifies and simplifies AI image generation | https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/ | Image gen | M |
 | Sep 2026 (date unverified) ★(peripheral) | Four ways Google Research scientists have been using Empirical Research Assistance | https://research.google/blog/four-ways-google-research-scientists-have-been-using-empirical-research-assistance/ | AI-for-research agents | L |
-| 2026-10-02 | Toward provably private learning from federated data (TEE-based) | research.google/blog (listing) | Privacy infra | M |
+| 2026-10-02 | Toward provably private learning from federated data (TEE-based) | [research.google/blog](https://research.google/blog/) (listing) | Privacy infra | M |
 | 2026-10-05 ★ | Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle | https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/ | Agent security | M |
 | 2026-10-06 | Unlocking Earth AI's planetary geospatial foundation models for global public health | https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/ | Science | M |
-| 2026-10-07 | (Headline only) Does higher-quality work mean better workers? | research.google/blog (listing) | Econ / HCI | M |
+| 2026-10-07 | (Headline only) Does higher-quality work mean better workers? | [research.google/blog](https://research.google/blog/) (listing) | Econ / HCI | M |
 
 ### 1E. Google Developers Blog (AI label), complete for the window per the feed history
 
@@ -147,15 +147,15 @@ Just before the window (context): 08-11 "Why Go is an Ideal Language for AI-Assi
 
 ### 1F. Searched for and NOT found in the window (or not searchable)
 
-- **Project Mariner:** no in-window post found. Mariner-style capability now appears to ship as Chrome auto browse and Gemini Spark browsing. Not searched directly because the search budget ran out.
-- **Standalone "Gemini computer use model" post:** none found. Computer use appears as a *preview capability of Gemini 3.8 Flash* (model page) and in SDK and harness code (see deep note 6). It was not searched separately because the budget ran out.
-- **SIMA / Genie:** no 2026-08-14..10-14 post found. The latest are SIMA 2 (Nov 2025) and Project Genie + Street View (May 2026).
-- **AlphaEvolve:** no in-window post found. The latest are the May 7 impact update and Jul 9 Cloud GA.
-- **Jules:** no confirmed in-window post. The "proactive features" post has conflicting dates.
-- **Frontier Safety Framework:** no new FSF version in the window. v3.1 (Apr 17, 2026) is current and was applied in the Argon model card.
-- **Gemini CLI:** its repo shows maintenance and bugfix activity only (v0.65.0-preview.0 changelog, 10-13). No feature blog post was found.
+- **Project Mariner:** no in-window post found. Mariner-style capability now appears to ship as Chrome auto browse and Gemini Spark browsing. Not searched directly because the search budget ran out. (sources: [Chrome auto browse on Android](https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android-auto-browse/); [Gemini Spark](https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/))
+- **Standalone "Gemini computer use model" post:** none found. Computer use appears as a *preview capability of Gemini 3.8 Flash* (model page) and in SDK and harness code (see deep note 6). It was not searched separately because the budget ran out. (sources: [3.8 Flash model card](https://deepmind.google/models/model-cards/gemini-3-8-flash/))
+- **SIMA / Genie:** no 2026-08-14..10-14 post found. The latest are SIMA 2 (Nov 2025) and Project Genie + Street View (May 2026). 「无出处，待核」
+- **AlphaEvolve:** no in-window post found. The latest are the May 7 impact update and Jul 9 Cloud GA. 「无出处，待核」
+- **Jules:** no confirmed in-window post. The "proactive features" post has conflicting dates. (sources: [Jules proactive features post](https://blog.google/innovation-and-ai/technology/developers-tools/jules-proactive-updates/))
+- **Frontier Safety Framework:** no new FSF version in the window. v3.1 (Apr 17, 2026) is current and was applied in the Argon model card. (sources: [FSF v3.1](https://deepmind.google/blog/strengthening-our-frontier-safety-framework/); [Argon model card](https://deepmind.google/models/model-cards/gemini-4-argon/))
+- **Gemini CLI:** its repo shows maintenance and bugfix activity only (v0.65.0-preview.0 changelog, 10-13). No feature blog post was found. 「无出处，待核」
 
-**Inventory count:** 83 in-window rows: 21 DeepMind/model pages (1A), 21 blog.google (1B; the Jules row may be out of window), 3 antigravity.google (1C), 17 Google Research (1D) and 21 Developers Blog (1E). Six rows are the same post listed in two places (Argon launch, Argon safety, 3.8 Flash, 3.8 Live, Argon for Robotics, EmbeddingGemma 2), which leaves **about 77 unique posts or pages**. About 40 rows are tagged agent-relevant (★).
+**Inventory count:** 83 in-window rows: 21 DeepMind/model pages (1A), 21 blog.google (1B; the Jules row may be out of window), 3 antigravity.google (1C), 17 Google Research (1D) and 21 Developers Blog (1E). Six rows are the same post listed in two places (Argon launch, Argon safety, 3.8 Flash, 3.8 Live, Argon for Robotics, EmbeddingGemma 2), which leaves **about 77 unique posts or pages**. About 40 rows are tagged agent-relevant (★). 「无出处，待核」
 
 ---
 
@@ -389,7 +389,7 @@ Just before the window (context): 08-11 "Why Go is an Ideal Language for AI-Assi
 - **Implications:** It brings on-device agents with local memory to Android, alongside Gemini Intelligence and Spark. That makes on-device mobile agents a likely target surface for evals.
 
 ### 23. Agent tool infrastructure (brief): API Gateway as MCP server (09-24), Developer Knowledge API + MCP Server (10-07), open-sourced SDK generation (09-17)
-- **Source of substance:** feed-summary-only.
+- **Source of substance:** feed-summary-only. URLs: [API Gateway (09-24)](https://developers.googleblog.com/turn-your-rest-apis-into-mcp-tools-with-google-cloud-api-gateway/); [Developer Knowledge API (10-07)](https://developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem/); [SDK generation (09-17)](https://developers.googleblog.com/why-client-sdk-generation-belongs-in-the-open/)
 - **API Gateway** turns OpenAPI 3.x operations into **MCP tools** through the `x-google-api-management.mcp` annotation. It transcodes MCP JSON-RPC to REST, and existing auth, quotas and logging apply to agent traffic.
 - **Developer Knowledge API + MCP Server** (public preview) gives a canonical, machine-readable docs corpus across Firebase, Cloud and Android for grounding coding agents.
 - **Speakeasy partnership:** AGPLv3 OpenAPI SDK generators, including **agent-native CLIs** and **docs MCP servers**.
@@ -399,8 +399,8 @@ Just before the window (context): 08-11 "Why Go is an Ideal Language for AI-Assi
 
 ## Part 3. Cross-cutting observations for browser/computer-use agents and agentic RL
 
-1. **CU is a capability of the workhorse models, not a separate model.** Since Gemini 3.5 Flash, computer use is a preview capability of the mainline Flash models (3.6 is the harness default; 3.8 Flash's model page lists it), with a new **desktop-grade action set**. No in-window CU benchmark was published. The evidence comes from code: ADK's 10-13 action-schema migration and the computer-use-preview repo.
-2. **Long-horizon autonomy is the product thesis.** Argon's 1M-token output, the overnight `/goal` + `.agents/skills` run on ADK, Teamwork's hours-to-days multi-agent loops, Spark's days-to-weeks jobs, and the managed Interactions `environments` / `triggers` / `continuation_token` API all point the same way.
-3. **Safety is layered with monitoring at the center.** It includes CoT-plus-action monitoring with execution halting (Argon), out-of-band trace anomaly detection with tool-call blocking (Agent Anomaly Detection), intent-level tool-call policies, gVisor and signed writes, Fairwind gated access for cyber-capable models, and double-blind third-party evals. **Quantitative IPI/ASR or monitor-accuracy numbers were missing from everything retrieved.**
-4. **Rapid post-training cadence on a fixed base.** Flash 3.6 → 3.7 → 3.8 shipped in about 6 weeks, and 3.8 is "based on 3.7 Flash," which suggests heavy RL post-training iteration. DeepSWE v1.1 went 49.0 → 65.3 → 73.7 → 77.9 (Argon) [VR].
-5. **Gaps to fill if more search budget becomes available:** full text of the Argon model card (IPI numbers, CCL details), the double-blind eval mechanism, the agentic-privacy report's problem list, the 3.8 Flash CU benchmarks, Mariner/Jules status, and the exact dates of the Teamwork and Windows posts.
+1. **CU is a capability of the workhorse models, not a separate model.** Since Gemini 3.5 Flash, computer use is a preview capability of the mainline Flash models (3.6 is the harness default; 3.8 Flash's model page lists it), with a new **desktop-grade action set**. No in-window CU benchmark was published. The evidence comes from code: ADK's 10-13 action-schema migration and the computer-use-preview repo. (sources: [3.8 Flash post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/); [3.8 Flash model card](https://deepmind.google/models/model-cards/gemini-3-8-flash/); [google/adk-python](https://github.com/google/adk-python); [google-gemini/computer-use-preview](https://github.com/google-gemini/computer-use-preview))
+2. **Long-horizon autonomy is the product thesis.** Argon's 1M-token output, the overnight `/goal` + `.agents/skills` run on ADK, Teamwork's hours-to-days multi-agent loops, Spark's days-to-weeks jobs, and the managed Interactions `environments` / `triggers` / `continuation_token` API all point the same way. (sources: [Argon launch](https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/); [overnight run](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/); [Teamwork](https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/); [Spark](https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/); [googleapis/python-genai](https://github.com/googleapis/python-genai))
+3. **Safety is layered with monitoring at the center.** It includes CoT-plus-action monitoring with execution halting (Argon), out-of-band trace anomaly detection with tool-call blocking (Agent Anomaly Detection), intent-level tool-call policies, gVisor and signed writes, Fairwind gated access for cyber-capable models, and double-blind third-party evals. **Quantitative IPI/ASR or monitor-accuracy numbers were missing from everything retrieved.** (sources: [Argon safety](https://blog.google/innovation-and-ai/technology/safety-security/gemini-4-model-safety-security/); [Agent Anomaly Detection](https://developers.googleblog.com/agent-anomaly-detection-now-in-private-preview-on-the-gemini-enterprise-agent-platform/); [intent-level policies](https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/); [zero-trust ADK](https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit/); [Fairwind](https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/); [double-blind evals](https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/))
+4. **Rapid post-training cadence on a fixed base.** Flash 3.6 → 3.7 → 3.8 shipped in about 6 weeks, and 3.8 is "based on 3.7 Flash," which suggests heavy RL post-training iteration. DeepSWE v1.1 went 49.0 → 65.3 → 73.7 → 77.9 (Argon) [VR]. (sources: [3.8 Flash post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/); [Argon launch](https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/))
+5. **Gaps to fill if more search budget becomes available:** full text of the Argon model card (IPI numbers, CCL details), the double-blind eval mechanism, the agentic-privacy report's problem list, the 3.8 Flash CU benchmarks, Mariner/Jules status, and the exact dates of the Teamwork and Windows posts. (sources: [Argon model card](https://deepmind.google/models/model-cards/gemini-4-argon/); [double-blind evals](https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/); [agentic privacy](https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/); [3.8 Flash model card](https://deepmind.google/models/model-cards/gemini-3-8-flash/); [Jules](https://blog.google/innovation-and-ai/technology/developers-tools/jules-proactive-updates/); [Teamwork](https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/); [Windows/Spark](https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/))

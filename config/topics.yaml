@@ -3,6 +3,27 @@
 # requires_any（可选）：除关键词外，正文还须出现其中任一词，topic 才成立（用来压掉泛词误报）。
 # authors: 命中直接置顶（HF blog 用 HF 用户名）。
 
+# ---- 当前重点（2026-10）：办公 / 专业领域 agent 及其环境构建 ----
+office-agent:
+  keywords: [office, spreadsheet, Excel, Word document, PowerPoint, slides, presentation, email, calendar,
+             CRM, ERP, SaaS, enterprise workflow, enterprise software, knowledge work, workplace, productivity,
+             OfficeBench, SpreadsheetBench, TheAgentCompany, WorkArena, GDPval, CoWorkBench, AutomationBench,
+             JobBench, APEX-Agents, tau-bench, AppWorld, OSWorld, Salesforce, ServiceNow, Jira, Slack, Notion]
+  requires_any: [agent, agents, agentic, computer-use, GUI, tool, workflow, benchmark]
+professional-agent:
+  keywords: [legal, contract, finance, financial, accounting, tax, audit, insurance, medical, clinical, healthcare,
+             EHR, scientific software, laboratory, lab automation, CAD, engineering design, chemistry, biology,
+             data analysis, data science, consulting, procurement, domain expert, expert-verified, professional]
+  requires_any: [agent, agents, agentic, computer-use, GUI, tool use, workflow, environment]
+env-construction:
+  keywords: [environment synthesis, environment construction, environment generation, synthesized environment,
+             synthesized environments, simulated environment, environment simulator, world model, digital twin,
+             mock, mock API, mocked, sandbox, real device, real devices, physical device, emulator, virtual machine,
+             task synthesis, task generation, synthetic tasks, data synthesis, trajectory synthesis, data generation,
+             verifier, verifiable, rubric, user simulator, simulated user, RL environment, RL environments,
+             reference implementation, state checker, reproducible environment]
+  requires_any: [agent, agents, agentic]   # 不放 environment，否则会吸进视频世界模型
+
 browser-use-agent:
   keywords: [browser agent, browser use, browser-use, web agent, web navigation, WebArena, Mind2Web,
              Online-Mind2Web, BrowseComp, WebVoyager, deep research, web browsing]

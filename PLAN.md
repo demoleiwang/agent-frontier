@@ -79,6 +79,7 @@ README 分两层：顶部的**研究罗盘**（研究方向雷达、置顶必读
    - 关键信号只留仍然成立的，并改 `updated` 日期
 3. **沉淀到 topic 页**：把值得长期保留的条目写进 `topics/*.md`；benchmark 有新的 SOTA 时更新表格
 4. 每月或遇到大事件时，在 `reviews/` 写一份深度报告
+5. 提交前运行 `python scripts/check_evidence.py`：所有论断都要就地附出处 URL（规则见 [CLAUDE.md](CLAUDE.md)）
 
 ## 运行
 
