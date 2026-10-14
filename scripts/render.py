@@ -89,6 +89,33 @@ def render_sources(items):
         write(DIGESTS / "sources" / f"{src}.md", md)
 
 
+LABS = [("openai", "OpenAI"), ("anthropic", "Anthropic"), ("google", "Google / DeepMind"), ("meta", "Meta"),
+        ("xai", "xAI"), ("mistral", "Mistral"), ("aisi", "UK AISI"), ("hf-blog", "Hugging Face")]
+
+
+def lab_of(it) -> str | None:
+    tags = set(it.get("tags", []))
+    return next((k for k, _ in LABS if k in tags), None)
+
+
+def render_labs(items, days):
+    """One page per window: every lab's posts, newest first, so nothing is lost to keyword filtering."""
+    cutoff = (today() - dt.timedelta(days=days)).isoformat()
+    md = f"# Lab timeline · last {days} days (since {cutoff})\n\n"
+    md += "所有 lab 来源的全部条目（不经 topic 过滤）。🎯 = 命中关注 topic；类别来自源站。\n\n"
+    for key, name in LABS:
+        rows = sorted((i for i in items if lab_of(i) == key and i["date"] >= cutoff), key=lambda r: r["date"], reverse=True)
+        if not rows:
+            continue
+        md += f"## {name} ({len(rows)})\n\n| Date | Title | Category | Topics |\n|---|---|---|---|\n"
+        for r in rows:
+            hit = "🎯 " if r.get("topics") else ""
+            md += (f"| {r['date']} | {hit}[{esc(r['title'])}]({r['url']}) | {esc(', '.join(r.get('source_tags', [])[:2]))} "
+                   f"| {topic_badges(r) if r.get('topics') else ''} |\n")
+        md += "\n"
+    write(DIGESTS / "labs.md", md)
+
+
 def render_readme(items, topic_names, days):
     cutoff = (today() - dt.timedelta(days=days)).isoformat()
     recent = [i for i in items if i["date"] >= cutoff and i.get("topics")]
@@ -111,6 +138,7 @@ def render_readme(items, topic_names, days):
     md += "\n## Digests\n\n"
     weeks = sorted({iso_week(i["date"]) for i in items}, reverse=True)[:4]
     md += "- Weekly: " + ", ".join(f"[{w}](digests/weekly/{w}.md)" for w in weeks) + "\n"
+    md += "- Labs (all posts, last 60 days): [digests/labs.md](digests/labs.md)\n"
     md += "- Sources: " + ", ".join(f"[{s}](digests/sources/{s}.md)" for s in sorted({i['source'] for i in items})) + "\n"
     reviews = sorted((ROOT / "reviews").glob("*.md"), reverse=True)[:5]
     if reviews:
@@ -128,6 +156,7 @@ def main():
     render_daily(items)
     render_weekly(items, topic_names)
     render_sources(items)
+    render_labs(items, 60)
     render_readme(items, topic_names, args.highlight_days)
     print(f"rendered {len(items)} items")
 

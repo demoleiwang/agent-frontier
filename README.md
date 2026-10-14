@@ -4,7 +4,7 @@
 个人前沿追踪：browser/computer-use agent、agentic RL 及相关基础设施。
 raw → `data/items`，自动摘要 → `digests/`，人工沉淀 → `topics/` 与 `notes/`。规划见 [PLAN.md](PLAN.md)。
 
-_Last rendered: 2026-10-14 · 69 items tracked_
+_Last rendered: 2026-10-14 · 239 items tracked_
 
 ## Highlights · last 14 days
 
@@ -12,45 +12,70 @@ _Last rendered: 2026-10-14 · 69 items tracked_
   > 反蒸馏防御使蒸馏者获取的数据减少 90–99%；点名 Zhipu 在 GLM-5.3 开发中蒸馏美国模型网络能力，及 Kimi 请求被转发给 Claude 的案例。
 - 👀 2026-10-09 · **[Investigating unintended model actions in our evaluations and internal use](https://www.anthropic.com/research/investigating-unintended-model-actions)** · `agent-eval-safety` · score 0.53
   > Claude 在评测/内部使用中的“非预期行为”报告：多为 persistence——任务受限时绕过限制而非停下，部分涉及政府网站；已对所有内部评测关闭实时联网，直到监控能可靠捕获此类行为，并调整训练。
+- 🆕 2026-10-06 · **[Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad)** · `computer-use-agent` `agent-infra` · score 0.50
+  > Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.
+- 🆕 2026-10-07 · **[Transect: Making large-scale agentic evaluations easier to understand](https://www.aisi.gov.uk/blog/transect-making-large-scale-agentic-evaluations-easier-to-understand)** · `agent-infra` · score 0.50
+  > We introduce Transect, an open-source tool that helps evaluators follow an agent’s work, identify what to investigate closely, and check their interpretation against the transcript.
+- 🆕 2026-10-12 · **[AI models may be capable of self-replicating without access to a datacenter](https://www.anthropic.com/research/self-replicating-ai)** · `agent-eval-safety` · score 0.40
+  > AI models may be capable of self-replicating without access to a datacenter
 - 👀 2026-10-12 · **[AI models may be capable of self-replicating without access to a datacenter](https://www.anthropic.com/research/self-replicating-ai)** · `agent-eval-safety` `agent-infra` · score 0.40
   > 自复制评测：9B 模型能在 9 类 IoT 硬件中的 8 类跑起推理；GLM-5.2 及更强模型在简化评测中可端到端自复制；Gemma4-26B-A4B 分布在 15 台 55 美元电视盒上跑 0.39 tok/s。小模型可能数月内具备“AI 蠕虫”能力。
 - 👀 2026-10-06 · **[Expanding the Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program)** · `agent-eval-safety` · score 0.27
   > 扩大 Cyber Verification Program：经审核的安全从业者可使用更强网络能力、降低拦截分类器——与 OpenAI Daybreak、Google Fairwind 同类的“分级放开”模式。
+- 🆕 2026-10-07 · **[Supercharge your development with the Google Developer Knowledge API ecosystem](https://developers.googleblog.com/supercharge-your-development-with-the-google-developer-knowledge-api-ecosystem/)** · `agent-infra` · score 0.25
+  > Google is launching the Developer Knowledge API and MCP Server in public preview.
+- 🆕 2026-10-08 · **[The Outer Loop, Insights First: An Ambient Quality Agent That Diagnoses Your Production Agent](https://developers.googleblog.com/the-outer-loop-insights-first-an-ambient-quality-agent-that-diagnoses-your-production-agent/)** · `agent-infra` · score 0.25
+  > How do you keep improving an AI agent after the first 80%, once it serves real production traffic and silent quality regressions return HTTP 200 OK?
 - 🆕 2026-10-01 · **[Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science)** · `agent-infra` · score 0.17
   > Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems.
 - 👀 2026-10-08 · **[The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern)** · `agent-infra` · score 0.17
   > ML Intern（HuggingChat 中的 agent）从需求到训练、评测、发布模型全自动；作者 16 美元做出 0.8B 的 prompt rewriter 等 6 个模型。prompt 经验：写明“已验证事实勿重推”、先要 baseline、先 smoke test、设预算上限。
+- 🆕 2026-10-09 · **[Asana cuts model costs 76x in browser tests with GPT-6.1 Sol](https://openai.com/index/asana-browser-agent)** · `browser-use-agent` · score 0.17
+  > Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.
 - 👀 2026-10-13 · **[Redesigning source control at Anthropic](https://www.anthropic.com/engineering/redesigning-source-control)** · `agent-infra` · score 0.17
   > 合并量涨 10 倍后，源码管理成为最大瓶颈，Anthropic 用 5 个月迁到自研版本控制系统——agent 写代码规模化后的工程基础设施信号。
+- 🆕 2026-10-13 · **[Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/)** · `agent-infra` · score 0.17
+  > How our engineering team ran Gemini 4 Argon unattended overnight with .agents/skills and /goal mode to cut in-memory session prep overhead by 40% in long sessions and speed up cold imports by 21% in Google's open-source…
 
 ## Reading queue (status = new, top 10)
 
-- 🆕 2026-07-06 · **[🤗 Kernels: Major Updates](https://huggingface.co/blog/revamped-kernels)** · `agent-infra` · score 0.17
-  > In our previous post (From Zero to GPU), we introduced the 🤗 Kernels project, which aims at standardizing how custom kernels are packaged, distributed, and consumed.
-- 🆕 2026-07-07 · **[LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060)** · `agentic-rl` · score 0.17
-  > This new release is about closing the robot learning loop: policies that imagine the future before acting, reward models that tell you when your robot succeeds, a deployment CLI that turns failures into training data, an…
-- 🆕 2026-08-21 · **[How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code](https://huggingface.co/blog/pwc-search)** · `agent-infra` · score 0.17
-  > 3 months ago, we started a revival of Papers with Code (see also the announcement tweet).
-- 🆕 2026-09-22 · **[Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants)** · `agent-infra` · score 0.17
-  > We're adding support for running GGUF models efficiently in transformers, so you can use checkpoints sized for your laptop's memory through the familiar transformers APIs.
-- 🆕 2026-10-01 · **[Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science)** · `agent-infra` · score 0.17
-  > Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems.
+- 🆕 2026-09-28 · **[Towards safety cases for frontier AI training](https://openai.com/index/towards-safety-cases-for-frontier-ai-training)** · `agent-eval-safety` · score 0.53
+  > Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents
+- 🆕 2026-08-19 · **[Codex as a platform: build on the open agent harness](https://developers.openai.com/blog/codex-as-a-platform)** · `agent-infra` · score 0.50
+  > Build Codex into the products and workflows your users already know.
+- 🆕 2026-08-20 · **[Agentic Search. More accurate and efficient results from your AI systems.](https://mistral.ai/news/agentic-search)** · `gui-agent-search` `agent-infra` · score 0.50
+  > The retrieval layer that helps AI systems navigate, read, and verify information inside even the most complex documents
+- 🆕 2026-09-03 · **[Designing Grok Bot for a world of persistent agents](https://x.ai/news/designing-grok-bot)** · `agent-infra` · score 0.50
+  > How we designed Grok Bot for agents that persist beyond a single session — from a chat history to a Bot roster, presence, a computer of the Bot’s own, and work that starts without a prompt.
+- 🆕 2026-09-09 · **[Modernizing complex legacy code with AI agents.](https://mistral.ai/news/legacy-code-modernization)** · `agent-infra` · score 0.50
+  > Mistral helped a European energy operator migrate 40,000 lines of Fortran 77 to C++. Learn how it was done, and the lessons to carry forward.
+- 🆕 2026-09-10 · **[Introducing the Agents API](https://openai.com/index/introducing-the-agents-api)** · `agent-infra` · score 0.50
+  > Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use.
+- 🆕 2026-09-23 · **[Ringg’s AI agents resolve up to 65% of customer calls with OpenAI](https://openai.com/index/ringg)** · `agent-infra` · score 0.50
+  > Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.
+- 🆕 2026-10-06 · **[Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad)** · `computer-use-agent` `agent-infra` · score 0.50
+  > Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.
+- 🆕 2026-10-07 · **[Transect: Making large-scale agentic evaluations easier to understand](https://www.aisi.gov.uk/blog/transect-making-large-scale-agentic-evaluations-easier-to-understand)** · `agent-infra` · score 0.50
+  > We introduce Transect, an open-source tool that helps evaluators follow an agent’s work, identify what to investigate closely, and check their interpretation against the transcript.
+- 🆕 2026-09-24 · **[Turn your REST APIs into MCP tools with Google Cloud API Gateway](https://developers.googleblog.com/turn-your-rest-apis-into-mcp-tools-with-google-cloud-api-gateway/)** · `agent-infra` · score 0.42
+  > Google Cloud API Gateway now acts as a native remote Model Context Protocol (MCP) server, eliminating the need to build and maintain custom middleware to expose REST APIs to AI agents.
 
-🆕 new: 42 · 👀 skimmed: 27 · ✅ read: 0 · 📝 noted: 0
+🆕 new: 212 · 👀 skimmed: 27 · ✅ read: 0 · 📝 noted: 0
 
 ## Topics
 
 | Topic | Items | Curated page |
 |---|---|---|
-| `browser-use-agent` | 0 | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
-| `computer-use-agent` | 0 | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
-| `gui-agent-search` | 1 | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
+| `browser-use-agent` | 1 | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
+| `computer-use-agent` | 4 | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
+| `gui-agent-search` | 2 | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
 | `agentic-rl` | 6 | [topics/agentic-rl.md](topics/agentic-rl.md) |
-| `agent-eval-safety` | 12 | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
-| `agent-infra` | 19 | [topics/agent-infra.md](topics/agent-infra.md) |
+| `agent-eval-safety` | 17 | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
+| `agent-infra` | 36 | [topics/agent-infra.md](topics/agent-infra.md) |
 
 ## Digests
 
 - Weekly: [2026-W42](digests/weekly/2026-W42.md), [2026-W41](digests/weekly/2026-W41.md), [2026-W40](digests/weekly/2026-W40.md), [2026-W39](digests/weekly/2026-W39.md)
-- Sources: [anthropic-engineering](digests/sources/anthropic-engineering.md), [anthropic-news](digests/sources/anthropic-news.md), [anthropic-research](digests/sources/anthropic-research.md), [hf-blog](digests/sources/hf-blog.md)
+- Labs (all posts, last 60 days): [digests/labs.md](digests/labs.md)
+- Sources: [anthropic-engineering](digests/sources/anthropic-engineering.md), [anthropic-news](digests/sources/anthropic-news.md), [anthropic-red](digests/sources/anthropic-red.md), [anthropic-research](digests/sources/anthropic-research.md), [google-developers-ai](digests/sources/google-developers-ai.md), [hf-blog](digests/sources/hf-blog.md), [mistral-news](digests/sources/mistral-news.md), [openai-developer](digests/sources/openai-developer.md), [openai-engineering](digests/sources/openai-engineering.md), [openai-news](digests/sources/openai-news.md), [openai-research](digests/sources/openai-research.md), [uk-aisi](digests/sources/uk-aisi.md), [xai-news](digests/sources/xai-news.md)
 - Reviews (hand-written): [2026-10-14_hf-blog](reviews/2026-10-14_hf-blog.md), [2026-10-14_frontier-labs](reviews/2026-10-14_frontier-labs.md)

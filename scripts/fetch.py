@@ -16,7 +16,23 @@ from urllib.parse import urljoin, urlparse
 import requests
 import yaml
 
-from common import load_items, load_yaml, merge_item, parse_date, save_items, today
+from common import ROOT, load_items, load_yaml, merge_item, parse_date, save_items, today
+
+import json
+
+# url -> published date for scraped pages, so old pages discovered via sitemap are not re-opened every run
+SCRAPE_CACHE = ROOT / "data" / "scrape_dates.json"
+
+
+def load_scrape_cache() -> dict[str, str]:
+    try:
+        return json.loads(SCRAPE_CACHE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def save_scrape_cache(cache: dict[str, str]) -> None:
+    SCRAPE_CACHE.write_text(json.dumps(dict(sorted(cache.items())), indent=0) + "\n", encoding="utf-8")
 
 UA = {"User-Agent": "agent-frontier/0.1 (+https://github.com/demoleiwang/agent-frontier)"}
 EXCERPT_CHARS = 1500
@@ -114,14 +130,18 @@ def fetch_rss(src: dict, since: dt.date, known: set[str]) -> list[dict]:
             continue
         link = e.get("link", "")
         slug = link.rstrip("/").rsplit("/", 1)[-1] or link
+        cats = [t.get("term") for t in e.get("tags", []) if t.get("term")]
+        if set(cats) & set(src.get("exclude_categories") or []):
+            continue
         out.append({
-            "id": f"{src['id']}:{slug}",
+            # id_prefix lets several feeds of one lab (e.g. OpenAI news + research) dedupe to one id
+            "id": f"{src.get('id_prefix', src['id'])}:{slug}",
             "source": src["id"],
             "title": e.get("title", "").strip(),
             "url": link,
             "date": d.isoformat(),
             "authors": [a.get("name") for a in e.get("authors", []) if a.get("name")],
-            "source_tags": [t.get("term") for t in e.get("tags", []) if t.get("term")],
+            "source_tags": cats,
             "tags": list(src.get("tags") or []),
             "excerpt": md_to_text(e.get("summary", ""))[:EXCERPT_CHARS],
         })
@@ -189,8 +209,10 @@ def scrape_listing(src: dict) -> dict[str, dt.date | None]:
 
 def fetch_scrape(src: dict, since: dt.date, known: set[str]) -> list[dict]:
     src = {**src, "_since": since}
+    cache = load_scrape_cache()
     out = []
     for url, listed in scrape_listing(src).items():
+        listed = listed or parse_date(cache.get(url, ""))
         if listed and listed < since:
             continue
         slug = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
@@ -204,6 +226,8 @@ def fetch_scrape(src: dict, since: dt.date, known: set[str]) -> list[dict]:
             print(f"  ! {url}: {ex}", file=sys.stderr)
             continue
         d = art["date"] or listed
+        if d:
+            cache[url] = d.isoformat()
         if not d or d < since:
             continue
         excerpt = (art["description"] + " " + art["text"]).strip()
@@ -218,6 +242,7 @@ def fetch_scrape(src: dict, since: dt.date, known: set[str]) -> list[dict]:
             "tags": list(src.get("tags") or []),
             "excerpt": excerpt[:EXCERPT_CHARS],
         })
+    save_scrape_cache(cache)
     return out
 
 
