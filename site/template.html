@@ -1,0 +1,491 @@
+<title>Agent Frontier 罗盘</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* Layout: a chart-room console. One reading column of sections; the plan (direction, phases, modules) leads, evidence and feeds follow. */
+:root {
+  --bg: #eef2f4; --surface: #fbfcfd; --sunk: #e3e9ed; --ink: #15232d; --muted: #586a77; --line: #d3dce2;
+  --accent: #1c5c8c; --accent-soft: #dde9f3;
+  --gap: #b8431a; --rise: #a36410; --crowd: #6a3fb8; --watch: #65737f;
+  --todo: #7d8b96; --doing: #1c5c8c; --done: #2f7d4a; --hold: #9a6a12;
+  --bar-prev: #b9c6cf;
+  --f-display: "Noto Serif SC", "Songti SC", "STSong", serif;
+  --f-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e151b; --surface: #141e26; --sunk: #1b2833; --ink: #e3ebf1; --muted: #98a9b6; --line: #263642;
+  --accent: #73b2e3; --accent-soft: #1b3346;
+  --gap: #f08a5d; --rise: #e0a94a; --crowd: #b39af0; --watch: #9aa8b3;
+  --todo: #8b99a4; --doing: #73b2e3; --done: #6fc28c; --hold: #e0b45a; --bar-prev: #3a4b58; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e151b; --surface: #141e26; --sunk: #1b2833; --ink: #e3ebf1; --muted: #98a9b6; --line: #263642;
+  --accent: #73b2e3; --accent-soft: #1b3346;
+  --gap: #f08a5d; --rise: #e0a94a; --crowd: #b39af0; --watch: #9aa8b3;
+  --todo: #8b99a4; --doing: #73b2e3; --done: #6fc28c; --hold: #e0b45a; --bar-prev: #3a4b58; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.7 var(--f-body); margin: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+code { font: 0.86em var(--f-mono); background: var(--sunk); padding: 0 4px; border-radius: 3px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.3; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.02rem; }
+.eyebrow { font: 500 0.72rem/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+
+/* header */
+header.top { padding-block: 28px 18px; display: grid; gap: 14px; }
+.title-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; justify-content: space-between; }
+h1 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+.scope { max-width: 70ch; color: var(--muted); }
+.fresh { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 0.84rem; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: 0.8rem; white-space: nowrap; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--todo); }
+.dot.live { background: var(--done); }
+.dot.warn { background: var(--rise); }
+button { font: inherit; font-size: 0.82rem; color: var(--accent); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 0.86rem; color: var(--muted); }
+.stats b { color: var(--ink); font-family: var(--f-mono); font-weight: 500; }
+
+nav.sec { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav.sec .wrap { display: flex; gap: 4px; overflow-x: auto; padding-block: 8px; scrollbar-width: none; }
+nav.sec a { flex: none; padding: 3px 12px; border-radius: 999px; color: var(--muted); font-size: 0.86rem; }
+nav.sec a:hover { background: var(--sunk); color: var(--ink); text-decoration: none; }
+
+section { padding-block: 34px 6px; display: grid; gap: 16px; scroll-margin-top: 52px; }
+.sec-head { display: grid; gap: 4px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; min-width: 0; }
+.lead { font-size: 1.05rem; max-width: 76ch; }
+
+/* phases gantt */
+.gantt { display: grid; gap: 8px; }
+.g-axis, .g-row { display: grid; grid-template-columns: minmax(96px, 150px) 1fr; gap: 12px; align-items: center; }
+.g-scale { position: relative; height: 18px; font: 0.72rem var(--f-mono); color: var(--muted); }
+.g-scale span { position: absolute; transform: translateX(-50%); }
+.g-track { position: relative; height: 30px; background: var(--sunk); border-radius: 6px; }
+.g-bar { position: absolute; top: 3px; bottom: 3px; border-radius: 4px; background: var(--accent-soft); border: 1px solid var(--accent); display: flex; align-items: center; gap: 4px; padding: 0 6px; overflow: hidden; }
+.g-name { font-size: 0.86rem; font-weight: 500; }
+.g-goal { font-size: 0.8rem; color: var(--muted); grid-column: 2; margin-top: -4px; }
+.mchip { font: 500 0.7rem/1 var(--f-mono); padding: 3px 5px; border-radius: 3px; color: var(--surface); background: var(--todo); }
+.mchip.s-进行中 { background: var(--doing); } .mchip.s-完成 { background: var(--done); } .mchip.s-搁置 { background: var(--hold); }
+
+/* modules */
+.mods { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.mod { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; gap: 6px; align-content: start; background: var(--surface); border-top: 3px solid var(--todo); min-width: 0; }
+.mod.s-进行中 { border-top-color: var(--doing); } .mod.s-完成 { border-top-color: var(--done); } .mod.s-搁置 { border-top-color: var(--hold); }
+.mod-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.mod-id { font: 500 0.78rem var(--f-mono); color: var(--muted); }
+.mod p { margin: 0; font-size: 0.88rem; }
+.mod .next { font-size: 0.82rem; color: var(--muted); }
+.mod .next::before { content: "下一步 · "; color: var(--ink); font-weight: 500; }
+.st { font-size: 0.74rem; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.st.s-未开始 { color: var(--todo); } .st.s-进行中 { color: var(--doing); } .st.s-完成 { color: var(--done); } .st.s-搁置 { color: var(--hold); }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.two > * { min-width: 0; }
+.list { display: grid; gap: 0; }
+.list > div { padding-block: 10px; border-bottom: 1px solid var(--line); display: grid; gap: 3px; font-size: 0.9rem; }
+.list > div:last-child { border-bottom: 0; }
+.list .act { color: var(--muted); font-size: 0.85rem; }
+.list .act::before { content: "→ "; color: var(--accent); }
+.log > div { grid-template-columns: 52px 1fr; column-gap: 12px; }
+.log .ver { font: 500 0.86rem var(--f-mono); color: var(--accent); grid-row: span 3; }
+.log .d { font: 0.76rem var(--f-mono); color: var(--muted); }
+
+/* why */
+.why { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.why .panel { padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.why .panel p { margin: 0; font-size: 0.88rem; }
+.why .panel.hit { border-color: var(--accent); background: var(--accent-soft); }
+
+.signals { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.signals .panel { padding: 12px 14px; display: grid; gap: 4px; align-content: start; font-size: 0.88rem; }
+.signals .refs { font-size: 0.8rem; }
+
+/* radar */
+.radar { display: grid; }
+.radar details { border-bottom: 1px solid var(--line); }
+.radar details:last-child { border-bottom: 0; }
+.radar summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px 132px; gap: 12px; align-items: center; padding-block: 11px; }
+.radar summary::-webkit-details-marker { display: none; }
+.radar .nm { font-weight: 500; }
+.radar .nx { font-size: 0.8rem; color: var(--muted); }
+.sts { font-size: 0.74rem; padding: 1px 8px; border-radius: 999px; text-align: center; color: var(--surface); }
+.sts.d-空白 { background: var(--gap); } .sts.d-上升 { background: var(--rise); } .sts.d-拥挤 { background: var(--crowd); } .sts.d-观望 { background: var(--watch); }
+.hits { text-align: right; }
+.hits b { font: 500 1.05rem var(--f-mono); }
+.hits small { display: block; font-size: 0.68rem; color: var(--muted); line-height: 1.2; }
+.spark { width: 132px; height: 34px; display: block; }
+.radar .body { padding: 2px 0 14px 76px; display: grid; gap: 8px; font-size: 0.88rem; }
+.radar .body p { margin: 0; max-width: 80ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 0.76rem; padding: 1px 8px; border-radius: 999px; background: var(--sunk); color: var(--muted); border: 1px solid transparent; }
+button.chip { cursor: pointer; }
+button.chip[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+
+/* feeds */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; color: var(--muted); padding: 6px 12px; font-size: 0.9rem; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.feed { display: grid; }
+.it { padding-block: 12px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.it:last-child { border-bottom: 0; }
+.it .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.76rem; color: var(--muted); align-items: center; }
+.it .t { font-weight: 500; }
+.it .tl { font-size: 0.86rem; color: var(--muted); margin: 0; max-width: 90ch; }
+.rep { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); }
+.rep i { display: inline-block; width: 48px; height: 5px; background: var(--sunk); border-radius: 3px; overflow: hidden; }
+.rep i::after { content: ""; display: block; height: 100%; width: var(--w); background: var(--accent); }
+.empty { padding: 18px 0; color: var(--muted); font-size: 0.9rem; }
+
+/* heat */
+.heat { display: grid; gap: 9px; }
+.hrow { display: grid; grid-template-columns: minmax(110px, 170px) 1fr 92px; gap: 12px; align-items: center; font-size: 0.84rem; }
+.hbars { display: grid; gap: 3px; }
+.hbar { height: 8px; border-radius: 4px; background: var(--accent); min-width: 2px; }
+.hbar.prev { background: var(--bar-prev); height: 5px; }
+.hnum { text-align: right; font-family: var(--f-mono); font-size: 0.78rem; }
+.legend { display: flex; gap: 16px; font-size: 0.78rem; color: var(--muted); align-items: center; }
+.legend i { display: inline-block; width: 18px; height: 6px; border-radius: 3px; background: var(--accent); margin-right: 6px; vertical-align: middle; }
+.legend i.prev { background: var(--bar-prev); }
+
+.reads { display: grid; gap: 0; }
+.reads > div { padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 0.9rem; display: grid; gap: 2px; }
+.reads > div:last-child { border-bottom: 0; }
+.reads small { color: var(--muted); }
+
+footer { padding-block: 36px 40px; color: var(--muted); font-size: 0.8rem; display: grid; gap: 6px; }
+
+@media (max-width: 640px) {
+  .radar summary { grid-template-columns: 54px minmax(0, 1fr) 46px; }
+  .spark { display: none; }
+  .radar .body { padding-left: 0; }
+  .g-axis, .g-row { grid-template-columns: 1fr; }
+  .g-axis > div:first-child { display: none; }
+  .g-goal { grid-column: 1; }
+  .g-track { height: auto; padding: 3px; }
+  .g-bar { position: static; width: auto !important; flex-wrap: wrap; padding: 4px 6px; }
+  .hrow { grid-template-columns: 1fr 70px; }
+  .hbars { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (prefers-reduced-motion: no-preference) { .g-bar, .hbar { transition: width .4s ease; } }
+</style>
+
+<header class="top wrap">
+  <div class="eyebrow">Agent Frontier · 研究罗盘</div>
+  <div class="title-row">
+    <h1>Agent Frontier 罗盘</h1>
+    <div class="fresh"><span class="pill" id="fresh"><span class="dot" id="fresh-dot"></span><span id="fresh-text">读取中</span></span><button type="button" id="refresh" hidden>拉取最新</button></div>
+  </div>
+  <div class="scope" id="scope"></div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<nav class="sec" aria-label="章节"><div class="wrap">
+  <a href="#direction">主方向</a><a href="#modules">模块</a><a href="#revise">修正</a><a href="#why">为什么是它</a><a href="#radar">方向雷达</a><a href="#feed">新工作</a><a href="#heat">热度</a><a href="#reads">必读与报告</a>
+</div></nav>
+
+<main class="wrap">
+  <section id="direction">
+    <div class="sec-head"><div class="eyebrow">主方向</div><h2>我们要做成什么</h2></div>
+    <div class="panel"><p class="lead" id="main-direction" style="margin:0"></p></div>
+    <div class="panel"><div class="sec-head" style="margin-bottom:10px"><h3>分阶段推进（26 周）</h3><span class="muted" style="font-size:.84rem">每一行是一个阶段，色块是该阶段要完成的模块，颜色表示模块当前状态</span></div><div class="gantt" id="gantt"></div></div>
+  </section>
+
+  <section id="modules">
+    <div class="sec-head"><div class="eyebrow">模块</div><h2>拆成 10 块，一块一块完成</h2></div>
+    <div class="mods" id="mods"></div>
+  </section>
+
+  <section id="revise">
+    <div class="sec-head"><div class="eyebrow">持续校准</div><h2>什么情况下改方向，以及改过什么</h2></div>
+    <div class="two">
+      <div class="panel"><h3 style="margin-bottom:6px">触发信号</h3><div class="list" id="watch"></div></div>
+      <div class="panel"><h3 style="margin-bottom:6px">修正记录</h3><div class="list log" id="log"></div></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="sec-head"><div class="eyebrow">选择</div><h2>为什么是常驻 agent，而不是其他 agent</h2></div>
+    <div class="why" id="why-cards"></div>
+    <div class="panel"><div class="eyebrow" style="margin-bottom:6px">当前判断</div><p id="thesis" style="margin:0;max-width:90ch"></p></div>
+    <div class="signals" id="signals"></div>
+  </section>
+
+  <section id="radar">
+    <div class="sec-head"><div class="eyebrow">方向雷达</div><h2>各研究方向的状态与热度</h2><span class="muted" style="font-size:.84rem">数字是近 14 天命中该方向关键词的新工作数，曲线是近 12 周每周的数量。点开看理由、证据和最近的工作。</span></div>
+    <div class="panel radar" id="radar-list"></div>
+  </section>
+
+  <section id="feed">
+    <div class="sec-head"><div class="eyebrow">新工作</div><h2>本周值得看的</h2></div>
+    <div class="panel">
+      <div class="tabs" role="tablist" id="tabs">
+        <button type="button" role="tab" aria-selected="true" data-tab="new_papers">待分拣论文</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="lab_posts">Lab 动态（14 天）</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="read_papers">已读论文</button>
+      </div>
+      <div class="chips" id="topic-filter" style="margin-top:12px"></div>
+      <div class="feed" id="feed-list"></div>
+    </div>
+  </section>
+
+  <section id="heat">
+    <div class="sec-head"><div class="eyebrow">热度</div><h2>各主题占同期论文的比例</h2></div>
+    <div class="panel"><div class="legend" style="margin-bottom:12px"><span><i></i>近 14 天</span><span><i class="prev"></i>前 14 天</span></div><div class="heat" id="heat-list"></div></div>
+  </section>
+
+  <section id="reads">
+    <div class="sec-head"><div class="eyebrow">阅读</div><h2>必读与深度报告</h2></div>
+    <div class="two">
+      <div class="panel"><h3 style="margin-bottom:6px">置顶必读</h3><div class="reads" id="must"></div></div>
+      <div class="panel"><h3 style="margin-bottom:6px">深度报告</h3><div class="reads" id="reports"></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div>规则：页面上的每条判断都附原始出处；“二手”表示只来自搜索摘要或聚合站，“推论”表示我们自己的判断并附依据。数字一律为厂商或作者自报。</div>
+  <div id="foot-src"></div>
+</footer>
+
+<script type="application/json" id="snapshot">__SNAPSHOT__</script>
+<script>
+(function () {
+  "use strict";
+  var SCHEMA = "agent-frontier/site@1";
+  var OWNER = "demoleiwang", REPO = "agent-frontier";
+  var REFS = ["refs/heads/main", "refs/heads/claude/inspiring-lovelace-umqw6v"];
+  var GH = "GitHub";
+  var data = JSON.parse(document.getElementById("snapshot").textContent);
+  var source = { kind: "snapshot", ref: null };
+  var state = { tab: "new_papers", topic: null };
+
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function txt(tag, cls, t) { var e = document.createElement(tag); if (cls) e.className = cls; e.textContent = t; return e; }
+  function a(href, t) { var e = document.createElement("a"); e.href = href; e.target = "_blank"; e.rel = "noopener"; e.textContent = t; return e; }
+  function fmtTime(iso) { try { var d = new Date(iso); return d.toLocaleString("zh-CN", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (e) { return iso; } }
+  var TOPIC_NAME = { "personal-agent": "个人 / 常驻 agent", "code-computer-use": "写代码操作电脑", "office-agent": "办公", "professional-agent": "专业领域", "env-construction": "环境构建", "computer-use-agent": "电脑操作", "browser-use-agent": "浏览器", "gui-agent-search": "搜索", "agentic-rl": "agentic RL", "agent-eval-safety": "评测与安全", "agent-infra": "基础设施" };
+
+  function renderFresh(note) {
+    var dot = $("fresh-dot"), t = $("fresh-text");
+    if (source.kind === "live") { dot.className = "dot live"; t.textContent = "最新数据 · 生成于 " + fmtTime(data.generated) + " · " + (source.ref || "").replace("refs/heads/", ""); }
+    else { dot.className = note ? "dot warn" : "dot"; t.textContent = "快照 · 生成于 " + fmtTime(data.generated) + (note ? " · " + note : ""); }
+  }
+
+  function render() {
+    $("scope").innerHTML = data.scope || "";
+    var s = data.stats || {};
+    $("stats").innerHTML = "";
+    [["跟踪条目", s.items], ["近 14 天论文", s.papers_14d], ["近 14 天 lab 文章", s.posts_14d], ["已浏览", s.skimmed], ["罗盘更新", data.compass_updated]].forEach(function (p) {
+      var sp = el("span"); sp.appendChild(document.createTextNode(p[0] + " ")); sp.appendChild(txt("b", null, p[1] == null ? "—" : String(p[1]))); $("stats").appendChild(sp);
+    });
+    $("main-direction").innerHTML = data.main_direction || "";
+
+    // phases gantt over 26 weeks
+    var mstat = {}; (data.modules || []).forEach(function (m) { mstat[m.id] = m.status; });
+    var g = $("gantt"); g.innerHTML = "";
+    var axis = el("div", "g-axis"); axis.appendChild(el("div")); var sc = el("div", "g-scale");
+    [1, 5, 9, 13, 17, 21, 26].forEach(function (w) { var sp = txt("span", null, "W" + w); sp.style.left = ((w - 0.5) / 26 * 100) + "%"; sc.appendChild(sp); });
+    axis.appendChild(sc); g.appendChild(axis);
+    (data.phases || []).forEach(function (p) {
+      var m = /(\d+)\D+(\d+)/.exec(p.weeks) || [0, 1, 26]; var a0 = +m[1], a1 = +m[2];
+      var row = el("div", "g-row"); row.appendChild(txt("div", "g-name", p.name));
+      var tr = el("div", "g-track"); var bar = el("div", "g-bar");
+      bar.style.left = ((a0 - 1) / 26 * 100) + "%"; bar.style.width = ((a1 - a0 + 1) / 26 * 100) + "%";
+      bar.title = "第 " + p.weeks + " 周";
+      (p.modules || []).forEach(function (id) { var c = txt("span", "mchip s-" + (mstat[id] || "未开始"), id); c.title = id + " · " + (mstat[id] || "未开始"); bar.appendChild(c); });
+      tr.appendChild(bar); row.appendChild(tr); g.appendChild(row);
+      var goal = el("div", "g-goal", "第 " + p.weeks + " 周 · " + (p.goal || "")); var gr = el("div", "g-row"); gr.appendChild(el("div")); gr.appendChild(goal); g.appendChild(gr);
+    });
+
+    var mods = $("mods"); mods.innerHTML = "";
+    (data.modules || []).forEach(function (m) {
+      var c = el("article", "mod s-" + m.status);
+      var h = el("div", "mod-head"); var left = el("div");
+      left.appendChild(txt("span", "mod-id", m.id + " ")); var nm = m.url ? a(m.url, m.name) : txt("span", null, m.name); nm.style.fontWeight = "500"; left.appendChild(nm);
+      h.appendChild(left); h.appendChild(txt("span", "st s-" + m.status, m.status)); c.appendChild(h);
+      c.appendChild(el("p", null, m.what)); c.appendChild(el("p", "next", m.next)); mods.appendChild(c);
+    });
+
+    var w = $("watch"); w.innerHTML = "";
+    (data.watch || []).forEach(function (x) { var d = el("div"); d.appendChild(el("div", null, x.signal)); d.appendChild(el("div", "act", x.action)); w.appendChild(d); });
+    var lg = $("log"); lg.innerHTML = "";
+    (data.direction_log || []).slice().reverse().forEach(function (x) {
+      var d = el("div"); d.appendChild(txt("div", "ver", x.version)); d.appendChild(txt("div", "d", x.date)); d.appendChild(el("div", null, x.direction)); d.appendChild(el("div", "muted", x.why)); lg.appendChild(d);
+    });
+
+    var wc = $("why-cards"); wc.innerHTML = "";
+    (data.why_this || []).forEach(function (x, i, arr) {
+      var p = el("div", "panel" + (i >= arr.length - 2 ? " hit" : "")); p.appendChild(el("h3", null, x.head)); p.appendChild(el("p", null, x.body)); wc.appendChild(p);
+    });
+    $("thesis").innerHTML = data.thesis || "";
+    var sg = $("signals"); sg.innerHTML = "";
+    (data.signals || []).forEach(function (x) {
+      var p = el("div", "panel"); p.appendChild(txt("strong", null, x.signal)); p.appendChild(el("div", null, x.detail));
+      var r = el("div", "refs"); (x.refs || []).forEach(function (f, i) { if (i) r.appendChild(document.createTextNode(" · ")); r.appendChild(a(f.url, f.title)); }); p.appendChild(r); sg.appendChild(p);
+    });
+
+    renderRadar(); renderFeed(); renderHeat(); renderReads();
+    $("foot-src").innerHTML = "";
+    $("foot-src").appendChild(document.createTextNode("数据与代码："));
+    $("foot-src").appendChild(a("https://github.com/" + OWNER + "/" + REPO, OWNER + "/" + REPO));
+    $("foot-src").appendChild(document.createTextNode(" · 数据日期 " + data.data_date + " · 每天由 GitHub Actions 自动抓取、打分、生成。"));
+    renderFresh();
+  }
+
+  function spark(vals) {
+    var W = 132, H = 34, n = vals.length, max = Math.max.apply(null, vals.concat([1]));
+    var ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H); svg.setAttribute("class", "spark"); svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "近 12 周每周新工作数：" + vals.join("、"));
+    var xs = function (i) { return 3 + i * (W - 6) / Math.max(n - 1, 1); }, ys = function (v) { return H - 4 - v / max * (H - 10); };
+    for (var k = 1; k <= 2; k++) { var gl = document.createElementNS(ns, "line"); gl.setAttribute("x1", 3); gl.setAttribute("x2", W - 3); gl.setAttribute("y1", ys(max * k / 2)); gl.setAttribute("y2", ys(max * k / 2)); gl.setAttribute("stroke", "var(--line)"); gl.setAttribute("stroke-width", "1"); svg.appendChild(gl); }
+    var pts = vals.map(function (v, i) { return xs(i).toFixed(1) + "," + ys(v).toFixed(1); });
+    var area = document.createElementNS(ns, "path");
+    area.setAttribute("d", "M" + xs(0) + "," + (H - 4) + " L" + pts.join(" L") + " L" + xs(n - 1) + "," + (H - 4) + " Z");
+    area.setAttribute("fill", "var(--accent-soft)"); svg.appendChild(area);
+    var line = document.createElementNS(ns, "polyline"); line.setAttribute("points", pts.join(" ")); line.setAttribute("fill", "none"); line.setAttribute("stroke", "var(--accent)"); line.setAttribute("stroke-width", "1.6"); svg.appendChild(line);
+    var c = document.createElementNS(ns, "circle"); c.setAttribute("cx", xs(n - 1)); c.setAttribute("cy", ys(vals[n - 1])); c.setAttribute("r", "2.6"); c.setAttribute("fill", "var(--accent)"); svg.appendChild(c);
+    return svg;
+  }
+
+  function itemNode(it) {
+    var d = el("div", "it"); var m = el("div", "meta");
+    m.appendChild(txt("span", "num", it.date));
+    if (it.lab) m.appendChild(txt("span", null, it.lab));
+    if (it.paper && it.inst) m.appendChild(txt("span", null, it.inst));
+    if (it.rep != null) { var r = el("span", "rep"); var bar = el("i"); bar.style.setProperty("--w", Math.round(it.rep * 100) + "%"); r.appendChild(bar); r.appendChild(document.createTextNode("口碑 " + it.rep.toFixed(2))); m.appendChild(r); }
+    if (it.upvotes) m.appendChild(txt("span", "num", "▲ " + it.upvotes));
+    (it.topics || []).slice(0, 3).forEach(function (t) { m.appendChild(txt("span", "chip", TOPIC_NAME[t] || t)); });
+    d.appendChild(m);
+    var t = el("div", "t"); t.appendChild(a(it.url, it.title)); d.appendChild(t);
+    if (it.tldr) d.appendChild(txt("p", "tl", it.tldr));
+    return d;
+  }
+
+  function renderRadar() {
+    var r = $("radar-list"); r.innerHTML = "";
+    (data.directions || []).forEach(function (dn) {
+      var det = el("details"); var s = el("summary");
+      s.appendChild(txt("span", "sts d-" + dn.status, dn.status));
+      var mid = el("div"); mid.appendChild(txt("div", "nm", dn.name)); mid.appendChild(el("div", "nx", "下一步 · " + dn.next)); s.appendChild(mid);
+      var h = el("div", "hits"); h.appendChild(txt("b", null, String(dn.hits14))); h.appendChild(txt("small", null, "近 14 天")); s.appendChild(h);
+      s.appendChild(spark(dn.weekly || [])); det.appendChild(s);
+      var b = el("div", "body"); b.appendChild(el("p", null, dn.why));
+      var ev = el("div", "chips"); ev.appendChild(txt("span", "muted", "证据：")); (dn.evidence || []).forEach(function (e) { var l = a(e.url, e.title); l.className = "chip"; ev.appendChild(l); }); b.appendChild(ev);
+      if ((dn.recent || []).length) { var f = el("div", "feed"); dn.recent.forEach(function (it) { f.appendChild(itemNode(it)); }); b.appendChild(txt("div", "eyebrow", "最近相关")); b.appendChild(f); }
+      det.appendChild(b); r.appendChild(det);
+    });
+  }
+
+  function renderFeed() {
+    var list = data[state.tab] || [];
+    var topics = {}; list.forEach(function (it) { (it.topics || []).forEach(function (t) { topics[t] = (topics[t] || 0) + 1; }); });
+    var tf = $("topic-filter"); tf.innerHTML = "";
+    var mk = function (key, label) { var b = txt("button", "chip", label); b.type = "button"; b.setAttribute("aria-pressed", String(state.topic === key)); b.onclick = function () { state.topic = key; renderFeed(); }; return b; };
+    tf.appendChild(mk(null, "全部 " + list.length));
+    Object.keys(topics).sort(function (x, y) { return topics[y] - topics[x]; }).forEach(function (t) { tf.appendChild(mk(t, (TOPIC_NAME[t] || t) + " " + topics[t])); });
+    var fl = $("feed-list"); fl.innerHTML = "";
+    var shown = list.filter(function (it) { return !state.topic || (it.topics || []).indexOf(state.topic) >= 0; });
+    if (!shown.length) fl.appendChild(txt("div", "empty", state.tab === "new_papers" ? "近 7 天没有口碑分 ≥ 0.3、尚未浏览的核心主题论文。" : "这里暂时没有条目。"));
+    shown.forEach(function (it) { fl.appendChild(itemNode(it)); });
+    Array.prototype.forEach.call($("tabs").querySelectorAll("button"), function (b) { b.setAttribute("aria-selected", String(b.dataset.tab === state.tab)); });
+  }
+
+  function renderHeat() {
+    var hl = $("heat-list"); hl.innerHTML = "";
+    var max = Math.max.apply(null, (data.heat || []).map(function (h) { return Math.max(h.cur_share, h.prev_share); }).concat([0.0001]));
+    (data.heat || []).forEach(function (h) {
+      var row = el("div", "hrow"); var name = h.page ? a(h.page, TOPIC_NAME[h.topic] || h.topic) : txt("span", null, TOPIC_NAME[h.topic] || h.topic); row.appendChild(name);
+      var bars = el("div", "hbars"); var b1 = el("div", "hbar"); b1.style.width = (h.cur_share / max * 100) + "%"; var b2 = el("div", "hbar prev"); b2.style.width = (h.prev_share / max * 100) + "%";
+      bars.appendChild(b1); bars.appendChild(b2); row.appendChild(bars);
+      row.appendChild(txt("div", "hnum", (h.cur_share * 100).toFixed(1) + "% " + h.trend + " " + h.cur + "篇"));
+      hl.appendChild(row);
+    });
+  }
+
+  function renderReads() {
+    var m = $("must"); m.innerHTML = "";
+    (data.must_read || []).forEach(function (p) { var d = el("div"); d.appendChild(a(p.url, p.title)); if (p.why) d.appendChild(txt("small", null, p.why)); m.appendChild(d); });
+    var r = $("reports"); r.innerHTML = "";
+    (data.reports || []).forEach(function (p) { var d = el("div"); d.appendChild(a(p.url, p.title)); d.appendChild(txt("small", "num", p.date)); r.appendChild(d); });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("#tabs button"), function (b) { b.addEventListener("click", function () { state.tab = b.dataset.tab; state.topic = null; renderFeed(); }); });
+
+  render();
+
+  // ---- live data: read site/data.json from GitHub through the viewer's GitHub connector (claude.ai viewer only) ----
+  function parseResult(res) {
+    var cands = [];
+    if (res && res.payload && typeof res.payload === "object" && res.payload.schema === SCHEMA) return res.payload;
+    if (res && typeof res.payload === "string") cands.push(res.payload);
+    ((res && res.content) || []).forEach(function (b) {
+      if (typeof b.text === "string") cands.push(b.text);
+      if (b.resource) {
+        if (typeof b.resource.text === "string") cands.push(b.resource.text);
+        if (typeof b.resource.blob === "string") { try { cands.push(new TextDecoder().decode(Uint8Array.from(atob(b.resource.blob), function (c) { return c.charCodeAt(0); }))); } catch (e) {} }
+      }
+    });
+    for (var i = 0; i < cands.length; i++) {
+      var s = cands[i], j = s.indexOf('{"schema"');
+      if (j < 0) continue;
+      try { var o = JSON.parse(s.slice(j, s.lastIndexOf("}") + 1)); if (o && o.schema === SCHEMA) return o; } catch (e) {}
+    }
+    return null;
+  }
+
+  var mcp = null;
+  function explain(code) {
+    switch (code) {
+      case "server_not_connected": case "selection_required": return "在 claude.ai 设置 → Connectors 连接 GitHub 后可看最新数据";
+      case "needs_reauth": return "GitHub 连接已过期，请在 claude.ai 设置里重新连接";
+      case "not_in_manifest": case "approval_required": case "consent_required": return "未允许读取 GitHub";
+      case "blocked_by_policy": return "组织策略不允许读取 GitHub";
+      default: return "暂时拉不到最新数据";
+    }
+  }
+
+  function fetchLive(fresh) {
+    if (!mcp) return;
+    $("fresh-text").textContent = "正在从 GitHub 拉取最新数据…";
+    var opts = fresh ? { cache: { refresh: true, staleTime: 0 } } : { cache: { staleTime: 60000 } };
+    var tries = REFS.map(function (ref) {
+      return mcp.callTool(GH, "get_file_contents", { owner: OWNER, repo: REPO, path: "site/data.json", ref: ref }, opts)
+        .then(function (res) { var d = parseResult(res); return d ? { data: d, ref: ref } : null; })
+        .catch(function (err) { return { error: err }; });
+    });
+    Promise.all(tries).then(function (rs) {
+      var ok = rs.filter(function (r) { return r && r.data; });
+      if (ok.length) {
+        ok.sort(function (x, y) { return x.data.generated < y.data.generated ? 1 : -1; });
+        if (ok[0].data.generated >= data.generated) { data = ok[0].data; source = { kind: "live", ref: ok[0].ref }; render(); }
+        else { source = { kind: "live", ref: ok[0].ref }; renderFresh(); }
+        $("refresh").hidden = false; $("refresh").textContent = "刷新";
+        return;
+      }
+      var errs = rs.filter(function (r) { return r && r.error; }).map(function (r) { return r.error; });
+      var code = errs.length ? errs[0].code : "upstream_error";
+      var retry = errs.find ? errs.find(function (e) { return e.retryable; }) : null;
+      if (retry && !fresh) { setTimeout(function () { fetchLive(true); }, (retry.retryAfterMs || 1500) + Math.random() * 800); return; }
+      source = { kind: "snapshot" }; renderFresh(explain(code));
+      $("refresh").hidden = false; $("refresh").textContent = code === "approval_required" || code === "not_in_manifest" || code === "consent_required" ? "允许读取 GitHub" : "重试";
+    });
+  }
+
+  $("refresh").addEventListener("click", function () { fetchLive(true); });
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("mcp").then(function (ns) { if (!ns) { renderFresh(); return; } mcp = ns; fetchLive(false); }).catch(function () { renderFresh(); });
+  }
+})();
+</script>

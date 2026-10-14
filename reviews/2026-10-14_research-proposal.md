@@ -1,7 +1,7 @@
-# 下半年研究主方向与模块拆解（v2，2026-10-14）
+# 下半年研究主方向与模块拆解（v2.1，2026-10-14）
 
 > 立场假设：在一个最前沿的 lab 里，为 2026-11 到 2027-04 选题，目标是影响最大。
-> 本版取代同日早些时候的 v1。v1 以“办公与专业软件练习场 + 环境安全”为主线（[v1 原文](https://github.com/demoleiwang/agent-frontier/blob/c31b2b5/reviews/2026-10-14_research-proposal.md)）。改动原因见 §6 的方向修正记录。
+> 本版取代同日早些时候的 v1；v2.1 只改了命名：从“Muse 级个人 agent”改为“常驻 agent”，Muse 只是其中的代表。v1 以“办公与专业软件练习场 + 环境安全”为主线（[v1 原文](https://github.com/demoleiwang/agent-frontier/blob/c31b2b5/reviews/2026-10-14_research-proposal.md)）。改动原因见 §6 的方向修正记录。
 > 证据底稿：[个人 agent 技术深挖](2026-10-14_personal-agent.md)、[办公与专业环境全景](2026-10-14_office-pro-env.md)、[前沿 lab 追踪](2026-10-14_frontier-labs.md)。
 > 证据规则：事实就地附原始出处；本文自己的判断标“推论”并附依据。所有数字都是厂商或作者自报。
 
@@ -9,7 +9,7 @@
 
 ## 0. 一句话主方向
 
-**主方向**：为 Muse 这一级的个人 agent 打造“练习场 + 训练方法”：在一个模拟出来的、属于某个人的数字生活里，让 agent 连续几周自己安排时间、记住该记的事、在对的时候出手、用最合适的方式动手（调接口、写代码或点屏幕），把事办成（推论，依据见下方三条与 §1，核心证据为 [VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492) 与 [Grok Bot](https://x.ai/news/designing-grok-bot)）。
+**主方向**：为常驻 agent（自带电脑、一直在线、不用提示也会干活的 agent，个人与团队都算）打造“练习场 + 训练方法”：在一个模拟出来的、属于某个人或某个团队的数字生活里，让 agent 连续几周自己安排时间、记住该记的事、在对的时候出手、用最合适的方式动手（调接口、写代码或点屏幕），把事办成（推论，依据见下方三条与 §1，核心证据为 [VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492) 与 [Grok Bot](https://x.ai/news/designing-grok-bot)）。
 
 这句话的依据（推论，各条出处见 §1）：
 - 产品已经冲出去了，但能力不够（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[VibeLifeBench](https://vibebench.github.io/VibeLifeBench_homepage/)，二手）；
@@ -35,6 +35,17 @@
    - 要大量算力并行跑几周长的模拟：Kimi 开发期创建了约 5,100 万个沙箱（[K3](https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf)）。
    - 要能拿到经过同意的真实使用数据：现有学术数据只有 8 人、83 人、1 人（[MobileMem-Omni](https://github.com/zjunlp/MobileMem/blob/fa5cd13c9c659699df9caf650987ba2bea8ca085/omni/README.md)、[Fingertip20k](https://github.com/fyzhang1/ExpActivator/blob/3ef8ce5d923de56e56dc17eada833306dd92ea63/samples/user_profile.csv)、[Activity Frames](https://github.com/nossa-y/activity-frames/blob/a2ce997ef45e9c865d632b8ac601080a758d29d8/research/RESULTS.md)）。
    - 要能和软件公司合作拿到真实应用：OpenAI 已和 Ironclad 这样做（[Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad)）。
+
+## 1.5 为什么是常驻 agent，而不是其他类型的 agent
+
+“Muse 级”只是代称。Muse 是这一类里用户最多、公开细节最多的代表，但 dots、Grok Bot、Autopilot、Spark 都属同一类，团队版的 Team Bots 和 Autopilot 也在内（[Team Bots](https://x.ai/news/team-bots)、[Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)）。下面逐类对比：
+
+- **编程 agent：最成熟、最拥挤**：分数已经很高：Opus 5.5 在 Terminal-Bench 4.0 上 66.4%（[Anthropic](https://www.anthropic.com/claude-opus-5-5)），Gemini 4 Argon 在 DeepSWE 上自报 77.9%（[Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)，摘录）。练习环境也最成熟：代码仓库加测试天然可判分，小米已开源整套编程 RL 环境（[MiMo-V2.6](https://arxiv.org/abs/2610.11959)）。结论（推论）：价值最大但各家都在做，新进入者难拉开差距。
+- **深度研究 / 搜索 agent：接近饱和**：BrowseComp 换个框架就能到 92.2（[HarnessDev](https://arxiv.org/abs/2609.01437)）。结论（推论）：剩下的主要是框架工程，研究空间在收窄。
+- **通用电脑操作：测试已饱和**：OSWorld-Verified 到 86.2（[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)），Opus 5.5 在 OSWorld 2.1 上 81.8%（[Anthropic](https://www.anthropic.com/claude-opus-5-5)）。真正没定论的是“写代码还是点屏幕”（[OpenAI commit](https://github.com/openai/openai-cua-sample-app/commit/a0f5a7641df9fbe76968ca41245a5eceee6061ce)），这一点放进 M6。
+- **办公与专业 agent：分数低，但卡在拿不到环境**：DAYJOB 最强 24.7%（[DAYJOB](https://arxiv.org/abs/2610.01306)），CADWorld 17.5%（[CADWorld](https://arxiv.org/abs/2609.16251)）。瓶颈是商业软件授权和厂商合作（[OSWorld-Science](https://github.com/DiscoAILab/OSWorld-Science/blob/main/configs/snapshots.yaml)、[Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad)）。结论（推论）：值得做，作为 M9 并入同一个练习场。
+- **常驻 agent：产品最热、分数最低、环境最缺**：五家一个月内上线（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)）；多周任务最强 32.5 分（[VibeLifeBench](https://vibebench.github.io/VibeLifeBench_homepage/)，二手）；核心能力“自己决定何时开工”没有任何开源环境能测（[VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492)）。
+- **而且常驻 agent 是装其他 agent 的“容器”**：Muse Wonder 同时面向个人、专业和编程任务（[Muse Wonder](https://research.meta.ai/blog/muse-wonder)），Grok Bot 跑在 Cursor 的基础设施上（[Grok Bot Enterprise](https://x.ai/news/grok-bot-for-enterprise)），Autopilot 横跨 Teams、Outlook 和文档（[Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)）。结论（推论）：常驻 agent 把编程、研究、操作电脑、办公串成一个长期运行的整体，做它的练习场等于同时覆盖了其他几类。
 
 ---
 
@@ -204,3 +215,4 @@ M0 贯穿全程。以上排期是本文的建议（推论），各阶段的依�
 |---|---|---|---|
 | v1 | 2026-10-14（早） | 办公与专业软件练习场，加环境审计与安全（[v1](https://github.com/demoleiwang/agent-frontier/blob/c31b2b5/reviews/2026-10-14_research-proposal.md)） | 起点：用户关注办公与专业场景的环境构建（[office-pro-env](2026-10-14_office-pro-env.md)，依据 [EngiWorld](https://github.com/Hongcheng-Gao/EngiWorld/blob/main/README.md)） |
 | v2 | 2026-10-14 | Muse 级个人 agent 的练习场与训练方法；办公与专业作为 M9 并入 | 用户指出 v1 漏了 Muse 这一波，并且对安全不感兴趣；补充调研确认五家产品同时押注、能力差距大、核心能力无人能练（[个人 agent 深挖](2026-10-14_personal-agent.md)，依据 [VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492)） |
+| v2.1 | 2026-10-14 | 命名改为“常驻 agent”（个人与团队），内容不变 | 用户问为什么一定是 Muse；Muse 只是同类产品中的代表，见 §1.5（依据 [Team Bots](https://x.ai/news/team-bots)） |

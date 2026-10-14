@@ -25,6 +25,7 @@ jobs:
       - run: python scripts/classify.py
         env: {LLM_API_KEY: "${{ secrets.LLM_API_KEY }}"}   # Phase 3 才会用到
       - run: python scripts/render.py
+      - run: python scripts/build_site.py   # site/data.json + index.html for the dashboard
       - name: evidence check (report only)
         run: python scripts/check_evidence.py README.md
         continue-on-error: true

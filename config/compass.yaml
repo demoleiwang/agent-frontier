@@ -13,11 +13,31 @@
 
 updated: 2026-10-14
 
-scope: "个人前沿追踪。当前主线：Muse 级个人 agent 的练习场与训练方法（模拟一个人的数字生活、自主安排时间、记忆、主动性、写代码操作电脑），办公与专业场景作为任务包并入。"
+dashboard:
+  artifact: "https://claude.ai/artifact/UdHBb3GVdCbFYYYHbCoEJJ"
+  static: "https://htmlpreview.github.io/?https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/site/index.html"
+  compact: true
+
+scope: "个人前沿追踪。当前主线：常驻 agent（Muse、dots、Grok Bot、Autopilot、Spark 这一类，个人和团队都算）的练习场与训练方法（模拟一个人的数字生活、自主安排时间、记忆、主动性、写代码操作电脑），办公与专业场景作为任务包并入。"
 
 thesis: "个人 agent 是这一季最大的产品浪潮：Grok Bot、Muse、Autopilot、dots 在 9 月 3 日到 29 日间先后上线（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[dots](https://openai.com/index/introducing-dots)），Muse 11 天约 56 万日活（[CNBC](https://www.cnbc.com/2026/09/27/meta-muse-ai-personal-agent.html)，二手）。但能力远跟不上：替人打理几周生活最强只有 32.5 分且越往后越差（[VibeLifeBench](https://vibebench.github.io/VibeLifeBench_homepage/)，二手），记忆靠检索最高只用上 14.4%（[InMind](https://arxiv.org/abs/2607.24368)）。产品的核心卖点“不用提示就开工”在开源环境里根本测不到（[VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492)）。同时电脑操作正在分叉：OpenAI 全面改成写代码（[commit a0f5a76](https://github.com/openai/openai-cua-sample-app/commit/a0f5a7641df9fbe76968ca41245a5eceee6061ce)），Anthropic 反其道而行（[tool reference](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference)），还没有受控对比。"
 
-main_direction: "**为 Muse 这一级的个人 agent 打造“练习场 + 训练方法”**：在模拟出来的、属于某个人的数字生活里，让 agent 连续几周自己安排时间、记住该记的事、在对的时候出手、用最合适的方式动手（调接口、写代码或点屏幕），把事办成。理由、模块细节、阶段顺序见 [research-proposal v2](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_research-proposal.md)；技术底稿见 [个人 agent 深挖](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_personal-agent.md)。"
+main_direction: "**为常驻 agent 打造“练习场 + 训练方法”**：常驻 agent 指自带电脑、一直在线、不用提示也会干活的 agent，Muse、dots、Grok Bot、Autopilot、Spark 都属于这一类，Muse 只是用户量最大、公开细节最多的代表（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[dots](https://openai.com/index/introducing-dots)、[Grok Bot](https://x.ai/news/designing-grok-bot)）。在模拟出来的、属于某个人或某个团队的数字生活里，让 agent 连续几周自己安排时间、记住该记的事、在对的时候出手、用最合适的方式动手（调接口、写代码或点屏幕），把事办成。理由、模块细节、阶段顺序见 [research-proposal v2](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_research-proposal.md)；技术底稿见 [个人 agent 深挖](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_personal-agent.md)。"
+
+why_this:
+  - {head: "编程 agent：最成熟、最拥挤", body: "分数已经很高：Opus 5.5 在 Terminal-Bench 4.0 上 66.4%（[Anthropic](https://www.anthropic.com/claude-opus-5-5)），Gemini 4 Argon 在 DeepSWE 上自报 77.9%（[Google](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)，摘录）。练习环境也最成熟：代码仓库加测试天然可判分，小米已开源整套编程 RL 环境（[MiMo-V2.6](https://arxiv.org/abs/2610.11959)）。结论（推论）：价值最大但各家都在做，新进入者难拉开差距。"}
+  - {head: "深度研究 / 搜索 agent：接近饱和", body: "BrowseComp 换个框架就能到 92.2（[HarnessDev](https://arxiv.org/abs/2609.01437)）。结论（推论）：剩下的主要是框架工程，研究空间在收窄。"}
+  - {head: "通用电脑操作：测试已饱和", body: "OSWorld-Verified 到 86.2（[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)），Opus 5.5 在 OSWorld 2.1 上 81.8%（[Anthropic](https://www.anthropic.com/claude-opus-5-5)）。真正没定论的是“写代码还是点屏幕”（[OpenAI commit](https://github.com/openai/openai-cua-sample-app/commit/a0f5a7641df9fbe76968ca41245a5eceee6061ce)），这一点放进 M6。"}
+  - {head: "办公与专业 agent：分数低，但卡在拿不到环境", body: "DAYJOB 最强 24.7%（[DAYJOB](https://arxiv.org/abs/2610.01306)），CADWorld 17.5%（[CADWorld](https://arxiv.org/abs/2609.16251)）。瓶颈是商业软件授权和厂商合作（[OSWorld-Science](https://github.com/DiscoAILab/OSWorld-Science/blob/main/configs/snapshots.yaml)、[Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad)）。结论（推论）：值得做，作为 M9 并入同一个练习场。"}
+  - {head: "常驻 agent：产品最热、分数最低、环境最缺", body: "五家一个月内上线（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)）；多周任务最强 32.5 分（[VibeLifeBench](https://vibebench.github.io/VibeLifeBench_homepage/)，二手）；核心能力“自己决定何时开工”没有任何开源环境能测（[VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492)）。"}
+  - {head: "而且常驻 agent 是装其他 agent 的“容器”", body: "Muse Wonder 同时面向个人、专业和编程任务（[Muse Wonder](https://research.meta.ai/blog/muse-wonder)），Grok Bot 跑在 Cursor 的基础设施上（[Grok Bot Enterprise](https://x.ai/news/grok-bot-for-enterprise)），Autopilot 横跨 Teams、Outlook 和文档（[Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)）。结论（推论）：常驻 agent 把编程、研究、操作电脑、办公串成一个长期运行的整体，做它的练习场等于同时覆盖了其他几类。"}
+
+phases:
+  - {name: "跑通最小闭环", weeks: "1–4", modules: [M1, M2, M3, M5], goal: "一个前沿模型在里面跑完一个 7 天任务，判分正确"}
+  - {name: "补齐练习场", weeks: "5–10", modules: [M1, M2, M4, M6], goal: "v0：100 个数字人 × 50 个任务"}
+  - {name: "摸清差距", weeks: "9–12", modules: [M7], goal: "排行榜与失败分析"}
+  - {name: "开始训练", weeks: "12–20", modules: [M8], goal: "练习场和外部基准同时提升的模型"}
+  - {name: "扩展与发布", weeks: "20–26", modules: [M9], goal: "技术报告与开源一部分练习场"}
 
 modules_intro: "大目标拆成 10 个模块，按阶段一个个完成：第 1–4 周跑通最小闭环（M1、M2、M3、M5），第 5–10 周补齐练习场（M4、M6），第 9–12 周基线评测（M7），第 12–20 周训练（M8），第 20–26 周扩展与发布（M9）。依据见 [proposal §2–§3](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_research-proposal.md)。"
 
@@ -44,6 +64,7 @@ direction_log:
   - {version: v1, date: "2026-10-14（早）", direction: "办公与专业软件练习场 + 环境审计与安全（[v1](https://github.com/demoleiwang/agent-frontier/blob/c31b2b5/reviews/2026-10-14_research-proposal.md)）", why: "起点：关注办公与专业场景的环境构建（[office-pro-env](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_office-pro-env.md)）"}
   - {version: v2, date: "2026-10-14", direction: "Muse 级个人 agent 的练习场与训练方法；办公与专业并入 M9（[v2](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_research-proposal.md)）", why: "v1 漏了 Muse 这一波且安全不是重点；补充调研确认五家同时押注、能力差距大、核心能力无人能练（[个人 agent 深挖](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_personal-agent.md)）"}
 
+  - {version: v2.1, date: "2026-10-14", direction: "命名修正：从“Muse 级个人 agent”改为“常驻 agent”（个人与团队），内容不变（[v2.1](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_research-proposal.md)）", why: "用户问为什么一定是 Muse；Muse 只是这一类里用户最多、公开细节最多的代表，dots、Grok Bot、Autopilot、Spark 同属一类，且团队版（Team Bots、Autopilot）也在内（[Team Bots](https://x.ai/news/team-bots)）"}
 directions:
   - name: agent 自主安排时间（自设闹钟、无提示开工）
     status: 空白

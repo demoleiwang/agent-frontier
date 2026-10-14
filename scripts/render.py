@@ -203,52 +203,8 @@ def review_title(path) -> str:
     return path.stem
 
 
-def render_readme(items, topic_names, days):
-    """README = hand-curated research compass (config/compass.yaml) + auto signals that keep it current."""
-    try:
-        compass = load_yaml("compass.yaml") or {}
-    except FileNotFoundError:
-        compass = {}
-    by_id = {i["id"]: i for i in items}
-    cutoff = (today() - dt.timedelta(days=days)).isoformat()
-    week = (today() - dt.timedelta(days=7)).isoformat()
-    counts = {s: sum(1 for i in items if i.get("status") == s) for s in STATUSES}
-
-    md = "# agent-frontier\n\n"
-    md += compass.get("scope", "个人前沿追踪：browser / computer-use agent、agentic RL、agent 评测与安全。") + "\n\n"
-    if compass.get("thesis"):
-        md += f"> **当前判断**：{compass['thesis']}\n\n"
-    md += (f"_罗盘更新于 {compass.get('updated', '—')}（人工）· 数据渲染于 {today().isoformat()}（自动）· "
-           f"跟踪 {len(items)} 条 · 👀 {counts['skimmed']} 已浏览 · ✅ {counts['read']} 已读 · 📝 {counts['noted']} 有笔记_\n\n")
-    md += ("[🎯 主方向](#-主方向) · " if compass.get("main_direction") else "") + ("[🎯 下半年提案](#-下半年提案) · " if compass.get("proposals") else "") + "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
-
-    # 0. main direction, its modules, and when to revise it (curated)
-    if compass.get("main_direction"):
-        md += f"## 🎯 主方向\n\n{compass['main_direction']}\n\n"
-        mods = compass.get("modules") or []
-        if mods:
-            md += (compass.get("modules_intro", "") + "\n\n" if compass.get("modules_intro") else "")
-            md += "| 模块 | 做什么 | 状态 | 下一步 |\n|---|---|---|---|\n"
-            for m in mods:
-                name = f"**{link(m['id'] + ' ' + m['name'], m['url'])}**" if m.get("url") else f"**{m['id']} {m['name']}**"
-                md += f"| {name} | {m.get('what', '')} | {m.get('status', '')} | {m.get('next', '')} |\n"
-            md += "\n"
-        watch = compass.get("watch") or []
-        if watch:
-            md += "**什么情况下修正主方向**\n\n| 信号 | 怎么改 |\n|---|---|\n"
-            md += "".join(f"| {w['signal']} | {w['action']} |\n" for w in watch) + "\n"
-        log = compass.get("direction_log") or []
-        if log:
-            md += "**方向修正记录**\n\n| 版本 | 日期 | 主方向 | 为什么改 |\n|---|---|---|---|\n"
-            md += "".join(f"| {d['version']} | {d['date']} | {d['direction']} | {d['why']} |\n" for d in log) + "\n"
-    props = compass.get("proposals") or []
-    if props:
-        md += "## 🎯 下半年提案\n\n" + (compass.get("proposals_intro", "") + "\n\n" if compass.get("proposals_intro") else "")
-        md += "| 优先级 | 提案 | 一句话（附依据） | 投入 |\n|---|---|---|---|\n"
-        for p in props:
-            md += f"| {p.get('priority', '')} | **{link(p['name'], p['url']) if p.get('url') else p['name']}** | {p.get('pitch', '')} | {p.get('share', '')} |\n"
-        md += "\n"
-
+def _readme_feeds(compass, items, by_id, cutoff, week, days, topic_names) -> str:
+    md = ""
     # 1. directions: curated judgement + auto activity count
     dirs = compass.get("directions") or []
     if dirs:
@@ -303,7 +259,66 @@ def render_readme(items, topic_names, days):
         cur, cs, prev, ps, arrow = topic_heat(items, t, days)
         page = ROOT / "topics" / f"{t}.md"
         md += f"| `{t}` | {cur}（{cs:.1%}） | {prev}（{ps:.1%}） | {arrow} | {f'[topics/{t}.md](topics/{t}.md)' if page.exists() else '—'} |\n"
+    return md
 
+
+def render_readme(items, topic_names, days):
+    """README = hand-curated research compass (config/compass.yaml) + auto signals that keep it current."""
+    try:
+        compass = load_yaml("compass.yaml") or {}
+    except FileNotFoundError:
+        compass = {}
+    by_id = {i["id"]: i for i in items}
+    cutoff = (today() - dt.timedelta(days=days)).isoformat()
+    week = (today() - dt.timedelta(days=7)).isoformat()
+    counts = {s: sum(1 for i in items if i.get("status") == s) for s in STATUSES}
+
+    md = "# agent-frontier\n\n"
+    md += compass.get("scope", "个人前沿追踪：browser / computer-use agent、agentic RL、agent 评测与安全。") + "\n\n"
+    if compass.get("thesis"):
+        md += f"> **当前判断**：{compass['thesis']}\n\n"
+    md += (f"_罗盘更新于 {compass.get('updated', '—')}（人工）· 数据渲染于 {today().isoformat()}（自动）· "
+           f"跟踪 {len(items)} 条 · 👀 {counts['skimmed']} 已浏览 · ✅ {counts['read']} 已读 · 📝 {counts['noted']} 有笔记_\n\n")
+    dash = compass.get("dashboard") or {}
+    compact = bool(dash.get("compact"))
+    if dash:
+        md += (f"**📊 交互网页（推荐）**：{link('打开罗盘', dash['artifact'])}（claude.ai，可从 GitHub 拉取每日最新数据）"
+               + (f" · {link('静态版', dash['static'])}" if dash.get("static") else "")
+               + "。方向雷达、本周新工作、主题热度、关键信号都在网页里，README 只保留主方向与模块。\n\n")
+    if compact:
+        md += ("[🎯 主方向](#-主方向) · " if compass.get("main_direction") else "") + "[🗂 报告与入口](#-报告与入口)\n\n"
+    else:
+        md += ("[🎯 主方向](#-主方向) · " if compass.get("main_direction") else "") + ("[🎯 下半年提案](#-下半年提案) · " if compass.get("proposals") else "") + "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
+
+    # 0. main direction, its modules, and when to revise it (curated)
+    if compass.get("main_direction"):
+        md += f"## 🎯 主方向\n\n{compass['main_direction']}\n\n"
+        mods = compass.get("modules") or []
+        if mods:
+            md += (compass.get("modules_intro", "") + "\n\n" if compass.get("modules_intro") else "")
+            md += "| 模块 | 做什么 | 状态 | 下一步 |\n|---|---|---|---|\n"
+            for m in mods:
+                name = f"**{link(m['id'] + ' ' + m['name'], m['url'])}**" if m.get("url") else f"**{m['id']} {m['name']}**"
+                md += f"| {name} | {m.get('what', '')} | {m.get('status', '')} | {m.get('next', '')} |\n"
+            md += "\n"
+        watch = compass.get("watch") or []
+        if watch:
+            md += "**什么情况下修正主方向**\n\n| 信号 | 怎么改 |\n|---|---|\n"
+            md += "".join(f"| {w['signal']} | {w['action']} |\n" for w in watch) + "\n"
+        log = compass.get("direction_log") or []
+        if log:
+            md += "**方向修正记录**\n\n| 版本 | 日期 | 主方向 | 为什么改 |\n|---|---|---|---|\n"
+            md += "".join(f"| {d['version']} | {d['date']} | {d['direction']} | {d['why']} |\n" for d in log) + "\n"
+    props = compass.get("proposals") or []
+    if props:
+        md += "## 🎯 下半年提案\n\n" + (compass.get("proposals_intro", "") + "\n\n" if compass.get("proposals_intro") else "")
+        md += "| 优先级 | 提案 | 一句话（附依据） | 投入 |\n|---|---|---|---|\n"
+        for p in props:
+            md += f"| {p.get('priority', '')} | **{link(p['name'], p['url']) if p.get('url') else p['name']}** | {p.get('pitch', '')} | {p.get('share', '')} |\n"
+        md += "\n"
+
+    if not compact:  # the dashboard shows these; README keeps them only in full mode
+        md += _readme_feeds(compass, items, by_id, cutoff, week, days, topic_names)
     # 6. reports & entry points
     md += "\n## 🗂 报告与入口\n\n**深度报告（人工）**\n\n"
     for r in sorted((ROOT / "reviews").glob("*.md"), reverse=True)[:6]:

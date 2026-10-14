@@ -73,6 +73,12 @@ raw item 字段：`id, source, title, url, date, authors, source_tags, tags, exc
 - [ ] Benchmark leaderboard 定期快照（OSWorld-Verified / 2.0、Terminal-Bench 4、DeepSWE、BrowseComp）→ topic 页 SOTA 表
 - [ ] daily digest 推送到 Slack / 邮件
 
+## 罗盘网页
+
+- `scripts/build_site.py` 生成 `site/data.json`、`site/index.html`（静态版）和 `site/artifact.html`（发布到 claude.ai 的版本），每天随 daily workflow 自动重建。
+- claude.ai 网页会通过查看者的 GitHub 连接器读取 `site/data.json`，所以数据每天自动更新，网页本身不用重发；只有改了 `site/template.html` 才需要重新发布。
+- 想用 GitHub Pages：仓库 Settings → Pages → Source 选 “GitHub Actions”，`pages.yml` 会在 main 分支的 `site/` 变化时部署。
+
 ## 每周例行（约 20 分钟）
 
 README 分两层：顶部的**研究罗盘**（研究方向雷达、置顶必读、关键信号）来自人工维护的 `config/compass.yaml`；下面的“本周待分拣”、topic 热度、各方向近 14 天的新工作数则每天自动重算。
