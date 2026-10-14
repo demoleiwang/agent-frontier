@@ -3,13 +3,13 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
-| 2026-09-28 | [Team Bots: shared AI teammates that learn as they work](https://x.ai/news/team-bots) | — | 0.00 | 🆕 new | News |
+| 2026-09-28 | [Team Bots: shared AI teammates that learn as they work](https://x.ai/news/team-bots) | — | 0.00 | 👀 skimmed | News |
 | 2026-09-22 | [How SpaceXSI is using Grok Bot to scale customer support](https://x.ai/news/grok-bot-customer-support) | — | 0.00 | 🆕 new | News |
-| 2026-09-21 | [Introducing Grok 4.7](https://x.ai/news/grok-4-7) | — | 0.00 | 🆕 new | News |
+| 2026-09-21 | [Introducing Grok 4.7](https://x.ai/news/grok-4-7) | — | 0.00 | 👀 skimmed | News |
 | 2026-09-18 | [Introducing Grok Voice Transcribe 2.0](https://x.ai/news/grok-voice-transcribe-2) | — | 0.00 | 🆕 new | News |
-| 2026-09-16 | [Memory in Grok Build](https://x.ai/news/grok-build-memory) | — | 0.00 | 🆕 new | News |
+| 2026-09-16 | [Memory in Grok Build](https://x.ai/news/grok-build-memory) | — | 0.00 | 👀 skimmed | News |
 | 2026-09-04 | [Setting Grok Bot loose on procurement](https://x.ai/news/grok-bot-procurement) | — | 0.00 | 🆕 new | News |
-| 2026-09-03 | [Designing Grok Bot for a world of persistent agents](https://x.ai/news/designing-grok-bot) | `agent-infra` | 0.50 | 🆕 new | News |
+| 2026-09-03 | [Designing Grok Bot for a world of persistent agents](https://x.ai/news/designing-grok-bot) | `agent-infra` | 0.50 | 👀 skimmed | News |
 | 2026-09-03 | [Grok Bot for Enterprise](https://x.ai/news/grok-bot-for-enterprise) | — | 0.00 | 🆕 new | News |
 | 2026-09-01 | [Biosecurity at the frontier](https://x.ai/news/biosafety-at-the-frontier) | — | 0.00 | 🆕 new | News |
 | 2026-08-29 | [Grok Bot now works with X](https://x.ai/news/grok-bot-and-x) | — | 0.00 | 🆕 new | News |

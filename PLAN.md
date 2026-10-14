@@ -53,11 +53,13 @@ raw item 字段：`id, source, title, url, date, authors, source_tags, tags, exc
 
 ### Phase 4 · 更多来源 + 推送
 
-- [x] Lab blogs · Anthropic news / research / engineering（`scrape` fetcher：listing + sitemap 发现，文章页取真实发布日期）
-- [x] 一次性人工汇总 2026-08-14 → 10-14 各大 lab，见 [reviews/2026-10-14_frontier-labs.md](reviews/2026-10-14_frontier-labs.md)
-- [ ] OpenAI / DeepMind / Google Research RSS（已在 sources.yaml 中占位，`enabled: false`；需在可直连的环境如 GitHub Actions 中验证后打开）
-- [ ] Meta、xAI、Mistral、Thinking Machines、Qwen、DeepSeek 等无 RSS 站点的 scrape 配置
-- [ ] Benchmark leaderboard 定期快照（OSWorld、WebArena、BrowseComp、AndroidWorld）→ topic 页 SOTA 表
+- [x] Anthropic news / research / engineering：`scrape` fetcher（listing + sitemap 发现，文章页取真实发布日期，`data/scrape_dates.json` 缓存日期）
+- [x] OpenAI（news / research / engineering / developer）、Google Developers AI、Mistral、xAI、Meta AI、UK AISI：经 GitHub 上的 RSS 镜像（Olshansk/rss-feeds）接入。`id_prefix` 合并同一 lab 的多个 feed，`exclude_categories` 去掉客户案例，跨源按 URL 去重
+- [x] `digests/labs.md`：各 lab 最近 60 天全部条目（不经 topic 过滤）
+- [x] 2026-08-14 → 10-14 前沿 lab 深读汇总：[reviews/2026-10-14_frontier-labs.md](reviews/2026-10-14_frontier-labs.md)，逐篇附录在 [reviews/2026-10-14_frontier-labs/](reviews/2026-10-14_frontier-labs/)
+- [ ] DeepMind blog、blog.google、Google Research、Thinking Machines 的官方 RSS（已占位，`enabled: false`；需在可直连的环境验证后打开）
+- [ ] Meta（research.meta.ai，镜像 07-27 后停更）、Qwen、DeepSeek、Kimi 等无 RSS 站点：scrape 配置，或监控官方 GitHub 仓库的提交（`git clone` 在本环境可用）
+- [ ] Benchmark leaderboard 定期快照（OSWorld-Verified / 2.0、Terminal-Bench 4、DeepSWE、BrowseComp）→ topic 页 SOTA 表
 - [ ] daily digest 推送到 Slack / 邮件
 
 ## 每周例行（~20 分钟）
@@ -77,5 +79,6 @@ python scripts/render.py
 
 ## 已知限制
 
-- 本 repo 的云端开发环境网络策略只放行少数站点（anthropic.com、GitHub raw 可达；huggingface.co、openai.com、google、meta 等被拦）。HF blog 走 GitHub 镜像；其他 lab 暂用限定官方域名的搜索做人工汇总。GitHub Actions runner 无此限制。
+- 本 repo 的云端开发环境网络策略只放行 anthropic.com 和 GitHub（raw 文件、`git clone`）；huggingface.co、openai.com、Google、Meta 等被拦。因此 HF blog 走 `huggingface/blog` 仓库，其他 lab 走 GitHub 上的 RSS 镜像，正文深读靠 lab 的官方 GitHub 仓库加官方域名搜索。GitHub Actions runner 无此限制，可换回官方 RSS。
+- RSS 镜像的日期偶有错误，例如 OpenAI 的 *Why we built the Responses API* 被标成 2026-09-22，实为 2025 年旧文。
 - HF 社区博客（`huggingface.co/blog/<user>/<slug>`）不在 `huggingface/blog` 仓库里，暂未覆盖。

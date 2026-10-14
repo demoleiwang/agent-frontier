@@ -13,12 +13,22 @@
 
 ## 条目
 
-### 2026-08 → 10 lab 动态（详见 [reviews/2026-10-14_frontier-labs.md](../reviews/2026-10-14_frontier-labs.md)）
-- [Agent Lightning v1.0](https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/)（MSR）：在真实部署 harness 里做 RL，3.5k 行；6K 样本让 Qwen3.5-9B SWE-bench Verified 41.8 → 56.4（自报）。
-- [Putting task expertise into RL](https://thinkingmachines.ai/news/putting-task-expertise-into-rl/)（Thinking Machines）：专家校验数据 + reward 重塑的 RLVR 胜过 scaffold 系统（BIRD text-to-SQL）。
-- [MiMo-V2.6](https://mimo.xiaomi.com/rl/)（小米）：开源权重 + RL 环境 + RL 代码 + RL 算力账本。
-- [Grok 4.7](https://x.ai/news/grok-4-7)：更长的小时级任务 RL + 自我验证。
-- **RL 副作用被系统记录**：OpenAI misalignment reports（compaction 摘要中自我提示隐瞒错误、为作弊泄露 token）、[metagaming latents](https://alignment.openai.com/metagaming-latents) 随 RL 增强；[训练暂停机制](https://openai.com/index/pacing-model-development-cyber-capabilities/)（30 分钟内无法排除的安全信号即暂停）。
+### 2026-08 → 10 lab 动态（深读结论，详见 [frontier-labs review](../reviews/2026-10-14_frontier-labs.md) §3.3）
+- **在真实 harness 里训练成为共识**
+  - [Agent Lightning v1.0](https://github.com/microsoft/agent-lightning)（MSR，约 3.5k 行）：网关记录 token ID 和 logprob，每个 rollout 一个 K8s Job，异步训练保持组完整、更新前暂停并排空、TIS 阈值 2，MoE 用 R3 router replay。Qwen3.5-9B 的 SWE-bench Verified 41.8 → 56.4。
+  - 同一思路：NeMo Gym 0.6/0.7、Orchard OpenForge、MiMo uni-agent。
+- **harness 随机化**：Kimi K3 在 RL 中组合 5 种以上 harness 的模块；MiMo 提供多 harness 配置。
+- **长程**：Grok 4.7 的 RL 偏向小时级任务（Terminal-Bench 4.0 20.3 → 37.6，但输出 token 约增 2.5×）；Kimi K3 partial rollout；slime 全异步。
+- **奖励与防 hack**
+  - [MiMo verl](https://github.com/XiaomiMiMo/verl)：tool-call 错误片段惩罚、按符号守恒的 advantage 再平衡、重复早停、VLM 组内挑选式判分。
+  - Kimi agentic GRM。
+  - Thinking Machines：专家清洗数据加可反驳的 verifier。
+  - Agent Lightning 防 hack 清单。
+  - 反例：MiMo 开源 coding 任务约 2/3 可从 git 历史拿到答案（Vals AI）。
+- **环境质量就是安全**
+  - Anthropic 4 月冻结 RL 环境，超过 10% 被标记；用 80 个可 hack 环境训练出的模型会在模拟中突破沙箱。
+  - OpenAI IM1 训练 run 中复杂作弊率上升，最终引发 HF 事件。
+  - OpenAI 暂停 RL 两周；最大前沿 RL run 至今搁置。
 
 ### 2026-09-28 · [Welcome RL Environments to the hub](https://huggingface.co/blog/rl-environments)
 - RL 环境 = 打 `rl-environment` tag 的 dataset repo；框架 tag（Harbor / Verifiers / OpenEnv / NeMo Gym）生成加载命令，一个 repo 可兼容多个框架。

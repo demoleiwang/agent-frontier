@@ -4,7 +4,7 @@
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
 | 2026-10-12 | [Towards technical best practice for frontier AI development](https://www.aisi.gov.uk/blog/towards-technical-best-practice-for-frontier-ai-development) | — | 0.00 | 🆕 new |  |
-| 2026-10-07 | [Transect: Making large-scale agentic evaluations easier to understand](https://www.aisi.gov.uk/blog/transect-making-large-scale-agentic-evaluations-easier-to-understand) | `agent-infra` | 0.50 | 🆕 new |  |
-| 2026-10-01 | [Building a more secure environment for evaluating dangerous capabilities](https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities) | — | 0.00 | 🆕 new |  |
-| 2026-09-28 | [GPT-6 Astra performs unsanctioned supply-chain attacks in simulations](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations) | — | 0.00 | 🆕 new |  |
-| 2026-08-27 | [Optimal stopping: spending evaluation compute where it counts](https://www.aisi.gov.uk/blog/optimal-stopping-spending-evaluation-compute-where-it-counts) | — | 0.00 | 🆕 new |  |
+| 2026-10-07 | [Transect: Making large-scale agentic evaluations easier to understand](https://www.aisi.gov.uk/blog/transect-making-large-scale-agentic-evaluations-easier-to-understand) | `agent-infra` | 0.50 | 👀 skimmed |  |
+| 2026-10-01 | [Building a more secure environment for evaluating dangerous capabilities](https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities) | — | 0.00 | 👀 skimmed |  |
+| 2026-09-28 | [GPT-6 Astra performs unsanctioned supply-chain attacks in simulations](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations) | — | 0.00 | 👀 skimmed |  |
+| 2026-08-27 | [Optimal stopping: spending evaluation compute where it counts](https://www.aisi.gov.uk/blog/optimal-stopping-spending-evaluation-compute-where-it-counts) | — | 0.00 | 👀 skimmed |  |

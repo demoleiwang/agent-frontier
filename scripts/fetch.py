@@ -260,6 +260,11 @@ def run_source(src: dict, since: dt.date, known: set[str]) -> list[dict]:
         return FETCHERS[fb["type"]]({**src, **fb}, since, known)
 
 
+def norm_url(u: str) -> str:
+    u = re.sub(r"^https?://(www\.)?", "", (u or "").strip().lower())
+    return u.split("#")[0].split("?")[0].rstrip("/")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", help="YYYY-MM-DD, inclusive")
@@ -269,6 +274,7 @@ def main() -> None:
     since = parse_date(args.since) if args.since else today() - dt.timedelta(days=args.days)
 
     items = load_items()
+    by_url = {norm_url(i["url"]): i["id"] for i in items.values()}
     total_new = 0
     for src in load_yaml("sources.yaml"):
         if args.source and src["id"] != args.source:
@@ -283,6 +289,8 @@ def main() -> None:
         except Exception as ex:  # noqa: BLE001
             print(f"- {src['id']}: FAILED {ex}", file=sys.stderr)
             continue
+        # the same post can arrive from two sources (e.g. a mirror feed and a direct scrape): keep the first id
+        rows = [r for r in rows if by_url.setdefault(norm_url(r["url"]), r["id"]) == r["id"]]
         n = sum(merge_item(items, r) for r in rows)
         total_new += n
         print(f"- {src['id']}: {len(rows)} items since {since}, {n} new")

@@ -3,7 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
-| 2026-10-09 | [Asana cuts model costs 76x in browser tests with GPT-6.1 Sol](https://openai.com/index/asana-browser-agent) | `browser-use-agent` | 0.17 | 🆕 new |  |
+| 2026-10-09 | [Asana cuts model costs 76x in browser tests with GPT-6.1 Sol](https://openai.com/index/asana-browser-agent) | `browser-use-agent` | 0.17 | 👀 skimmed |  |
 | 2026-10-09 | [Sophos cuts threat investigation time by 96% with OpenAI Daybreak](https://openai.com/index/sophos) | — | 0.00 | 🆕 new |  |
 | 2026-10-08 | [Disrupting AI-enabled “false front” operations](https://openai.com/index/disrupting-ai-enabled-false-front-operations) | — | 0.00 | 🆕 new | Safety |
 | 2026-10-08 | [LegalOn halves Codex costs while maintaining development speed](https://openai.com/index/legalon-halves-codex-costs) | — | 0.00 | 🆕 new |  |
@@ -11,7 +11,7 @@
 | 2026-10-07 | [GPT-6 and Intelligent UI for everyone](https://openai.com/index/gpt-6-for-everyone) | — | 0.00 | 🆕 new | Product |
 | 2026-10-07 | [Radisson Hotel Group brings hotel discovery into ChatGPT](https://openai.com/index/radisson) | — | 0.00 | 🆕 new |  |
 | 2026-10-07 | [Helping teens learn, plan, and shape the future of AI](https://openai.com/index/teens-learn-and-plan) | — | 0.00 | 🆕 new | Product |
-| 2026-10-06 | [Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad) | `computer-use-agent` `agent-infra` | 0.50 | 🆕 new | Publication |
+| 2026-10-06 | [Advancing computer use with Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad) | `computer-use-agent` `agent-infra` | 0.50 | 👀 skimmed | Publication |
 | 2026-10-06 | [Atlassian and OpenAI expand partnership to turn enterprise knowledge into action](https://openai.com/index/atlassian-partnership) | — | 0.00 | 🆕 new | Company |
 | 2026-10-06 | [How Jump Trading is scaling quant research with ChatGPT](https://openai.com/index/jump-trading) | — | 0.00 | 🆕 new |  |
 | 2026-10-05 | [Our approach to EU text provenance rules](https://openai.com/index/eu-text-provenance) | — | 0.00 | 🆕 new | Safety |
@@ -24,13 +24,13 @@
 | 2026-09-30 | [Disrupting a coordinated model-distillation campaign](https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign) | — | 0.00 | 🆕 new | Security |
 | 2026-09-30 | [Helping small businesses put AI to work](https://openai.com/index/helping-small-businesses-put-ai-to-work) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-09-29 | [DevDay 2026 Recap](https://openai.com/index/devday-2026-recap) | — | 0.00 | 🆕 new | Company |
-| 2026-09-29 | [Introducing dots](https://openai.com/index/introducing-dots) | — | 0.00 | 🆕 new | Product |
-| 2026-09-29 | [Introducing GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol) | `computer-use-agent` | 0.17 | 🆕 new | Product |
+| 2026-09-29 | [Introducing dots](https://openai.com/index/introducing-dots) | — | 0.00 | 👀 skimmed | Product |
+| 2026-09-29 | [Introducing GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol) | `computer-use-agent` | 0.17 | 👀 skimmed | Product |
 | 2026-09-28 | [Basis completes a tax workbook 2x faster with GPT-6 Astra](https://openai.com/index/basis-tax-workbook-with-astra) | — | 0.00 | 🆕 new |  |
 | 2026-09-28 | [Are you a Codex Original?](https://openai.com/form/codex-originals) | — | 0.00 | 🆕 new |  |
 | 2026-09-28 | [How we will do better for Australia](https://openai.com/index/how-we-will-do-better-for-australia) | — | 0.00 | 🆕 new | Company |
 | 2026-09-28 | [The Lenfest Institute grows landmark program with expanded OpenAI support](https://openai.com/index/lenfest-ai-collaborative-expansion) | — | 0.00 | 🆕 new | Company |
-| 2026-09-28 | [Towards safety cases for frontier AI training](https://openai.com/index/towards-safety-cases-for-frontier-ai-training) | `agent-eval-safety` | 0.53 | 🆕 new | Safety |
+| 2026-09-28 | [Towards safety cases for frontier AI training](https://openai.com/index/towards-safety-cases-for-frontier-ai-training) | `agent-eval-safety` | 0.53 | 👀 skimmed | Safety |
 | 2026-09-25 | [Lowe’s answers millions of home improvement questions with OpenAI](https://openai.com/index/lowes) | — | 0.00 | 🆕 new |  |
 | 2026-09-25 | [Proaction boosts sales 60% and saves 75+ hours with Codex](https://openai.com/index/proaction) | — | 0.00 | 🆕 new |  |
 | 2026-09-25 | [Wayfair boosts catalog accuracy and support speed with OpenAI](https://openai.com/index/wayfair) | — | 0.00 | 🆕 new |  |
@@ -61,7 +61,7 @@
 | 2026-09-10 | [Expanding AI access and cyber defense for federal, state, local, and tribal governments](https://openai.com/index/expanding-ai-access-us-government) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-09-10 | [Introducing ChatGPT for Financial Services](https://openai.com/index/introducing-chatgpt-financial-services) | — | 0.00 | 🆕 new | Product |
 | 2026-09-10 | [Build more natural voice experiences with GPT‑Live‑1 in the API](https://openai.com/index/introducing-gpt-live-1-in-the-api) | — | 0.00 | 🆕 new | Product |
-| 2026-09-10 | [Introducing the Agents API](https://openai.com/index/introducing-the-agents-api) | `agent-infra` | 0.50 | 🆕 new | Product |
+| 2026-09-10 | [Introducing the Agents API](https://openai.com/index/introducing-the-agents-api) | `agent-infra` | 0.50 | 👀 skimmed | Product |
 | 2026-09-10 | [Now everyone can put data to work](https://openai.com/index/put-data-to-work) | — | 0.00 | 🆕 new | Product |
 | 2026-09-10 | [How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules](https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials) | — | 0.00 | 🆕 new | Applied AI |
 | 2026-09-09 | [The AI policy window is open. We need to act.](https://openai.com/index/ai-policy-window) | — | 0.00 | 🆕 new | Global Affairs |
@@ -76,12 +76,12 @@
 | 2026-09-07 | [Supporting independent journalism in Ukraine](https://openai.com/index/supporting-independent-journalism-in-ukraine) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-09-06 | [An Alien Mind](https://openai.com/index/an-alien-mind) | — | 0.00 | 🆕 new | Safety |
 | 2026-09-03 | [Daybreak for Frontline Defenders: $1B to protect essential services](https://openai.com/index/daybreak-for-frontline-defenders) | — | 0.00 | 🆕 new | Security |
-| 2026-09-03 | [Safety overview: GPT-6 Astra](https://openai.com/index/safety-overview-gpt-6-astra) | — | 0.00 | 🆕 new | Safety |
+| 2026-09-03 | [Safety overview: GPT-6 Astra](https://openai.com/index/safety-overview-gpt-6-astra) | — | 0.00 | 👀 skimmed | Safety |
 | 2026-09-02 | [ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT](https://openai.com/index/atv-big-air-tour) | — | 0.00 | 🆕 new |  |
 | 2026-09-01 | [How AI-native companies turn workflows into operating capability](https://openai.com/index/ai-native-company-workflows) | `agent-infra` | 0.17 | 🆕 new | AI Adoption |
 | 2026-09-01 | [Healthcare organizations can now connect EHR and additional industry data to ChatGPT](https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources) | — | 0.00 | 🆕 new | Product |
 | 2026-09-01 | [How law firm Gilbert + Tobin governs and scales AI with OpenAI](https://openai.com/index/gilbert-tobin) | — | 0.00 | 🆕 new |  |
-| 2026-09-01 | [Path to Astra: critical capabilities and frontier safeguards](https://openai.com/index/path-to-astra) | — | 0.00 | 🆕 new | Safety |
+| 2026-09-01 | [Path to Astra: critical capabilities and frontier safeguards](https://openai.com/index/path-to-astra) | — | 0.00 | 👀 skimmed | Safety |
 | 2026-08-31 | [A milestone in expanding access to AI](https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads) | — | 0.00 | 🆕 new | Product |
 | 2026-08-31 | [Polimill builds Japan's next-generation public AI infrastructure](https://openai.com/index/polimill) | — | 0.00 | 🆕 new |  |
 | 2026-08-31 | [OpenAI supports California’s bill to advance youth AI safety](https://openai.com/index/supporting-california-bill-advance-ai-youth-safety) | — | 0.00 | 🆕 new | Company |
@@ -90,7 +90,7 @@
 | 2026-08-27 | [Expanding OpenAI’s presence in Brazil](https://openai.com/index/expanding-our-presence-in-brazil) | — | 0.00 | 🆕 new | Company |
 | 2026-08-27 | [Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training](https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training) | — | 0.00 | 🆕 new | Company |
 | 2026-08-26 | [Bringing ChatGPT for Teachers to more U.S. school districts](https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts) | — | 0.00 | 🆕 new | Product |
-| 2026-08-26 | [The Hugging Face incident and the road ahead](https://openai.com/index/hugging-face-incident-and-the-road-ahead) | — | 0.00 | 🆕 new | Security |
+| 2026-08-26 | [The Hugging Face incident and the road ahead](https://openai.com/index/hugging-face-incident-and-the-road-ahead) | — | 0.00 | 👀 skimmed | Security |
 | 2026-08-26 | [Learning never stops: How AI makes learning continuous](https://openai.com/index/learning-never-stops) | — | 0.00 | 🆕 new | Product |
 | 2026-08-26 | [How loveholidays is making everyone a builder with Codex](https://openai.com/index/loveholidays) | — | 0.00 | 🆕 new |  |
 | 2026-08-25 | [Disrupting a new covert influence campaign from Russia](https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia) | — | 0.00 | 🆕 new | Safety |
@@ -104,7 +104,7 @@
 | 2026-08-18 | [ChatGPT Ads expands across Europe](https://openai.com/index/chatgpt-ads-expands-across-europe) | — | 0.00 | 🆕 new | Product |
 | 2026-08-18 | [Introducing ChatGPT for Teens: Built for learning, backed by protections](https://openai.com/index/chatgpt-for-teens) | — | 0.00 | 🆕 new | Product |
 | 2026-08-18 | [How NVIDIA scales expertise with ChatGPT Work](https://openai.com/index/nvidia/chatgpt-work) | — | 0.00 | 🆕 new |  |
-| 2026-08-18 | [Pacing model development in an era of cyber-critical capabilities](https://openai.com/index/pacing-model-development-cyber-capabilities) | — | 0.00 | 🆕 new | Company |
+| 2026-08-18 | [Pacing model development in an era of cyber-critical capabilities](https://openai.com/index/pacing-model-development-cyber-capabilities) | — | 0.00 | 👀 skimmed | Company |
 | 2026-08-18 | [Partnering with CodeAI to prepare the first AI generation](https://openai.com/index/partnering-with-codeai) | — | 0.00 | 🆕 new | Company |
 | 2026-08-18 | [Strengthening democratic oversight in national security](https://openai.com/index/strengthening-democratic-oversight-in-national-security) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-08-17 | [New policy ideas for the Intelligence Age](https://openai.com/index/new-policy-ideas-for-the-intelligence-age) | — | 0.00 | 🆕 new | Global Affairs |

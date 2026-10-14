@@ -4,7 +4,7 @@
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
 | 2026-10-06 | [Sharing AI progress in mathematics](https://openai.com/index/sharing-ai-progress-in-mathematics) | — | 0.00 | 🆕 new | Research |
-| 2026-09-16 | [Our framework for reporting model misalignment](https://openai.com/index/model-misalignment-reporting-framework) | `agent-eval-safety` | 0.40 | 🆕 new | Research |
+| 2026-09-16 | [Our framework for reporting model misalignment](https://openai.com/index/model-misalignment-reporting-framework) | `agent-eval-safety` | 0.40 | 👀 skimmed | Research |
 | 2026-09-08 | [On the Navier–Stokes Millennium Prize Problem](https://openai.com/index/navier-stokes-solution) | — | 0.00 | 🆕 new | Research |
 | 2026-09-06 | [Research acceleration: The view inside OpenAI](https://openai.com/index/research-acceleration-view-inside-openai) | `agent-infra` | 0.25 | 🆕 new | Research |
-| 2026-09-03 | [GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra) | `computer-use-agent` | 0.17 | 🆕 new | Research |
+| 2026-09-03 | [GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra) | `computer-use-agent` | 0.17 | 👀 skimmed | Research |

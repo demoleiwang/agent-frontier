@@ -3,11 +3,11 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
-| 2026-10-06 | [Introducing Mistral Large 4](https://mistral.ai/news/mistral-large-4) | — | 0.00 | 🆕 new | News |
+| 2026-10-06 | [Introducing Mistral Large 4](https://mistral.ai/news/mistral-large-4) | — | 0.00 | 👀 skimmed | News |
 | 2026-09-28 | [Hallo, Deutschland!](https://mistral.ai/news/hallo-deutschland) | — | 0.00 | 🆕 new | News |
 | 2026-09-16 | [Mistral and Mozilla are bringing open, private and multilingual AI to your web browser](https://mistral.ai/news/mistral-x-mozilla) | — | 0.00 | 🆕 new | News |
 | 2026-09-10 | [Cloudera and Mistral Partner to Bring Specialized, Sovereign Intelligence to Enterprise Data](https://mistral.ai/news/mistral-x-cloudera) | — | 0.00 | 🆕 new | News |
-| 2026-09-09 | [Modernizing complex legacy code with AI agents.](https://mistral.ai/news/legacy-code-modernization) | `agent-infra` | 0.50 | 🆕 new | News |
+| 2026-09-09 | [Modernizing complex legacy code with AI agents.](https://mistral.ai/news/legacy-code-modernization) | `agent-infra` | 0.50 | 👀 skimmed | News |
 | 2026-09-08 | [Mistral raises €3B to make sovereign, open-weight AI the technology frontier](https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier) | — | 0.00 | 🆕 new | News |
 | 2026-08-24 | [Mistral x HUMAIN](https://mistral.ai/news/mistral-x-humain) | — | 0.00 | 🆕 new | News |
-| 2026-08-20 | [Agentic Search. More accurate and efficient results from your AI systems.](https://mistral.ai/news/agentic-search) | `gui-agent-search` `agent-infra` | 0.50 | 🆕 new | News |
+| 2026-08-20 | [Agentic Search. More accurate and efficient results from your AI systems.](https://mistral.ai/news/agentic-search) | `gui-agent-search` `agent-infra` | 0.50 | 👀 skimmed | News |

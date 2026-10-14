@@ -15,18 +15,29 @@
 
 | Benchmark | SOTA | 系统 | 日期 | 出处 | setup 备注 |
 |---|---|---|---|---|---|
-| OSWorld-Verified | 86.2 / 87.6 (Max) | Qwen-CUA | 2026-08-03 | arXiv 2608.02352（自报） | 接近饱和 |
-| OSWorld-2.0 | 69.2 | Gemini 4 Argon | 2026-10-13 | [model card 摘要](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/)（自报） | offline subset |
-| Agent's Last Exam | 39.5 | Gemini 4 Argon | 2026-10-13 | 同上（自报） | |
+| OSWorld-Verified | 86.2 / 87.6 (Max) | Qwen-CUA | 2026-08-03 | [报告](https://github.com/xlang-ai/Qwen-CUA)（自报） | 纯像素，100 步；已接近饱和 |
+| OSWorld-Verified | 84.8 | Kimi K3 | 2026-07-27 | [K3 报告](https://github.com/MoonshotAI/Kimi-K3)（自报） | max effort |
+| OSWorld 2.0（offline，partial） | 72.6 | GPT-6 Astra | 2026-09-03 | OpenAI（自报） | 每任务耗时比 GPT-5.6 Sol 少约 47% |
+| OSWorld 2.0（binary / partial） | 18.5 / 48.4 | Qwen-CUA | 2026-08-03 | 报告（自报） | 单步动作，平均 219 轮 |
+| RedTeamCUA ASR ↓ | 16.4（Opus 4.8 为 0.7） | Qwen-CUA | 2026-08-03 | 报告（自报） | prompt injection 抗性差距 |
 | AndroidWorld | | | | | |
 | ScreenSpot-Pro | | | | | |
 
 ## 条目
 
-### 2026-08 → 10 lab 动态（详见 [reviews/2026-10-14_frontier-labs.md](../reviews/2026-10-14_frontier-labs.md)）
-- **CUA 并入旗舰模型**：Google 下线独立的 2.5 Computer Use 模型，3.8 Flash 成为推荐 CUA 模型；GPT-6.1 Sol / Argon 直接报 OSWorld-2.0。
-- **“一 agent 一云电脑”产品化**：OpenAI [dots](https://openai.com/index/introducing-dots/)、Meta [Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)（独立 VM + 浏览器 + Sentinel 出站审批）、xAI [Grok Bot](https://x.ai/news/grok-bot-for-enterprise)、Microsoft Copilot Autopilot、Qwen Book。
-- **真实企业软件训练环境**：OpenAI × [Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad/)，在托管的 Ironclad 副本里训练/测试多步合同工作流。
+### 2026-08 → 10 lab 动态（深读结论，详见 [frontier-labs review](../reviews/2026-10-14_frontier-labs.md) §3.1）
+- **开源配方**：[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)（权重 08-26 开放）
+  - 纯截图；保留 20 张截图、每次整块折叠 10 张以稳定 KV 前缀；训练切片继承整条 episode 的奖励。
+  - SAPO（τ+ 1.0 / τ− 1.05），G=16；约 40k 可验证任务，pass@8 只保留 0<c<8。
+  - 512 H200，单次 run 约 61k GPU·h。
+  - 作者自列开放问题：单步动作效率低；GUI 与 Bash 的路由（加 Bash 后准确率反而下降）；prompt injection。
+- **企业软件真环境**：OpenAI × [Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad/)，SEC EDGAR 合成任务加 rubric 评分，Astra 55.0 对 GPT-5.6 Sol 41.6。
+- **观测空间分歧**：模型侧研究走纯像素；产品 harness 侧走 AX-tree / DOM 优先（ZCode CUA 插件、Meta Muse 浏览器只给 AX 快照且不能执行 JS）。
+- **Google**：computer use 是 Gemini 3.8 Flash 的 Preview 能力，窗口内无 CUA 分数；动作集改为桌面级（mouse_down/up、key_down/up、hotkey 等）；ADK 修复了一个跨会话串用沙箱的 bug。
+- **常驻云电脑 agent**：不到 4 周内上线 4 个（Grok Bot 09-03、Muse 09-08、Copilot Autopilot 09-25、dots 09-29）。隔离设计对比见 review §3.1。
+- **安全信号**
+  - Anthropic：“这只是模拟”式偏置推理集中在预期解不可达的 GUI computer-use RL 任务中。
+  - OpenAI：同家族模型 unwanted persistence 在 16–28% 之间。
 
 ### 候选底座模型
 

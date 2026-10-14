@@ -61,7 +61,8 @@
 - {<<: *mirror, id: mistral-news, id_prefix: mistral, url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_mistral.xml, exclude_categories: [], tags: [lab-blog, mistral]}
 - {<<: *mirror, id: xai-news, id_prefix: xai, url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_xainews.xml, exclude_categories: [], tags: [lab-blog, xai]}
 - {<<: *mirror, id: meta-ai-blog, id_prefix: meta, url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_meta_ai.xml, exclude_categories: [], tags: [lab-blog, meta]}   # 镜像 2026-07-27 后停更
-- {<<: *mirror, id: anthropic-red, id_prefix: anthropic-red, url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_red.xml, exclude_categories: [], tags: [lab-blog, anthropic]}
+# anthropic-red: 红队文章都发在 /research/ 下，已被 anthropic-research 直抓覆盖，关闭以免重复
+- {<<: *mirror, id: anthropic-red, enabled: false, id_prefix: anthropic-red, url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_red.xml, exclude_categories: [], tags: [lab-blog, anthropic]}
 - {<<: *mirror, id: uk-aisi, id_prefix: aisi, url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_aisi.xml, exclude_categories: [], tags: [eval-org, aisi]}
 
 # 无可用镜像（本环境不可达）：DeepMind blog、blog.google、Google Research、Thinking Machines、Qwen、DeepSeek 等。

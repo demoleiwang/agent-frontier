@@ -135,19 +135,17 @@
 | 2026-08-17 | [OpenAI joins PORTS-Pike project](https://openai.com/index/openai-joins-ports-pike-project) | Global Affairs |  |
 | 2026-08-17 | [The Defender’s Window](https://openai.com/index/the-defenders-window) | Security |  |
 
-## Anthropic (37)
+## Anthropic (33)
 
 | Date | Title | Category | Topics |
 |---|---|---|---|
 | 2026-10-13 | 🎯 [Redesigning source control at Anthropic](https://www.anthropic.com/engineering/redesigning-source-control) |  | `agent-infra` |
-| 2026-10-12 | 🎯 [AI models may be capable of self-replicating without access to a datacenter](https://www.anthropic.com/research/self-replicating-ai) |  | `agent-eval-safety` |
 | 2026-10-12 | 🎯 [Strengthening our defenses against distillation attacks](https://www.anthropic.com/research/distillation-defenses) |  | `agent-eval-safety` |
 | 2026-10-12 | 🎯 [AI models may be capable of self-replicating without access to a datacenter](https://www.anthropic.com/research/self-replicating-ai) |  | `agent-eval-safety` `agent-infra` |
 | 2026-10-09 | 🎯 [Investigating unintended model actions in our evaluations and internal use](https://www.anthropic.com/research/investigating-unintended-model-actions) |  | `agent-eval-safety` |
 | 2026-10-08 | [2026 Usage Policy update](https://www.anthropic.com/news/2026-usage-policy-update) |  |  |
 | 2026-10-08 | [Introducing the Anthropic Cyber Mission](https://www.anthropic.com/news/anthropic-cyber-mission) |  |  |
 | 2026-10-08 | [Building on our commitment to American scientific discovery](https://www.anthropic.com/news/genesis-mission-commitment) |  |  |
-| 2026-10-08 | [Launching an opt-in vulnerability-finding service for open-source software](https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source) |  |  |
 | 2026-10-08 | [An opt-in vulnerability-finding service for open-source software](https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source) |  |  |
 | 2026-10-08 | [Using Claude Science to produce the first complete map of the sky in UV light](https://www.anthropic.com/research/the-missing-map-of-the-sky) |  |  |
 | 2026-10-06 | 🎯 [Expanding the Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program) |  | `agent-eval-safety` |
@@ -156,7 +154,6 @@
 | 2026-10-01 | 🎯 [Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science) |  | `agent-infra` |
 | 2026-09-30 | [Can we predict the jobs robots will do?](https://www.anthropic.com/research/what-work-can-robots-do) |  |  |
 | 2026-09-29 | 🎯 [GLM-5.3 and the spread of advanced cyber capabilities](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities) |  | `agent-eval-safety` |
-| 2026-09-29 | 🎯 [GLM-5.3 and the spread of advanced cyber capabilities](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities) |  | `agent-eval-safety` |
 | 2026-09-29 | [What do you want from AI?](https://www.anthropic.com/research/your-thoughts-on-ai) |  |  |
 | 2026-09-25 | [Claude computes a nine-loop amplitude in N=4 super-Yang-Mills](https://www.anthropic.com/research/yes-claude-can-do-nine-loops) |  |  |
 | 2026-09-24 | 🎯 [Project Swap: What happens when agents trade for us?](https://www.anthropic.com/research/project-swap) |  | `agent-infra` |
@@ -164,7 +161,6 @@
 | 2026-09-18 | [Partnering with Accenture on embedded evaluation](https://www.anthropic.com/news/accenture-embedded-evaluation) |  |  |
 | 2026-09-17 | [Introducing the Life Sciences Verification Program](https://www.anthropic.com/news/life-sciences-verification-program) |  |  |
 | 2026-09-17 | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |  |  |
-| 2026-09-10 | [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |  |  |
 | 2026-09-10 | [Measuring AI capabilities in intelligence targeting and conventional weapons](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |  |  |
 | 2026-09-09 | 🎯 [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |  | `agent-eval-safety` `gui-agent-search` `agentic-rl` `agent-infra` |
 | 2026-09-04 | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |  |  |
