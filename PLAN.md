@@ -67,11 +67,18 @@ raw item 字段：`id, source, title, url, date, authors, source_tags, tags, exc
 - [ ] Benchmark leaderboard 定期快照（OSWorld-Verified / 2.0、Terminal-Bench 4、DeepSWE、BrowseComp）→ topic 页 SOTA 表
 - [ ] daily digest 推送到 Slack / 邮件
 
-## 每周例行（~20 分钟）
+## 每周例行（约 20 分钟）
 
-1. 打开最新 `digests/weekly/`，把值得留的条目挪进对应 `topics/*.md`，写一句 takeaway
-2. benchmark 有新 SOTA 就更新 topic 页的表
-3. 深读的论文在 `notes/` 建一篇（模板 `notes/_template.md`），并 `mark.py <id> noted`
+README 分两层：顶部的**研究罗盘**（研究方向雷达、置顶必读、关键信号）来自人工维护的 `config/compass.yaml`；下面的“本周待分拣”、topic 热度、各方向近 14 天的新工作数则每天自动重算。
+
+1. **清空“本周待分拣”**：逐条看完，用 `python scripts/mark.py <id> skimmed --tldr "…"` 标记；值得深读的建 `notes/`，标记为 `noted`
+2. **更新罗盘** `config/compass.yaml`：
+   - 看 README 中各方向“近 14 天新工作”的数量和条目，判断状态是否改变（空白 → 上升 → 拥挤）；
+   - 新发现的研究机会加为新方向，过时的方向删除；
+   - 置顶必读控制在 10 条以内，读完的换掉；
+   - 关键信号只留仍然成立的，并改 `updated` 日期
+3. **沉淀到 topic 页**：把值得长期保留的条目写进 `topics/*.md`；benchmark 有新的 SOTA 时更新表格
+4. 每月或遇到大事件时，在 `reviews/` 写一份深度报告
 
 ## 运行
 

@@ -162,39 +162,128 @@ def render_papers(items, days, per_topic=25):
     write(DIGESTS / "papers.md", md)
 
 
+STATUS_BADGE = {"空白": "🟥 空白", "上升": "🟧 上升", "拥挤": "🟦 拥挤", "观望": "⬜ 观望"}
+CORE_TOPICS = {"computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety"}
+
+
+def link(title, url) -> str:
+    return f"[{esc(title)}]({url})"
+
+
+def direction_hits(d, items, cutoff):
+    """Recent items (papers + blogs) on a core topic whose title/abstract mentions any of the direction's keywords."""
+    from classify import compile_kw
+    pats = [compile_kw(k) for k in d.get("keywords", [])]
+    def matches(i):  # a keyword in the title, or at least two distinct keywords in the abstract
+        if any(p.search(i["title"]) for p in pats):
+            return True
+        return sum(1 for p in pats if p.search(i.get("excerpt", ""))) >= 2
+    hits = [i for i in items if i["date"] >= cutoff and CORE_TOPICS & set(i.get("topics", [])) and matches(i)]
+    return sorted(hits, key=lambda i: (paper_rank(i) if is_paper(i) else 0.5 + i.get("score", 0)), reverse=True)
+
+
+def topic_heat(items, topic, days=14):
+    """Share of papers on a topic, current window vs previous: shares cancel out changes in overall paper volume."""
+    now = today()
+    a = (now - dt.timedelta(days=days)).isoformat()
+    b = (now - dt.timedelta(days=2 * days)).isoformat()
+    cur_all = [i for i in items if is_paper(i) and i["date"] >= a]
+    prev_all = [i for i in items if is_paper(i) and b <= i["date"] < a]
+    cur = sum(1 for i in cur_all if topic in i.get("topics", []))
+    prev = sum(1 for i in prev_all if topic in i.get("topics", []))
+    cs, ps = cur / max(len(cur_all), 1), prev / max(len(prev_all), 1)
+    arrow = "↑" if cs > ps * 1.2 else ("↓" if cs < ps * 0.8 else "→")
+    return cur, cs, prev, ps, arrow
+
+
+def review_title(path) -> str:
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# "):
+            return line[2:].strip()
+    return path.stem
+
+
 def render_readme(items, topic_names, days):
+    """README = hand-curated research compass (config/compass.yaml) + auto signals that keep it current."""
+    try:
+        compass = load_yaml("compass.yaml") or {}
+    except FileNotFoundError:
+        compass = {}
+    by_id = {i["id"]: i for i in items}
     cutoff = (today() - dt.timedelta(days=days)).isoformat()
-    recent = [i for i in items if i["date"] >= cutoff and i.get("topics") and not is_paper(i)]
-    queue = rank([i for i in items if i.get("topics") and i.get("status") == "new" and not is_paper(i)])[:10]
-    top_papers = sorted((i for i in items if is_paper(i) and i["date"] >= cutoff and set(i.get("topics", [])) - {"agent-infra"}),
-                        key=paper_rank, reverse=True)[:10]
+    week = (today() - dt.timedelta(days=7)).isoformat()
     counts = {s: sum(1 for i in items if i.get("status") == s) for s in STATUSES}
 
-    md = "# agent-frontier\n\n个人前沿追踪：browser/computer-use agent、agentic RL 及相关基础设施。\n"
-    md += "raw → `data/items`，自动摘要 → `digests/`，人工沉淀 → `topics/` 与 `notes/`。规划见 [PLAN.md](PLAN.md)。\n\n"
-    md += f"_Last rendered: {today().isoformat()} · {len(items)} items tracked_\n\n"
-    md += f"## Highlights · last {days} days\n\n"
-    md += "".join(bullet(i, True) for i in rank(recent)) if recent else "_No on-topic items in this window._\n"
-    md += f"\n## Top papers · last {days} days（按口碑 + 相关度，完整列表见 [digests/papers.md](digests/papers.md)）\n\n"
-    md += "".join(paper_line(i) for i in top_papers) if top_papers else "_None._\n"
-    md += "\n## Reading queue (blogs, status = new, top 10)\n\n"
-    md += "".join(bullet(i, True) for i in queue) if queue else "_Empty._\n"
-    md += "\n" + " · ".join(f"{STATUS_ICON[s]} {s}: {counts[s]}" for s in STATUSES) + "\n"
-    md += "\n## Topics\n\n| Topic | Items | Curated page |\n|---|---|---|\n"
+    md = "# agent-frontier\n\n"
+    md += "个人前沿追踪：browser / computer-use agent、agentic RL、agent 评测与安全。\n\n"
+    if compass.get("thesis"):
+        md += f"> **当前判断**：{compass['thesis']}\n\n"
+    md += (f"_罗盘更新于 {compass.get('updated', '—')}（人工）· 数据渲染于 {today().isoformat()}（自动）· "
+           f"跟踪 {len(items)} 条 · 👀 {counts['skimmed']} 已浏览 · ✅ {counts['read']} 已读 · 📝 {counts['noted']} 有笔记_\n\n")
+    md += "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
+
+    # 1. directions: curated judgement + auto activity count
+    dirs = compass.get("directions") or []
+    if dirs:
+        md += f"## 🧭 研究方向雷达\n\n状态是人工判断；“近 {days} 天新工作”按关键词自动统计（核心 topic 的论文与 blog），用来看方向是否在变拥挤。\n\n"
+        md += f"| 状态 | 方向 | 近 {days} 天新工作 | 下一步 |\n|---|---|---|---|\n"
+        details = ""
+        for d in dirs:
+            hits = direction_hits(d, items, cutoff)
+            top = f"：{link(hits[0]['title'][:48] + ('…' if len(hits[0]['title']) > 48 else ''), hits[0]['url'])}" if hits else ""
+            md += f"| {STATUS_BADGE.get(d.get('status'), d.get('status', ''))} | **{d['name']}** | {len(hits)}{top} | {d.get('next', '')} |\n"
+            ev = " · ".join(link(e["title"], e["url"]) for e in d.get("evidence", []))
+            recent = "".join(f"  - {i['date']} · {link(i['title'], i['url'])}" + (f" · rep {i['rep']:.2f}" if is_paper(i) else "") + "\n" for i in hits[:3])
+            details += (f"<details><summary><b>{d['name']}</b> — 为什么是现在</summary>\n\n{d.get('why', '').strip()}\n\n"
+                        f"- 证据：{ev}\n" + (f"- 近期相关：\n{recent}" if recent else "") + "\n</details>\n")
+        md += "\n" + details + "\n"
+
+    # 2. pinned must-reads
+    pins = compass.get("must_read") or []
+    if pins:
+        md += "## 📌 置顶必读\n\n"
+        for p in pins:
+            if p.get("id") and p["id"] in by_id:
+                it = by_id[p["id"]]
+                md += f"- {STATUS_ICON.get(it.get('status'), '')} {link(it['title'], it['url'])} — {p.get('why', '')}\n"
+            elif p.get("url"):
+                md += f"- 📄 {link(p['title'], p['url'])}\n"
+        md += "\n"
+
+    # 3. signals
+    sig = compass.get("signals") or []
+    if sig:
+        md += "## 📡 关键信号\n\n" + "".join(f"- **{x['signal']}**：{x['detail']}（[来源]({x['ref']})）\n" for x in sig) + "\n"
+
+    # 4. this week's untriaged: new, core-topic, ranked
+    new_papers = sorted((i for i in items if is_paper(i) and i["date"] >= week and i.get("status") == "new"
+                         and CORE_TOPICS & set(i.get("topics", [])) and i.get("rep", 0) >= 0.3), key=paper_rank, reverse=True)[:8]
+    new_blogs = rank([i for i in items if not is_paper(i) and i["date"] >= week and i.get("status") == "new"
+                      and CORE_TOPICS & set(i.get("topics", []))])[:5]
+    md += "## 🆕 本周待分拣\n\n近 7 天、核心 topic、尚未浏览的新工作。看完用 `python scripts/mark.py <id> skimmed --tldr \"…\"` 标记，标记后就不再出现在这里。\n\n"
+    md += "**论文**（按口碑 + 相关度，rep ≥ 0.3）\n\n" + ("".join(paper_line(i) for i in new_papers) or "_无。_\n")
+    md += "\n**Lab blog**\n\n" + ("".join(bullet(i, True) for i in new_blogs) or "_无。_\n") + "\n"
+
+    # 5. topic heat
+    md += (f"## 📊 Topic 热度\n\n论文数及其占同期论文总数的比例；趋势按占比比较（变化超过 ±20% 记 ↑↓），以抵消论文总量本身的波动。\n\n"
+           f"| Topic | 近 {days} 天 | 前 {days} 天 | 趋势 | 人工页 |\n|---|---|---|---|---|\n")
     for t in topic_names:
-        n = sum(1 for i in items if t in i.get("topics", []))
+        cur, cs, prev, ps, arrow = topic_heat(items, t, days)
         page = ROOT / "topics" / f"{t}.md"
-        md += f"| `{t}` | {n} | {f'[topics/{t}.md](topics/{t}.md)' if page.exists() else '—'} |\n"
-    md += "\n## Digests\n\n"
-    weeks = sorted({iso_week(i["date"]) for i in items}, reverse=True)[:4]
-    md += "- Weekly: " + ", ".join(f"[{w}](digests/weekly/{w}.md)" for w in weeks) + "\n"
-    md += "- Labs (all posts, last 60 days): [digests/labs.md](digests/labs.md)\n"
-    md += "- Papers (last 30 days, reputation-ranked): [digests/papers.md](digests/papers.md)\n"
-    md += "- Sources: " + ", ".join(f"[{s}](digests/sources/{s}.md)" for s in sorted({i['source'] for i in items})) + "\n"
-    reviews = sorted((ROOT / "reviews").glob("*.md"), reverse=True)[:5]
-    if reviews:
-        md += "- Reviews (hand-written): " + ", ".join(f"[{r.stem}](reviews/{r.name})" for r in reviews) + "\n"
-    (ROOT / "README.md").write_text(AUTOGEN + md, encoding="utf-8")
+        md += f"| `{t}` | {cur}（{cs:.1%}） | {prev}（{ps:.1%}） | {arrow} | {f'[topics/{t}.md](topics/{t}.md)' if page.exists() else '—'} |\n"
+
+    # 6. reports & entry points
+    md += "\n## 🗂 报告与入口\n\n**深度报告（人工）**\n\n"
+    for r in sorted((ROOT / "reviews").glob("*.md"), reverse=True)[:6]:
+        md += f"- [{review_title(r)}](reviews/{r.name})\n"
+    weeks = sorted({iso_week(i["date"]) for i in items if not is_paper(i)}, reverse=True)[:3]
+    md += ("\n**自动摘要**\n\n"
+           f"- [论文 · 近 30 天按口碑排序](digests/papers.md) · [各 lab 近 60 天全部条目](digests/labs.md)\n"
+           "- 周报：" + ", ".join(f"[{w}](digests/weekly/{w}.md)" for w in weeks) + "\n"
+           "- 来源：" + ", ".join(f"[{s}](digests/sources/{s}.md)" for s in sorted({i['source'] for i in items if not is_paper(i)})) + "\n")
+    md += ("\n**维护**：每天 GitHub Actions 自动抓取、打分、渲染。每周人工约 20 分钟：清空“本周待分拣”，"
+           "把值得留的写进 `topics/` 与 `notes/`，并更新 `config/compass.yaml` 中的方向状态、必读与信号。规划见 [PLAN.md](PLAN.md)。\n")
+    (ROOT / "README.md").write_text(AUTOGEN.replace("do not edit by hand", "edit config/compass.yaml instead") + md, encoding="utf-8")
 
 
 def main():

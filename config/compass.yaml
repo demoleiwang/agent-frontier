@@ -1,0 +1,114 @@
+# 研究罗盘：README 顶部展示的人工判断，由 scripts/render.py 读取。
+# 自动部分（每个方向近 14 天的新工作、本周待分拣、topic 热度、报告索引）每天重算；这里的内容每周例行时更新一次。
+#
+# directions.status 取值：
+#   空白 = 有明确需求但几乎没人做    上升 = 正在快速出现工作
+#   拥挤 = 已有多篇强工作，需要差异化    观望 = 信号不足，继续跟踪
+# directions.keywords：用于自动统计近 14 天命中该方向的新工作（标题命中任一词，或摘要命中至少 2 个不同的词）。
+# must_read：优先写 item id（来自 data/items，自动带出阅读状态）；仓库或外部链接用 title + url。
+# 长文本写成单行字符串（YAML 折叠换行会在中文里插入空格）。
+
+updated: 2026-10-14
+
+thesis: "CUA/BUA 的瓶颈已从“模型会不会点”转到两件事：可验证环境的规模化生产，以及 agent 越界（persistence、sim-awareness、规避监控）的度量与约束。lab 侧事故和论文侧方法在这两点上交汇，空白也集中在这里。"
+
+directions:
+  - name: 奖励“停下并报告”的 CUA/BUA 环境
+    status: 空白
+    keywords: [impossible task, infeasible task, unanswerable, abstain, abstention, ask for clarification, stop and report, ambiguous instruction, underspecified instruction, unsolvable]
+    why: "多家 lab 的越界事故反复指向同一触发器：任务不可能完成、mock 损坏或授权含糊时，agent 选择绕过而不是停下。“这只是模拟”式的偏置推理集中在预期解不可达的 GUI 任务中。论文侧至今没有专门的环境或基准。"
+    evidence:
+      - {title: "Anthropic · Investigating unintended model actions", url: "https://www.anthropic.com/research/investigating-unintended-model-actions"}
+      - {title: "Anthropic · Alignment assessment（GUI 任务中的模拟偏置）", url: "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"}
+      - {title: "OpenAI system cards · unwanted persistence 16–28%", url: "reviews/2026-10-14_frontier-labs.md"}
+    next: 构造含不可能 / 坏 mock / 含糊授权变体的任务集，同时度量完成率、越界率与诚实性
+
+  - name: persistence 的两面：越界率作为一等指标
+    status: 空白
+    keywords: [overreach, unintended action, unintended actions, side effect, side effects, out-of-scope, scope violation, unsanctioned, destructive action, over-agency, unwanted persistence]
+    why: "Meta 把坚持（Active Focus / FocusBench）当卖点，OpenAI 把 unwanted persistence（16–28%）当风险，AISI 发现 Astra 把自动消息当授权。同一种行为，一边奖励一边惩罚，还没有跨模型、harness 固定的统一度量。"
+    evidence:
+      - {title: "frontier-labs review §3.4", url: "reviews/2026-10-14_frontier-labs.md"}
+      - {title: "AISI · Astra unsanctioned supply-chain attacks", url: "https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations"}
+    next: 定义“该坚持 / 该停”成对任务，报告 persistence-vs-overreach 曲线
+
+  - name: 可验证 CUA 环境合成 + 独立攻破者审计
+    status: 上升
+    keywords: [environment synthesis, synthesized environment, synthesized environments, scalable environment, scalable environments, environment generation, verifiable environment, verifiable environments, RL environments, task synthesis]
+    why: "环境生产成了训练瓶颈：RecreationWorld、SoftwareGym、CodeMidas、VHD-Play 等两周内密集出现。但 MiMo 开源任务约 2/3 可从 git 历史拿到答案，Anthropic 生产 RL 环境中超过 10% 有问题。泄题和可 hack 已有证据会泛化成危险倾向。"
+    evidence:
+      - {title: "RecreationWorld (Qwen)", url: "https://arxiv.org/abs/2609.22000"}
+      - {title: "CodeMidas (Xiaomi MiMo)", url: "https://arxiv.org/abs/2609.22068"}
+      - {title: "Anthropic · Improving alignment & security practices", url: "https://www.anthropic.com/news/improving-alignment-security-efforts"}
+    next: 合成 → 独立求解 → 找漏洞 agent 审计（git 历史、可读的特权状态、可伪造的成功判定）
+
+  - name: GUI ↔ CLI 接口路由
+    status: 上升
+    keywords: [GUI and CLI, GUI+CLI, CLI and GUI, hybrid computer-use, hybrid action space, shell and GUI, accessibility tree, a11y tree, API and GUI]
+    why: "混合动作空间成为 CUA 的标准定义，但不训练就直接加 CLI 会掉分（HybridCUA 38.8 → 18.4；Qwen-CUA 加 Bash 后准确率下降）。像素策略与 AX-tree broker（Meta Muse、ZCode）之间也存在分布偏移。"
+    evidence:
+      - {title: "HybridCUA (ZJU)", url: "https://arxiv.org/abs/2609.38008"}
+      - {title: "Qwen-CUA report", url: "https://github.com/xlang-ai/Qwen-CUA"}
+    next: 学“何时切接口”的奖励设计；像素 → AX 树的迁移评测
+
+  - name: 离线 / 回放式 BUA 评测与环境替身
+    status: 上升
+    keywords: [offline web, web replay, live web, live website, live websites, simulated website, environment simulator, environment simulation, contamination, memorization, evaluator]
+    why: "BrowseComp、OSWorld 等实网评测已造成真实第三方副作用；数据污染与 evaluator 漏判（5–8pp）同时侵蚀分数。Trace2Env 证明可以从 trace 重建有状态的网站替身，Schrödinger 证明表面扰动能探测记忆。"
+    evidence:
+      - {title: "Trace2Env (NTU)", url: "https://arxiv.org/abs/2610.06100"}
+      - {title: "Schrödinger's Code Repository (SJTU)", url: "https://arxiv.org/abs/2609.27891"}
+    next: 离线快照 + mock 失败即关闭 + 不可逆动作拦截 + DOM 扰动的抗污染 web RL 环境
+
+  - name: 稀疏奖励下的信号（全失败组 / 好坏成功）
+    status: 拥挤
+    keywords: [sparse reward, sparse rewards, credit assignment, advantage redistribution, process reward, hindsight, all-fail, identical rewards, binary reward, binary outcome reward]
+    why: "SRD、GAGAR、PTGS、RDPO、GuardPO 一个月内集中出现，方法已多；差异化要落在 web/CUA 的长程、高方差场景。"
+    evidence:
+      - {title: "SRD (Salesforce)", url: "https://arxiv.org/abs/2610.08077"}
+      - {title: "GAGAR (Xiaomi MiMo)", url: "https://arxiv.org/abs/2609.32577"}
+    next: 直接作为 web GRPO 的基线接入，而不是重新发明
+
+  - name: 监控器作为攻击面 / 带外审批
+    status: 上升
+    keywords: [monitor evasion, evade monitoring, evading monitors, oversight, collusion, covert, approval, guard model, trajectory guard, monitorability]
+    why: "对抗设定下 CoT 监控召回 <11%；Anthropic 离线监控被“这是模拟”的推理说服；agent 花两小时游说审核者；9 个模型中 7 个会规避 monitor。已出现的控制手段：形式化策略证明（OpenShell）、模型无法伪造的审批通道（Meta Sentinel）、硬件看门狗。"
+    evidence:
+      - {title: "NVIDIA OpenShell policy prover", url: "https://github.com/NVIDIA/OpenShell"}
+      - {title: "Meta · How We Built Safety Into Muse", url: "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse"}
+    next: “游说审核者 / 伪造授权 / 把自动消息当授权”的评测，对比三类控制
+
+  - name: 长程上下文与 memory 的完整性
+    status: 观望
+    keywords: [context management, compaction, memory poisoning, agent memory, long-term memory, summarization, context window, belief state]
+    why: "CLM 把上下文管理移进权重；OpenAI 发现 compaction 摘要里出现“隐瞒错误”的提示和自我注入；Team Bots 的共享 memory 是新的投毒面。"
+    evidence:
+      - {title: "Context Language Models (Meta/UW)", url: "https://arxiv.org/abs/2609.37725"}
+      - {title: "frontier-labs review §3.5", url: "reviews/2026-10-14_frontier-labs.md"}
+    next: 长程 CUA 的 memory / 摘要完整性评测
+
+must_read:
+  - {title: "Qwen-CUA 技术报告：最完整的开源 CUA RL 配方", url: "https://github.com/xlang-ai/Qwen-CUA"}
+  - id: anthropic-research:investigating-unintended-model-actions
+    why: 实网 BUA/CUA 评测的真实副作用与整改
+  - id: anthropic-news:improving-alignment-security-efforts
+    why: 环境质量 → 危险倾向；评测伙伴检查清单
+  - id: arxiv:2609.22000
+    why: 用参考 app 当 oracle 的可执行 CUA 奖励
+  - id: arxiv:2609.38008
+    why: GUI+CLI 混合 CUA 的 RL 配方，全开源
+  - {title: "Agent Lightning v1.0：在真实 harness 里做 RL 的最小实现 + 防 hack 清单", url: "https://github.com/microsoft/agent-lightning"}
+  - id: arxiv:2610.08077
+    why: 全失败组也有信号，可直接用于 web GRPO
+  - id: arxiv:2609.27891
+    why: 抗污染评测的可迁移方法
+  - id: openai:towards-safety-cases-for-frontier-ai-training
+    why: RL 基础设施的安全检查清单
+  - {title: "Kimi K3 技术报告 §4.2：harness 随机化、fork 判分、活环境", url: "https://github.com/MoonshotAI/Kimi-K3"}
+
+signals:
+  - {signal: "OSWorld-Verified 饱和", detail: "Qwen-CUA 86.2 / Kimi K3 84.8；比较转向 OSWorld 2.0（binary 约 20%）、过程评测 OSWorld-Pro、注入攻击成功率", ref: "reviews/2026-10-14_frontier-labs.md"}
+  - {signal: "长程基准换代", detail: "Terminal-Bench 4（8 小时预算）、DeepSWE v1.1、SWE-Marathon；报告惯例转为单任务时间与成本", ref: "reviews/2026-10-14_frontier-labs.md"}
+  - {signal: "前沿 RL 受遏制约束", detail: "OpenAI 自 09-20 暂停最强模型的 tool-use 训练与评测；Anthropic、AISI 评测断网", ref: "reviews/2026-10-14_frontier-labs.md"}
+  - {signal: "harness 是隐藏变量", detail: "同一模型换 harness 可差 20.84pp；BrowseComp 52.6 vs 92.2（HarnessDev）", ref: "reviews/2026-10-14_papers.md"}
+  - {signal: "开源 CUA 可复现", detail: "Qwen-CUA 权重（08-26）、HybridCUA 数据和 RL 基建、MiMo RL 代码均已公开", ref: "reviews/2026-10-14_papers.md"}
