@@ -10,14 +10,15 @@
 - 👀 **CodeMidas: Scaling Agentic Coding RL Environments from Code Itself** · 2026-09-21 · rep 0.60 (HF 98↑ · Xiaomi MiMo) · [arXiv](https://arxiv.org/abs/2609.22068) [HF](https://huggingface.co/papers/2609.22068)
   > 只用源码作输入，由 agent 写 spec 和测试、再用多次 rollout 过滤，合成 5,545 个 coding RL 任务；GRPO 训练 MiMo-V2.5 后 DeepSWE、ProgramBench、Terminal-Bench 均有提升。
 - 👀 **SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments** · 2026-10-12 · rep 0.59 (HF 85↑ · Shanghai Jiao Tong University · code) · [arXiv](https://arxiv.org/abs/2610.12611) [HF](https://huggingface.co/papers/2610.12611) [code](https://github.com/MrKiing-Jin/SoftwareGym)
-  > LLM 合成 182 个原生桌面应用，用真实 GUI agent 测试修复后用于训练；OSWorld 41.39 → 56.97，注意为 Pass@3。
+  > Codex 合成原生应用并强制 dump/reset/seed 契约，GUI 实测修复后再训练
 - 👀 **MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement** · 2026-10-09 · rep 0.56 (HF 60↑ · Xiaomi MiMo) · [arXiv](https://arxiv.org/abs/2610.11959) [HF](https://huggingface.co/papers/2610.11959)
   > MiMo-V2.6 技术报告：大规模 agentic RL、多层反 reward hacking、组内打分；配套开源 mimoagent 含规则型反作弊拦截器（注释称由 6,026 条 hacking 轨迹归纳）。
 - 👀 **HazardAuditor: From Executable Threats to Safer Computer-Use Agents** · 2026-09-15 · rep 0.51 (HF 14↑ · Ant Group · code) · [arXiv](https://arxiv.org/abs/2609.15134) [HF](https://huggingface.co/papers/2609.15134) [code](https://github.com/Yunhao-Feng/HazardAuditor)
   > 基于真实执行记录的 CUA 轨迹级安全 guard，GuardPO 以一次安全判决为优化单位；CUA-Exec 准确率 90.88%（最多 +16.5pp）；注意所谓外部 benchmark 的训练集在其训练数据中。
 - 👀 **HybridCUA: Learning to Orchestrate GUI and CLI for Computer-Use Agents** · 2026-09-30 · rep 0.51 (HF 28↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2609.38008) [HF](https://huggingface.co/papers/2609.38008) [code](https://github.com/ZJU-REAL/HybridCUA)
   > 统一 GUI 与 shell 的 bash 动作空间 + CLI-aware RL（惩罚执行失败命令的 token）；不训练直接加 CLI 会掉分（38.8 → 18.4），训练后 9B 模型 OSWorld 53.6%、14 步；全开源。
-- 🆕 **OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software** · 2026-10-01 · rep 0.51 (HF 28↑ · DiscoAILab · 作者: Jie Tang · code) · [arXiv](https://arxiv.org/abs/2609.39903) [HF](https://huggingface.co/papers/2609.39903) [code](https://github.com/DiscoAILab/OSWorld-Science)
+- 👀 **OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software** · 2026-10-01 · rep 0.51 (HF 28↑ · DiscoAILab · 作者: Jie Tang · code) · [arXiv](https://arxiv.org/abs/2609.39903) [HF](https://huggingface.co/papers/2609.39903) [code](https://github.com/DiscoAILab/OSWorld-Science)
+  > 17 款真实科学软件进 VM；商业许可证三种处理；gate + 加权部分分，grader 先写负测试
 - 👀 **OSWorld-Pro: Process-based Evaluation for Computer Use Agents** · 2026-10-06 · rep 0.49 (HF 22↑ · NVIDIA) · [arXiv](https://arxiv.org/abs/2609.24890) [HF](https://huggingface.co/papers/2609.24890)
   > 过程式 CUA 评测：300+ 任务、2,800+ 子目标、67K 人工标注，可演化为 process reward；无代码。
 - 👀 **Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight** · 2026-10-08 · rep 0.79 (HF 88↑ · Salesforce AI Research · 作者: Silvio Savarese) · [arXiv](https://arxiv.org/abs/2610.08077) [HF](https://huggingface.co/papers/2610.08077)
@@ -68,16 +69,20 @@ _…其余 8 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
   > post-training 会损失 agentic 任务的 pass@k 覆盖面（42 个 case 中 36 个为正）；PTGS 按 prompt 难度自适应采样温度，即插即用（仅在玩具环境验证）。
 - 🆕 **AIM: Agentic Idea Management for Automated Research** · 2026-10-01 · rep 0.54 (HF 47↑ · Google) · [arXiv](https://arxiv.org/abs/2609.38445) [HF](https://huggingface.co/papers/2609.38445)
 - 🆕 **Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation** · 2026-09-14 · rep 0.60 (HF 151↑ · Carnegie Mellon University · code) · [arXiv](https://arxiv.org/abs/2609.11115) [HF](https://huggingface.co/papers/2609.11115) [code](https://github.com/ktwu01/benchmark-radar)
-- 🆕 **EngiWorld: What Can Frontier Agents Deliver in Professional Engineering Environments?** · 2026-09-30 · rep 0.35 (HF 53↑ · Zhiman AI · code) · [arXiv](https://arxiv.org/abs/2609.37686) [HF](https://huggingface.co/papers/2609.37686) [code](https://github.com/Hongcheng-Gao/EngiWorld)
+- 👀 **EngiWorld: What Can Frontier Agents Deliver in Professional Engineering Environments?** · 2026-09-30 · rep 0.35 (HF 53↑ · Zhiman AI · code) · [arXiv](https://arxiv.org/abs/2609.37686) [HF](https://huggingface.co/papers/2609.37686) [code](https://github.com/Hongcheng-Gao/EngiWorld)
+  > 26 款真实工程软件 1,301 题；几何/物理引擎 verifier，检测绕开 GUI；多软件任务仅 3.6%
 - 🆕 **Agentic RAG Evaluation: Budget Allocation Across Questions, Trajectories, and Reads** · 2026-10-08 · rep 0.43 (HF 19↑ · Carnegie Mellon University) · [arXiv](https://arxiv.org/abs/2610.05034) [HF](https://huggingface.co/papers/2610.05034)
 - 🆕 **WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents** · 2026-10-01 · rep 0.39 (HF 93↑ · University of California, Santa Barbara · code) · [arXiv](https://arxiv.org/abs/2609.40325) [HF](https://huggingface.co/papers/2609.40325) [code](https://github.com/UCSB-NLP-Chang/WorldAuditBench)
 - 🆕 **DecepEval: A Benchmark for Evaluating Deception in LLM Agents** · 2026-10-08 · rep 0.37 (HF 66↑ · Xi'an Jiaotong University · code) · [arXiv](https://arxiv.org/abs/2610.07967) [HF](https://huggingface.co/papers/2610.07967) [code](https://github.com/functy/DECEPEVAL)
 - 🆕 **From Given to Gathered Evidence: Agentic Learning for Longitudinal Medical Reasoning** · 2026-10-12 · rep 0.24 (HF 12↑ · CASE · code) · [arXiv](https://arxiv.org/abs/2609.39566) [HF](https://huggingface.co/papers/2609.39566) [code](https://github.com/VinyehShaw/CASE)
-- 🆕 **DAYJOB: A Benchmark for Long-Horizon Professional Work** · 2026-10-01 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2610.01306)
+- 👀 **DAYJOB: A Benchmark for Long-Horizon Professional Work** · 2026-10-01 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2610.01306)
+  > 从业者出题，每题几十条专家 binary rubric；最强医疗 24.7% / 金融 23.9%
 - 🆕 **LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures** · 2026-10-06 · rep 0.31 (HF 31↑ · University of Illinois at Urbana-Champaign · code) · [arXiv](https://arxiv.org/abs/2610.04292) [HF](https://huggingface.co/papers/2610.04292) [code](https://github.com/Lumos-Jiateng/LMBuild)
 - 🆕 **Pick Your Poison: Learning to Select Poison Sets for Stronger LLM Backdoor Attacks** · 2026-09-15 · rep 0.46 (HF 7↑ · Anthropic · code) · [arXiv](https://arxiv.org/abs/2609.15029) [HF](https://huggingface.co/papers/2609.15029) [code](https://github.com/aashiqmuhamed/poison-set-selection)
-- 🆕 **ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments** · 2026-09-17 · rep 0.37 (HF 71↑ · PhAI Labs · code) · [arXiv](https://arxiv.org/abs/2609.19134) [HF](https://huggingface.co/papers/2609.19134) [code](https://github.com/aitofound/ScienceIDE)
-- 🆕 **Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows** · 2026-10-02 · rep 0.27 (HF 18↑ · TextQL · code) · [arXiv](https://arxiv.org/abs/2610.02122) [HF](https://huggingface.co/papers/2610.02122) [code](https://github.com/TextQLLabs/Argo-Bench)
+- 👀 **ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments** · 2026-09-17 · rep 0.37 (HF 71↑ · PhAI Labs · code) · [arXiv](https://arxiv.org/abs/2609.19134) [HF](https://huggingface.co/papers/2609.19134) [code](https://github.com/aitofound/ScienceIDE)
+  > 钉死版本的科学代码 + 物理用例当 verifier，floor 归一化；已用于 SFT/RL
+- 👀 **Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows** · 2026-10-02 · rep 0.27 (HF 18↑ · TextQL · code) · [arXiv](https://arxiv.org/abs/2610.02122) [HF](https://huggingface.co/papers/2610.02122) [code](https://github.com/TextQLLabs/Argo-Bench)
+  > 模拟器生成隐藏真值的企业世界，按动作后果评分；公开 grader 被读取的 reward hacking 记录
 - 🆕 **AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents** · 2026-10-07 · rep 0.26 (HF 29↑ · Genentech) · [arXiv](https://arxiv.org/abs/2610.05140) [HF](https://huggingface.co/papers/2610.05140)
 - 🆕 **Designer-RSI: Evolving Procedural Memory from User Traffic for Agentic Graphic Design** · 2026-09-21 · rep 0.24 (HF 23↑ · Adobe) · [arXiv](https://arxiv.org/abs/2609.22086) [HF](https://huggingface.co/papers/2609.22086)
 - 🆕 **Omni-Decision: Evidence-Ledger Planning for Omni-Modal Agents** · 2026-09-30 · rep 0.24 (HF 23↑ · unknown) · [arXiv](https://arxiv.org/abs/2607.11433) [HF](https://huggingface.co/papers/2607.11433)
@@ -100,10 +105,11 @@ _…其余 68 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
   > 图像生成模型当 GUI 视觉 world model，零部署合成 79K 步轨迹，OSWorld 33.0 → 40.8；但合成轨迹从未在真实环境执行验证。
 - 👀 **Verifiable Hidden Dynamics Play: Generating Agentic RL Environments from Solved Mechanisms** · 2026-09-24 · rep 0.42 (HF 8↑ · Qwen) · [arXiv](https://arxiv.org/abs/2609.27321) [HF](https://huggingface.co/papers/2609.27321)
   > VHD-Play：先采样并求解数学机制，再渲染成有状态工具环境，reward 天然可验证；3,300 个环境，每个几美分；诊断分 0.204 → 0.815（证据较薄）。
-- 🆕 **MIMESIS: Learning User Simulators as Training Environments for Interactive Agents** · 2026-10-08 · rep 0.53 (HF 19↑ · AI at Meta · code) · [arXiv](https://arxiv.org/abs/2610.09484) [HF](https://huggingface.co/papers/2610.09484) [code](https://github.com/VietHoang1512/mimesis)
+- 👀 **MIMESIS: Learning User Simulators as Training Environments for Interactive Agents** · 2026-10-08 · rep 0.53 (HF 19↑ · AI at Meta · code) · [arXiv](https://arxiv.org/abs/2610.09484) [HF](https://huggingface.co/papers/2610.09484) [code](https://github.com/VietHoang1512/mimesis)
+  > 训练出的不合作用户模拟器作为 RL 环境，泛化优于 GPT-5.5 扮演用户
 - 🆕 **Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents** · 2026-10-01 · rep 0.60 (HF 105↑ · NVIDIA) · [arXiv](https://arxiv.org/abs/2609.39982) [HF](https://huggingface.co/papers/2609.39982)
 - 👀 **From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation** · 2026-10-09 · rep 0.60 (HF 98↑ · Nanyang Technological University Singapore · code) · [arXiv](https://arxiv.org/abs/2610.06100) [HF](https://huggingface.co/papers/2610.06100) [code](https://github.com/ruyue0001/trace2env)
-  > Trace2Env：从几十条历史 trace 重建有状态环境替身（worldbook + world-model agent + harness 校验），覆盖 Web 和 Android；ALFWorld 回放一致率 0.032 → 0.914。
+  > 从 trace 重建有状态环境替身，规则校验 + 不变量 + 回放晋升门；报告数字早于一次 bug 修复
 - 🆕 **TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces** · 2026-09-29 · rep 0.61 (HF 60↑ · ByteDance · code) · [arXiv](https://arxiv.org/abs/2609.33295) [HF](https://huggingface.co/papers/2609.33295) [code](https://github.com/ZhishanQ/TraceDance)
 - 🆕 **EVOKE: Eliciting World Knowledge in Agents for Transferable Decision-Making** · 2026-10-01 · rep 0.57 (HF 68↑ · Shanghai Jiao Tong University · code) · [arXiv](https://arxiv.org/abs/2609.38334) [HF](https://huggingface.co/papers/2609.38334) [code](https://github.com/Gnonymous/EVOKE)
 - 🆕 **ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks** · 2026-09-17 · rep 0.54 (HF 45↑ · Microsoft Research) · [arXiv](https://arxiv.org/abs/2609.18805) [HF](https://huggingface.co/papers/2609.18805)
@@ -119,7 +125,8 @@ _…其余 68 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **World Editing: Intervening on Executable Worlds at Increasing Depth** · 2026-10-06 · rep 0.47 (HF 17↑ · University of Waterloo · code) · [arXiv](https://arxiv.org/abs/2610.02331) [HF](https://huggingface.co/papers/2610.02331) [code](https://github.com/vinesmsuic/IGMWorld)
 - 🆕 **Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction** · 2026-10-09 · rep 0.34 (HF 45↑ · KAIST AI · code) · [arXiv](https://arxiv.org/abs/2610.12299) [HF](https://huggingface.co/papers/2610.12299) [code](https://github.com/cvlab-kaist/ME-World)
 - 🆕 **Skill2Env: Capability-Oriented Environment Synthesis from Skills for General Agents** · 2026-09-29 · rep 0.24 (HF 22↑ · AllSpark Research) · [arXiv](https://arxiv.org/abs/2609.33772) [HF](https://huggingface.co/papers/2609.33772)
-- 🆕 **UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training** · 2026-09-29 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2609.38043)
+- 👀 **UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training** · 2026-09-29 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2609.38043)
+  > 只换用户模拟器，企业任务 reward 变化 15.2 分
 - 🆕 **Reasoning-Informed Visual Editing** · 2026-10-09 · rep 0.47 (HF 17↑ · SJTU VisionXLab · code) · [arXiv](https://arxiv.org/abs/2610.12343) [HF](https://huggingface.co/papers/2610.12343) [code](https://github.com/VisionXLab/RISEBench)
 - 🆕 **BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender** · 2026-09-15 · rep 0.29 (HF 23↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.15478) [HF](https://huggingface.co/papers/2609.15478) [code](https://github.com/yunlong10/BVB)
 - 🆕 **ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents** · 2026-09-16 · rep 0.28 (HF 20↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.17523) [HF](https://huggingface.co/papers/2609.17523) [code](https://github.com/Gen-Verse/ScienceBuddy)
@@ -131,12 +138,13 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 👀 **RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents** · 2026-09-21 · rep 0.62 (HF 63↑ · Qwen · code) · [arXiv](https://arxiv.org/abs/2609.22000) [HF](https://huggingface.co/papers/2609.22000) [code](https://github.com/QwenLM/RecreationWorld)
   > 用运行中的参考 app 当 oracle 生成隐藏行为测试，构建 5 个平台的混合 CUA 可执行奖励环境 + 250 题 benchmark；环境构建范式可直接迁移。
 - 👀 **SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments** · 2026-10-12 · rep 0.59 (HF 85↑ · Shanghai Jiao Tong University · code) · [arXiv](https://arxiv.org/abs/2610.12611) [HF](https://huggingface.co/papers/2610.12611) [code](https://github.com/MrKiing-Jin/SoftwareGym)
-  > LLM 合成 182 个原生桌面应用，用真实 GUI agent 测试修复后用于训练；OSWorld 41.39 → 56.97，注意为 Pass@3。
+  > Codex 合成原生应用并强制 dump/reset/seed 契约，GUI 实测修复后再训练
 - 👀 **HazardAuditor: From Executable Threats to Safer Computer-Use Agents** · 2026-09-15 · rep 0.51 (HF 14↑ · Ant Group · code) · [arXiv](https://arxiv.org/abs/2609.15134) [HF](https://huggingface.co/papers/2609.15134) [code](https://github.com/Yunhao-Feng/HazardAuditor)
   > 基于真实执行记录的 CUA 轨迹级安全 guard，GuardPO 以一次安全判决为优化单位；CUA-Exec 准确率 90.88%（最多 +16.5pp）；注意所谓外部 benchmark 的训练集在其训练数据中。
 - 👀 **HybridCUA: Learning to Orchestrate GUI and CLI for Computer-Use Agents** · 2026-09-30 · rep 0.51 (HF 28↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2609.38008) [HF](https://huggingface.co/papers/2609.38008) [code](https://github.com/ZJU-REAL/HybridCUA)
   > 统一 GUI 与 shell 的 bash 动作空间 + CLI-aware RL（惩罚执行失败命令的 token）；不训练直接加 CLI 会掉分（38.8 → 18.4），训练后 9B 模型 OSWorld 53.6%、14 步；全开源。
-- 🆕 **OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software** · 2026-10-01 · rep 0.51 (HF 28↑ · DiscoAILab · 作者: Jie Tang · code) · [arXiv](https://arxiv.org/abs/2609.39903) [HF](https://huggingface.co/papers/2609.39903) [code](https://github.com/DiscoAILab/OSWorld-Science)
+- 👀 **OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software** · 2026-10-01 · rep 0.51 (HF 28↑ · DiscoAILab · 作者: Jie Tang · code) · [arXiv](https://arxiv.org/abs/2609.39903) [HF](https://huggingface.co/papers/2609.39903) [code](https://github.com/DiscoAILab/OSWorld-Science)
+  > 17 款真实科学软件进 VM；商业许可证三种处理；gate + 加权部分分，grader 先写负测试
 - 👀 **OSWorld-Pro: Process-based Evaluation for Computer Use Agents** · 2026-10-06 · rep 0.49 (HF 22↑ · NVIDIA) · [arXiv](https://arxiv.org/abs/2609.24890) [HF](https://huggingface.co/papers/2609.24890)
   > 过程式 CUA 评测：300+ 任务、2,800+ 子目标、67K 人工标注，可演化为 process reward；无代码。
 - 🆕 **CUA-SWE: When Computer-Use Agents Meet Visual Software Engineering** · 2026-10-01 · rep 0.45 (HF 13↑ · Carnegie Mellon University · code) · [arXiv](https://arxiv.org/abs/2609.32600) [HF](https://huggingface.co/papers/2609.32600) [code](https://github.com/kingofspace0wzz/cua-swe)
@@ -144,7 +152,8 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents** · 2026-10-13 · rep 0.51 (HF 29↑ · Nanyang Technological University · code) · [arXiv](https://arxiv.org/abs/2609.33304) [HF](https://huggingface.co/papers/2609.33304) [code](https://github.com/fyzhang1/ExpActivator)
 - 🆕 **DeskForge: Dense Supervision from Desktop Environments for Computer-Use Agents** · 2026-10-06 · rep 0.21 (HF 7↑ · Docling · code) · [arXiv](https://arxiv.org/abs/2610.02320) [HF](https://huggingface.co/papers/2610.02320) [code](https://github.com/Saidgurbuz/deskforge)
 - 🆕 **ReSAIL: Mitigating Collapse in Iterative Agent Self-Distillation** · 2026-10-08 · rep 0.52 (HF 32↑ · Renmin University of China · code) · [arXiv](https://arxiv.org/abs/2609.39306) [HF](https://huggingface.co/papers/2609.39306) [code](https://github.com/ShengjieJin/ReSAIL)
-- 🆕 **CADWorld: Computer-Use Benchmark for Long-Horizon Computer-Aided Design** · 2026-09-21 · rep 0.14 (HF 5↑ · unknown) · [arXiv](https://arxiv.org/abs/2609.16251) [HF](https://huggingface.co/papers/2609.16251)
+- 👀 **CADWorld: Computer-Use Benchmark for Long-Horizon Computer-Aided Design** · 2026-09-21 · rep 0.14 (HF 5↑ · unknown) · [arXiv](https://arxiv.org/abs/2609.16251) [HF](https://huggingface.co/papers/2609.16251)
+  > FreeCAD 真实软件 + VM，约 1,300 人时 / 200 题；最强 17.5% 对专家 87.0%
 - 🆕 **Work2Skill: Capturing Human GUI Experience for Reusable Agent Skill Induction** · 2026-10-12 · rep 0.33 (HF 41↑ · Nex AGI · code) · [arXiv](https://arxiv.org/abs/2610.12984) [HF](https://huggingface.co/papers/2610.12984) [code](https://github.com/china-qijizhifeng/Work2Skill)
 - 🆕 **GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution** · 2026-10-07 · rep 0.24 (HF 12↑ · The Chinese University of Hongkong,Shenzhen · code) · [arXiv](https://arxiv.org/abs/2610.00948) [HF](https://huggingface.co/papers/2610.00948) [code](https://github.com/GaryYang12345/GUI-HARVEST)
 - 🆕 **LLaDA-UI: Bringing Block-wise Diffusion to Vision-Language GUI Agents** · 2026-09-15 · rep 0.25 (HF 13↑ · inclusionAI · code) · [arXiv](https://arxiv.org/abs/2609.13287) [HF](https://huggingface.co/papers/2609.13287) [code](https://github.com/inclusionAI/LLaDA-UI)
@@ -252,7 +261,8 @@ _…其余 151 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations** · 2026-10-06 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.08364)
 - 🆕 **Mixture of Self-Improving Branches For Agent Harness Optimization** · 2026-09-29 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.37834)
 - 🆕 **SelfSearch: Reward-Free Search for Self-Improving Agents** · 2026-09-29 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.37968)
-- 🆕 **NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents** · 2026-10-02 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.03631)
+- 👀 **NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents** · 2026-10-02 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.03631)
+  > McStas 模拟器 + 分层 ladder 部分分，RL 让 8B 从 11% 到 77%；去掉部分分增益塌缩 60 点
 - 🆕 **Ecology of AI Agents: Collaboration Creates a Population Threshold for Takeoff** · 2026-10-08 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.12436)
 - 🆕 **Verifier Errors in RLVR: Reward Hacking, Limits of Feedback, and Selective Control** · 2026-09-28 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.35677)
 - 🆕 **Correct, Don't Delete: Mitigating Emergent Misalignment with Corrective Supervision** · 2026-09-29 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.37624)

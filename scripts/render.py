@@ -215,12 +215,21 @@ def render_readme(items, topic_names, days):
     counts = {s: sum(1 for i in items if i.get("status") == s) for s in STATUSES}
 
     md = "# agent-frontier\n\n"
-    md += "个人前沿追踪：browser / computer-use agent、agentic RL、agent 评测与安全。\n\n"
+    md += compass.get("scope", "个人前沿追踪：browser / computer-use agent、agentic RL、agent 评测与安全。") + "\n\n"
     if compass.get("thesis"):
         md += f"> **当前判断**：{compass['thesis']}\n\n"
     md += (f"_罗盘更新于 {compass.get('updated', '—')}（人工）· 数据渲染于 {today().isoformat()}（自动）· "
            f"跟踪 {len(items)} 条 · 👀 {counts['skimmed']} 已浏览 · ✅ {counts['read']} 已读 · 📝 {counts['noted']} 有笔记_\n\n")
-    md += "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
+    md += ("[🎯 下半年提案](#-下半年提案) · " if compass.get("proposals") else "") + "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
+
+    # 0. proposals: what to bet on next (curated)
+    props = compass.get("proposals") or []
+    if props:
+        md += "## 🎯 下半年提案\n\n" + (compass.get("proposals_intro", "") + "\n\n" if compass.get("proposals_intro") else "")
+        md += "| 优先级 | 提案 | 一句话（附依据） | 投入 |\n|---|---|---|---|\n"
+        for p in props:
+            md += f"| {p.get('priority', '')} | **{link(p['name'], p['url']) if p.get('url') else p['name']}** | {p.get('pitch', '')} | {p.get('share', '')} |\n"
+        md += "\n"
 
     # 1. directions: curated judgement + auto activity count
     dirs = compass.get("directions") or []
@@ -249,7 +258,7 @@ def render_readme(items, topic_names, days):
                 it = by_id[p["id"]]
                 md += f"- {STATUS_ICON.get(it.get('status'), '')} {link(it['title'], it['url'])} — {p.get('why', '')}\n"
             elif p.get("url"):
-                md += f"- 📄 {link(p['title'], p['url'])}\n"
+                md += f"- 📄 {link(p['title'], p['url'])}" + (f" — {p['why']}" if p.get("why") else "") + "\n"
         md += "\n"
 
     # 3. signals

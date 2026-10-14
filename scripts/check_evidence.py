@@ -149,6 +149,8 @@ def check(path: Path, verbose: bool) -> tuple[int, int, int]:
             continue
         if is_label(plain):
             continue
+        if re.match(r"^(\*\*)?(统计|来源深度图例|阅读说明)", plain if not plain.startswith("**") else text):  # our own screening stats / legends
+            continue
         if text.startswith(">") and n <= 12:  # file preamble
             continue
         if not heads or (path.name == "README.md" and all(h[0] == 1 for h in heads)):  # title block / README intro

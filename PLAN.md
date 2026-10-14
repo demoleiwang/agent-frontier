@@ -6,6 +6,9 @@
 
 | 优先级 | Topic | 关注点 |
 |---|---|---|
+| P0（当前焦点） | `env-construction` | 环境形态（真实应用 / mock / 模拟 / 真机）、状态与基础设施、任务合成、verifier 与 rubric、数据准备、隔离 |
+| P0（当前焦点） | `office-agent` | 办公套件与企业 SaaS（邮件、日历、IM、工单、CRM / ERP） |
+| P0（当前焦点） | `professional-agent` | 工程、科学软件、金融、医疗、法务、数据与 BI |
 | P0 | `browser-use-agent` | Web agent / deep research；WebArena、Online-Mind2Web、BrowseComp、WebVoyager |
 | P0 | `computer-use-agent` | GUI / desktop / mobile agent；OSWorld、AndroidWorld、ScreenSpot；GUI grounding |
 | P0 | `agentic-rl` | 多轮/长程 RL、环境构建与扩展、异步 RL 基础设施、reward 设计 |
@@ -62,6 +65,7 @@ raw item 字段：`id, source, title, url, date, authors, source_tags, tags, exc
 - [x] OpenAI（news / research / engineering / developer）、Google Developers AI、Mistral、xAI、Meta AI、UK AISI：经 GitHub 上的 RSS 镜像（Olshansk/rss-feeds）接入。`id_prefix` 合并同一 lab 的多个 feed，`exclude_categories` 去掉客户案例，跨源按 URL 去重
 - [x] `digests/labs.md`：各 lab 最近 60 天全部条目（不经 topic 过滤）
 - [x] 2026-08-14 → 10-14 前沿 lab 深读汇总：[reviews/2026-10-14_frontier-labs.md](reviews/2026-10-14_frontier-labs.md)，逐篇附录在 [reviews/2026-10-14_frontier-labs/](reviews/2026-10-14_frontier-labs/)
+- [x] 办公与专业 agent 的环境构建全景：[reviews/2026-10-14_office-pro-env.md](reviews/2026-10-14_office-pro-env.md)（附录 77 篇精读 + 21 张 lab 卡片），下半年研究提案：[reviews/2026-10-14_research-proposal.md](reviews/2026-10-14_research-proposal.md)
 - [ ] DeepMind blog、blog.google、Google Research、Thinking Machines 的官方 RSS（已占位，`enabled: false`；需在可直连的环境验证后打开）
 - [ ] Meta（research.meta.ai，镜像 07-27 后停更）、Qwen、DeepSeek、Kimi 等无 RSS 站点：scrape 配置，或监控官方 GitHub 仓库的提交（`git clone` 在本环境可用）
 - [ ] Benchmark leaderboard 定期快照（OSWorld-Verified / 2.0、Terminal-Bench 4、DeepSWE、BrowseComp）→ topic 页 SOTA 表
@@ -78,7 +82,7 @@ README 分两层：顶部的**研究罗盘**（研究方向雷达、置顶必读
    - 置顶必读控制在 10 条以内，读完的换掉；
    - 关键信号只留仍然成立的，并改 `updated` 日期
 3. **沉淀到 topic 页**：把值得长期保留的条目写进 `topics/*.md`；benchmark 有新的 SOTA 时更新表格
-4. 每月或遇到大事件时，在 `reviews/` 写一份深度报告
+4. 每月或遇到大事件时，在 `reviews/` 写一份深度报告；每半年更新一次研究提案（当前：[2026-10-14_research-proposal.md](reviews/2026-10-14_research-proposal.md)），同步 `compass.yaml` 的 `proposals`
 5. 提交前运行 `python scripts/check_evidence.py`：所有论断都要就地附出处 URL（规则见 [CLAUDE.md](CLAUDE.md)）
 
 ## 运行

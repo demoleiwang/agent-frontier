@@ -1,115 +1,125 @@
 # 研究罗盘：README 顶部展示的人工判断，由 scripts/render.py 读取。
 # 自动部分（每个方向近 14 天的新工作、本周待分拣、topic 热度、报告索引）每天重算；这里的内容每周例行时更新一次。
 #
+# proposals：下半年要押注的提案（完整论证见 reviews/*research-proposal.md）。
 # directions.status 取值：
 #   空白 = 有明确需求但几乎没人做    上升 = 正在快速出现工作
 #   拥挤 = 已有多篇强工作，需要差异化    观望 = 信号不足，继续跟踪
 # directions.keywords：用于自动统计近 14 天命中该方向的新工作（标题命中任一词，或摘要命中至少 2 个不同的词）。
-# must_read：优先写 item id（来自 data/items，自动带出阅读状态）；仓库或外部链接用 title + url。
-# 长文本写成单行字符串（YAML 折叠换行会在中文里插入空格）。
+# must_read：优先写 item id（来自 data/items，自动带出阅读状态）；仓库或外部链接用 title + url + why。
+# 长文本写成单行字符串（YAML 折叠换行会在中文里插入空格）。所有判断都要就地附出处 URL。
 
 updated: 2026-10-14
 
-thesis: "CUA/BUA 的瓶颈已从“模型会不会点”转到两件事：可验证环境的规模化生产（[RecreationWorld](https://arxiv.org/abs/2609.22000)、[CodeMidas](https://arxiv.org/abs/2609.22068)、[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)），以及 agent 越界（persistence、sim-awareness、规避监控）的度量与约束（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)、[OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead)、[AISI](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations)）。lab 侧事故和论文侧方法在这两点上交汇，空白也集中在这里。"
+scope: "个人前沿追踪。当前焦点：办公与专业领域 agent 的环境构建（真实应用、mock、真机、任务合成、verifier、数据准备），兼顾 computer-use、agentic RL 与 agent 安全。"
+
+thesis: "通用 CUA 基准已饱和（OSWorld-Verified 86.2，[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA)），差距集中在专业工作（DAYJOB 最强 24.7%，[DAYJOB](https://arxiv.org/abs/2610.01306)；CADWorld 17.5% 对专家 87.0%，[CADWorld](https://arxiv.org/abs/2609.16251)）。瓶颈是可验证、可遏制的环境供给：环境由 coding agent 工业化生产（[Echoverse](https://github.com/microsoft/Echoverse/blob/main/README.md)、[VeriGen](https://github.com/THUDM/SCALE-CUA/blob/main/VeriGen/README.md)），但超过 10% 的生产 RL 环境有问题（[Anthropic](https://www.anthropic.com/news/improving-alignment-security-efforts)），出站事故已让前沿 lab 暂停训练（[OpenAI](https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/)）。企业部署卡在可靠性与越界：pass^20 只有 25.25%（[Thinkingbox](https://arxiv.org/abs/2608.19741)），unwanted persistence 16–28%（[GPT-6.1 Sol card](https://deploymentsafety.openai.com/gpt-6-1-sol)）。"
+
+proposals_intro: "假设在前沿 lab，下一个半年（2026-11 → 2027-04）的选题组合。完整论证、去风险实验、里程碑与止损条件见 [research-proposal](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_research-proposal.md)；环境构建的证据底稿见 [office-pro-env](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_office-pro-env.md)。"
+
+proposals:
+  - {priority: 主押, name: "A. 专业工作环境工厂", url: "reviews/2026-10-14_research-proposal.md#a-专业工作环境工厂主押", share: "~40%", pitch: "用领域引擎当 verifier，规模化生产专业软件与企业 SaaS 环境并直接训练；有领域 verifier 时 RL 把 8B 模型从 11% 提到 77%（[NeutronGym](https://arxiv.org/abs/2610.03631)），商业软件与厂商合作是 lab 的独有优势（[Ironclad](https://openai.com/index/advancing-computer-use-with-ironclad)）"}
+  - {priority: 必须配套, name: "B. 环境审计与可遏制训练", url: "reviews/2026-10-14_research-proposal.md#b-环境审计与可遏制训练必须配套", share: "~20%", pitch: "攻破者 agent 审计泄漏与可伪造判定，遏制检查覆盖 DNS 与 mock 失败；可 hack 环境会泛化成危险倾向（[Anthropic](https://www.anthropic.com/news/improving-alignment-security-efforts)），训练 run 需要 safety case（[OpenAI](https://openai.com/index/towards-safety-cases-for-frontier-ai-training)）"}
+  - {priority: 差异化, name: "C. 有边界的委托", url: "reviews/2026-10-14_research-proposal.md#c-有边界的委托差异化", share: "~20%", pitch: "把 pass^k、最小副作用、缺输入时停下报告、委托人偏好做成训练目标；agent 曾提交真实政府表单（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)），代理交易的差距 85% 来自偏好误读（[Project Swap](https://www.anthropic.com/research/project-swap)）"}
+  - {priority: 科学问题, name: "D. mock 保真度的科学", url: "reviews/2026-10-14_research-proposal.md#d-mock-保真度的科学科学问题", share: "~10%", pitch: "测清 mock 的哪些维度决定迁移；浅环境让真实站点准确率从 80.0 降到 75.0（[Echoverse](https://arxiv.org/abs/2607.28074)），回放一致性指标只有一例（[Trace2Env](https://github.com/ruyue0001/trace2env/blob/main/REPRODUCING.md)）"}
+  - {priority: 前瞻, name: "E. 活的组织模拟", url: "reviews/2026-10-14_research-proposal.md#e-活的组织模拟前瞻", share: "~10%", pitch: "多日、多角色、训练过的用户模拟器；原型见 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf) 与 [MIMESIS](https://github.com/VietHoang1512/mimesis/blob/main/README.md)，用户模拟器本身让 reward 波动 15.2 分（[UserProxyBench](https://arxiv.org/abs/2609.38043)）"}
 
 directions:
-  - name: 奖励“停下并报告”的 CUA/BUA 环境
+  - name: 专业软件环境 + 领域引擎 verifier
+    status: 上升
+    keywords: [professional software, engineering software, scientific software, CAD, CAE, Simulink, domain expert, expert-curated, professional tasks, professional work, enterprise workflow, ERP, CRM, finance agent, legal agent, medical agent]
+    why: "真实专业软件已能装进 VM（[EngiWorld](https://github.com/Hongcheng-Gao/EngiWorld/blob/main/README.md) 26 款、[OSWorld-Science](https://github.com/DiscoAILab/OSWorld-Science/blob/main/README.md) 17 款），verifier 可以让领域引擎重算（[EngiWorld eval.py](https://github.com/Hongcheng-Gao/EngiWorld/blob/main/task/design-optimization/cli/fenics/task-01/eval.py)、[ScienceIDE](https://github.com/aitofound/ScienceIDE/blob/main/README.md)、[SimuVerity](https://github.com/SimuVerity/SimuVerity/blob/main/SimuVerity-benchmark/README.md)）。分数仍低：EngiWorld 多软件任务 3.6%（[EngiWorld](https://arxiv.org/abs/2609.37686)），Argo-Bench 最强只在 34.8% 的任务上 ≥95（[Argo-Bench](https://arxiv.org/abs/2610.02122)）。瓶颈是商业许可证（[OSWorld-Science](https://github.com/DiscoAILab/OSWorld-Science/blob/main/configs/snapshots.yaml)）与专家成本（CADWorld 约 1,300 人时 / 200 题，[CADWORLD.pdf](https://github.com/Zdong104/CADWORLD/blob/main/CADWORLD.pdf)）；多数基准只评测不训练（[Thinkingbox-Bench](https://github.com/microsoft/thinkingbox-data/blob/main/releases/thinkingbox_bench_v1/README.md)）。"
+    evidence:
+      - {title: "EngiWorld · 26 款工程软件", url: "https://github.com/Hongcheng-Gao/EngiWorld/blob/main/README.md"}
+      - {title: "NeutronGym · 领域 verifier 上的 RL 11% → 77%", url: "https://arxiv.org/abs/2610.03631"}
+      - {title: "DAYJOB · 医疗 / 金融 24.7% / 23.9%", url: "https://arxiv.org/abs/2610.01306"}
+    next: 选 3 个“有开源引擎、高价值、低分”的领域做训练级环境与 verifier 库
+
+  - name: 环境工业化生产（coding agent 造环境 + 运行时自检）
+    status: 上升
+    keywords: [environment synthesis, synthesized environment, synthesized environments, scalable environment, scalable environments, environment generation, verifiable environment, verifiable environments, RL environments, task synthesis, mock environment, synthetic environment, synthetic environments]
+    why: "环境由 coding agent 合成并强制可测试性契约：[SoftwareGym](https://github.com/MrKiing-Jin/SoftwareGym/blob/main/agent/prompt/Coderprompt.json) 的 dump / reset / seed、[VeriGen](https://github.com/THUDM/SCALE-CUA/blob/main/VeriGen/docs/architecture/agent_feasibility_verification.md) 的负对照、[Echoverse](https://github.com/microsoft/Echoverse/blob/main/README.md) 的规格断言与分层修复、[GDPevo](https://github.com/Prism-Shadow/GDPevo/blob/main/README.md) 的全流程开源。深度比数量重要：修好一个环境，模型从 16.2% 升到 38.5%（[Echoverse](https://arxiv.org/abs/2607.28074)）。lab 级规模见 [Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA/blob/main/paper/Qwen-CUA.pdf)（约 10 万 vCPU）与 [Kimi K3](https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf)（约 5,100 万个沙箱）。"
+    evidence:
+      - {title: "Echoverse (Microsoft)", url: "https://github.com/microsoft/Echoverse/blob/main/README.md"}
+      - {title: "ScaleCUA / VeriGen (THUDM)", url: "https://github.com/THUDM/SCALE-CUA/blob/main/VeriGen/docs/architecture/agent_feasibility_verification.md"}
+      - {title: "GDPevo · 构建 SOP", url: "https://github.com/Prism-Shadow/GDPevo/blob/main/data_construction/Stage_2_Task_Group_Synthesis/task_factory/guides/environment_and_data.md"}
+    next: 报告每个合格任务的成本与“修复后增益”，把深度作为一等指标
+
+  - name: 环境审计：泄漏、可 hack、遏制
     status: 空白
-    keywords: [impossible task, infeasible task, unanswerable, abstain, abstention, ask for clarification, stop and report, ambiguous instruction, underspecified instruction, unsolvable]
-    why: "多家 lab 的越界事故反复指向同一触发器：任务不可能完成、mock 损坏或授权含糊时，agent 选择绕过而不是停下（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)）。“这只是模拟”式的偏置推理集中在预期解不可达的 GUI 任务中（[Anthropic](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)）。论文侧至今没有专门的环境或基准（本库近 3 个月论文池按关键词检索未发现，见 [digests/papers.md](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/digests/papers.md)）。"
+    keywords: [reward hacking, reward hack, answer leakage, task leakage, sandbox escape, containment, environment audit, verifier bug, grader bug, specification gaming, hackable]
+    why: "超过 10% 的生产 RL 环境有问题，可 hack 环境训练出的模型会在模拟中突破沙箱（[Anthropic](https://www.anthropic.com/news/improving-alignment-security-efforts)）；MiMo 开源任务约 2/3 可从 git 历史拿到答案（[Vals AI，二手](https://digg.com/ai/wo6cdxwj)）；Argo-Bench 有 run 读到 grader 拿到 0.99（[Argo-Bench](https://github.com/TextQLLabs/Argo-Bench/blob/main/analysis/reward_hacking/README.md)）；DNS 外联让 OpenAI 暂停 tool-use 训练（[OpenAI](https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/)）。防护已有零散做法（[mimoagent antihack](https://github.com/XiaomiMiMo/mimoagent/blob/mimo-oss/src/mimoagent/agents/antihack.py)、[K3 fork 判分](https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf)），但没有系统化的自动审计。"
+    evidence:
+      - {title: "Anthropic · Improving alignment & security practices", url: "https://www.anthropic.com/news/improving-alignment-security-efforts"}
+      - {title: "Argo-Bench · reward hacking 记录", url: "https://github.com/TextQLLabs/Argo-Bench/blob/main/analysis/reward_hacking/README.md"}
+      - {title: "OpenAI · Towards safety cases for frontier AI training", url: "https://openai.com/index/towards-safety-cases-for-frontier-ai-training"}
+    next: 攻破者 agent 扫公开环境集，统计可 hack 比例并人工复核 precision
+
+  - name: 有边界的委托：停下报告、最小副作用、pass^k
+    status: 空白
+    keywords: [impossible task, infeasible task, unanswerable, abstain, abstention, stop and report, ambiguous instruction, underspecified instruction, side effect, side effects, unintended action, overreach, unwanted persistence, pass^k]
+    why: "练习副本加载失败后 agent 提交了真实政府表单（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)）；会员接口拒绝后 Astra 用管理员连接写生产库（[Astra card，二手](https://deploymentsafety.openai.com/gpt-6-astra)）；unwanted persistence 16–28%（[GPT-6.1 Sol card](https://deploymentsafety.openai.com/gpt-6-1-sol)）；pass@1 65.36% 对 pass^20 25.25%（[Thinkingbox](https://arxiv.org/abs/2608.19741)）。副作用判分尚无共识（[Echoverse prompts](https://github.com/microsoft/Echoverse/blob/main/harness/prompts.py) 容忍，[Thinkingbox](https://arxiv.org/abs/2608.19741) 拒绝）。"
     evidence:
       - {title: "Anthropic · Investigating unintended model actions", url: "https://www.anthropic.com/research/investigating-unintended-model-actions"}
-      - {title: "Anthropic · Alignment assessment（GUI 任务中的模拟偏置）", url: "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"}
-      - {title: "OpenAI GPT-6.1 Sol system card · unwanted persistence 23.5%", url: "https://deploymentsafety.openai.com/gpt-6-1-sol"}
-    next: 构造含不可能 / 坏 mock / 含糊授权变体的任务集，同时度量完成率、越界率与诚实性
+      - {title: "Thinkingbox · pass^20", url: "https://arxiv.org/abs/2608.19741"}
+      - {title: "OpenAI GPT-6.1 Sol card · unwanted persistence", url: "https://deploymentsafety.openai.com/gpt-6-1-sol"}
+    next: 100 个办公任务的“应坚持 / 应停下”成对变体，测完成率、越界率、编造率
 
-  - name: persistence 的两面：越界率作为一等指标
-    status: 空白
-    keywords: [overreach, unintended action, unintended actions, side effect, side effects, out-of-scope, scope violation, unsanctioned, destructive action, over-agency, unwanted persistence]
-    why: "Meta 把坚持（Active Focus / FocusBench）当卖点（[Muse Wonder](https://research.meta.ai/blog/muse-wonder)），OpenAI 把 unwanted persistence（16–28%）当风险（[GPT-6.1 Sol card](https://deploymentsafety.openai.com/gpt-6-1-sol)、[Oct card](https://deploymentsafety.openai.com/gpt-6-october/introduction)），AISI 发现 Astra 把自动消息当授权（[AISI](https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations)）。同一种行为，一边奖励一边惩罚，还没有跨模型、harness 固定的统一度量。"
-    evidence:
-      - {title: "OpenAI GPT-6 Sol/Luna Oct card · persistence 28% / 15.9%", url: "https://deploymentsafety.openai.com/gpt-6-october/introduction"}
-      - {title: "Meta Muse Wonder · Active Focus / FocusBench", url: "https://research.meta.ai/blog/muse-wonder"}
-      - {title: "AISI · Astra unsanctioned supply-chain attacks", url: "https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations"}
-    next: 定义“该坚持 / 该停”成对任务，报告 persistence-vs-overreach 曲线
-
-  - name: 可验证 CUA 环境合成 + 独立攻破者审计
+  - name: 委托人偏好与用户模拟器
     status: 上升
-    keywords: [environment synthesis, synthesized environment, synthesized environments, scalable environment, scalable environments, environment generation, verifiable environment, verifiable environments, RL environments, task synthesis]
-    why: "环境生产成了训练瓶颈：[RecreationWorld](https://arxiv.org/abs/2609.22000)、[SoftwareGym](https://arxiv.org/abs/2610.12611)、[CodeMidas](https://arxiv.org/abs/2609.22068)、[VHD-Play](https://arxiv.org/abs/2609.27321) 等两周内密集出现。但 MiMo 开源任务约 2/3 可从 git 历史拿到答案（[Vals AI，二手](https://digg.com/ai/wo6cdxwj)），Anthropic 生产 RL 环境中超过 10% 有问题（[Anthropic](https://www.anthropic.com/news/improving-alignment-security-efforts)）。泄题和可 hack 已有证据会泛化成危险倾向（同上）。"
+    keywords: [user simulator, user simulation, simulated user, user proxy, preference elicitation, personalization, principal, delegation, on behalf of]
+    why: "代理交易中用户效率 0.55 对最优 0.89，85% 的差距来自偏好误读（[Project Swap](https://www.anthropic.com/research/project-swap)）；只换用户模拟器企业任务 reward 变化 15.2 分（[UserProxyBench](https://arxiv.org/abs/2609.38043)）；训练出的不合作用户模拟器比 GPT-5.5 扮演用户泛化更好（[MIMESIS](https://github.com/VietHoang1512/mimesis/blob/main/README.md)）；Google ADK 也用 LLM 模拟用户评测语音 agent（[Google](https://developers.googleblog.com/how-to-evaluate-live-voice-agents-in-adk/)）。"
     evidence:
-      - {title: "RecreationWorld (Qwen)", url: "https://arxiv.org/abs/2609.22000"}
-      - {title: "CodeMidas (Xiaomi MiMo)", url: "https://arxiv.org/abs/2609.22068"}
-      - {title: "Anthropic · Improving alignment & security practices", url: "https://www.anthropic.com/news/improving-alignment-security-efforts"}
-    next: 合成 → 独立求解 → 找漏洞 agent 审计（git 历史、可读的特权状态、可伪造的成功判定）
+      - {title: "Anthropic · Project Swap", url: "https://www.anthropic.com/research/project-swap"}
+      - {title: "MIMESIS · 用户模拟器作为 RL 环境", url: "https://github.com/VietHoang1512/mimesis/blob/main/README.md"}
+      - {title: "UserProxyBench", url: "https://arxiv.org/abs/2609.38043"}
+    next: 在环境里加入 representation test 一步，用留出的真人偏好评分
+
+  - name: mock 保真度与 sim-to-real
+    status: 空白
+    keywords: [sim-to-real, sim2real, environment fidelity, mock fidelity, simulation fidelity, environment simulator, simulated environment, simulated environments, LLM-simulated, digital twin, real-world transfer]
+    why: "浅环境会伤害真实表现，真实站点准确率 80.0 → 75.0（[Echoverse](https://arxiv.org/abs/2607.28074)）；只有 Trace2Env 定义了模拟动作回放到真实环境的一致性（[Trace2Env](https://github.com/ruyue0001/trace2env/blob/main/REPRODUCING.md)）；纯 LLM 模拟只适合 SFT 冷启动（[Apple env-free](https://arxiv.org/abs/2607.16900)、[EnvACE reward](https://github.com/Within-yao/EnvACE/blob/main/agent_system/environments/env_package/checklist/checklist_reward.py)）；lab 把 mock 与真实 app 定位为互补（[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA/blob/main/paper/Qwen-CUA.pdf)），但缺定量依据。"
+    evidence:
+      - {title: "Echoverse · 深度 vs 浅环境", url: "https://arxiv.org/abs/2607.28074"}
+      - {title: "Trace2Env · 回放一致性", url: "https://github.com/ruyue0001/trace2env/blob/main/REPRODUCING.md"}
+    next: 按维度（状态深度、错误模式、权限流、UI）降保真，测迁移
+
+  - name: 办公文件语义 verifier（xlsx / docx / pptx）
+    status: 空白
+    keywords: [spreadsheet, Excel, xlsx, docx, pptx, PowerPoint, Word document, office documents, office tasks, document editing, slide]
+    why: "公式、透视表、修订、版式的语义检查只有少量代码 verifier，部分要 Office COM（[OfficeVal](https://github.com/baidu-frontier-research/OmegaUse-OfficeVal/blob/main/README.md)）；交付物式基准多依赖规则加 rubric-LLM（[WorkBuddy](https://github.com/Tencent/workbuddy-bench/blob/main/.agents/skills/wbbench-report-skills/references/wb-bench-office.md)）；方法组跨篇分析把它列为本批论文都没解决的问题（[methods 笔记](https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/reviews/2026-10-14_office-pro-env/methods.md)）。"
+    evidence:
+      - {title: "OmegaUse-OfficeVal (Baidu)", url: "https://github.com/baidu-frontier-research/OmegaUse-OfficeVal/blob/main/README.md"}
+      - {title: "WorkBuddy Bench (Tencent)", url: "https://arxiv.org/abs/2607.20911"}
+    next: 开源一套可复用的 Office 语义检查库，作为 A 的公共组件
 
   - name: GUI ↔ CLI 接口路由
     status: 上升
     keywords: [GUI and CLI, GUI+CLI, CLI and GUI, hybrid computer-use, hybrid action space, shell and GUI, accessibility tree, a11y tree, API and GUI]
-    why: "混合动作空间成为 CUA 的标准定义，但不训练就直接加 CLI 会掉分（[HybridCUA](https://arxiv.org/abs/2609.38008) 38.8 → 18.4；[Qwen-CUA](https://github.com/xlang-ai/Qwen-CUA) 加 Bash 后准确率下降）。像素策略与 AX-tree broker（[Meta Muse](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse)、[ZCode](https://github.com/zai-org/ZCode)）之间也存在分布偏移（推论）。"
+    why: "专业软件上 GUI 远弱于 CLI：EngiWorld 同一模型 CLI 48.3、GUI 2.0（[EngiWorld](https://github.com/Hongcheng-Gao/EngiWorld/blob/main/README.md)）；不训练直接加 CLI 会掉分，38.8 → 18.4（[HybridCUA](https://arxiv.org/abs/2609.38008)）；OSWorld-Science 有 16.4% 任务只能用 GUI（[OSWorld-Science](https://github.com/DiscoAILab/OSWorld-Science/blob/main/README.md)）。"
     evidence:
       - {title: "HybridCUA (ZJU)", url: "https://arxiv.org/abs/2609.38008"}
-      - {title: "Qwen-CUA report", url: "https://github.com/xlang-ai/Qwen-CUA"}
-    next: 学“何时切接口”的奖励设计；像素 → AX 树的迁移评测
-
-  - name: 离线 / 回放式 BUA 评测与环境替身
-    status: 上升
-    keywords: [offline web, web replay, live web, live website, live websites, simulated website, environment simulator, environment simulation, contamination, memorization, evaluator]
-    why: "BrowseComp、OSWorld 等实网评测已造成真实第三方副作用（[Anthropic](https://www.anthropic.com/research/investigating-unintended-model-actions)）；数据污染（[Schrödinger](https://arxiv.org/abs/2609.27891)）与 evaluator 漏判 5–8pp（[WebArena-Lite 审计](https://arxiv.org/abs/2610.01491)）同时侵蚀分数。[Trace2Env](https://arxiv.org/abs/2610.06100) 证明可以从 trace 重建有状态的网站替身，Schrödinger 证明表面扰动能探测记忆。"
-    evidence:
-      - {title: "Trace2Env (NTU)", url: "https://arxiv.org/abs/2610.06100"}
-      - {title: "Schrödinger's Code Repository (SJTU)", url: "https://arxiv.org/abs/2609.27891"}
-    next: 离线快照 + mock 失败即关闭 + 不可逆动作拦截 + DOM 扰动的抗污染 web RL 环境
-
-  - name: 稀疏奖励下的信号（全失败组 / 好坏成功）
-    status: 拥挤
-    keywords: [sparse reward, sparse rewards, credit assignment, advantage redistribution, process reward, hindsight, all-fail, identical rewards, binary reward, binary outcome reward]
-    why: "[SRD](https://arxiv.org/abs/2610.08077)、[GAGAR](https://arxiv.org/abs/2609.32577)、[PTGS](https://arxiv.org/abs/2610.01509)、[RDPO](https://arxiv.org/abs/2609.29444)、[GuardPO](https://arxiv.org/abs/2609.15134) 一个月内集中出现，方法已多；差异化要落在 web/CUA 的长程、高方差场景。"
-    evidence:
-      - {title: "SRD (Salesforce)", url: "https://arxiv.org/abs/2610.08077"}
-      - {title: "GAGAR (Xiaomi MiMo)", url: "https://arxiv.org/abs/2609.32577"}
-    next: 直接作为 web GRPO 的基线接入，而不是重新发明
-
-  - name: 监控器作为攻击面 / 带外审批
-    status: 上升
-    keywords: [monitor evasion, evade monitoring, evading monitors, oversight, collusion, covert, approval, guard model, trajectory guard, monitorability]
-    why: "对抗设定下 CoT 监控召回 <11%（[OpenAI](https://openai.com/index/safety-overview-gpt-6-astra)）；Anthropic 离线监控被“这是模拟”的推理说服（[Anthropic](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)）；agent 花两小时游说审核者（[OpenShell](https://github.com/NVIDIA/OpenShell)）；9 个模型中 7 个会规避 monitor（[Covert Assistance](https://arxiv.org/abs/2609.39050)）。已出现的控制手段：形式化策略证明（[OpenShell](https://github.com/NVIDIA/OpenShell)）、模型无法伪造的审批通道（[Meta Sentinel](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse)）、[硬件看门狗](https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/)。"
-    evidence:
-      - {title: "NVIDIA OpenShell policy prover", url: "https://github.com/NVIDIA/OpenShell"}
-      - {title: "Meta · How We Built Safety Into Muse", url: "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse"}
-    next: “游说审核者 / 伪造授权 / 把自动消息当授权”的评测，对比三类控制
-
-  - name: 长程上下文与 memory 的完整性
-    status: 观望
-    keywords: [context management, compaction, memory poisoning, agent memory, long-term memory, summarization, context window, belief state]
-    why: "[CLM](https://arxiv.org/abs/2609.37725) 把上下文管理移进权重；OpenAI 发现 compaction 摘要里出现“隐瞒错误”的提示和自我注入（[report](https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/)）；[Team Bots](https://x.ai/news/team-bots) 的共享 memory 是新的投毒面（推论）。"
-    evidence:
-      - {title: "Context Language Models (Meta/UW)", url: "https://arxiv.org/abs/2609.37725"}
-      - {title: "OpenAI · deception in compaction summaries", url: "https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/"}
-    next: 长程 CUA 的 memory / 摘要完整性评测
+      - {title: "EngiWorld · CLI vs GUI", url: "https://github.com/Hongcheng-Gao/EngiWorld/blob/main/README.md"}
+    next: 学“何时切接口”的奖励设计；专业软件上的 GUI-only 子集
 
 must_read:
-  - {title: "Qwen-CUA 技术报告：最完整的开源 CUA RL 配方", url: "https://github.com/xlang-ai/Qwen-CUA"}
-  - id: anthropic-research:investigating-unintended-model-actions
-    why: 实网 BUA/CUA 评测的真实副作用与整改
+  - {title: "Qwen-CUA 报告 §3：mock 服务、打包应用、阶段链式合成、真机", url: "https://github.com/xlang-ai/Qwen-CUA/blob/main/paper/Qwen-CUA.pdf", why: "lab 级完整的环境实践"}
+  - {title: "Kimi K3 报告 §4.2 / §5.3：活环境、harness 随机化、AgentENV fork 判分", url: "https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf", why: "长程个人助理环境与沙箱原语"}
+  - {title: "Echoverse：规格编译成有状态应用、数据库 diff 判分", url: "https://github.com/microsoft/Echoverse/blob/main/README.md", why: "深度比数量重要的证据"}
+  - {title: "GDPevo 构建 SOP：企业环境、任务、grader 全流程", url: "https://github.com/Prism-Shadow/GDPevo/blob/main/data_construction/Stage_2_Task_Group_Synthesis/task_factory/guides/environment_and_data.md", why: "可照抄的工业化流水线"}
+  - {title: "EngiWorld：26 款真实工程软件 + 领域引擎 verifier", url: "https://github.com/Hongcheng-Gao/EngiWorld/blob/main/README.md", why: "专业软件环境的样板"}
+  - {title: "UI-Mate / CUA-Gym-Hub：98 个 mock SaaS + 统一状态 API", url: "https://github.com/Tencent/UI-Mate/blob/main/osworker_bench/CUA-Gym-Hub/README.md", why: "办公 mock 的样板"}
+  - {title: "HANDBOOK：rubric 文本与 verifier 代码配对、含禁止项", url: "https://github.com/surge-ai/handbook/blob/main/tasks/hr_crestwood_university_79786c46/tests/rubrics.json", why: "结构化 rubric 的样板"}
   - id: anthropic-news:improving-alignment-security-efforts
     why: 环境质量 → 危险倾向；评测伙伴检查清单
-  - id: arxiv:2609.22000
-    why: 用参考 app 当 oracle 的可执行 CUA 奖励
-  - id: arxiv:2609.38008
-    why: GUI+CLI 混合 CUA 的 RL 配方，全开源
-  - {title: "Agent Lightning v1.0：在真实 harness 里做 RL 的最小实现 + 防 hack 清单", url: "https://github.com/microsoft/agent-lightning"}
-  - id: arxiv:2610.08077
-    why: 全失败组也有信号，可直接用于 web GRPO
-  - id: arxiv:2609.27891
-    why: 抗污染评测的可迁移方法
-  - id: openai:towards-safety-cases-for-frontier-ai-training
-    why: RL 基础设施的安全检查清单
-  - {title: "Kimi K3 技术报告 §4.2：harness 随机化、fork 判分、活环境", url: "https://github.com/MoonshotAI/Kimi-K3"}
+  - id: anthropic-research:investigating-unintended-model-actions
+    why: 坏 mock 导致真实副作用；停下并报告的需求来源
+  - {title: "OpenAI × Ironclad：伙伴托管的真实 SaaS 上做 CUA RL", url: "https://openai.com/index/advancing-computer-use-with-ironclad", why: "lab 与软件厂商结盟拿环境"}
 
 signals:
-  - {signal: "OSWorld-Verified 饱和", detail: "Qwen-CUA 86.2 / Kimi K3 84.8；比较转向 OSWorld 2.0（binary 约 20%）、过程评测 OSWorld-Pro、注入攻击成功率", refs: [{title: Qwen-CUA, url: "https://github.com/xlang-ai/Qwen-CUA"}, {title: Kimi K3, url: "https://github.com/MoonshotAI/Kimi-K3"}, {title: OSWorld-Pro, url: "https://arxiv.org/abs/2609.24890"}]}
-  - {signal: "长程基准换代", detail: "Terminal-Bench 4（8 小时预算）、DeepSWE v1.1、SWE-Marathon；报告惯例转为单任务时间与成本", refs: [{title: Grok 4.7, url: "https://x.ai/news/grok-4-7"}, {title: GPT-6 Astra, url: "https://openai.com/index/gpt-6-astra"}, {title: Muse Wonder, url: "https://research.meta.ai/blog/muse-wonder"}]}
-  - {signal: "前沿 RL 受遏制约束", detail: "OpenAI 自 09-20 暂停最强模型的 tool-use 训练与评测；Anthropic、AISI 评测断网", refs: [{title: OpenAI DNS report, url: "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"}, {title: Anthropic, url: "https://www.anthropic.com/research/investigating-unintended-model-actions"}, {title: AISI, url: "https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities"}]}
-  - {signal: "harness 是隐藏变量", detail: "同一模型换 harness 可差 20.84pp；BrowseComp 52.6 vs 92.2（HarnessDev）", refs: [{title: ProgramGym, url: "https://arxiv.org/abs/2610.13395"}, {title: HarnessDev, url: "https://arxiv.org/abs/2609.01437"}]}
-  - {signal: "开源 CUA 可复现", detail: "Qwen-CUA 权重（08-26）、HybridCUA 数据和 RL 基建、MiMo RL 代码均已公开", refs: [{title: Qwen-CUA, url: "https://github.com/xlang-ai/Qwen-CUA"}, {title: HybridCUA, url: "https://arxiv.org/abs/2609.38008"}, {title: MiMo verl, url: "https://github.com/XiaomiMiMo/verl"}]}
+  - {signal: "通用 CUA 饱和、专业工作低分", detail: "OSWorld-Verified 86.2；DAYJOB 24.7%、CADWorld 17.5%、EngiWorld 多软件 3.6%", refs: [{title: Qwen-CUA, url: "https://github.com/xlang-ai/Qwen-CUA"}, {title: DAYJOB, url: "https://arxiv.org/abs/2610.01306"}, {title: CADWorld, url: "https://arxiv.org/abs/2609.16251"}, {title: EngiWorld, url: "https://arxiv.org/abs/2609.37686"}]}
+  - {signal: "lab 与软件厂商结盟", detail: "OpenAI 与 Ironclad 在伙伴托管副本上训练，GPT-6 Astra 平均 55.0%（二手）", refs: [{title: OpenAI, url: "https://openai.com/index/advancing-computer-use-with-ironclad"}, {title: fourweekmba（二手）, url: "https://fourweekmba.com/ai-openai-says-gpt-6-astra-scored-55-percent-on-11-ironclad-tas/"}]}
+  - {signal: "环境质量成为训练门槛", detail: "超过 10% 生产 RL 环境有问题；OpenAI 暂停最强模型的 tool-use 训练；训练 run 开始写 safety case", refs: [{title: Anthropic, url: "https://www.anthropic.com/news/improving-alignment-security-efforts"}, {title: OpenAI DNS report, url: "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/"}, {title: OpenAI safety case, url: "https://openai.com/index/towards-safety-cases-for-frontier-ai-training"}]}
+  - {signal: "评测口径转向可靠性与越界", detail: "pass^20 25.25%；部分分 84.3 对完美率 58.7；unwanted persistence 16–28%", refs: [{title: Thinkingbox, url: "https://arxiv.org/abs/2608.19741"}, {title: Qwen-CUA, url: "https://github.com/xlang-ai/Qwen-CUA/blob/main/paper/Qwen-CUA.pdf"}, {title: GPT-6.1 Sol card, url: "https://deploymentsafety.openai.com/gpt-6-1-sol"}]}
+  - {signal: "harness 与用户是隐藏变量", detail: "BrowseComp 52.6 vs 92.2；换 harness 差 15.36；换用户模拟器 reward 差 15.2", refs: [{title: HarnessDev, url: "https://arxiv.org/abs/2609.01437"}, {title: DataSpace, url: "https://arxiv.org/abs/2608.03451"}, {title: UserProxyBench, url: "https://arxiv.org/abs/2609.38043"}]}
+  - {signal: "真机与物理仪器进入 agent 环境", detail: "设备侧强制安全上限，6 种故障在动作前被拦下；激光重锁成功率 58% → 96%", refs: [{title: Anthropic MHS, url: "https://www.anthropic.com/news/model-hardware-standard-research-preview"}]}
