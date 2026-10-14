@@ -1,6 +1,7 @@
 # agent-frontier · 工作约定
 
-个人前沿追踪仓库：办公 / 专业领域 agent 及其环境构建、computer/browser-use agent、agentic RL、agent 评测与安全。结构与流程见 [PLAN.md](PLAN.md)。
+个人前沿追踪仓库：Muse 级个人 agent 的练习场与训练（主线）、写代码操作电脑、办公 / 专业领域 agent 及其环境构建、computer/browser-use agent、agentic RL、agent 评测与安全。结构与流程见 [PLAN.md](PLAN.md)；主方向与模块拆解见 `config/compass.yaml` 和 `reviews/*research-proposal.md`。
+- 本仓库对安全话题只在影响设计时顺带记录，不作为主线。
 
 ## 证据规则（必须遵守）
 

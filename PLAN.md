@@ -6,6 +6,8 @@
 
 | 优先级 | Topic | 关注点 |
 |---|---|---|
+| P0（当前主线） | `personal-agent` | Muse 级个人 agent：自带电脑、常驻、记忆、主动性、多设备、数字人环境 |
+| P0（当前主线） | `code-computer-use` | 写代码操作电脑、GUI 与代码 / 命令行的路由 |
 | P0（当前焦点） | `env-construction` | 环境形态（真实应用 / mock / 模拟 / 真机）、状态与基础设施、任务合成、verifier 与 rubric、数据准备、隔离 |
 | P0（当前焦点） | `office-agent` | 办公套件与企业 SaaS（邮件、日历、IM、工单、CRM / ERP） |
 | P0（当前焦点） | `professional-agent` | 工程、科学软件、金融、医疗、法务、数据与 BI |
@@ -83,7 +85,8 @@ README 分两层：顶部的**研究罗盘**（研究方向雷达、置顶必读
    - 关键信号只留仍然成立的，并改 `updated` 日期
 3. **沉淀到 topic 页**：把值得长期保留的条目写进 `topics/*.md`；benchmark 有新的 SOTA 时更新表格
 4. 每月或遇到大事件时，在 `reviews/` 写一份深度报告；每半年更新一次研究提案（当前：[2026-10-14_research-proposal.md](reviews/2026-10-14_research-proposal.md)），同步 `compass.yaml` 的 `proposals`
-5. 提交前运行 `python scripts/check_evidence.py`：所有论断都要就地附出处 URL（规则见 [CLAUDE.md](CLAUDE.md)）
+5. **方向复盘（M0）**：对照 `config/compass.yaml` 的 `watch` 列表看本周有没有触发信号；更新 `modules` 的状态和下一步；需要修正主方向时，先改 [research-proposal](reviews/2026-10-14_research-proposal.md)，再在 `direction_log` 加一行写明原因和证据
+6. 提交前运行 `python scripts/check_evidence.py`：所有论断都要就地附出处 URL（规则见 [CLAUDE.md](CLAUDE.md)）
 
 ## 运行
 

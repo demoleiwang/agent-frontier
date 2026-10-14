@@ -24,7 +24,7 @@
 | 2026-09-30 | [Disrupting a coordinated model-distillation campaign](https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign) | — | 0.00 | 🆕 new | Security |
 | 2026-09-30 | [Helping small businesses put AI to work](https://openai.com/index/helping-small-businesses-put-ai-to-work) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-09-29 | [DevDay 2026 Recap](https://openai.com/index/devday-2026-recap) | — | 0.00 | 🆕 new | Company |
-| 2026-09-29 | [Introducing dots](https://openai.com/index/introducing-dots) | — | 0.00 | 👀 skimmed | Product |
+| 2026-09-29 | [Introducing dots](https://openai.com/index/introducing-dots) | `personal-agent` | 0.17 | 👀 skimmed | Product |
 | 2026-09-29 | [Introducing GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol) | `computer-use-agent` | 0.17 | 👀 skimmed | Product |
 | 2026-09-28 | [Basis completes a tax workbook 2x faster with GPT-6 Astra](https://openai.com/index/basis-tax-workbook-with-astra) | — | 0.00 | 🆕 new |  |
 | 2026-09-28 | [Are you a Codex Original?](https://openai.com/form/codex-originals) | — | 0.00 | 🆕 new |  |

@@ -30,7 +30,7 @@
 | 2026-09-30 | [Disrupting a coordinated model-distillation campaign](https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign) | Security |  |
 | 2026-09-30 | [Helping small businesses put AI to work](https://openai.com/index/helping-small-businesses-put-ai-to-work) | Global Affairs |  |
 | 2026-09-29 | [DevDay 2026 Recap](https://openai.com/index/devday-2026-recap) | Company |  |
-| 2026-09-29 | [Introducing dots](https://openai.com/index/introducing-dots) | Product |  |
+| 2026-09-29 | 🎯 [Introducing dots](https://openai.com/index/introducing-dots) | Product | `personal-agent` |
 | 2026-09-29 | 🎯 [Introducing GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol) | Product | `computer-use-agent` |
 | 2026-09-28 | [Basis completes a tax workbook 2x faster with GPT-6 Astra](https://openai.com/index/basis-tax-workbook-with-astra) |  |  |
 | 2026-09-28 | [Are you a Codex Original?](https://openai.com/form/codex-originals) |  |  |
@@ -198,7 +198,7 @@
 | 2026-09-18 | [Introducing Grok Voice Transcribe 2.0](https://x.ai/news/grok-voice-transcribe-2) | News |  |
 | 2026-09-16 | [Memory in Grok Build](https://x.ai/news/grok-build-memory) | News |  |
 | 2026-09-04 | [Setting Grok Bot loose on procurement](https://x.ai/news/grok-bot-procurement) | News |  |
-| 2026-09-03 | 🎯 [Designing Grok Bot for a world of persistent agents](https://x.ai/news/designing-grok-bot) | News | `agent-infra` |
+| 2026-09-03 | 🎯 [Designing Grok Bot for a world of persistent agents](https://x.ai/news/designing-grok-bot) | News | `personal-agent` `agent-infra` |
 | 2026-09-03 | [Grok Bot for Enterprise](https://x.ai/news/grok-bot-for-enterprise) | News |  |
 | 2026-09-01 | [Biosecurity at the frontier](https://x.ai/news/biosafety-at-the-frontier) | News |  |
 | 2026-08-29 | [Grok Bot now works with X](https://x.ai/news/grok-bot-and-x) | News |  |

@@ -3,7 +3,17 @@
 # requires_any（可选）：除关键词外，正文还须出现其中任一词，topic 才成立（用来压掉泛词误报）。
 # authors: 命中直接置顶（HF blog 用 HF 用户名）。
 
-# ---- 当前重点（2026-10）：办公 / 专业领域 agent 及其环境构建 ----
+# ---- 当前重点（2026-10）：Muse 级个人 agent、写代码操作电脑、办公 / 专业领域 agent 及其环境构建 ----
+personal-agent:
+  keywords: [personal agent, personal agents, personal assistant, personal AI, always-on, persistent agent,
+             proactive, proactivity, long-term memory, agent memory, memory agent, personalization, personalized agent,
+             user simulator, user preference, lifelong, digital life, everyday life, on-device agent, mobile agent,
+             Grok Bot, Copilot Autopilot, Gemini Spark, OpenClaw, multi-day, living world]
+  requires_any: [agent, agents, agentic, assistant]
+code-computer-use:
+  keywords: [code as action, code-as-action, CodeAct, Playwright, PyAutoGUI, programmatic tool calling,
+             GUI and CLI, GUI+CLI, hybrid action space, semantic actions, code execution, REPL, executable actions]
+  requires_any: [GUI, computer-use, computer use, browser, desktop, screen, CUA, web agent]
 office-agent:
   keywords: [office, spreadsheet, Excel, Word document, PowerPoint, slides, presentation, email, calendar,
              CRM, ERP, SaaS, enterprise workflow, enterprise software, knowledge work, workplace, productivity,

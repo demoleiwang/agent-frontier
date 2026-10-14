@@ -32,7 +32,37 @@
   > VHD-Play：先采样并求解数学机制，再渲染成有状态工具环境，reward 天然可验证；3,300 个环境，每个几美分；诊断分 0.204 → 0.815（证据较薄）。
 - 🆕 **RRSI: Regularized Recursive Self-Improvement of Agent Harnesses** · 2026-09-22 · rep 0.65 (HF 162↑ · Google · code) · [arXiv](https://arxiv.org/abs/2609.24972) [HF](https://huggingface.co/papers/2609.24972) [code](https://github.com/google-research/rrsi)
 
-## office-agent (33)
+## personal-agent (37)
+
+- 🆕 **nanoMuse: An Open-Source Personal Agent for Every Device You Own** · 2026-10-08 · rep 0.59 (HF 93↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2610.08699) [HF](https://huggingface.co/papers/2610.08699) [code](https://github.com/nano-muse/nanoMuse)
+- 🆕 **Beyond Dyadic Memory: Interaction-Aware Multimodal Memory with Adaptive Agentic Retrieval for Multi-Party Spoken Conversations** · 2026-09-30 · rep 0.56 (HF 56↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2609.32522) [HF](https://huggingface.co/papers/2609.32522) [code](https://github.com/VoxPolyMem/Code)
+- 🆕 **Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents** · 2026-09-24 · rep 0.52 (HF 34↑ · Salesforce AI Research) · [arXiv](https://arxiv.org/abs/2609.27334) [HF](https://huggingface.co/papers/2609.27334)
+- 🆕 **Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym** · 2026-10-06 · rep 0.26 (HF 28↑ · Minnesota NLP) · [arXiv](https://arxiv.org/abs/2609.37267) [HF](https://huggingface.co/papers/2609.37267)
+- 🆕 **Personal-Agent Mediated Recommendation with Cross-Platform User History** · 2026-10-07 · rep 0.39 (HF 5↑ · Meta) · [arXiv](https://arxiv.org/abs/2610.07588) [HF](https://huggingface.co/papers/2610.07588)
+- 🆕 **APM-Bench: Benchmarking Cross-session Persistent Memory for Egocentric Streaming Video Assistants** · 2026-09-30 · rep 0.52 (HF 32↑ · Shanghai Jiao Tong University · code) · [arXiv](https://arxiv.org/abs/2609.37559) [HF](https://huggingface.co/papers/2609.37559) [code](https://github.com/Jianguo-Huang11/APM-Bench)
+- 🆕 **Capability-Driven Self-Evolution of Agent Memory** · 2026-10-06 · rep 0.43 (HF 10↑ · Microsoft) · [arXiv](https://arxiv.org/abs/2610.06361) [HF](https://huggingface.co/papers/2610.06361)
+- 🆕 **Asking for What Was Never Requested: Horizontal and Vertical Proactivity in Agents** · 2026-09-30 · rep 0.30 (HF 27↑ · IBM · code) · [arXiv](https://arxiv.org/abs/2609.37236) [HF](https://huggingface.co/papers/2609.37236) [code](https://github.com/dolev31/ProactiveInquirer)
+- 🆕 **CERA-MoA: Co-Evolving Routing Mechanisms with Continually Learning LLM Agents** · 2026-09-17 · rep 0.36 (HF 3↑ · Tsinghua University · code) · [arXiv](https://arxiv.org/abs/2609.18779) [HF](https://huggingface.co/papers/2609.18779) [code](https://github.com/michaeljiang0530/CERA-MoA)
+- 🆕 **Towards In-Parameter Memory Augmentation for Large Language Models** · 2026-10-07 · rep 0.40 (HF 6↑ · HKUST · code) · [arXiv](https://arxiv.org/abs/2610.08630) [HF](https://huggingface.co/papers/2610.08630) [code](https://github.com/HKUST-KnowComp/Awesome-In-Parameter-Memory)
+- 🆕 **HGP:An on-device personalized agent memory via hybrid graph storage** · 2026-10-07 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.10071)
+- 🆕 **X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13886)
+- 🆕 **Memadapter: Counterfactual Adaptation Against Memory-induced Sycophancy** · 2026-10-06 · rep 0.32 (HF 34↑ · unknown · code) · [arXiv](https://arxiv.org/abs/2610.05162) [HF](https://huggingface.co/papers/2610.05162) [code](https://github.com/DEEP-JLU/MemAdapter)
+- 🆕 **When Does Selection Replace Extraction? A Pre-Registered Test of Agent Memory with a Typed Decision Model** · 2026-10-06 · rep 0.23 (HF 10↑ · unknown · code) · [arXiv](https://arxiv.org/abs/2609.34227) [HF](https://huggingface.co/papers/2609.34227) [code](https://github.com/ris3abh/Engram)
+- 🆕 **DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks** · 2026-10-07 · rep 0.20 (HF 6↑ · Illuin Technology · code) · [arXiv](https://arxiv.org/abs/2610.08048) [HF](https://huggingface.co/papers/2610.08048) [code](https://github.com/illuin-tech/daedalus)
+- 🆕 **NavHarness: Towards Lifelong Embodied Navigation** · 2026-10-01 · rep 0.19 (HF 5↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.34276) [HF](https://huggingface.co/papers/2609.34276) [code](https://github.com/billzhao1030/NavHarness)
+- 🆕 **Improving Proactive AI Assistance with Hierarchical Procedural Understanding** · 2026-10-08 · rep 0.17 (HF 9↑ · Sungkyunkwan University) · [arXiv](https://arxiv.org/abs/2610.06505) [HF](https://huggingface.co/papers/2610.06505)
+- 🆕 **Ambient @ EgoProactive 2026 : Proactive Egocentric Assistance with Visually Grounded Supervision** · 2026-09-14 · rep 0.16 (HF 3↑ · Ambient Intelligence · code) · [arXiv](https://arxiv.org/abs/2609.07099) [HF](https://huggingface.co/papers/2609.07099) [code](https://github.com/ambient-intelligence-hq/egoproactive-verbalizer)
+- 🆕 **AgentKernel: The Trust-Native Agentic Operating System** · 2026-09-25 · rep 0.14 (HF 5↑ · unknown) · [arXiv](https://arxiv.org/abs/2609.29647) [HF](https://huggingface.co/papers/2609.29647)
+- 🆕 **ThinkFlow: Self-Evolving Probabilistic Latent Memory for Lifelong Conversational Agents** · 2026-09-15 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.17010)
+- 🆕 **Learning from Research: Toward Lifelong Agent Harness Evolution** · 2026-09-30 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.40169)
+- 🆕 **Self-Evolving Search Index** · 2026-09-18 · rep 0.16 (HF 7↑ · unknown) · [arXiv](https://arxiv.org/abs/2609.19656) [HF](https://huggingface.co/papers/2609.19656)
+- 🆕 **Persistent Memory in Multi-Agent LLM Inference: What It Costs, What It Buys, and When You Can Tell** · 2026-10-06 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2610.07782)
+- 🆕 **From Knowledge Access to Source Learning: Developing Source-Specific Competence** · 2026-10-06 · rep 0.22 (HF 9↑ · Georgia Institute of Technology · code) · [arXiv](https://arxiv.org/abs/2610.02150) [HF](https://huggingface.co/papers/2610.02150) [code](https://github.com/luchengfu6/SourceLearn)
+- 🆕 **Mind2Dialogue: Training Human-Aware Language Models by Simulating User Mental States** · 2026-09-16 · rep 0.19 (HF 5↑ · unknown · code) · [arXiv](https://arxiv.org/abs/2609.15972) [HF](https://huggingface.co/papers/2609.15972) [code](https://github.com/wannabeyourfriend/mind2dialogue)
+
+_…其余 12 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
+
+## office-agent (31)
 
 - 🆕 **Atria Dawn: The Dawn of Agentic Superintelligence** · 2026-09-15 · rep 0.60 (HF 411↑ · Intern Large Models · 作者: Bo Li · code) · [arXiv](https://arxiv.org/abs/2609.15818) [HF](https://huggingface.co/papers/2609.15818) [code](https://github.com/atria-asi/Atria-Dawn-Preview)
 - 🆕 **Harness-Zero: Harness Distillation via Agent-as-Harness** · 2026-09-22 · rep 0.45 (HF 13↑ · Peking University · code) · [arXiv](https://arxiv.org/abs/2609.24974) [HF](https://huggingface.co/papers/2609.24974) [code](https://github.com/metaevo-ai/harness-zero)
@@ -44,7 +74,6 @@
 - 🆕 **SWE-Game: Can Coding Agents Build the Games We Want?** · 2026-10-08 · rep 0.25 (HF 25↑ · unknown) · [arXiv](https://arxiv.org/abs/2609.33678) [HF](https://huggingface.co/papers/2609.33678)
 - 🆕 **UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents** · 2026-10-06 · rep 0.24 (HF 11↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2610.05622) [HF](https://huggingface.co/papers/2610.05622) [code](https://github.com/tradertanmay/undobench)
 - 🆕 **Document Retrieval-Aware Chunking (D-RAC): Universal Retrieval-Aware Ingestion of Enterprise Documents via PDF Normalization and Multimodal Markdown Conversion** · 2026-09-22 · rep 0.30 (HF 51↑ · Yellow.ai) · [arXiv](https://arxiv.org/abs/2609.24220) [HF](https://huggingface.co/papers/2609.24220)
-- 🆕 **DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks** · 2026-10-07 · rep 0.20 (HF 6↑ · Illuin Technology · code) · [arXiv](https://arxiv.org/abs/2610.08048) [HF](https://huggingface.co/papers/2610.08048) [code](https://github.com/illuin-tech/daedalus)
 - 🆕 **In-Distribution Forcing for Long Video Generation at Test Time** · 2026-10-06 · rep 0.32 (HF 35↑ · Seoul National University · code) · [arXiv](https://arxiv.org/abs/2610.03120) [HF](https://huggingface.co/papers/2610.03120) [code](https://github.com/In-Distribution-Forcing/ID-Forcing)
 - 🆕 **PolyOCR-Venus: Unified OCR Foundation Models for Text-Centric Visual Intelligence** · 2026-10-12 · rep 0.31 (HF 31↑ · inclusionAI · code) · [arXiv](https://arxiv.org/abs/2609.37712) [HF](https://huggingface.co/papers/2609.37712) [code](https://github.com/inclusionAI/PolyOCR-Venus)
 - 🆕 **Does an Agent's History Tell You When Compaction Will Hurt? A Modest, Bounded Effect on the TRACE Paired-Replay Corpus** · 2026-10-06 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2610.08722)
@@ -54,15 +83,16 @@
 - 🆕 **Rewarding Novel Deductions: Solver-guided Process Rewards for Logical Reasoning** · 2026-09-28 · rep 0.20 (作者: Huan Wang) · [arXiv](https://arxiv.org/abs/2609.34660)
 - 🆕 **The Right Lesson at the Right Step: Deriving Control Updates for Self-Evolving Agents** · 2026-09-28 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.34988)
 - 🆕 **Better Deck or Different Judge? Evaluating Agentic Harness Gains in Corporate and Investment Banking** · 2026-09-30 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.39958)
-- 🆕 **Learning from Research: Toward Lifelong Agent Harness Evolution** · 2026-09-30 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.40169)
 - 🆕 **LongHarness: Advancing Agentic Reasoning over 100M-Token Corpora via Stateful Evidence Management** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13075)
 - 🆕 **Humanity's Sixth Sense: Benchmarking Intuitive Visual Reasoning in Multimodal Models** · 2026-10-12 · rep 0.16 (HF 7↑ · Scale AI) · [arXiv](https://arxiv.org/abs/2610.08966) [HF](https://huggingface.co/papers/2610.08966)
 - 🆕 **Evaluating LLM Creativity through Long-Tail Performance** · 2026-10-13 · rep 0.16 (HF 3↑ · University of Chicago · code) · [arXiv](https://arxiv.org/abs/2610.12998) [HF](https://huggingface.co/papers/2610.12998) [code](https://github.com/YichenZW/longtail-creativity)
 - 🆕 **EvoIn: Bridging Evolution and Internalization for Agent Fine-Tuning** · 2026-09-28 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.35290)
+- 🆕 **ContextRender: From Execution Dependencies to Agent Context** · 2026-09-29 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.37743)
+- 🆕 **Mining Agent Skills from Production Traces** · 2026-10-05 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.05777)
 
-_…其余 8 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
+_…其余 6 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 
-## professional-agent (93)
+## professional-agent (92)
 
 - 🆕 **RRSI: Regularized Recursive Self-Improvement of Agent Harnesses** · 2026-09-22 · rep 0.65 (HF 162↑ · Google · code) · [arXiv](https://arxiv.org/abs/2609.24972) [HF](https://huggingface.co/papers/2609.24972) [code](https://github.com/google-research/rrsi)
 - 👀 **Sharpening Tax in Post-Training** · 2026-10-02 · rep 0.62 (HF 69↑ · Meta · code) · [arXiv](https://arxiv.org/abs/2610.01509) [HF](https://huggingface.co/papers/2610.01509) [code](https://github.com/changdaeoh/sharpening-tax)
@@ -95,9 +125,9 @@ _…其余 8 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Retrieval-Augmented Skill Optimization via Cross-Harness Adaptation** · 2026-10-02 · rep 0.28 (HF 41↑ · Unknown) · [arXiv](https://arxiv.org/abs/2609.38024) [HF](https://huggingface.co/papers/2609.38024)
 - 🆕 **EgoTools: Towards Tool-Centric Reasoning in Real-World Egocentric Videos** · 2026-10-02 · rep 0.32 (HF 36↑ · Ropedia · code) · [arXiv](https://arxiv.org/abs/2609.39378) [HF](https://huggingface.co/papers/2609.39378) [code](https://github.com/Ropedia/EgoTools)
 
-_…其余 68 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
+_…其余 67 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 
-## env-construction (78)
+## env-construction (76)
 
 - 👀 **CodeMidas: Scaling Agentic Coding RL Environments from Code Itself** · 2026-09-21 · rep 0.60 (HF 98↑ · Xiaomi MiMo) · [arXiv](https://arxiv.org/abs/2609.22068) [HF](https://huggingface.co/papers/2609.22068)
   > 只用源码作输入，由 agent 写 spec 和测试、再用多次 rollout 过滤，合成 5,545 个 coding RL 任务；GRPO 训练 MiMo-V2.5 后 DeepSWE、ProgramBench、Terminal-Bench 均有提升。
@@ -131,9 +161,9 @@ _…其余 68 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **BVB: Benchmarking Agentic Video Understanding via Programmatic Reconstruction in Blender** · 2026-09-15 · rep 0.29 (HF 23↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.15478) [HF](https://huggingface.co/papers/2609.15478) [code](https://github.com/yunlong10/BVB)
 - 🆕 **ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents** · 2026-09-16 · rep 0.28 (HF 20↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.17523) [HF](https://huggingface.co/papers/2609.17523) [code](https://github.com/Gen-Verse/ScienceBuddy)
 
-_…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
+_…其余 51 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 
-## computer-use-agent (22)
+## computer-use-agent (20)
 
 - 👀 **RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents** · 2026-09-21 · rep 0.62 (HF 63↑ · Qwen · code) · [arXiv](https://arxiv.org/abs/2609.22000) [HF](https://huggingface.co/papers/2609.22000) [code](https://github.com/QwenLM/RecreationWorld)
   > 用运行中的参考 app 当 oracle 生成隐藏行为测试，构建 5 个平台的混合 CUA 可执行奖励环境 + 250 题 benchmark；环境构建范式可直接迁移。
@@ -160,12 +190,10 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **EchoPath: Execution-Level Replayable Memory for GUI Agents** · 2026-09-15 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.16635)
 - 🆕 **LongPuzzleBench: Evaluating GUI Agents on Long-Horizon Visual Puzzles** · 2026-09-28 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.34769)
 - 🆕 **TRACE: Trajectory-robust Admission with Evidence Ordering for Efficient GUI Agents** · 2026-09-14 · rep 0.13 (HF 2↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.10297) [HF](https://huggingface.co/papers/2609.10297) [code](https://github.com/924973292/TRACE)
-- 🆕 **PhoneCLI: From App Interfaces to Callable Commands for Mobile Agents** · 2026-09-28 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.35671)
 - 🆕 **Not All Experience Belongs in the Weights: Component Routing for Self-Improving GUI Agents** · 2026-10-01 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.01787)
 - 🆕 **AgentTime: Can Agents Estimate and Control Their Own Runtime?** · 2026-10-07 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.09944)
-- 🆕 **When Faster Decisions Do Not Make Better Agents: An Empirical Study of Jev in Agent Workflows** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13092)
 
-## browser-use-agent (21)
+## browser-use-agent (20)
 
 - 🆕 **AdaTutoRank: Learning to Rerank Document Sets via Adaptive Tutoring Optimization for RAG and Deep Research** · 2026-09-29 · rep 0.52 (HF 17↑ · Tencent · code) · [arXiv](https://arxiv.org/abs/2609.32472) [HF](https://huggingface.co/papers/2609.32472) [code](https://github.com/AdaTutoRank/AdaTutoRank)
 - 🆕 **Auditing Web Agent Evaluation on WebArena-Lite: Human Review of Outcomes and Trajectories** · 2026-10-01 · rep 0.15 (NeurIPS 录用) · [arXiv](https://arxiv.org/abs/2610.01491)
@@ -185,12 +213,11 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **WebPageBench: Event-Level Verification and Controlled UI-Variant Generation for Web Agents** · 2026-09-28 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2609.35026)
 - 🆕 **Can Agent Harnesses and Inference Engines Hear Each Other? The HEAR Protocol for Agentic LLM Serving** · 2026-10-05 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.06597)
 - 🆕 **Web$hell: A Unified Interface for Agentic Web Access** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13416)
-- 🆕 **Proactive Agentic Orchestration** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13485)
 - 🆕 **A Baseline Assessment for the Agentic Web Technology Stack** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13703)
 - 🆕 **CodeGraph: Open-Taxonomy Knowledge Graph for Source Code with Wikidata Grounding** · 2026-09-28 · rep 0.10 (HF 1↑ · Unknown · code) · [arXiv](https://arxiv.org/abs/2609.29474) [HF](https://huggingface.co/papers/2609.29474) [code](https://github.com/halykoss/CodeGraph)
 - 🆕 **Harness Evolution Hits a Ceiling: When Weight Training Should Begin** · 2026-10-08 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.11655)
 
-## gui-agent-search (17)
+## gui-agent-search (16)
 
 - 🆕 **ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search** · 2026-09-15 · rep 0.60 (HF 295↑ · ZGCAGI · 作者: Kai Chen · code) · [arXiv](https://arxiv.org/abs/2609.13356) [HF](https://huggingface.co/papers/2609.13356) [code](https://github.com/zgcagi/ZGCM-1)
 - 🆕 **Follow the Entities: A Corpus Map for Agentic Search** · 2026-09-30 · rep 0.58 (HF 76↑ · Microsoft) · [arXiv](https://arxiv.org/abs/2609.37226) [HF](https://huggingface.co/papers/2609.37226)
@@ -208,10 +235,9 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Beyond Outcome Rewards: Constructing and Assigning Retrieval Credit for Search Agents** · 2026-10-07 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.10179)
 - 🆕 **SEEDS: Preview-Guided Evidence Admission for Search Agents** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.12932)
 - 🆕 **SOAR: Source-Aware Reinforcement Learning with Precise Credit Assignment for Search Agents** · 2026-10-09 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.13157)
-- 🆕 **Self-Evolving Search Index** · 2026-09-18 · rep 0.16 (HF 7↑ · unknown) · [arXiv](https://arxiv.org/abs/2609.19656) [HF](https://huggingface.co/papers/2609.19656)
 - 🆕 **Leveraging a four-quadrant approach for evaluating Redpine Science** · 2026-10-06 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.07937)
 
-## agentic-rl (176)
+## agentic-rl (169)
 
 - 👀 **MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement** · 2026-10-09 · rep 0.56 (HF 60↑ · Xiaomi MiMo) · [arXiv](https://arxiv.org/abs/2610.11959) [HF](https://huggingface.co/papers/2610.11959)
   > MiMo-V2.6 技术报告：大规模 agentic RL、多层反 reward hacking、组内打分；配套开源 mimoagent 含规则型反作弊拦截器（注释称由 6,026 条 hacking 轨迹归纳）。
@@ -228,11 +254,9 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Marathoner: Ultra-Long-Horizon Autonomous Intelligence** · 2026-09-30 · rep 0.51 (HF 28↑ · Ant Group) · [arXiv](https://arxiv.org/abs/2609.34378) [HF](https://huggingface.co/papers/2609.34378)
 - 🆕 **FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation** · 2026-10-05 · rep 0.59 (HF 91↑ · National University of Singapore · code) · [arXiv](https://arxiv.org/abs/2609.38839) [HF](https://huggingface.co/papers/2609.38839) [code](https://github.com/YinBo0927/FrameMorrow)
 - 🆕 **NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale** · 2026-10-07 · rep 0.49 (HF 11↑ · NVIDIA · code) · [arXiv](https://arxiv.org/abs/2610.08430) [HF](https://huggingface.co/papers/2610.08430) [code](https://github.com/NVIDIA-NeMo/RL)
-- 🆕 **Beyond Dyadic Memory: Interaction-Aware Multimodal Memory with Adaptive Agentic Retrieval for Multi-Party Spoken Conversations** · 2026-09-30 · rep 0.56 (HF 56↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2609.32522) [HF](https://huggingface.co/papers/2609.32522) [code](https://github.com/VoxPolyMem/Code)
 - 🆕 **One to More, More to One: Category-Aware Iterative Expert Training for Software Engineering Agents** · 2026-09-22 · rep 0.55 (HF 25↑ · alibaba · code) · [arXiv](https://arxiv.org/abs/2609.23377) [HF](https://huggingface.co/papers/2609.23377) [code](https://github.com/alibaba/AgenticBigBang)
 - 🆕 **SLCA-GRPO: Resolving Cross-Segment Credit Misattribution in Tool-Calling RL** · 2026-09-28 · rep 0.46 (HF 7↑ · Tencent · code) · [arXiv](https://arxiv.org/abs/2609.29050) [HF](https://huggingface.co/papers/2609.29050) [code](https://github.com/SLCA-GRPO/SLCA-GRPO)
 - 🆕 **Dream-RSI: Recursive Self-Improvement through Evolving Worlds** · 2026-09-15 · rep 0.65 (HF 266↑ · Google · code) · [arXiv](https://arxiv.org/abs/2609.14858) [HF](https://huggingface.co/papers/2609.14858) [code](https://github.com/zhengkid/Dream-RSI)
-- 🆕 **Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents** · 2026-09-24 · rep 0.52 (HF 34↑ · Salesforce AI Research) · [arXiv](https://arxiv.org/abs/2609.27334) [HF](https://huggingface.co/papers/2609.27334)
 - 🆕 **Rollout-Marginal Distillation for Long-Horizon Autoregressive Video Generation** · 2026-10-05 · rep 0.52 (HF 17↑ · Tencent · code) · [arXiv](https://arxiv.org/abs/2609.37925) [HF](https://huggingface.co/papers/2609.37925) [code](https://github.com/cjeen/RMD)
 - 🆕 **Inducing Process Supervision from Outcome-Only Reinforcement Learning** · 2026-10-12 · rep 0.42 (HF 18↑ · Renmin University of China) · [arXiv](https://arxiv.org/abs/2609.36641) [HF](https://huggingface.co/papers/2609.36641)
 - 🆕 **QwenGyre: An Elastic Reinforcement Learning Framework for Training xLong-Horizon Agents** · 2026-09-29 · rep 0.50 (HF 27↑ · Qwen) · [arXiv](https://arxiv.org/abs/2609.33848) [HF](https://huggingface.co/papers/2609.33848)
@@ -241,8 +265,10 @@ _…其余 53 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **GameHorizon Suite: Multi-Horizon Data and Evaluation in Gameplay** · 2026-09-22 · rep 0.65 (HF 113↑ · Tencent · code) · [arXiv](https://arxiv.org/abs/2609.25001) [HF](https://huggingface.co/papers/2609.25001) [code](https://github.com/TencentARC/GameHorizon)
 - 🆕 **Long-WAM: Scaling the Context of World-Action Models** · 2026-10-08 · rep 0.65 (HF 94↑ · NVIDIA · code) · [arXiv](https://arxiv.org/abs/2610.10528) [HF](https://huggingface.co/papers/2610.10528) [code](https://github.com/NVlabs/LongLive)
 - 🆕 **Stateless Language Agents: Scaling Long-Horizon Automated Research** · 2026-10-12 · rep 0.48 (HF 20↑ · Stanford University · code) · [arXiv](https://arxiv.org/abs/2610.07625) [HF](https://huggingface.co/papers/2610.07625) [code](https://github.com/Alex-q-z/stateless-language-agents)
+- 🆕 **Towards Full Pipeline FP8 Reinforcement Learning for LLMs** · 2026-09-22 · rep 0.39 (HF 5↑ · ByteDance Seed) · [arXiv](https://arxiv.org/abs/2609.22870) [HF](https://huggingface.co/papers/2609.22870)
+- 🆕 **VideoGen-Agent: Reinforcing Video Generation Agents** · 2026-09-22 · rep 0.47 (HF 36↑ · Princeton University) · [arXiv](https://arxiv.org/abs/2609.24997) [HF](https://huggingface.co/papers/2609.24997)
 
-_…其余 151 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
+_…其余 144 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 
 ## agent-eval-safety (23)
 
@@ -273,7 +299,7 @@ _…其余 151 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Signature-Based Feature Learning for Human Activity Recognition: A Reproducible Machine Learning Study of Representation, Depth, and Model Choice** · 2026-10-05 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.06553)
 - 🆕 **Successive Training Stages and Large Language Model Persuasion: Effects of Misalignment, Supervised Fine-Tuning, and Preference Optimization** · 2026-10-07 · rep 0.00 (—) · [arXiv](https://arxiv.org/abs/2610.09964)
 
-## agent-infra (230)
+## agent-infra (212)
 
 - 🆕 **SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness** · 2026-09-18 · rep 0.60 (HF 51↑ · NVIDIA · code) · [arXiv](https://arxiv.org/abs/2609.20519) [HF](https://huggingface.co/papers/2609.20519) [code](https://github.com/NVlabs/SoL-Pi)
 - 🆕 **Omni-IO Skills: Harnessing Your Agent Omni-Native** · 2026-09-30 · rep 0.60 (HF 198↑ · National University of Singapore · code) · [arXiv](https://arxiv.org/abs/2609.31847) [HF](https://huggingface.co/papers/2609.31847) [code](https://github.com/any2any-mllm/Omni-IO-Skill)
@@ -285,7 +311,6 @@ _…其余 151 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents** · 2026-09-17 · rep 0.55 (HF 49↑ · University of Cambridge · code) · [arXiv](https://arxiv.org/abs/2609.17708) [HF](https://huggingface.co/papers/2609.17708) [code](https://github.com/caiqizh/xconf)
 - 🆕 **ActiveSaddler: Automated Curriculum Learning for Agent Harness Optimization** · 2026-10-02 · rep 0.55 (HF 50↑ · Microsoft) · [arXiv](https://arxiv.org/abs/2610.00906) [HF](https://huggingface.co/papers/2610.00906)
 - 🆕 **From Evidence to Action: How Tool-Using Agents Fail** · 2026-10-07 · rep 0.52 (HF 36↑ · National University of Singapore · code) · [arXiv](https://arxiv.org/abs/2610.07753) [HF](https://huggingface.co/papers/2610.07753) [code](https://github.com/caoshidong66/safeact)
-- 🆕 **nanoMuse: An Open-Source Personal Agent for Every Device You Own** · 2026-10-08 · rep 0.59 (HF 93↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2610.08699) [HF](https://huggingface.co/papers/2610.08699) [code](https://github.com/nano-muse/nanoMuse)
 - 🆕 **Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens** · 2026-10-02 · rep 0.50 (HF 26↑ · DAGroup-PKU · code) · [arXiv](https://arxiv.org/abs/2610.01939) [HF](https://huggingface.co/papers/2610.01939) [code](https://github.com/DAGroup-PKU/PyRUA-Lean)
 - 🆕 **COBRA-Skills: Contextual Bandit-Guided Evolution for Agent Skill Optimization** · 2026-09-14 · rep 0.52 (HF 32↑ · Chinese University of Hong Kong, Shenzhen · code) · [arXiv](https://arxiv.org/abs/2609.11682) [HF](https://huggingface.co/papers/2609.11682) [code](https://github.com/Jerry-LuP/COBRA-Skills)
 - 🆕 **OmniEcho: Spatial Audio Understanding for Embodied Agents** · 2026-09-25 · rep 0.48 (HF 20↑ · PKU-VaLuE-Lab · code) · [arXiv](https://arxiv.org/abs/2609.23407) [HF](https://huggingface.co/papers/2609.23407) [code](https://github.com/PKU-VaLuE-Lab/OmniEcho)
@@ -300,6 +325,7 @@ _…其余 151 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 - 🆕 **EvoOntology: A Self-Evolving Ontology Layer for Data Agents** · 2026-09-21 · rep 0.40 (HF 121↑ · RUC-DataLab · code) · [arXiv](https://arxiv.org/abs/2609.15779) [HF](https://huggingface.co/papers/2609.15779) [code](https://github.com/ruc-datalab/EvoOntology)
 - 🆕 **AgentGarten: Code Worlds for Evolving Agents** · 2026-10-09 · rep 0.40 (HF 134↑ · MirroS · code) · [arXiv](https://arxiv.org/abs/2610.12374) [HF](https://huggingface.co/papers/2610.12374) [code](https://github.com/MirroS-Lab/AgentGarten)
 - 🆕 **Grounded Skill Synthesis from Code at Scale for Agentic Intelligence** · 2026-09-21 · rep 0.39 (HF 89↑ · ant-international · code) · [arXiv](https://arxiv.org/abs/2609.05571) [HF](https://huggingface.co/papers/2609.05571) [code](https://github.com/ant-intl/Code2Skill)
+- 🆕 **BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence** · 2026-09-21 · rep 0.51 (HF 14↑ · Microsoft Research · code) · [arXiv](https://arxiv.org/abs/2609.20886) [HF](https://huggingface.co/papers/2609.20886) [code](https://github.com/Hu-Chuxuan/bi-agent)
 
-_…其余 205 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
+_…其余 187 篇见 data/items（source = hf-daily-papers / arxiv-listing）_
 

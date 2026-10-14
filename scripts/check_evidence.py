@@ -25,7 +25,7 @@ MIN_CHARS = 12  # shorter blocks are labels, not claims
 # Sections that describe our own method / navigation rather than making claims about the world.
 META_HEADINGS = re.compile(r"怎么做的|怎么筛|来源说明|How this|Method and source|方法与来源|阅读顺序|Coverage list|维护|目录|附录|Appendix|"
                            r"筛选说明|可信度|Scope|范围|缺口|Gaps|待跟进|下一步|For each|Screening|筛查|对研究的启示|研究的启示|可做的问题|"
-                           r"热度|报告与入口|本周待分拣")  # README: computed stats / navigation, not claims
+                           r"热度|报告与入口|本周待分拣|一步一步的顺序|路线图")  # README: computed stats / navigation, not claims
 
 
 def default_paths() -> list[Path]:
@@ -98,6 +98,28 @@ def card_has_url(lines: list[str], heading_line: int) -> bool:
     return False
 
 
+PLAN_LABEL = re.compile(r"^(\d+\.\s*|[-*+]\s*)?(\*\*)?(做什么|完成标准|第一步|统计|来源深度图例|阅读说明)")
+
+
+def under_plan_label(lines: list[str], n: int) -> bool:
+    """Proposal content ("what we will do", "done when", "first step") states our plan, not a claim about the world.
+    A list item is exempt when it, or an item it is nested under, starts with such a label."""
+    cur = len(lines[n - 1]) - len(lines[n - 1].lstrip())
+    if PLAN_LABEL.match(lines[n - 1].strip()):
+        return True
+    for raw in reversed(lines[: n - 1]):
+        if not raw.strip():
+            return False
+        ind = len(raw) - len(raw.lstrip())
+        if ind < cur and re.match(r"^\s*([-*+]|\d+\.)\s+", raw):
+            if PLAN_LABEL.match(raw.strip()):
+                return True
+            cur = ind
+            if ind == 0:
+                return False
+    return False
+
+
 def is_label(plain: str) -> bool:
     """Short headings-in-prose such as '架构共识：在 LLM 边界捕获' or '**Benchmark 现状**' carry no claim of their own."""
     return (len(plain) <= 25 and not re.search(r"[。；]", plain)) or (len(plain) <= 40 and not re.search(r"[0-9。；]", plain))
@@ -149,7 +171,7 @@ def check(path: Path, verbose: bool) -> tuple[int, int, int]:
             continue
         if is_label(plain):
             continue
-        if re.match(r"^(\*\*)?(统计|来源深度图例|阅读说明)", plain if not plain.startswith("**") else text):  # our own screening stats / legends
+        if PLAN_LABEL.match(text.strip()) or PLAN_LABEL.match(plain) or (kind == "item" and under_plan_label(lines, n)):  # our own plan / stats / legends
             continue
         if text.startswith(">") and n <= 12:  # file preamble
             continue

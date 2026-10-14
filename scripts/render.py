@@ -116,7 +116,7 @@ def render_labs(items, days):
     write(DIGESTS / "labs.md", md)
 
 
-PAPER_TOPICS = ["office-agent", "professional-agent", "env-construction", "computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety", "agent-infra"]
+PAPER_TOPICS = ["personal-agent", "code-computer-use", "office-agent", "professional-agent", "env-construction", "computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety", "agent-infra"]
 
 
 def is_paper(it) -> bool:
@@ -163,7 +163,7 @@ def render_papers(items, days, per_topic=25):
 
 
 STATUS_BADGE = {"空白": "🟥 空白", "上升": "🟧 上升", "拥挤": "🟦 拥挤", "观望": "⬜ 观望"}
-CORE_TOPICS = {"office-agent", "professional-agent", "env-construction", "computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety"}
+CORE_TOPICS = {"personal-agent", "code-computer-use", "office-agent", "professional-agent", "env-construction", "computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety"}
 
 
 def link(title, url) -> str:
@@ -220,9 +220,27 @@ def render_readme(items, topic_names, days):
         md += f"> **当前判断**：{compass['thesis']}\n\n"
     md += (f"_罗盘更新于 {compass.get('updated', '—')}（人工）· 数据渲染于 {today().isoformat()}（自动）· "
            f"跟踪 {len(items)} 条 · 👀 {counts['skimmed']} 已浏览 · ✅ {counts['read']} 已读 · 📝 {counts['noted']} 有笔记_\n\n")
-    md += ("[🎯 下半年提案](#-下半年提案) · " if compass.get("proposals") else "") + "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
+    md += ("[🎯 主方向](#-主方向) · " if compass.get("main_direction") else "") + ("[🎯 下半年提案](#-下半年提案) · " if compass.get("proposals") else "") + "[🧭 研究方向](#-研究方向雷达) · [📌 必读](#-置顶必读) · [📡 关键信号](#-关键信号) · [🆕 本周待分拣](#-本周待分拣) · [📊 热度](#-topic-热度) · [🗂 报告与入口](#-报告与入口)\n\n"
 
-    # 0. proposals: what to bet on next (curated)
+    # 0. main direction, its modules, and when to revise it (curated)
+    if compass.get("main_direction"):
+        md += f"## 🎯 主方向\n\n{compass['main_direction']}\n\n"
+        mods = compass.get("modules") or []
+        if mods:
+            md += (compass.get("modules_intro", "") + "\n\n" if compass.get("modules_intro") else "")
+            md += "| 模块 | 做什么 | 状态 | 下一步 |\n|---|---|---|---|\n"
+            for m in mods:
+                name = f"**{link(m['id'] + ' ' + m['name'], m['url'])}**" if m.get("url") else f"**{m['id']} {m['name']}**"
+                md += f"| {name} | {m.get('what', '')} | {m.get('status', '')} | {m.get('next', '')} |\n"
+            md += "\n"
+        watch = compass.get("watch") or []
+        if watch:
+            md += "**什么情况下修正主方向**\n\n| 信号 | 怎么改 |\n|---|---|\n"
+            md += "".join(f"| {w['signal']} | {w['action']} |\n" for w in watch) + "\n"
+        log = compass.get("direction_log") or []
+        if log:
+            md += "**方向修正记录**\n\n| 版本 | 日期 | 主方向 | 为什么改 |\n|---|---|---|---|\n"
+            md += "".join(f"| {d['version']} | {d['date']} | {d['direction']} | {d['why']} |\n" for d in log) + "\n"
     props = compass.get("proposals") or []
     if props:
         md += "## 🎯 下半年提案\n\n" + (compass.get("proposals_intro", "") + "\n\n" if compass.get("proposals_intro") else "")
