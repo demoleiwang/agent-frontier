@@ -39,11 +39,16 @@ raw item 字段：`id, source, title, url, date, authors, source_tags, tags, exc
 - [x] 回填 2026-07-01 起 35 篇，13 篇 agent 相关手写中文 tldr，汇总见 [reviews/2026-10-14_hf-blog.md](reviews/2026-10-14_hf-blog.md)
 - [x] GitHub Actions 每天 UTC 01:00（新加坡 09:00）自动跑
 
-### Phase 2 · 论文源（下一步）
+### Phase 2 · 论文源 + 口碑排序
 
-- [ ] `hf-daily-papers`：全量阈值 upvotes ≥ 30，命中 P0/P1 topic 放宽到 ≥ 5
-- [ ] `arxiv-agents`：arXiv API，cs.AI/CL/LG × agent 关键词
-- [ ] arXiv id 去重：同一篇在 HF papers 和 arXiv 中合并为 `arxiv:<id>`
+- [x] `hf-daily-papers`：HF Daily Papers 经 GitHub 镜像接入（主源 Senmo996/hugginggface_daily_paper 带机构标注，备源 joe-nv/hf_paper_watch_dog），带点赞数、机构、代码仓库
+- [x] `arxiv-listing`：arXiv cs.AI / cs.CL 经 UNIkeEN/arxiv-daily-server 镜像接入。仅含主分类、非全量，只保留命中关注 topic 的条目，读取 comment 中的录用信息
+- [x] 统一 id 为 `arxiv:<id>`，跨源合并信号（`sources` 字段）
+- [x] **口碑分 rep**（`config/reputation.yaml`）：HF 点赞（log 缩放）、机构分级、作者关注名单、顶会录用、开源代码，与 topic 相关度分开计算，并给出可读理由
+- [x] `requires_any`：泛 RL 词须同时出现 agent 语境，压掉视觉生成类 RL 的误报
+- [x] `digests/papers.md`：近 30 天按口碑和相关度排序，含 Must-read 与分 topic 列表；README 增加 Top papers
+- [x] 2026-09-14 → 10-14 高口碑论文精读：[reviews/2026-10-14_papers.md](reviews/2026-10-14_papers.md)
+- [ ] arXiv 全量（需放行 arxiv.org，或找全量镜像）；Semantic Scholar 引用数作为额外口碑信号（需放行）
 
 ### Phase 3 · LLM 精排
 

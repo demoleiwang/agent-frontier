@@ -1,5 +1,6 @@
 # topic 定义。匹配范围：title（权重高）+ 源自带 tags + 正文前若干字符。
 # keywords 大小写不敏感；短词（<=4 字符）按整词匹配。
+# requires_any（可选）：除关键词外，正文还须出现其中任一词，topic 才成立（用来压掉泛词误报）。
 # authors: 命中直接置顶（HF blog 用 HF 用户名）。
 
 browser-use-agent:
@@ -13,6 +14,8 @@ gui-agent-search:
 agentic-rl:
   keywords: [agentic RL, multi-turn RL, long-horizon, environment scaling, RL environment, RL environments,
              GRPO, OpenEnv, verifiers, reward model, TRL, reinforcement learning]
+  # 泛 RL 词（GRPO / reward model）也会命中视觉生成、扩散模型的 RL，要求同时出现 agent 语境
+  requires_any: [agent, agentic, tool, environment, multi-turn, long-horizon, harness]
 agent-eval-safety:
   keywords: [agent evaluation, reward hacking, sandbox escape, intrusion, prompt injection, agent security,
              Terminal-Bench, SWE-Bench, ExploitGym, reproduc, Every Eval Ever, inference compute,

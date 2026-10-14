@@ -74,8 +74,17 @@ def merge_item(items: dict[str, dict], new: dict) -> bool:
     old = items.get(new["id"])
     if old is None:
         new.setdefault("status", "new")
+        new["sources"] = [new["source"]]
         items[new["id"]] = new
         return True
+    incoming = new["source"]
+    if old.get("source") != incoming:
+        # same paper from another source: keep first-seen date/source, union tags, keep the richer abstract
+        new["date"], new["source"] = old["date"], old["source"]
+        new["tags"] = sorted(set(old.get("tags", [])) | set(new.get("tags", [])))
+        if len(old.get("excerpt", "")) >= len(new.get("excerpt", "")):
+            new["excerpt"] = old.get("excerpt", "")
+    new["sources"] = sorted(set(old.get("sources", [old["source"]])) | {incoming})
     for k in MANUAL_FIELDS:
         if k in old:
             new[k] = old[k]

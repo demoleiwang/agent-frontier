@@ -246,7 +246,83 @@ def fetch_scrape(src: dict, since: dt.date, known: set[str]) -> list[dict]:
     return out
 
 
-FETCHERS = {"github_blog_index": fetch_github_blog_index, "rss": fetch_rss, "scrape": fetch_scrape}
+def paper_item(src: dict, arxiv_id: str, title: str, date: dt.date, authors, abstract: str, **signals) -> dict:
+    it = {
+        "id": f"arxiv:{arxiv_id}",
+        "source": src["id"],
+        "title": re.sub(r"\s+", " ", title or "").strip(),
+        "url": f"https://arxiv.org/abs/{arxiv_id}",
+        "date": date.isoformat(),
+        "authors": list(authors or []),
+        "source_tags": [],
+        "tags": list(src.get("tags") or []),
+        "excerpt": re.sub(r"\s+", " ", abstract or "").strip()[:EXCERPT_CHARS],
+    }
+    it.update({k: v for k, v in signals.items() if v not in (None, "", [], {})})
+    return it
+
+
+def fetch_hf_daily_mirror(src: dict, since: dt.date, known: set[str]) -> list[dict]:
+    """HF Daily Papers via GitHub mirrors, one file per weekday; upvotes/institution are the reputation signals."""
+    out = []
+    d = since
+    while d <= today():
+        fmt = {"date": d.isoformat(), "yyyy": f"{d.year}", "mm": f"{d.month:02d}"}
+        data = None
+        for key in ("primary", "fallback"):
+            try:
+                data = json.loads(get(src[key].format(**fmt)))
+                break
+            except (requests.RequestException, ValueError):
+                continue
+        for p in (data or {}).get("papers", []):
+            aid = p.get("id") or p.get("arxiv_id")
+            if not aid:
+                continue
+            out.append(paper_item(
+                src, aid, p.get("title"), d, p.get("authors"), p.get("summary") or p.get("abstract"),
+                upvotes=p.get("upvotes"),
+                institution=p.get("institution") or p.get("institution_tag") or p.get("organization"),
+                github_repo=p.get("github_repo"), project_page=p.get("project_page"),
+                hf_url=p.get("hf_url") or f"https://huggingface.co/papers/{aid}",
+            ))
+        d += dt.timedelta(days=1)
+    return out
+
+
+def _topic_patterns() -> list[re.Pattern]:
+    from classify import compile_kw  # local import: classify imports nothing from fetch
+    cfg = load_yaml("topics.yaml")
+    return [compile_kw(k) for name, t in cfg.items() if name != "authors" for k in t.get("keywords", [])]
+
+
+def fetch_arxiv_month_mirror(src: dict, since: dt.date, known: set[str]) -> list[dict]:
+    pats = _topic_patterns() if src.get("only_topic_hits") else []
+    months = sorted({(since + dt.timedelta(days=i)).strftime("%Y-%m") for i in range((today() - since).days + 1)})
+    out = []
+    for cat in src["categories"]:
+        for ym in months:
+            y, m = ym.split("-")
+            try:
+                data = json.loads(get(src["url"].format(cat=cat, yyyy=y, mm=m)))
+            except (requests.RequestException, ValueError):
+                continue
+            for p in data.get("papers", []):
+                d = parse_date(p.get("publishedAt", "")[:10])
+                if not d or d < since:
+                    continue
+                text = f"{p.get('title', '')} {p.get('abstract', '')}"
+                if pats and not any(pt.search(text) for pt in pats):
+                    continue
+                out.append(paper_item(
+                    src, p.get("arxivId") or p["id"], p.get("title"), d, p.get("authors"), p.get("abstract"),
+                    comment=p.get("comment"), arxiv_categories=p.get("categories"),
+                ))
+    return out
+
+
+FETCHERS = {"github_blog_index": fetch_github_blog_index, "rss": fetch_rss, "scrape": fetch_scrape,
+            "hf_daily_mirror": fetch_hf_daily_mirror, "arxiv_month_mirror": fetch_arxiv_month_mirror}
 
 
 def run_source(src: dict, since: dt.date, known: set[str]) -> list[dict]:

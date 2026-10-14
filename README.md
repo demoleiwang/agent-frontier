@@ -4,7 +4,7 @@
 个人前沿追踪：browser/computer-use agent、agentic RL 及相关基础设施。
 raw → `data/items`，自动摘要 → `digests/`，人工沉淀 → `topics/` 与 `notes/`。规划见 [PLAN.md](PLAN.md)。
 
-_Last rendered: 2026-10-14 · 235 items tracked_
+_Last rendered: 2026-10-14 · 2830 items tracked_
 
 ## Highlights · last 14 days
 
@@ -35,7 +35,20 @@ _Last rendered: 2026-10-14 · 235 items tracked_
 - 👀 2026-10-13 · **[Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/)** · `agent-infra` · score 0.17
   > Argon 在 ADK（约 20 万行）上无人值守跑了一夜，靠 11 个 .agents/skills 加 /goal；提交 1754b3e 可查：50 轮后首次请求 −43%，import −21%，冷启动无改善。
 
-## Reading queue (status = new, top 10)
+## Top papers · last 14 days（按口碑 + 相关度，完整列表见 [digests/papers.md](digests/papers.md)）
+
+- 🆕 **SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments** · 2026-10-12 · rep 0.59 (HF 85↑ · Shanghai Jiao Tong University · code) · [arXiv](https://arxiv.org/abs/2610.12611) [HF](https://huggingface.co/papers/2610.12611) [code](https://github.com/MrKiing-Jin/SoftwareGym)
+- 🆕 **MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement** · 2026-10-09 · rep 0.56 (HF 60↑ · Xiaomi MiMo) · [arXiv](https://arxiv.org/abs/2610.11959) [HF](https://huggingface.co/papers/2610.11959)
+- 🆕 **HybridCUA: Learning to Orchestrate GUI and CLI for Computer-Use Agents** · 2026-09-30 · rep 0.51 (HF 28↑ · Zhejiang University · code) · [arXiv](https://arxiv.org/abs/2609.38008) [HF](https://huggingface.co/papers/2609.38008) [code](https://github.com/ZJU-REAL/HybridCUA)
+- 🆕 **OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software** · 2026-10-01 · rep 0.51 (HF 28↑ · DiscoAILab · 作者: Jie Tang · code) · [arXiv](https://arxiv.org/abs/2609.39903) [HF](https://huggingface.co/papers/2609.39903) [code](https://github.com/DiscoAILab/OSWorld-Science)
+- 🆕 **OSWorld-Pro: Process-based Evaluation for Computer Use Agents** · 2026-10-06 · rep 0.49 (HF 22↑ · NVIDIA) · [arXiv](https://arxiv.org/abs/2609.24890) [HF](https://huggingface.co/papers/2609.24890)
+- 🆕 **Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight** · 2026-10-08 · rep 0.79 (HF 88↑ · Salesforce AI Research · 作者: Silvio Savarese) · [arXiv](https://arxiv.org/abs/2610.08077) [HF](https://huggingface.co/papers/2610.08077)
+- 🆕 **CUA-SWE: When Computer-Use Agents Meet Visual Software Engineering** · 2026-10-01 · rep 0.45 (HF 13↑ · Carnegie Mellon University · code) · [arXiv](https://arxiv.org/abs/2609.32600) [HF](https://huggingface.co/papers/2609.32600) [code](https://github.com/kingofspace0wzz/cua-swe)
+- 🆕 **AutoGUIWorld: Image Generators as Visual World Models for GUI Agent** · 2026-10-02 · rep 0.59 (HF 42↑ · Tencent Hunyuan · code) · [arXiv](https://arxiv.org/abs/2610.01215) [HF](https://huggingface.co/papers/2610.01215) [code](https://github.com/ImYangC7/AutoGUIWorld)
+- 🆕 **TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models** · 2026-10-07 · rep 0.59 (HF 85↑ · Qwen) · [arXiv](https://arxiv.org/abs/2610.07767) [HF](https://huggingface.co/papers/2610.07767)
+- 🆕 **Opera: A Verbal Critic Framework for Long-horizon Coding Agents** · 2026-10-09 · rep 0.67 (HF 8↑ · Salesforce AI Research · 作者: Silvio Savarese · code) · [arXiv](https://arxiv.org/abs/2609.33987) [HF](https://huggingface.co/papers/2609.33987) [code](https://github.com/dongyuanjushi/Opera)
+
+## Reading queue (blogs, status = new, top 10)
 
 - 🆕 2026-09-23 · **[Ringg’s AI agents resolve up to 65% of customer calls with OpenAI](https://openai.com/index/ringg)** · `agent-infra` · score 0.50
   > Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.
@@ -53,27 +66,28 @@ _Last rendered: 2026-10-14 · 235 items tracked_
   > How do you keep improving an AI agent after the first 80%, once it serves real production traffic and silent quality regressions return HTTP 200 OK?
 - 🆕 2026-07-06 · **[🤗 Kernels: Major Updates](https://huggingface.co/blog/revamped-kernels)** · `agent-infra` · score 0.17
   > In our previous post (From Zero to GPU), we introduced the 🤗 Kernels project, which aims at standardizing how custom kernels are packaged, distributed, and consumed.
-- 🆕 2026-07-07 · **[LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060)** · `agentic-rl` · score 0.17
-  > This new release is about closing the robot learning loop: policies that imagine the future before acting, reward models that tell you when your robot succeeds, a deployment CLI that turns failures into training data, an…
 - 🆕 2026-08-21 · **[How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code](https://huggingface.co/blog/pwc-search)** · `agent-infra` · score 0.17
   > 3 months ago, we started a revival of Papers with Code (see also the announcement tweet).
+- 🆕 2026-09-01 · **[How AI-native companies turn workflows into operating capability](https://openai.com/index/ai-native-company-workflows)** · `agent-infra` · score 0.17
+  > Basis, Clay, and Exa Labs use AI agents to improve onboarding, account management, and developer integrations. See what enterprise leaders can apply.
 
-🆕 new: 182 · 👀 skimmed: 53 · ✅ read: 0 · 📝 noted: 0
+🆕 new: 2777 · 👀 skimmed: 53 · ✅ read: 0 · 📝 noted: 0
 
 ## Topics
 
 | Topic | Items | Curated page |
 |---|---|---|
-| `browser-use-agent` | 1 | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
-| `computer-use-agent` | 4 | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
-| `gui-agent-search` | 2 | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
-| `agentic-rl` | 6 | [topics/agentic-rl.md](topics/agentic-rl.md) |
-| `agent-eval-safety` | 15 | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
-| `agent-infra` | 36 | [topics/agent-infra.md](topics/agent-infra.md) |
+| `browser-use-agent` | 55 | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
+| `computer-use-agent` | 50 | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
+| `gui-agent-search` | 33 | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
+| `agentic-rl` | 453 | [topics/agentic-rl.md](topics/agentic-rl.md) |
+| `agent-eval-safety` | 87 | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
+| `agent-infra` | 1262 | [topics/agent-infra.md](topics/agent-infra.md) |
 
 ## Digests
 
 - Weekly: [2026-W42](digests/weekly/2026-W42.md), [2026-W41](digests/weekly/2026-W41.md), [2026-W40](digests/weekly/2026-W40.md), [2026-W39](digests/weekly/2026-W39.md)
 - Labs (all posts, last 60 days): [digests/labs.md](digests/labs.md)
-- Sources: [anthropic-engineering](digests/sources/anthropic-engineering.md), [anthropic-news](digests/sources/anthropic-news.md), [anthropic-research](digests/sources/anthropic-research.md), [google-developers-ai](digests/sources/google-developers-ai.md), [hf-blog](digests/sources/hf-blog.md), [mistral-news](digests/sources/mistral-news.md), [openai-developer](digests/sources/openai-developer.md), [openai-engineering](digests/sources/openai-engineering.md), [openai-news](digests/sources/openai-news.md), [openai-research](digests/sources/openai-research.md), [uk-aisi](digests/sources/uk-aisi.md), [xai-news](digests/sources/xai-news.md)
+- Papers (last 30 days, reputation-ranked): [digests/papers.md](digests/papers.md)
+- Sources: [anthropic-engineering](digests/sources/anthropic-engineering.md), [anthropic-news](digests/sources/anthropic-news.md), [anthropic-research](digests/sources/anthropic-research.md), [arxiv-listing](digests/sources/arxiv-listing.md), [google-developers-ai](digests/sources/google-developers-ai.md), [hf-blog](digests/sources/hf-blog.md), [hf-daily-papers](digests/sources/hf-daily-papers.md), [mistral-news](digests/sources/mistral-news.md), [openai-developer](digests/sources/openai-developer.md), [openai-engineering](digests/sources/openai-engineering.md), [openai-news](digests/sources/openai-news.md), [openai-research](digests/sources/openai-research.md), [uk-aisi](digests/sources/uk-aisi.md), [xai-news](digests/sources/xai-news.md)
 - Reviews (hand-written): [2026-10-14_hf-blog](reviews/2026-10-14_hf-blog.md), [2026-10-14_frontier-labs](reviews/2026-10-14_frontier-labs.md)

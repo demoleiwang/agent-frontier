@@ -1,0 +1,31 @@
+# 论文“口碑”打分（0–1），与 topic 相关度分开计算。各信号取 max 后加总再截断：
+#   upvotes   HF Daily Papers 点赞（社区热度），log 缩放：>=100 记满分
+#   inst      机构分级（HF 镜像给出的 institution/organization 字段，子串匹配，大小写不敏感）
+#   author    作者关注名单命中（agent 方向的知名作者 / 组）
+#   venue     arXiv comment 中出现顶会录用
+#   code      有开源代码仓库（可复现性）
+weights: {upvotes: 0.35, inst: 0.25, author: 0.2, venue: 0.15, code: 0.05}
+upvotes_full: 100
+
+institutions:
+  tier1:   # 前沿 lab
+    [OpenAI, Anthropic, DeepMind, Google, Meta, FAIR, Microsoft, NVIDIA, Apple, Amazon, AWS,
+     Qwen, Alibaba, Tongyi, DeepSeek, Moonshot, Kimi, ByteDance, Seed, Zhipu, Z.ai, THUDM, Tencent, Hunyuan,
+     Xiaomi, MiMo, MiniMax, StepFun, Mistral, xAI, Thinking Machines, Allen Institute, Ai2, AllenAI, Salesforce,
+     Shanghai AI Lab, Shanghai Artificial Intelligence Laboratory, Huawei, Baidu, Ant Group, Kuaishou, Meituan, ServiceNow]
+  tier1_academia:
+    [Stanford, Berkeley, Carnegie Mellon, CMU, MIT, Princeton, Harvard, Tsinghua, Peking University, PKU,
+     University of Hong Kong, HKU, HKUST, CUHK, NUS, National University of Singapore, NTU, Nanyang,
+     Oxford, Cambridge, ETH, EPFL, University of Washington, UIUC, Ohio State, Mila, Toronto, Waterloo,
+     UCLA, UCSD, Columbia, Cornell, NYU, Yale, Shanghai Jiao Tong, SJTU, Fudan, Zhejiang University, USTC, Renmin]
+  tier_weight: {tier1: 1.0, tier1_academia: 0.8}
+
+# agent / CUA / web agent 方向作者关注名单（命中任一作者即记满分）。按需增删。
+authors:
+  [Yu Su, Graham Neubig, Shuyan Zhou, Tao Yu, Tianbao Xie, Diyi Yang, Percy Liang, Sergey Levine,
+   Karthik Narasimhan, Ofir Press, John Yang, Shunyu Yao, Danqi Chen, Huan Sun, Xiang Deng, Boyu Gou,
+   Ruslan Salakhutdinov, Daniel Fried, Frank F. Xu, Xinyun Chen, Denny Zhou, Jason Weston, Yuandong Tian,
+   Aviral Kumar, Chelsea Finn, Dawn Song, Bo Li, Jie Tang, Yuxiao Dong, Zhiyuan Liu, Maosong Sun,
+   Junyang Lin, Binyuan Hui, Caiming Xiong, Silvio Savarese, Huan Wang, Zhengyang Wang, Kai Chen]
+
+venues: [NeurIPS, ICLR, ICML, ACL, EMNLP, NAACL, COLM, CVPR, ICCV, ECCV, AAAI, IJCAI, KDD, WWW, TMLR, JMLR, CoRL, RSS]

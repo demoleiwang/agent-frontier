@@ -8,6 +8,7 @@ Usage: python scripts/classify.py [--all]
 from __future__ import annotations
 
 import argparse
+import math
 import re
 
 from common import load_items, load_yaml, save_items
@@ -33,12 +34,45 @@ def extract_tldr(text: str, limit: int = 220) -> str:
     return out[:limit].rstrip() + ("…" if len(out) > limit else "")
 
 
+def reputation(it: dict, rep: dict) -> tuple[float, list[str]]:
+    """0-1 reputation for papers from community, institution, author, venue and code signals, plus readable reasons."""
+    w, reasons, parts = rep["weights"], [], {}
+    up = it.get("upvotes") or 0
+    if up:
+        parts["upvotes"] = min(1.0, math.log1p(up) / math.log1p(rep.get("upvotes_full", 100)))
+        reasons.append(f"HF {up}↑")
+    inst = (it.get("institution") or "").lower()
+    if inst:
+        for tier, names in rep["institutions"].items():
+            if tier == "tier_weight":
+                continue
+            if any(n.lower() in inst for n in names):
+                parts["inst"] = max(parts.get("inst", 0), rep["institutions"]["tier_weight"][tier])
+        reasons.append(it["institution"])
+    hit = [a for a in it.get("authors", []) if a in rep["_authors"]]
+    if hit:
+        parts["author"] = 1.0
+        reasons.append("作者: " + ", ".join(hit[:2]))
+    comment = it.get("comment") or ""
+    venue = next((v for v in rep["venues"] if re.search(rf"\b{re.escape(v)}\b", comment)), None)
+    if venue and re.search(r"accept|published|to appear|camera", comment, re.I):
+        parts["venue"] = 1.0
+        reasons.append(f"{venue} 录用")
+    if it.get("github_repo"):
+        parts["code"] = 1.0
+        reasons.append("code")
+    return round(min(1.0, sum(w[k] * v for k, v in parts.items())), 2), reasons
+
+
 def classify(it: dict, topics: dict, authors: set[str]) -> None:
     title = it.get("title", "")
     tags = " ".join(it.get("source_tags", []) + it.get("tags", []))
     body = it.get("excerpt", "")
     scores = {}
     for name, cfg in topics.items():
+        req = cfg.get("requires_any")
+        if req and not any(compile_kw(k).search(f"{title} {body}") for k in req):
+            continue
         raw = 0.0
         for kw in cfg.get("keywords", []):
             p = compile_kw(kw)
@@ -67,12 +101,16 @@ def main() -> None:
     args = ap.parse_args()
     cfg = load_yaml("topics.yaml")
     authors = set(cfg.pop("authors", None) or [])
+    rep = load_yaml("reputation.yaml")
+    rep["_authors"] = set(rep.get("authors") or [])
     items = load_items()
     n = 0
     for it in items.values():
         if args.all or "topics" not in it:
             classify(it, cfg, authors)
             n += 1
+        if "paper" in it.get("tags", []):  # signals (upvotes, venue) can change on refetch: always recompute
+            it["rep"], it["rep_reasons"] = reputation(it, rep)
     save_items(items)
     print(f"classified {n} items")
 

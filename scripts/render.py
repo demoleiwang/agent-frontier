@@ -43,7 +43,7 @@ def write(path, text):
 
 def render_daily(items):
     by_day = defaultdict(list)
-    for it in items:
+    for it in (i for i in items if not is_paper(i)):
         by_day[it["date"]].append(it)
     for day, rows in by_day.items():
         rel = [r for r in rows if r.get("topics")]
@@ -63,7 +63,7 @@ def iso_week(d: str) -> str:
 
 def render_weekly(items, topic_names):
     by_week = defaultdict(list)
-    for it in items:
+    for it in (i for i in items if not is_paper(i)):
         by_week[iso_week(it["date"])].append(it)
     for wk, rows in by_week.items():
         md = f"# Weekly · {wk}\n\n{len(rows)} items, {sum(1 for r in rows if r.get('topics'))} on-topic.\n\n"
@@ -79,7 +79,7 @@ def render_weekly(items, topic_names):
 
 def render_sources(items):
     by_src = defaultdict(list)
-    for it in items:
+    for it in (i for i in items if not is_paper(i)):
         by_src[it["source"]].append(it)
     for src, rows in by_src.items():
         md = f"# Source tracker · `{src}`\n\n| Date | Title | Topics | Score | Status | Source tags |\n|---|---|---|---|---|---|\n"
@@ -116,10 +116,58 @@ def render_labs(items, days):
     write(DIGESTS / "labs.md", md)
 
 
+PAPER_TOPICS = ["computer-use-agent", "browser-use-agent", "gui-agent-search", "agentic-rl", "agent-eval-safety", "agent-infra"]
+
+
+def is_paper(it) -> bool:
+    return "paper" in it.get("tags", [])
+
+
+def paper_rank(it) -> float:
+    """Reputation first, relevance second: rep in [0,1] plus half the topic score."""
+    return it.get("rep", 0) + 0.5 * it.get("score", 0)
+
+
+def paper_line(it) -> str:
+    links = [f"[arXiv]({it['url']})"]
+    if it.get("hf_url"):
+        links.append(f"[HF]({it['hf_url']})")
+    if it.get("github_repo"):
+        links.append(f"[code]({it['github_repo']})")
+    reasons = " · ".join(it.get("rep_reasons", [])) or "—"
+    s = f"- {STATUS_ICON.get(it.get('status'), '')} **{esc(it['title'])}** · {it['date']} · rep {it.get('rep', 0):.2f} ({reasons}) · {' '.join(links)}\n"
+    if it.get("tldr_source") == "manual":
+        s += f"  > {it['tldr']}\n"
+    return s
+
+
+def render_papers(items, days, per_topic=25):
+    cutoff = (today() - dt.timedelta(days=days)).isoformat()
+    papers = [i for i in items if is_paper(i) and i["date"] >= cutoff and i.get("topics")]
+    md = f"# Papers · last {days} days (since {cutoff})\n\n"
+    md += ("来源：HF Daily Papers 与 arXiv（经 GitHub 镜像）。按口碑 rep 加相关度排序。rep 综合了 HF 点赞、机构、作者关注名单、"
+           "顶会录用和开源代码，配置见 `config/reputation.yaml`。每篇只列在其首要 topic 下。\n\n")
+    core = [i for i in papers if i["topics"][0] != "agent-infra" or len(i["topics"]) > 1]
+    top = sorted((i for i in core if set(i["topics"]) - {"agent-infra"} and i.get("rep", 0) >= 0.4), key=paper_rank, reverse=True)[:15]
+    md += "## 🔝 Must-read（核心 topic 且 rep ≥ 0.4）\n\n" + ("".join(paper_line(i) for i in top) or "_None._\n") + "\n"
+    for t in PAPER_TOPICS:
+        rows = [i for i in papers if (i["topics"][0] if i["topics"][0] != "agent-infra" or len(i["topics"]) == 1 else i["topics"][1]) == t]
+        if not rows:
+            continue
+        rows.sort(key=paper_rank, reverse=True)
+        md += f"## {t} ({len(rows)})\n\n" + "".join(paper_line(i) for i in rows[:per_topic])
+        if len(rows) > per_topic:
+            md += f"\n_…其余 {len(rows) - per_topic} 篇见 data/items（source = hf-daily-papers / arxiv-listing）_\n"
+        md += "\n"
+    write(DIGESTS / "papers.md", md)
+
+
 def render_readme(items, topic_names, days):
     cutoff = (today() - dt.timedelta(days=days)).isoformat()
-    recent = [i for i in items if i["date"] >= cutoff and i.get("topics")]
-    queue = rank([i for i in items if i.get("topics") and i.get("status") == "new"])[:10]
+    recent = [i for i in items if i["date"] >= cutoff and i.get("topics") and not is_paper(i)]
+    queue = rank([i for i in items if i.get("topics") and i.get("status") == "new" and not is_paper(i)])[:10]
+    top_papers = sorted((i for i in items if is_paper(i) and i["date"] >= cutoff and set(i.get("topics", [])) - {"agent-infra"}),
+                        key=paper_rank, reverse=True)[:10]
     counts = {s: sum(1 for i in items if i.get("status") == s) for s in STATUSES}
 
     md = "# agent-frontier\n\n个人前沿追踪：browser/computer-use agent、agentic RL 及相关基础设施。\n"
@@ -127,7 +175,9 @@ def render_readme(items, topic_names, days):
     md += f"_Last rendered: {today().isoformat()} · {len(items)} items tracked_\n\n"
     md += f"## Highlights · last {days} days\n\n"
     md += "".join(bullet(i, True) for i in rank(recent)) if recent else "_No on-topic items in this window._\n"
-    md += "\n## Reading queue (status = new, top 10)\n\n"
+    md += f"\n## Top papers · last {days} days（按口碑 + 相关度，完整列表见 [digests/papers.md](digests/papers.md)）\n\n"
+    md += "".join(paper_line(i) for i in top_papers) if top_papers else "_None._\n"
+    md += "\n## Reading queue (blogs, status = new, top 10)\n\n"
     md += "".join(bullet(i, True) for i in queue) if queue else "_Empty._\n"
     md += "\n" + " · ".join(f"{STATUS_ICON[s]} {s}: {counts[s]}" for s in STATUSES) + "\n"
     md += "\n## Topics\n\n| Topic | Items | Curated page |\n|---|---|---|\n"
@@ -139,6 +189,7 @@ def render_readme(items, topic_names, days):
     weeks = sorted({iso_week(i["date"]) for i in items}, reverse=True)[:4]
     md += "- Weekly: " + ", ".join(f"[{w}](digests/weekly/{w}.md)" for w in weeks) + "\n"
     md += "- Labs (all posts, last 60 days): [digests/labs.md](digests/labs.md)\n"
+    md += "- Papers (last 30 days, reputation-ranked): [digests/papers.md](digests/papers.md)\n"
     md += "- Sources: " + ", ".join(f"[{s}](digests/sources/{s}.md)" for s in sorted({i['source'] for i in items})) + "\n"
     reviews = sorted((ROOT / "reviews").glob("*.md"), reverse=True)[:5]
     if reviews:
@@ -157,6 +208,7 @@ def main():
     render_weekly(items, topic_names)
     render_sources(items)
     render_labs(items, 60)
+    render_papers(items, 30)
     render_readme(items, topic_names, args.highlight_days)
     print(f"rendered {len(items)} items")
 

@@ -10,10 +10,10 @@
 | 2026-09-22 | [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) | — | 0.00 | 🆕 new | mlx, open-source, community, llm |
 | 2026-09-22 | [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) | `agent-infra` | 0.17 | 🆕 new | transformers, gguf, kernels, inference, local |
 | 2026-09-21 | [tokenizers v1: encode, decode and scaling, measured](https://huggingface.co/blog/tokenizers-v1) | — | 0.00 | 🆕 new | tokenizers, tokenization, rust, performance, open-source |
-| 2026-09-10 | [Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL](https://huggingface.co/blog/asyncgrpo-lora-hfjobs) | `agentic-rl` | 0.83 | 👀 skimmed | llm, rl, trl, lora, open-source, hub, storage |
+| 2026-09-10 | [Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL](https://huggingface.co/blog/asyncgrpo-lora-hfjobs) | — | 0.00 | 👀 skimmed | llm, rl, trl, lora, open-source, hub, storage |
 | 2026-09-10 | [Rebuilding AUTOMATIC1111 with Gradio Workflow](https://huggingface.co/blog/gradio-workflow-1111) | — | 0.00 | 🆕 new | gradio, workflows, automatic1111, spaces, models, inference-providers, comfyui |
 | 2026-09-03 | [Give Your Coding Agents a Memory You Own](https://huggingface.co/blog/funes) | `agent-infra` | 0.50 | 👀 skimmed | agents, open-source, datasets, guide, announcement |
-| 2026-09-03 | [Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps](https://huggingface.co/blog/grpo-with-trl-ifstruct) | `agentic-rl` | 0.83 | 👀 skimmed | nlp, guide, community, open-source, grpo, trl |
+| 2026-09-03 | [Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps](https://huggingface.co/blog/grpo-with-trl-ifstruct) | — | 0.00 | 👀 skimmed | nlp, guide, community, open-source, grpo, trl |
 | 2026-09-03 | [Training a coding model to paint watercolours with TRL and OpenEnv](https://huggingface.co/blog/train-to-paint-with-code) | `agentic-rl` | 1.00 | 👀 skimmed | rl, grpo, trl, openenv, guide |
 | 2026-09-01 | [Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI](https://huggingface.co/blog/webgpu-kernels) | — | 0.00 | 🆕 new | inference, javascript, webgpu, open-source, hub |
 | 2026-08-28 | [The Open ASR Leaderboard Adds Its First Global South Language](https://huggingface.co/blog/open-asr-leaderboard-global-south) | — | 0.00 | 🆕 new | audio, speech, leaderboard, datasets, evaluation, research |
@@ -34,7 +34,7 @@
 | 2026-07-15 | [Welcome Inkling by Thinking Machines](https://huggingface.co/blog/thinkingmachines-inkling) | `agent-infra` | 0.17 | 👀 skimmed | announcement, multimodal, transformers, inference, open-source |
 | 2026-07-10 | [Profiling in PyTorch (Part 3): Attention is all you profile](https://huggingface.co/blog/torch-attention-profile) | — | 0.00 | 🆕 new | torch, profile, flash, xformers, cudnn |
 | 2026-07-08 | [Native-speed vLLM transformers modeling backend](https://huggingface.co/blog/native-speed-vllm-transformers-backend) | — | 0.00 | 🆕 new | vllm, transformers, inference, optimization |
-| 2026-07-07 | [LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060) | `agentic-rl` | 0.17 | 🆕 new | lerobot, robotics |
+| 2026-07-07 | [LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060) | — | 0.00 | 🆕 new | lerobot, robotics |
 | 2026-07-07 | [Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot](https://huggingface.co/blog/skypilot-hf-storage) | — | 0.00 | 🆕 new | guide, partnerships, open-source-collab, storage, skypilot |
 | 2026-07-06 | [🤗 Kernels: Major Updates](https://huggingface.co/blog/revamped-kernels) | `agent-infra` | 0.17 | 🆕 new | kernels, hub, optimization, kernel-builder |
 | 2026-07-01 | [Hugging Face and Cerebras bring Gemma 4 to real-time voice AI](https://huggingface.co/blog/cerebras-gemma4-voice-ai) | — | 0.00 | 🆕 new | partnerships, audio, open-source-collab, inference-providers |

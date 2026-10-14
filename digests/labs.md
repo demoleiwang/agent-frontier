@@ -242,10 +242,10 @@
 | 2026-09-22 | [Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community](https://huggingface.co/blog/omlx) | mlx, open-source |  |
 | 2026-09-22 | 🎯 [Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants) | transformers, gguf | `agent-infra` |
 | 2026-09-21 | [tokenizers v1: encode, decode and scaling, measured](https://huggingface.co/blog/tokenizers-v1) | tokenizers, tokenization |  |
-| 2026-09-10 | 🎯 [Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL](https://huggingface.co/blog/asyncgrpo-lora-hfjobs) | llm, rl | `agentic-rl` |
+| 2026-09-10 | [Async GRPO with LoRA across HF Jobs: a bucket, a proxy, and no NCCL](https://huggingface.co/blog/asyncgrpo-lora-hfjobs) | llm, rl |  |
 | 2026-09-10 | [Rebuilding AUTOMATIC1111 with Gradio Workflow](https://huggingface.co/blog/gradio-workflow-1111) | gradio, workflows |  |
 | 2026-09-03 | 🎯 [Give Your Coding Agents a Memory You Own](https://huggingface.co/blog/funes) | agents, open-source | `agent-infra` |
-| 2026-09-03 | 🎯 [Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps](https://huggingface.co/blog/grpo-with-trl-ifstruct) | nlp, guide | `agentic-rl` |
+| 2026-09-03 | [Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps](https://huggingface.co/blog/grpo-with-trl-ifstruct) | nlp, guide |  |
 | 2026-09-03 | 🎯 [Training a coding model to paint watercolours with TRL and OpenEnv](https://huggingface.co/blog/train-to-paint-with-code) | rl, grpo | `agentic-rl` |
 | 2026-09-01 | [Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI](https://huggingface.co/blog/webgpu-kernels) | inference, javascript |  |
 | 2026-08-28 | [The Open ASR Leaderboard Adds Its First Global South Language](https://huggingface.co/blog/open-asr-leaderboard-global-south) | audio, speech |  |

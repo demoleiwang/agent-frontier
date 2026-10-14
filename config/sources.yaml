@@ -72,15 +72,21 @@
 - {id: google-research, type: rss, enabled: false, url: https://research.google/blog/rss/, tags: [lab-blog, google]}
 - {id: thinking-machines, type: rss, enabled: false, url: https://thinkingmachines.ai/blog/index.xml, tags: [lab-blog, thinking-machines]}
 
-# ---- Phase 2 ----
+# ---- Papers ----
+# huggingface.co / arxiv.org 在本环境不可达，走 GitHub 上每日更新的镜像。id 统一为 arxiv:<id>，跨源去重并合并信号。
 - id: hf-daily-papers
-  type: api
-  enabled: false
-  url: https://huggingface.co/api/daily_papers
-  filter: {min_upvotes: 30, min_upvotes_on_topic: 5}
+  type: hf_daily_mirror
+  enabled: true
+  # 主：带机构标注；备：带 organization 字段。按日期逐日取，主缺失时用备。
+  primary: https://raw.githubusercontent.com/Senmo996/hugginggface_daily_paper/main/data/daily/{date}.json
+  fallback: https://raw.githubusercontent.com/joe-nv/hf_paper_watch_dog/main/papers/{yyyy}/{mm}/{date}.json
+  tags: [paper, hf-daily]
 
-- id: arxiv-agents
-  type: api
-  enabled: false
-  query: '(cat:cs.AI OR cat:cs.CL OR cat:cs.LG) AND (abs:"computer use" OR abs:"web agent" OR abs:"GUI agent")'
-
+- id: arxiv-listing
+  type: arxiv_month_mirror
+  enabled: true
+  # 只含主分类、每天约 50 篇，非全量；主要用于补召回和读取 comment 里的录用信息。
+  url: https://raw.githubusercontent.com/UNIkeEN/arxiv-daily-server/data/data/{cat}/{yyyy}/{yyyy}-{mm}.json
+  categories: [cs.AI, cs.CL]
+  only_topic_hits: true   # arXiv 量大，只保留命中关注 topic 关键词的条目
+  tags: [paper, arxiv]
