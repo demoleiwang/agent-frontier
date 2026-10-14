@@ -1,0 +1,25 @@
+# topic 定义。匹配范围：title（权重高）+ 源自带 tags + 正文前若干字符。
+# keywords 大小写不敏感；短词（<=4 字符）按整词匹配。
+# authors: 命中直接置顶（HF blog 用 HF 用户名）。
+
+browser-use-agent:
+  keywords: [browser agent, browser use, browser-use, web agent, web navigation, WebArena, Mind2Web,
+             Online-Mind2Web, BrowseComp, WebVoyager, deep research, web browsing]
+computer-use-agent:
+  keywords: [computer use, computer-use, CUA, OSWorld, desktop agent, GUI agent, GUI grounding,
+             AndroidWorld, screen agent, ScreenSpot, smolagents vision]
+gui-agent-search:
+  keywords: [search agent, agentic search, deep search, retrieval agent, search tool]
+agentic-rl:
+  keywords: [agentic RL, multi-turn RL, long-horizon, environment scaling, RL environment, RL environments,
+             GRPO, OpenEnv, verifiers, reward model, rollout, TRL, reinforcement learning]
+agent-eval-safety:
+  keywords: [agent evaluation, reward hacking, sandbox escape, intrusion, prompt injection, agent security,
+             Terminal-Bench, SWE-Bench, ExploitGym, reproduc, Every Eval Ever, inference compute]
+  weight: 0.8
+agent-infra:
+  keywords: [agent, agents, agentic, tool calling, tool use, function calling, MCP, smolagents,
+             harness, coding agent, ml-intern, sandbox, agent evaluation]
+  weight: 0.5        # 泛 agent 话题，降权，避免淹没核心方向
+
+authors: []          # e.g. [burtenshaw, merve]

@@ -1,0 +1,41 @@
+# 来源配置。enabled: false 的源暂不抓取，按阶段逐步打开。
+# type:
+#   github_blog_index  解析 GitHub 上的博客源码仓库（index yaml + 每篇 md frontmatter），信息最全
+#   rss                标准 RSS/Atom
+#   api / scrape       后续阶段实现
+
+- id: hf-blog
+  type: github_blog_index
+  enabled: true
+  repo: huggingface/blog
+  branch: main
+  index: _blog.yml
+  url_template: https://huggingface.co/blog/{local}
+  fallback:                      # GitHub 不可达时退回官方 RSS
+    type: rss
+    url: https://huggingface.co/blog/feed.xml
+  tags: [hf-blog]
+
+# ---- Phase 2 ----
+- id: hf-daily-papers
+  type: api
+  enabled: false
+  url: https://huggingface.co/api/daily_papers
+  filter: {min_upvotes: 30, min_upvotes_on_topic: 5}
+
+- id: arxiv-agents
+  type: api
+  enabled: false
+  query: '(cat:cs.AI OR cat:cs.CL OR cat:cs.LG) AND (abs:"computer use" OR abs:"web agent" OR abs:"GUI agent")'
+
+- id: anthropic-news
+  type: scrape
+  enabled: false
+  url: https://www.anthropic.com/news
+  tags: [lab-blog]
+
+- id: anthropic-engineering
+  type: scrape
+  enabled: false
+  url: https://www.anthropic.com/engineering
+  tags: [lab-blog, agent-eng]

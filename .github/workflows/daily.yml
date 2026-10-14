@@ -1,0 +1,33 @@
+name: daily
+
+on:
+  schedule: [{cron: "0 1 * * *"}]   # UTC 01:00 = 新加坡 09:00
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "回填起始日期 YYYY-MM-DD（留空 = 最近 14 天）"
+        required: false
+
+concurrency: {group: daily, cancel-in-progress: false}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip}
+      - run: pip install -r requirements.txt
+      - name: fetch
+        run: |
+          if [ -n "${{ inputs.since }}" ]; then python scripts/fetch.py --since "${{ inputs.since }}"; else python scripts/fetch.py --days 14; fi
+      - run: python scripts/classify.py
+        env: {LLM_API_KEY: "${{ secrets.LLM_API_KEY }}"}   # Phase 3 才会用到
+      - run: python scripts/render.py
+      - name: commit
+        run: |
+          git config user.name "frontier-bot"
+          git config user.email "frontier-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || { git commit -m "daily $(date -u +%F)" && git push; }
