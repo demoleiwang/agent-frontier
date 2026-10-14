@@ -6,9 +6,12 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import functools
 import html
 import re
 import sys
+import time
+from urllib.parse import urljoin, urlparse
 
 import requests
 import yaml
@@ -19,6 +22,7 @@ UA = {"User-Agent": "agent-frontier/0.1 (+https://github.com/demoleiwang/agent-f
 EXCERPT_CHARS = 1500
 
 
+@functools.lru_cache(maxsize=64)
 def get(url: str) -> str:
     r = requests.get(url, headers=UA, timeout=60)
     r.raise_for_status()
@@ -124,7 +128,100 @@ def fetch_rss(src: dict, since: dt.date, known: set[str]) -> list[dict]:
     return out
 
 
-FETCHERS = {"github_blog_index": fetch_github_blog_index, "rss": fetch_rss}
+MONTH_DATE = re.compile(r"\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2}, \d{4}\b")
+
+
+# Site-wide boilerplate some pages fall back to; useless as an excerpt.
+GENERIC_DESCRIPTIONS = {
+    "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+}
+
+
+def _meta(h: str, prop: str) -> str:
+    m = re.search(rf'<meta[^>]+(?:property|name)="{prop}"[^>]+content="([^"]*)"', h) or \
+        re.search(rf'<meta[^>]+content="([^"]*)"[^>]+(?:property|name)="{prop}"', h)
+    return html.unescape(m.group(1)).strip() if m else ""
+
+
+def parse_article(h: str) -> dict:
+    """Title / published date / description / body excerpt from a server-rendered article page."""
+    title = _meta(h, "og:title")
+    if not title:
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+        title = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
+    d = None
+    m = re.search(r'"datePublished":"(\d{4}-\d{2}-\d{2})', h) or \
+        re.search(r'article:published_time" content="(\d{4}-\d{2}-\d{2})', h) or \
+        re.search(r'<time[^>]+dateTime="(\d{4}-\d{2}-\d{2})', h, re.I)
+    if m:
+        d = parse_date(m.group(1))
+    h1 = h.find("<h1")
+    body = h[h1:] if h1 >= 0 else h
+    paras = [html.unescape(re.sub(r"<[^>]+>", "", p)).strip() for p in re.findall(r"<p[^>]*>(.*?)</p>", body, re.S)]
+    paras = [re.sub(r"\s+", " ", p) for p in paras if len(p) > 40]
+    desc = _meta(h, "og:description") or _meta(h, "description")
+    if desc and desc in GENERIC_DESCRIPTIONS:
+        desc = ""
+    return {"title": title, "date": d, "description": desc, "text": " ".join(paras)}
+
+
+def scrape_listing(src: dict) -> dict[str, dt.date | None]:
+    """URL -> listing date (None if the listing shows none) for links matching src['link_pattern']."""
+    pat = re.compile(src["link_pattern"])
+    found: dict[str, dt.date | None] = {}
+    for page in src.get("listing_urls", []):
+        h = get(page)
+        for m in re.finditer(r'<a\b[^>]*href="([^"#?]+)"[^>]*>(.*?)</a>', h, re.S):
+            url = urljoin(page, m.group(1))
+            if not pat.search(urlparse(url).path):
+                continue
+            dm = MONTH_DATE.search(re.sub(r"<[^>]+>", " ", m.group(2)))
+            d = parse_date(dm.group(0)) if dm else None
+            if found.get(url) is None:
+                found[url] = d
+    if src.get("sitemap"):  # discovery only: lastmod is when the page was touched, not published
+        since_mod = src.get("_since")
+        for loc, mod in re.findall(r"<loc>([^<]+)</loc>\s*(?:<lastmod>([^<]+)</lastmod>)?", get(src["sitemap"])):
+            if pat.search(urlparse(loc).path) and (not since_mod or not mod or mod[:10] >= since_mod.isoformat()):
+                found.setdefault(loc, None)
+    return found
+
+
+def fetch_scrape(src: dict, since: dt.date, known: set[str]) -> list[dict]:
+    src = {**src, "_since": since}
+    out = []
+    for url, listed in scrape_listing(src).items():
+        if listed and listed < since:
+            continue
+        slug = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+        iid = f"{src['id']}:{slug}"
+        if iid in known:  # already stored; re-scraping old posts every run is wasted requests
+            continue
+        try:
+            art = parse_article(get(url))
+            time.sleep(src.get("delay", 0.2))
+        except requests.RequestException as ex:
+            print(f"  ! {url}: {ex}", file=sys.stderr)
+            continue
+        d = art["date"] or listed
+        if not d or d < since:
+            continue
+        excerpt = (art["description"] + " " + art["text"]).strip()
+        out.append({
+            "id": iid,
+            "source": src["id"],
+            "title": art["title"] or slug,
+            "url": url,
+            "date": d.isoformat(),
+            "authors": [],
+            "source_tags": [],
+            "tags": list(src.get("tags") or []),
+            "excerpt": excerpt[:EXCERPT_CHARS],
+        })
+    return out
+
+
+FETCHERS = {"github_blog_index": fetch_github_blog_index, "rss": fetch_rss, "scrape": fetch_scrape}
 
 
 def run_source(src: dict, since: dt.date, known: set[str]) -> list[dict]:

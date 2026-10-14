@@ -25,3 +25,5 @@
 ## 条目
 
 _HF blog 2026-07 → 2026-10 无直接相关文章。_
+
+- 2026-08 → 10 lab 动态：纯 BUA 官方 post 很少，浏览器能力被吸收进通用 CUA——Chrome auto browse 全量 US Android、[Firefox × Mistral](https://mistral.ai/news/mistral-x-mozilla/) AI 浏览、ChatGPT Work 云浏览器取代 Atlas/ChatGPT agent。见 [reviews/2026-10-14_frontier-labs.md](../reviews/2026-10-14_frontier-labs.md)。

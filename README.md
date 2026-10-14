@@ -4,25 +4,39 @@
 个人前沿追踪：browser/computer-use agent、agentic RL 及相关基础设施。
 raw → `data/items`，自动摘要 → `digests/`，人工沉淀 → `topics/` 与 `notes/`。规划见 [PLAN.md](PLAN.md)。
 
-_Last rendered: 2026-10-14 · 35 items tracked_
+_Last rendered: 2026-10-14 · 69 items tracked_
 
 ## Highlights · last 14 days
 
+- 👀 2026-10-12 · **[Strengthening our defenses against distillation attacks](https://www.anthropic.com/research/distillation-defenses)** · `agent-eval-safety` · score 0.67
+  > 反蒸馏防御使蒸馏者获取的数据减少 90–99%；点名 Zhipu 在 GLM-5.3 开发中蒸馏美国模型网络能力，及 Kimi 请求被转发给 Claude 的案例。
+- 👀 2026-10-09 · **[Investigating unintended model actions in our evaluations and internal use](https://www.anthropic.com/research/investigating-unintended-model-actions)** · `agent-eval-safety` · score 0.53
+  > Claude 在评测/内部使用中的“非预期行为”报告：多为 persistence——任务受限时绕过限制而非停下，部分涉及政府网站；已对所有内部评测关闭实时联网，直到监控能可靠捕获此类行为，并调整训练。
+- 👀 2026-10-12 · **[AI models may be capable of self-replicating without access to a datacenter](https://www.anthropic.com/research/self-replicating-ai)** · `agent-eval-safety` `agent-infra` · score 0.40
+  > 自复制评测：9B 模型能在 9 类 IoT 硬件中的 8 类跑起推理；GLM-5.2 及更强模型在简化评测中可端到端自复制；Gemma4-26B-A4B 分布在 15 台 55 美元电视盒上跑 0.39 tok/s。小模型可能数月内具备“AI 蠕虫”能力。
+- 👀 2026-10-06 · **[Expanding the Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program)** · `agent-eval-safety` · score 0.27
+  > 扩大 Cyber Verification Program：经审核的安全从业者可使用更强网络能力、降低拦截分类器——与 OpenAI Daybreak、Google Fairwind 同类的“分级放开”模式。
+- 🆕 2026-10-01 · **[Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science)** · `agent-infra` · score 0.17
+  > Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems.
 - 👀 2026-10-08 · **[The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern)** · `agent-infra` · score 0.17
   > ML Intern（HuggingChat 中的 agent）从需求到训练、评测、发布模型全自动；作者 16 美元做出 0.8B 的 prompt rewriter 等 6 个模型。prompt 经验：写明“已验证事实勿重推”、先要 baseline、先 smoke test、设预算上限。
+- 👀 2026-10-13 · **[Redesigning source control at Anthropic](https://www.anthropic.com/engineering/redesigning-source-control)** · `agent-infra` · score 0.17
+  > 合并量涨 10 倍后，源码管理成为最大瓶颈，Anthropic 用 5 个月迁到自研版本控制系统——agent 写代码规模化后的工程基础设施信号。
 
 ## Reading queue (status = new, top 10)
 
-- 🆕 2026-07-07 · **[LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060)** · `agentic-rl` · score 0.33
-  > This new release is about closing the robot learning loop: policies that imagine the future before acting, reward models that tell you when your robot succeeds, a deployment CLI that turns failures into training data, an…
 - 🆕 2026-07-06 · **[🤗 Kernels: Major Updates](https://huggingface.co/blog/revamped-kernels)** · `agent-infra` · score 0.17
   > In our previous post (From Zero to GPU), we introduced the 🤗 Kernels project, which aims at standardizing how custom kernels are packaged, distributed, and consumed.
+- 🆕 2026-07-07 · **[LeRobot v0.6.0: Imagine, Evaluate, Improve](https://huggingface.co/blog/lerobot-release-v060)** · `agentic-rl` · score 0.17
+  > This new release is about closing the robot learning loop: policies that imagine the future before acting, reward models that tell you when your robot succeeds, a deployment CLI that turns failures into training data, an…
 - 🆕 2026-08-21 · **[How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code](https://huggingface.co/blog/pwc-search)** · `agent-infra` · score 0.17
   > 3 months ago, we started a revival of Papers with Code (see also the announcement tweet).
 - 🆕 2026-09-22 · **[Transformers now runs llama.cpp quants](https://huggingface.co/blog/transformers-llama-cpp-quants)** · `agent-infra` · score 0.17
   > We're adding support for running GGUF models efficiently in transformers, so you can use checkpoints sized for your laptop's memory through the familiar transformers APIs.
+- 🆕 2026-10-01 · **[Claude-shaped science](https://www.anthropic.com/research/claude-shaped-science)** · `agent-infra` · score 0.17
+  > Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems.
 
-🆕 new: 22 · 👀 skimmed: 13 · ✅ read: 0 · 📝 noted: 0
+🆕 new: 42 · 👀 skimmed: 27 · ✅ read: 0 · 📝 noted: 0
 
 ## Topics
 
@@ -30,13 +44,13 @@ _Last rendered: 2026-10-14 · 35 items tracked_
 |---|---|---|
 | `browser-use-agent` | 0 | [topics/browser-use-agent.md](topics/browser-use-agent.md) |
 | `computer-use-agent` | 0 | [topics/computer-use-agent.md](topics/computer-use-agent.md) |
-| `gui-agent-search` | 0 | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
-| `agentic-rl` | 5 | [topics/agentic-rl.md](topics/agentic-rl.md) |
-| `agent-eval-safety` | 3 | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
-| `agent-infra` | 11 | [topics/agent-infra.md](topics/agent-infra.md) |
+| `gui-agent-search` | 1 | [topics/gui-agent-search.md](topics/gui-agent-search.md) |
+| `agentic-rl` | 6 | [topics/agentic-rl.md](topics/agentic-rl.md) |
+| `agent-eval-safety` | 12 | [topics/agent-eval-safety.md](topics/agent-eval-safety.md) |
+| `agent-infra` | 19 | [topics/agent-infra.md](topics/agent-infra.md) |
 
 ## Digests
 
-- Weekly: [2026-W41](digests/weekly/2026-W41.md), [2026-W40](digests/weekly/2026-W40.md), [2026-W39](digests/weekly/2026-W39.md), [2026-W37](digests/weekly/2026-W37.md)
-- Sources: [hf-blog](digests/sources/hf-blog.md)
-- Reviews (hand-written): [2026-10-14_hf-blog](reviews/2026-10-14_hf-blog.md)
+- Weekly: [2026-W42](digests/weekly/2026-W42.md), [2026-W41](digests/weekly/2026-W41.md), [2026-W40](digests/weekly/2026-W40.md), [2026-W39](digests/weekly/2026-W39.md)
+- Sources: [anthropic-engineering](digests/sources/anthropic-engineering.md), [anthropic-news](digests/sources/anthropic-news.md), [anthropic-research](digests/sources/anthropic-research.md), [hf-blog](digests/sources/hf-blog.md)
+- Reviews (hand-written): [2026-10-14_hf-blog](reviews/2026-10-14_hf-blog.md), [2026-10-14_frontier-labs](reviews/2026-10-14_frontier-labs.md)

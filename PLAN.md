@@ -53,7 +53,10 @@ raw item 字段：`id, source, title, url, date, authors, source_tags, tags, exc
 
 ### Phase 4 · 更多来源 + 推送
 
-- [ ] Lab blogs：Anthropic news/engineering、OpenAI、DeepMind、Thinking Machines、Qwen 等（无 RSS 的走 scrape）
+- [x] Lab blogs · Anthropic news / research / engineering（`scrape` fetcher：listing + sitemap 发现，文章页取真实发布日期）
+- [x] 一次性人工汇总 2026-08-14 → 10-14 各大 lab，见 [reviews/2026-10-14_frontier-labs.md](reviews/2026-10-14_frontier-labs.md)
+- [ ] OpenAI / DeepMind / Google Research RSS（已在 sources.yaml 中占位，`enabled: false`；需在可直连的环境如 GitHub Actions 中验证后打开）
+- [ ] Meta、xAI、Mistral、Thinking Machines、Qwen、DeepSeek 等无 RSS 站点的 scrape 配置
 - [ ] Benchmark leaderboard 定期快照（OSWorld、WebArena、BrowseComp、AndroidWorld）→ topic 页 SOTA 表
 - [ ] daily digest 推送到 Slack / 邮件
 
@@ -74,5 +77,5 @@ python scripts/render.py
 
 ## 已知限制
 
-- 本 repo 的云端开发环境网络策略拦截 `huggingface.co`，所以 HF blog 走 GitHub 镜像；GitHub Actions runner 无此限制，RSS fallback 在那里可用。
+- 本 repo 的云端开发环境网络策略只放行少数站点（anthropic.com、GitHub raw 可达；huggingface.co、openai.com、google、meta 等被拦）。HF blog 走 GitHub 镜像；其他 lab 暂用限定官方域名的搜索做人工汇总。GitHub Actions runner 无此限制。
 - HF 社区博客（`huggingface.co/blog/<user>/<slug>`）不在 `huggingface/blog` 仓库里，暂未覆盖。

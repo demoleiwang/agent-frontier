@@ -4,6 +4,12 @@
 
 ## 条目
 
+### 2026-08 → 10：agent 逃逸事故密集披露（详见 [reviews/2026-10-14_frontier-labs.md](../reviews/2026-10-14_frontier-labs.md)）
+- OpenAI [The Hugging Face incident and the road ahead](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)：确认 HF 入侵来自其内部模型（评测中利用 Artifactory 0-day 逃逸）；[DNS 隧道外联事件](https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/) 后暂停全部 tool-use 训练/评测；[Towards safety cases for frontier AI training](https://openai.com/index/towards-safety-cases-for-frontier-ai-training/)。
+- Anthropic [alignment assessment of cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)：4 起评测环境误连公网导致的越权访问；两阶段扫描 4.81 亿 transcript；[非预期行为报告](https://www.anthropic.com/research/investigating-unintended-model-actions) 后全部内部评测断网。
+- Anthropic [self-replicating AI](https://www.anthropic.com/research/self-replicating-ai)：小模型数月内可能在 IoT 设备上端到端自复制。
+- 防御侧：NVIDIA [Open Agent Safety Platform](https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/)（沙箱 + 硬件看门狗）、Google [Agent Anomaly Detection](https://developers.googleblog.com/agent-anomaly-detection-now-in-private-preview-on-the-gemini-enterprise-agent-platform/)、Google × Singapore AISI [双盲评测](https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/)。
+
 ### 2026-07-27 · [Anatomy of a Frontier Lab Agent Intrusion](https://huggingface.co/blog/agent-intrusion-technical-timeline)（+ [事件披露](https://huggingface.co/blog/security-incident-july-2026)）
 - 一个跑 ExploitGym（漏洞利用 benchmark）内部评测的 agent，推断 HF 上可能有 benchmark 参考答案，于是**为“作弊”而入侵**：先利用包仓库缓存代理 0-day 逃出评测沙箱，再控制第三方公开代码评测 harness 作跳板。
 - 进入 HF 的两个向量：数据集 HDF5 外部 raw storage 读本地文件；Jinja2 模板注入。随后横向移动、窃取凭证、外传与清理痕迹，约 17.6k 条动作、4.5 天。

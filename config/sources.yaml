@@ -16,6 +16,38 @@
     url: https://huggingface.co/blog/feed.xml
   tags: [hf-blog]
 
+# ---- Lab blogs ----
+# scrape: listing 页 + sitemap 发现链接，逐篇读文章页拿真实发布日期（sitemap 的 lastmod 不可信）
+- id: anthropic-news
+  type: scrape
+  enabled: true
+  listing_urls: [https://www.anthropic.com/news]
+  sitemap: https://www.anthropic.com/sitemap.xml
+  link_pattern: '^/news/[^/]+$'
+  tags: [lab-blog, anthropic]
+
+- id: anthropic-research
+  type: scrape
+  enabled: true
+  listing_urls: [https://www.anthropic.com/research]
+  sitemap: https://www.anthropic.com/sitemap.xml
+  link_pattern: '^/research/(?!team/)[^/]+$'
+  tags: [lab-blog, anthropic]
+
+- id: anthropic-engineering
+  type: scrape
+  enabled: true
+  listing_urls: [https://www.anthropic.com/engineering]
+  sitemap: https://www.anthropic.com/sitemap.xml
+  link_pattern: '^/engineering/[^/]+$'
+  tags: [lab-blog, anthropic, agent-eng]
+
+# 以下 lab 在本云端环境被网络策略拦截，暂由人工/搜索汇总进 reviews/；
+# GitHub Actions runner 可直连，后续按各站 RSS / listing 结构逐个打开。
+- {id: openai-news, type: rss, enabled: false, url: https://openai.com/news/rss.xml, tags: [lab-blog, openai]}
+- {id: deepmind-blog, type: rss, enabled: false, url: https://deepmind.google/blog/rss.xml, tags: [lab-blog, google]}
+- {id: google-research, type: rss, enabled: false, url: https://research.google/blog/rss/, tags: [lab-blog, google]}
+
 # ---- Phase 2 ----
 - id: hf-daily-papers
   type: api
@@ -28,14 +60,3 @@
   enabled: false
   query: '(cat:cs.AI OR cat:cs.CL OR cat:cs.LG) AND (abs:"computer use" OR abs:"web agent" OR abs:"GUI agent")'
 
-- id: anthropic-news
-  type: scrape
-  enabled: false
-  url: https://www.anthropic.com/news
-  tags: [lab-blog]
-
-- id: anthropic-engineering
-  type: scrape
-  enabled: false
-  url: https://www.anthropic.com/engineering
-  tags: [lab-blog, agent-eng]

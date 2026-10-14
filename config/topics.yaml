@@ -12,10 +12,12 @@ gui-agent-search:
   keywords: [search agent, agentic search, deep search, retrieval agent, search tool]
 agentic-rl:
   keywords: [agentic RL, multi-turn RL, long-horizon, environment scaling, RL environment, RL environments,
-             GRPO, OpenEnv, verifiers, reward model, rollout, TRL, reinforcement learning]
+             GRPO, OpenEnv, verifiers, reward model, TRL, reinforcement learning]
 agent-eval-safety:
   keywords: [agent evaluation, reward hacking, sandbox escape, intrusion, prompt injection, agent security,
-             Terminal-Bench, SWE-Bench, ExploitGym, reproduc, Every Eval Ever, inference compute]
+             Terminal-Bench, SWE-Bench, ExploitGym, reproduc, Every Eval Ever, inference compute,
+             cyber capabilit, self-replicat, unauthorized access, unintended model actions, misalignment,
+             safety case, distillation attack, sandbox, alignment assessment, alignment failure, cybersecurity]
   weight: 0.8
 agent-infra:
   keywords: [agent, agents, agentic, tool calling, tool use, function calling, MCP, smolagents,

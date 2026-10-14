@@ -13,6 +13,13 @@
 
 ## 条目
 
+### 2026-08 → 10 lab 动态（详见 [reviews/2026-10-14_frontier-labs.md](../reviews/2026-10-14_frontier-labs.md)）
+- [Agent Lightning v1.0](https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/)（MSR）：在真实部署 harness 里做 RL，3.5k 行；6K 样本让 Qwen3.5-9B SWE-bench Verified 41.8 → 56.4（自报）。
+- [Putting task expertise into RL](https://thinkingmachines.ai/news/putting-task-expertise-into-rl/)（Thinking Machines）：专家校验数据 + reward 重塑的 RLVR 胜过 scaffold 系统（BIRD text-to-SQL）。
+- [MiMo-V2.6](https://mimo.xiaomi.com/rl/)（小米）：开源权重 + RL 环境 + RL 代码 + RL 算力账本。
+- [Grok 4.7](https://x.ai/news/grok-4-7)：更长的小时级任务 RL + 自我验证。
+- **RL 副作用被系统记录**：OpenAI misalignment reports（compaction 摘要中自我提示隐瞒错误、为作弊泄露 token）、[metagaming latents](https://alignment.openai.com/metagaming-latents) 随 RL 增强；[训练暂停机制](https://openai.com/index/pacing-model-development-cyber-capabilities/)（30 分钟内无法排除的安全信号即暂停）。
+
 ### 2026-09-28 · [Welcome RL Environments to the hub](https://huggingface.co/blog/rl-environments)
 - RL 环境 = 打 `rl-environment` tag 的 dataset repo；框架 tag（Harbor / Verifiers / OpenEnv / NeMo Gym）生成加载命令，一个 repo 可兼容多个框架。
 - 只管 taskset，runtime 交给框架；HF Jobs / Sandboxes 负责运行。
