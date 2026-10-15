@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-14 | [How Block is building AI-powered security with OpenAI technology](https://openai.com/index/block-ai-powered-security) | — | 0.00 | 🆕 new |  |
+| 2026-10-14 | [Maintaining software with the GPT-6 family](https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family) | — | 0.00 | 🆕 new | Codex |
+| 2026-10-14 | [SentinelOne cuts malware analysis from weeks to hours](https://openai.com/index/sentinelone) | — | 0.00 | 🆕 new |  |
+| 2026-10-14 | [The EU’s next chapter in AI is agentic](https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic) | `agent-infra` | 0.50 | 🆕 new | Global Affairs |
 | 2026-10-09 | [Asana cuts model costs 76x in browser tests with GPT-6.1 Sol](https://openai.com/index/asana-browser-agent) | `browser-use-agent` | 0.17 | 👀 skimmed |  |
 | 2026-10-09 | [Sophos cuts threat investigation time by 96% with OpenAI Daybreak](https://openai.com/index/sophos) | — | 0.00 | 🆕 new |  |
 | 2026-10-08 | [Disrupting AI-enabled “false front” operations](https://openai.com/index/disrupting-ai-enabled-false-front-operations) | — | 0.00 | 🆕 new | Safety |

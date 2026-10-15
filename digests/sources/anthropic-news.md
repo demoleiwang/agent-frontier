@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-14 | [Preparing for the 2026 US midterms](https://www.anthropic.com/news/2026-us-midterms) | — | 0.00 | 🆕 new |  |
+| 2026-10-14 | [Singapore office and government MOU \| Anthropic](https://www.anthropic.com/news/singapore-office-opening) | — | 0.00 | 🆕 new |  |
 | 2026-10-08 | [2026 Usage Policy update](https://www.anthropic.com/news/2026-usage-policy-update) | — | 0.00 | 🆕 new |  |
 | 2026-10-08 | [Introducing the Anthropic Cyber Mission](https://www.anthropic.com/news/anthropic-cyber-mission) | — | 0.00 | 🆕 new |  |
 | 2026-10-08 | [Building on our commitment to American scientific discovery](https://www.anthropic.com/news/genesis-mission-commitment) | — | 0.00 | 🆕 new |  |

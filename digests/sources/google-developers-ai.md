@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-14 | [Announcing MCP support in Apigee hybrid: agentic tools that run in your own cluster](https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-10-13 | [Gemini 4 Argon for Robotics](https://developers.googleblog.com/gemini-4-argon-for-robotics/) | — | 0.00 | 🆕 new | AI |
 | 2026-10-13 | [Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/) | `agent-infra` | 0.17 | 👀 skimmed | Gemini |
 | 2026-10-08 | [ML Drift: Next-Gen GPU AI/ML Inference at the Edge](https://developers.googleblog.com/ml-drift-next-gen-gpu-aiml-inference-at-the-edge/) | — | 0.00 | 🆕 new | Mobile |
