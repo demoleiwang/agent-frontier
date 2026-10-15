@@ -6,7 +6,7 @@
 
 | 类别 | 代表工作 | 一句话 takeaway |
 |---|---|---|
-| Harness / 框架 | | |
+| Harness / 框架 | [Codex Browser Use](https://github.com/iFurySt/open-codex-browser-use/tree/ebfca6587d2446836fbf8722c873fdf98d9a5524/docs)（逆向） | 底层全走 CDP（Electron webview / Chrome 扩展的 `chrome.debugger`）；接口从 坐标 / DOM-id / Playwright 收敛为 AX 编号 + Playwright（[报告](https://github.com/demoleiwang/agent-frontier/blob/claude/intelligent-goldberg-ocxr01/reviews/2026-10-15_codex-cu-bu.md)） |
 | 训练（SFT / RL on real web） | | |
 | Benchmark / 评测 | | |
 | Deep research | | |

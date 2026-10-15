@@ -8,7 +8,7 @@
 |---|---|---|
 | 端到端 CUA 模型 | | |
 | GUI grounding | | |
-| Harness / 框架 | | |
+| Harness / 框架 | [Codex Computer Use](https://github.com/iFurySt/open-codex-computer-use/tree/7d8cb3fa5618d1ed8ec71773434ac3677f1922c9/docs/references/codex-computer-use-reverse-engineering)（逆向） | AX 编号树 + 截图、语义动作优先、`CGEventPostToPid` 后台执行；模型在 `cua_repl` 中写 JS 调用受信 API（[报告](https://github.com/demoleiwang/agent-frontier/blob/claude/intelligent-goldberg-ocxr01/reviews/2026-10-15_codex-cu-bu.md)） |
 | 训练环境 / 数据 | | |
 
 ## Benchmark leaderboard
