@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-15 | [Bringing GPT-Rosalind to academic research labs](https://openai.com/index/introducing-the-rosalind-academic-plan) | — | 0.00 | 🆕 new | Research |
+| 2026-10-15 | [Sullivan & Cromwell brings legal expertise into agreement review](https://openai.com/index/sullivan-cromwell) | — | 0.00 | 🆕 new |  |
+| 2026-10-15 | [Teaching students to think and learn through questions](https://openai.com/index/teaching-students-to-think-and-learn-through-questions) | — | 0.00 | 🆕 new | Company |
 | 2026-10-14 | [How Block is building AI-powered security with OpenAI technology](https://openai.com/index/block-ai-powered-security) | — | 0.00 | 🆕 new |  |
 | 2026-10-14 | [Maintaining software with the GPT-6 family](https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family) | — | 0.00 | 🆕 new | Codex |
 | 2026-10-14 | [SentinelOne cuts malware analysis from weeks to hours](https://openai.com/index/sentinelone) | — | 0.00 | 🆕 new |  |

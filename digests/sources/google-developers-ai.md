@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-15 | [Announcing DPoP Support for Google OAuth: Securing Refresh Tokens](https://developers.googleblog.com/announcing-dpop-support-for-google-oauth-securing-refresh-tokens/) | `agent-infra` | 0.17 | 🆕 new | Mobile |
+| 2026-10-15 | [Evaluating AI agents: moving past the vibe check](https://developers.googleblog.com/evaluating-ai-agents-moving-past-the-vibe-check/) | `agent-infra` | 0.50 | 🆕 new | AI |
+| 2026-10-15 | [Three layers, one repo: a tour of google/adk-recipes](https://developers.googleblog.com/three-layers-one-repo-a-tour-of-googleadk-recipes/) | `agent-infra` | 0.17 | 🆕 new | AI |
 | 2026-10-14 | [Announcing MCP support in Apigee hybrid: agentic tools that run in your own cluster](https://developers.googleblog.com/announcing-mcp-support-in-apigee-hybrid-agentic-tools-that-run-in-your-own-cluster/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-10-13 | [Gemini 4 Argon for Robotics](https://developers.googleblog.com/gemini-4-argon-for-robotics/) | — | 0.00 | 🆕 new | AI |
 | 2026-10-13 | [Optimizing a 200,000-line Python codebase overnight with Gemini 4 Argon](https://developers.googleblog.com/optimizing-a-200000-line-python-codebase-overnight-with-gemini-4-argon/) | `agent-infra` | 0.17 | 👀 skimmed | Gemini |

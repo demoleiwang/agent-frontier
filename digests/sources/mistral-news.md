@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-15 | [Introducing Timestral](https://mistral.ai/news/timestral) | — | 0.00 | 🆕 new | News |
 | 2026-10-06 | [Introducing Mistral Large 4](https://mistral.ai/news/mistral-large-4) | — | 0.00 | 👀 skimmed | News |
 | 2026-09-28 | [Hallo, Deutschland!](https://mistral.ai/news/hallo-deutschland) | — | 0.00 | 🆕 new | News |
 | 2026-09-16 | [Mistral and Mozilla are bringing open, private and multilingual AI to your web browser](https://mistral.ai/news/mistral-x-mozilla) | — | 0.00 | 🆕 new | News |
