@@ -3,6 +3,11 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-16 | [The AI expectations gap](https://www.anthropic.com/research/ai-expectations-gap) | — | 0.00 | 🆕 new |  |
+| 2026-10-16 | [Designing more efficient quantum circuits with Claude](https://www.anthropic.com/research/designing-efficient-quantum-circuits) | — | 0.00 | 🆕 new |  |
+| 2026-10-16 | [Claude reveals ECDSA curve origins](https://www.anthropic.com/research/ecdsa-curve-origins) | — | 0.00 | 🆕 new |  |
+| 2026-10-16 | [How employment is changing at Anthropic](https://www.anthropic.com/research/employment-at-anthropic) | `office-agent` `agent-infra` | 0.50 | 🆕 new |  |
+| 2026-10-16 | [Working at the frontier shapes expectations for the future](https://www.anthropic.com/research/expectations-for-the-future) | `office-agent` `professional-agent` `agent-infra` | 0.17 | 🆕 new |  |
 | 2026-10-12 | [Strengthening our defenses against distillation attacks](https://www.anthropic.com/research/distillation-defenses) | `agent-eval-safety` | 0.67 | 👀 skimmed |  |
 | 2026-10-12 | [AI models may be capable of self-replicating without access to a datacenter](https://www.anthropic.com/research/self-replicating-ai) | `agent-eval-safety` `agent-infra` | 0.40 | 👀 skimmed |  |
 | 2026-10-09 | [Investigating unintended model actions in our evaluations and internal use](https://www.anthropic.com/research/investigating-unintended-model-actions) | `agent-eval-safety` | 0.53 | 👀 skimmed |  |

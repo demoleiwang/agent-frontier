@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-16 | [Welcome Beam: a 501B open model you can own, customize, and scale](https://huggingface.co/blog/reflection-beam) | `agentic-rl` `agent-infra` `env-construction` | 0.67 | 🆕 new | open-source-collab, llm, transformers, inference, trl, rl |
 | 2026-10-15 | [Welcome FLUX.3 Image Klein in Diffusers](https://huggingface.co/blog/flux-3) | — | 0.00 | 🆕 new | diffusers, flux, quantization, black-forest-labs, lora |
 | 2026-10-15 | [Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta](https://huggingface.co/blog/meta-muse-spark-open) | `agent-infra` | 0.17 | 🆕 new | meta, muse-spark, open-source, community, llm |
 | 2026-10-08 | [The model that didn't exist, so you made it yourself](https://huggingface.co/blog/building-with-ml-intern) | `agent-infra` | 0.17 | 👀 skimmed | ml-intern, datasets, spaces, models, inference-providers, huggingchat, gradio |
