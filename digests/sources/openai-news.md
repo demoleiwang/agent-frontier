@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-16 | [Benefit Street Partners answers questions faster with Codex](https://openai.com/index/benefit-street-partners) | — | 0.00 | 🆕 new |  |
 | 2026-10-16 | [How Itaú is building generative AI for its entire customer base](https://openai.com/index/itau-generative-ai) | — | 0.00 | 🆕 new |  |
 | 2026-10-15 | [Bringing GPT-Rosalind to academic research labs](https://openai.com/index/introducing-the-rosalind-academic-plan) | — | 0.00 | 🆕 new | Research |
 | 2026-10-15 | [Sullivan & Cromwell brings legal expertise into agreement review](https://openai.com/index/sullivan-cromwell) | — | 0.00 | 🆕 new |  |
