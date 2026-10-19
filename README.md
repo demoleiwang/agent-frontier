@@ -5,7 +5,7 @@
 
 > **当前判断**：个人 agent 是这一季最大的产品浪潮：Grok Bot、Muse、Autopilot、dots 在 9 月 3 日到 29 日间先后上线（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[dots](https://openai.com/index/introducing-dots)），Muse 11 天约 56 万日活（[CNBC](https://www.cnbc.com/2026/09/27/meta-muse-ai-personal-agent.html)，二手）。但能力远跟不上：替人打理几周生活最强只有 32.5 分且越往后越差（[VibeLifeBench](https://vibebench.github.io/VibeLifeBench_homepage/)，二手），记忆靠检索最高只用上 14.4%（[InMind](https://arxiv.org/abs/2607.24368)）。产品的核心卖点“不用提示就开工”在开源环境里根本测不到（[VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492)）。同时电脑操作正在分叉：OpenAI 全面改成写代码（[commit a0f5a76](https://github.com/openai/openai-cua-sample-app/commit/a0f5a7641df9fbe76968ca41245a5eceee6061ce)），Anthropic 反其道而行（[tool reference](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference)），还没有受控对比。
 
-_罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-18（自动）· 跟踪 5804 条 · 👀 92 已浏览 · ✅ 0 已读 · 📝 0 有笔记_
+_罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-19（自动）· 跟踪 5805 条 · 👀 92 已浏览 · ✅ 0 已读 · 📝 0 有笔记_
 
 **📊 交互网页（推荐）**：[打开罗盘](https://claude.ai/artifact/UdHBb3GVdCbFYYYHbCoEJJ)（claude.ai，可从 GitHub 拉取每日最新数据） · [静态版](https://htmlpreview.github.io/?https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/site/index.html)。方向雷达、本周新工作、主题热度、关键信号都在网页里，README 只保留主方向与模块。
 

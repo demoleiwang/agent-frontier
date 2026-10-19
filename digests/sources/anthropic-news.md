@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-18 | [Investing in the public benefit](https://www.anthropic.com/news/public-benefit-fund) | — | 0.00 | 🆕 new |  |
 | 2026-10-15 | [Anthropic update on independent evaluators](https://www.anthropic.com/news/an-update-on-independent-evaluators) | — | 0.00 | 🆕 new |  |
 | 2026-10-14 | [Preparing for the 2026 US midterms](https://www.anthropic.com/news/2026-us-midterms) | — | 0.00 | 🆕 new |  |
 | 2026-10-14 | [Singapore office and government MOU \| Anthropic](https://www.anthropic.com/news/singapore-office-opening) | — | 0.00 | 🆕 new |  |
