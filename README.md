@@ -5,7 +5,7 @@
 
 > **当前判断**：个人 agent 是这一季最大的产品浪潮：Grok Bot、Muse、Autopilot、dots 在 9 月 3 日到 29 日间先后上线（[Muse](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)、[dots](https://openai.com/index/introducing-dots)），Muse 11 天约 56 万日活（[CNBC](https://www.cnbc.com/2026/09/27/meta-muse-ai-personal-agent.html)，二手）。但能力远跟不上：替人打理几周生活最强只有 32.5 分且越往后越差（[VibeLifeBench](https://vibebench.github.io/VibeLifeBench_homepage/)，二手），记忆靠检索最高只用上 14.4%（[InMind](https://arxiv.org/abs/2607.24368)）。产品的核心卖点“不用提示就开工”在开源环境里根本测不到（[VibeLifeBench task.py](https://github.com/evolvent-ai/VibeLifeBench/blob/cd21b2cb5d18a81b0fcdb4a948889a2148f48958/eval_set/travel/galapagos_no_us_transit/task.py#L471-L492)）。同时电脑操作正在分叉：OpenAI 全面改成写代码（[commit a0f5a76](https://github.com/openai/openai-cua-sample-app/commit/a0f5a7641df9fbe76968ca41245a5eceee6061ce)），Anthropic 反其道而行（[tool reference](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference)），还没有受控对比。
 
-_罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-19（自动）· 跟踪 5805 条 · 👀 92 已浏览 · ✅ 0 已读 · 📝 0 有笔记_
+_罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-20（自动）· 跟踪 5924 条 · 👀 92 已浏览 · ✅ 0 已读 · 📝 0 有笔记_
 
 **📊 交互网页（推荐）**：[打开罗盘](https://claude.ai/artifact/UdHBb3GVdCbFYYYHbCoEJJ)（claude.ai，可从 GitHub 拉取每日最新数据） · [静态版](https://htmlpreview.github.io/?https://github.com/demoleiwang/agent-frontier/blob/claude/inspiring-lovelace-umqw6v/site/index.html)。方向雷达、本周新工作、主题热度、关键信号都在网页里，README 只保留主方向与模块。
 
@@ -63,7 +63,7 @@ _罗盘更新于 2026-10-14（人工）· 数据渲染于 2026-10-19（自动）
 **自动摘要**
 
 - [论文 · 近 30 天按口碑排序](digests/papers.md) · [各 lab 近 60 天全部条目](digests/labs.md)
-- 周报：[2026-W42](digests/weekly/2026-W42.md), [2026-W41](digests/weekly/2026-W41.md), [2026-W40](digests/weekly/2026-W40.md)
+- 周报：[2026-W43](digests/weekly/2026-W43.md), [2026-W42](digests/weekly/2026-W42.md), [2026-W41](digests/weekly/2026-W41.md)
 - 来源：[anthropic-engineering](digests/sources/anthropic-engineering.md), [anthropic-news](digests/sources/anthropic-news.md), [anthropic-research](digests/sources/anthropic-research.md), [google-developers-ai](digests/sources/google-developers-ai.md), [hf-blog](digests/sources/hf-blog.md), [mistral-news](digests/sources/mistral-news.md), [openai-developer](digests/sources/openai-developer.md), [openai-engineering](digests/sources/openai-engineering.md), [openai-news](digests/sources/openai-news.md), [openai-research](digests/sources/openai-research.md), [uk-aisi](digests/sources/uk-aisi.md), [xai-news](digests/sources/xai-news.md)
 
 **维护**：每天 GitHub Actions 自动抓取、打分、渲染。每周人工约 20 分钟：清空“本周待分拣”，把值得留的写进 `topics/` 与 `notes/`，并更新 `config/compass.yaml` 中的方向状态、必读与信号。规划见 [PLAN.md](PLAN.md)。

@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-19 | [Native Model Authoring for Edge with LiteRT Tensor API](https://developers.googleblog.com/native-model-authoring-for-edge-with-litert-tensor-api/) | — | 0.00 | 🆕 new | Mobile |
+| 2026-10-19 | [Step by Step guide: Build a Voice Agent That Never Goes Silent using ADK](https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/) | `agent-infra` | 0.33 | 🆕 new | AI |
 | 2026-10-15 | [Announcing DPoP Support for Google OAuth: Securing Refresh Tokens](https://developers.googleblog.com/announcing-dpop-support-for-google-oauth-securing-refresh-tokens/) | `agent-infra` | 0.17 | 🆕 new | Mobile |
 | 2026-10-15 | [Evaluating AI agents: moving past the vibe check](https://developers.googleblog.com/evaluating-ai-agents-moving-past-the-vibe-check/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-10-15 | [Three layers, one repo: a tour of google/adk-recipes](https://developers.googleblog.com/three-layers-one-repo-a-tour-of-googleadk-recipes/) | `agent-infra` | 0.17 | 🆕 new | AI |
