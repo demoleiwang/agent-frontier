@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-20 | [AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms](https://huggingface.co/blog/anylanguagemodel-1-0) | — | 0.00 | 🆕 new | swift, llm, mlx, open-source, community |
+| 2026-10-20 | [Hugging Face ❤️ TorchTPU: TPUs, Natively](https://huggingface.co/blog/hf-torchtpu) | — | 0.00 | 🆕 new | tpu, google, gcp, partnerships, hardware, transformers, diffusers, kernels |
+| 2026-10-20 | [MPS in PyTorch 2.15](https://huggingface.co/blog/mps-pytorch-2-15) | — | 0.00 | 🆕 new | pytorch, mps, apple, performance |
 | 2026-10-19 | [TorchNeuron: running HF models on AWS Trainium is easier than ever](https://huggingface.co/blog/hf-torchneuron) | — | 0.00 | 🆕 new | open-source, torch, neuron |
 | 2026-10-16 | [Welcome Beam: a 501B open model you can own, customize, and scale](https://huggingface.co/blog/reflection-beam) | `agentic-rl` `agent-infra` `env-construction` | 0.67 | 🆕 new | open-source-collab, llm, transformers, inference, trl, rl |
 | 2026-10-15 | [Welcome FLUX.3 Image Klein in Diffusers](https://huggingface.co/blog/flux-3) | — | 0.00 | 🆕 new | diffusers, flux, quantization, black-forest-labs, lora |

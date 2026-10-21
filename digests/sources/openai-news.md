@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-20 | [OpenAI acquires Orchestra Bio](https://openai.com/index/openai-to-acquire-orchestra-bio) | — | 0.00 | 🆕 new | Company |
+| 2026-10-20 | [Franchisee reconciles cash in 94% less time with ChatGPT Work](https://openai.com/index/ted-taylor-restaurant) | — | 0.00 | 🆕 new |  |
 | 2026-10-19 | [Advancing coding in low‑resource programming languages](https://openai.com/index/low-resource-programming-languages) | — | 0.00 | 🆕 new | Publication |
 | 2026-10-16 | [Benefit Street Partners answers questions faster with Codex](https://openai.com/index/benefit-street-partners) | — | 0.00 | 🆕 new |  |
 | 2026-10-16 | [How Itaú is building generative AI for its entire customer base](https://openai.com/index/itau-generative-ai) | — | 0.00 | 🆕 new |  |

@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-20 | [Announcing New vLLM and SGLang Inference Engines on TPU](https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/) | `agent-infra` | 0.17 | 🆕 new | AI |
+| 2026-10-20 | [Bringing Visual Graph Debugging to Custom Edge Compilers with Model Explorer](https://developers.googleblog.com/bringing-visual-graph-debugging-to-custom-edge-compilers-with-model-explorer/) | — | 0.00 | 🆕 new | Mobile |
+| 2026-10-20 | [Integrating TorchTPU into TorchTitan and Optimizing Models for TPU](https://developers.googleblog.com/integrating-torchtpu-into-torchtitan-and-optimizing-models-for-tpu/) | — | 0.00 | 🆕 new | AI |
+| 2026-10-20 | [Unifying Edge AI: How Coral NPU’s open standard brings portable, energy-viable intelligence from model to silicon](https://developers.googleblog.com/unifying-edge-ai-how-coral-npus-open-standard-brings-portable-energy-viable-intelligence-from-model-to-silicon/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-10-19 | [Native Model Authoring for Edge with LiteRT Tensor API](https://developers.googleblog.com/native-model-authoring-for-edge-with-litert-tensor-api/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-10-19 | [Step by Step guide: Build a Voice Agent That Never Goes Silent using ADK](https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/) | `agent-infra` | 0.33 | 🆕 new | AI |
 | 2026-10-15 | [Announcing DPoP Support for Google OAuth: Securing Refresh Tokens](https://developers.googleblog.com/announcing-dpop-support-for-google-oauth-securing-refresh-tokens/) | `agent-infra` | 0.17 | 🆕 new | Mobile |

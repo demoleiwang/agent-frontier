@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-20 | [Voxtral 3](https://mistral.ai/news/voxtral-3) | `agent-infra` | 0.17 | 🆕 new | News |
 | 2026-10-15 | [Introducing Timestral](https://mistral.ai/news/timestral) | — | 0.00 | 🆕 new | News |
 | 2026-10-06 | [Introducing Mistral Large 4](https://mistral.ai/news/mistral-large-4) | — | 0.00 | 👀 skimmed | News |
 | 2026-09-28 | [Hallo, Deutschland!](https://mistral.ai/news/hallo-deutschland) | — | 0.00 | 🆕 new | News |
