@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-21 | [Powering the Agent Development Lifecycle with any framework, from ADK to LangChain and beyond](https://developers.googleblog.com/powering-the-agent-development-lifecycle-with-any-framework-from-adk-to-langchain-and-beyond/) | `agent-infra` | 0.33 | 🆕 new | AI |
 | 2026-10-20 | [Announcing New vLLM and SGLang Inference Engines on TPU](https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/) | `agent-infra` | 0.17 | 🆕 new | AI |
 | 2026-10-20 | [Bringing Visual Graph Debugging to Custom Edge Compilers with Model Explorer](https://developers.googleblog.com/bringing-visual-graph-debugging-to-custom-edge-compilers-with-model-explorer/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-10-20 | [Integrating TorchTPU into TorchTitan and Optimizing Models for TPU](https://developers.googleblog.com/integrating-torchtpu-into-torchtitan-and-optimizing-models-for-tpu/) | — | 0.00 | 🆕 new | AI |

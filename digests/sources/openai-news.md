@@ -3,6 +3,15 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-21 | [How AT&T is rethinking in-house legal work with OpenAI](https://openai.com/index/att-legal) | — | 0.00 | 🆕 new |  |
+| 2026-10-21 | [Broad access through consistent standards](https://openai.com/index/broad-access-through-consistent-standards) | — | 0.00 | 🆕 new | Safety |
+| 2026-10-21 | [How we built ChatGPT’s novel ad stack for user trust and relevance](https://openai.com/index/building-chatgpt-ad-stack) | — | 0.00 | 🆕 new | Engineering |
+| 2026-10-21 | [ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform](https://openai.com/index/chatgpt-ads-expands-26-new-countries) | — | 0.00 | 🆕 new | Product |
+| 2026-10-21 | [Cloudflare links vulnerability discovery to defense with OpenAI](https://openai.com/index/cloudflare-cyber) | — | 0.00 | 🆕 new |  |
+| 2026-10-21 | [Patch the Planet: global response coordination as agents uncover critical vulnerabilities](https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities) | `agent-infra` | 0.50 | 🆕 new | Security |
+| 2026-10-21 | [Democratic governance of frontier AI, part II: Empowering cyber defenders](https://openai.com/index/empowering-cyber-defenders) | — | 0.00 | 🆕 new | Global Affairs |
+| 2026-10-21 | [OpenAI models are coming to Google Cloud](https://openai.com/index/openai-models-google-cloud) | — | 0.00 | 🆕 new | Company |
+| 2026-10-21 | [Using thousands of AI agents to uncover new leads in biological data](https://openai.com/index/scaling-ai-research-for-complex-biological-data) | `agent-infra` | 0.50 | 🆕 new | Publication |
 | 2026-10-20 | [OpenAI acquires Orchestra Bio](https://openai.com/index/openai-to-acquire-orchestra-bio) | — | 0.00 | 🆕 new | Company |
 | 2026-10-20 | [Franchisee reconciles cash in 94% less time with ChatGPT Work](https://openai.com/index/ted-taylor-restaurant) | — | 0.00 | 🆕 new |  |
 | 2026-10-19 | [Advancing coding in low‑resource programming languages](https://openai.com/index/low-resource-programming-languages) | — | 0.00 | 🆕 new | Publication |
