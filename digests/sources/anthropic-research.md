@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-22 | [LLMs are making formal software verification feasible at a much larger scale](https://www.anthropic.com/research/formal-verification) | — | 0.00 | 🆕 new |  |
 | 2026-10-20 | [Using Claude to reduce the attack surface of code](https://www.anthropic.com/research/attack-surface-reduction) | — | 0.00 | 🆕 new |  |
 | 2026-10-20 | [How Claude designed protein binders against scorpion neurotoxins](https://www.anthropic.com/research/claude-scorpion-toxin-binder-design) | — | 0.00 | 🆕 new |  |
 | 2026-10-16 | [The AI expectations gap](https://www.anthropic.com/research/ai-expectations-gap) | — | 0.00 | 🆕 new |  |

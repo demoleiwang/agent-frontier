@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-22 | [Build more responsive apps with the Decisions API](https://openai.com/index/decisions-api) | — | 0.00 | 🆕 new | Product |
+| 2026-10-22 | [What FDE means at OpenAI](https://openai.com/index/forward-deployed-engineering-means) | — | 0.00 | 🆕 new | Engineering |
+| 2026-10-22 | [Uber brings ChatGPT Work to all employees with OpenAI](https://openai.com/index/uber-chatgpt-work-rollout) | `office-agent` | 0.17 | 🆕 new | Company |
 | 2026-10-21 | [How AT&T is rethinking in-house legal work with OpenAI](https://openai.com/index/att-legal) | — | 0.00 | 🆕 new |  |
 | 2026-10-21 | [Broad access through consistent standards](https://openai.com/index/broad-access-through-consistent-standards) | — | 0.00 | 🆕 new | Safety |
 | 2026-10-21 | [How we built ChatGPT’s novel ad stack for user trust and relevance](https://openai.com/index/building-chatgpt-ad-stack) | — | 0.00 | 🆕 new | Engineering |
