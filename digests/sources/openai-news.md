@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-23 | [OpenAI and Poland’s NASK partner to advance AI safety and security](https://openai.com/index/openai-nask-ai-safety-security-partnership) | — | 0.00 | 🆕 new | Global Affairs |
+| 2026-10-23 | [Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)](https://openai.com/index/scaling-storage-one-billion-users-part-two) | — | 0.00 | 🆕 new | Engineering |
+| 2026-10-23 | [Securing our frontier model training environment](https://openai.com/index/securing-our-frontier-model-training-environment) | — | 0.00 | 🆕 new | Security |
 | 2026-10-22 | [Build more responsive apps with the Decisions API](https://openai.com/index/decisions-api) | — | 0.00 | 🆕 new | Product |
 | 2026-10-22 | [What FDE means at OpenAI](https://openai.com/index/forward-deployed-engineering-means) | — | 0.00 | 🆕 new | Engineering |
 | 2026-10-22 | [Uber brings ChatGPT Work to all employees with OpenAI](https://openai.com/index/uber-chatgpt-work-rollout) | `office-agent` | 0.17 | 🆕 new | Company |

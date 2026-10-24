@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-23 | [An alignment assessment of the UK AISI cybertesting incident](https://www.anthropic.com/research/alignment-assessment-ukaisi) | `agent-eval-safety` | 0.67 | 🆕 new |  |
 | 2026-10-22 | [LLMs are making formal software verification feasible at a much larger scale](https://www.anthropic.com/research/formal-verification) | — | 0.00 | 🆕 new |  |
 | 2026-10-20 | [Using Claude to reduce the attack surface of code](https://www.anthropic.com/research/attack-surface-reduction) | — | 0.00 | 🆕 new |  |
 | 2026-10-20 | [How Claude designed protein binders against scorpion neurotoxins](https://www.anthropic.com/research/claude-scorpion-toxin-binder-design) | — | 0.00 | 🆕 new |  |

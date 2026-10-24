@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-23 | [Does Your Model Run on AWS Trainium? Look It Up](https://huggingface.co/blog/torch-neuronx-model-support) | — | 0.00 | 🆕 new | neuron, torch, transformers, aws |
 | 2026-10-20 | [AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms](https://huggingface.co/blog/anylanguagemodel-1-0) | — | 0.00 | 🆕 new | swift, llm, mlx, open-source, community |
 | 2026-10-20 | [Hugging Face ❤️ TorchTPU: TPUs, Natively](https://huggingface.co/blog/hf-torchtpu) | — | 0.00 | 🆕 new | tpu, google, gcp, partnerships, hardware, transformers, diffusers, kernels |
 | 2026-10-20 | [MPS in PyTorch 2.15](https://huggingface.co/blog/mps-pytorch-2-15) | — | 0.00 | 🆕 new | pytorch, mps, apple, performance |
