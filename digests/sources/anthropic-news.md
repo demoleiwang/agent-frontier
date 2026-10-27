@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-26 | [Anthropic files S-1 with the SEC for proposed initial public offering](https://www.anthropic.com/news/s1-sec) | — | 0.00 | 🆕 new |  |
 | 2026-10-22 | [Donating Agent Skills to the Agentic AI Foundation](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation) | `agent-infra` `office-agent` | 0.50 | 🆕 new |  |
 | 2026-10-22 | [Open call for guest investigators in the life sciences](https://www.anthropic.com/news/open-call-guest-investigators-life-sciences) | — | 0.00 | 🆕 new |  |
 | 2026-10-21 | [Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust](https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust) | — | 0.00 | 🆕 new |  |

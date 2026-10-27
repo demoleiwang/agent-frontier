@@ -3,6 +3,13 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-27 | [Using Codex for education at Dagster Labs](https://developers.openai.com/blog/codex-for-documentation-dagster) | — | 0.00 | 🆕 new | Codex |
+| 2026-10-26 | [Working with academic communities to build scientific understanding](https://openai.com/index/building-scientific-understanding-with-academic-communities) | — | 0.00 | 🆕 new | Research |
+| 2026-10-26 | [ChatGPT’s expanding world of work](https://openai.com/index/chatgpt-expanding-world-of-work) | — | 0.00 | 🆕 new | Research |
+| 2026-10-26 | [How Fanatics and OpenAI streamline the fan experience](https://openai.com/index/fanatics-streamline-fan-experience) | — | 0.00 | 🆕 new |  |
+| 2026-10-26 | [GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases](https://openai.com/index/gpt-6-1-sol-coderabbit-code-security) | — | 0.00 | 🆕 new | Security |
+| 2026-10-26 | [Introducing GPT-6.1 Terra](https://openai.com/index/introducing-gpt-6-1-terra) | `computer-use-agent` | 0.17 | 🆕 new | Product |
+| 2026-10-26 | [How Ultrafast cut incident investigation from hours to minutes at OpenAI](https://openai.com/index/openai-cut-incident-investigation) | — | 0.00 | 🆕 new | OpenAI on OpenAI |
 | 2026-10-23 | [OpenAI and Poland’s NASK partner to advance AI safety and security](https://openai.com/index/openai-nask-ai-safety-security-partnership) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-10-23 | [Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)](https://openai.com/index/scaling-storage-one-billion-users-part-two) | — | 0.00 | 🆕 new | Engineering |
 | 2026-10-23 | [Securing our frontier model training environment](https://openai.com/index/securing-our-frontier-model-training-environment) | — | 0.00 | 🆕 new | Security |
