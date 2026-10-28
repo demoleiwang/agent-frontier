@@ -3,7 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-27 | [How Check Point accelerates vulnerability research with Daybreak](https://openai.com/index/check-point-daybreak) | — | 0.00 | 🆕 new |  |
 | 2026-10-27 | [Using Codex for education at Dagster Labs](https://developers.openai.com/blog/codex-for-documentation-dagster) | — | 0.00 | 🆕 new | Codex |
+| 2026-10-27 | [OpenAI expands partnership with Oracle to bring its apps to ChatGPT](https://openai.com/index/oracle-apps-in-chatgpt) | `agent-infra` | 0.17 | 🆕 new | Company |
 | 2026-10-26 | [Working with academic communities to build scientific understanding](https://openai.com/index/building-scientific-understanding-with-academic-communities) | — | 0.00 | 🆕 new | Research |
 | 2026-10-26 | [ChatGPT’s expanding world of work](https://openai.com/index/chatgpt-expanding-world-of-work) | — | 0.00 | 🆕 new | Research |
 | 2026-10-26 | [How Fanatics and OpenAI streamline the fan experience](https://openai.com/index/fanatics-streamline-fan-experience) | — | 0.00 | 🆕 new |  |
@@ -29,7 +31,9 @@
 | 2026-10-20 | [Franchisee reconciles cash in 94% less time with ChatGPT Work](https://openai.com/index/ted-taylor-restaurant) | — | 0.00 | 🆕 new |  |
 | 2026-10-19 | [Advancing coding in low‑resource programming languages](https://openai.com/index/low-resource-programming-languages) | — | 0.00 | 🆕 new | Publication |
 | 2026-10-16 | [Benefit Street Partners answers questions faster with Codex](https://openai.com/index/benefit-street-partners) | — | 0.00 | 🆕 new |  |
+| 2026-10-16 | [How Grupo Boticário uses AI to strengthen human connections](https://openai.com/index/grupo-boticario) | — | 0.00 | 🆕 new |  |
 | 2026-10-16 | [How Itaú is building generative AI for its entire customer base](https://openai.com/index/itau-generative-ai) | — | 0.00 | 🆕 new |  |
+| 2026-10-16 | [How Localiza reorganized work around generative AI](https://openai.com/index/localiza-generative-ai) | `agent-infra` | 0.17 | 🆕 new |  |
 | 2026-10-15 | [Bringing GPT-Rosalind to academic research labs](https://openai.com/index/introducing-the-rosalind-academic-plan) | — | 0.00 | 🆕 new | Research |
 | 2026-10-15 | [Sullivan & Cromwell brings legal expertise into agreement review](https://openai.com/index/sullivan-cromwell) | — | 0.00 | 🆕 new |  |
 | 2026-10-15 | [Teaching students to think and learn through questions](https://openai.com/index/teaching-students-to-think-and-learn-through-questions) | — | 0.00 | 🆕 new | Company |

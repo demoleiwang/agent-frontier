@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-27 | [Building Conversational Commerce with Multi-Agent Swarms on GCP: A Working Prototype](https://developers.googleblog.com/building-conversational-commerce-with-multi-agent-swarms-on-gcp-a-working-prototype/) | `agent-infra` | 0.25 | 🆕 new | Mobile |
+| 2026-10-27 | [Fast, reliable A2UI, with swappable inference formats](https://developers.googleblog.com/fast-reliable-a2ui/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-10-22 | [Architecting Governed, Self-Evolving AI Agents on Google Cloud](https://developers.googleblog.com/architecting-governed-self-evolving-ai-agents-on-gemini-agent-platform/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-10-21 | [Powering the Agent Development Lifecycle with any framework, from ADK to LangChain and beyond](https://developers.googleblog.com/powering-the-agent-development-lifecycle-with-any-framework-from-adk-to-langchain-and-beyond/) | `agent-infra` | 0.33 | 🆕 new | AI |
 | 2026-10-20 | [Announcing New vLLM and SGLang Inference Engines on TPU](https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/) | `agent-infra` | 0.17 | 🆕 new | AI |
