@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-28 | [Hill-Climbing Agent Quality with Agents CLI Evaluation](https://developers.googleblog.com/hill-climbing-agent-quality-with-agents-cli-evaluation/) | `agent-infra` | 0.50 | 🆕 new | AI |
+| 2026-10-28 | [Smaller apps and faster GPU inference with LiteRT in Google Play services](https://developers.googleblog.com/smaller-apps-and-faster-gpu-inference-with-litert-in-google-play-services/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-10-27 | [Building Conversational Commerce with Multi-Agent Swarms on GCP: A Working Prototype](https://developers.googleblog.com/building-conversational-commerce-with-multi-agent-swarms-on-gcp-a-working-prototype/) | `agent-infra` | 0.25 | 🆕 new | Mobile |
 | 2026-10-27 | [Fast, reliable A2UI, with swappable inference formats](https://developers.googleblog.com/fast-reliable-a2ui/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-10-22 | [Architecting Governed, Self-Evolving AI Agents on Google Cloud](https://developers.googleblog.com/architecting-governed-self-evolving-ai-agents-on-gemini-agent-platform/) | `agent-infra` | 0.50 | 🆕 new | AI |

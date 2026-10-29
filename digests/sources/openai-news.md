@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-28 | [Legora is building the agentic operating system for legal work](https://openai.com/index/legora) | `professional-agent` `agent-infra` | 0.67 | 🆕 new |  |
+| 2026-10-28 | [Legora is building the agentic operating system for legal work](https://openai.com/index/legora-agentic-operating-system-for-legal-work) | `professional-agent` `agent-infra` | 0.67 | 🆕 new |  |
+| 2026-10-28 | [OpenAI and ServiceNow expand partnership across enterprise workflows](https://openai.com/index/openai-servicenow-partnership-expansion) | `office-agent` `agent-infra` | 1.00 | 🆕 new | Company |
+| 2026-10-28 | [The future of the firm](https://openai.com/index/the-future-of-the-firm) | — | 0.00 | 🆕 new | Intelligence Age |
 | 2026-10-27 | [How Check Point accelerates vulnerability research with Daybreak](https://openai.com/index/check-point-daybreak) | — | 0.00 | 🆕 new |  |
 | 2026-10-27 | [Using Codex for education at Dagster Labs](https://developers.openai.com/blog/codex-for-documentation-dagster) | — | 0.00 | 🆕 new | Codex |
 | 2026-10-27 | [OpenAI expands partnership with Oracle to bring its apps to ChatGPT](https://openai.com/index/oracle-apps-in-chatgpt) | `agent-infra` | 0.17 | 🆕 new | Company |
