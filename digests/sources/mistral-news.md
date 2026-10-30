@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-29 | [Le Chonk: Built for Coders, Trusted by Defenders.](https://mistral.ai/news/mistral-large-4-oss) | — | 0.00 | 🆕 new | News |
 | 2026-10-21 | [Mistral Advances AI for Engineering with NVIDIA](https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering) | — | 0.00 | 🆕 new | News |
 | 2026-10-20 | [Voxtral 3](https://mistral.ai/news/voxtral-3) | `agent-infra` | 0.17 | 🆕 new | News |
 | 2026-10-15 | [Introducing Timestral](https://mistral.ai/news/timestral) | — | 0.00 | 🆕 new | News |

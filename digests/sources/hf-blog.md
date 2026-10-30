@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-29 | [Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready](https://huggingface.co/blog/announcing-project-protostar) | — | 0.00 | 🆕 new | open-source, science, datasets, research, community |
+| 2026-10-29 | [Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms](https://huggingface.co/blog/anydecisionmodel) | — | 0.00 | 🆕 new | swift, mlx, coreml, audio, speech, community, open-source |
+| 2026-10-29 | [Welcome Le Chonk: Mistral Large 4 on Hugging Face](https://huggingface.co/blog/mistral-large4) | `agent-infra` `agentic-rl` | 0.25 | 🆕 new | transformers, mistral, vllm, llamacpp, inference, open-source |
 | 2026-10-23 | [Does Your Model Run on AWS Trainium? Look It Up](https://huggingface.co/blog/torch-neuronx-model-support) | — | 0.00 | 🆕 new | neuron, torch, transformers, aws |
 | 2026-10-20 | [AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms](https://huggingface.co/blog/anylanguagemodel-1-0) | — | 0.00 | 🆕 new | swift, llm, mlx, open-source, community |
 | 2026-10-20 | [Hugging Face ❤️ TorchTPU: TPUs, Natively](https://huggingface.co/blog/hf-torchtpu) | — | 0.00 | 🆕 new | tpu, google, gcp, partnerships, hardware, transformers, diffusers, kernels |
