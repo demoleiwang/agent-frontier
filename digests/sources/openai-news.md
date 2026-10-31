@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-10-30 | [Community safety report and new protections for teens](https://openai.com/index/community-safety-report-and-new-protections-for-teens) | — | 0.00 | 🆕 new | Safety |
+| 2026-10-30 | [Fair use benefits everyone](https://openai.com/index/fair-use-benefits-everyone) | — | 0.00 | 🆕 new | Company |
+| 2026-10-30 | [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences) | — | 0.00 | 🆕 new | Company |
+| 2026-10-29 | [Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot](https://openai.com/index/credit-saison) | — | 0.00 | 🆕 new |  |
 | 2026-10-29 | [How we detect frontier model misalignment](https://openai.com/index/how-we-detect-frontier-model-misalignment) | `agent-eval-safety` | 0.40 | 🆕 new | Security |
 | 2026-10-29 | [How Ropes & Gray is developing AI for transactional diligence](https://openai.com/index/ropes-gray-ai-diligence) | — | 0.00 | 🆕 new |  |
 | 2026-10-29 | [An updated Model Spec for more capable and beneficial AI](https://openai.com/index/updated-model-spec) | — | 0.00 | 🆕 new | Safety |
