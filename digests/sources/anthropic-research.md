@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-02 | [Progress on provable inference for large language models](https://www.anthropic.com/research/provable-inference) | — | 0.00 | 🆕 new |  |
 | 2026-10-27 | [How AI agents shape experts’ judgment calls](https://www.anthropic.com/research/agents-judgment-calls) | `agent-infra` `office-agent` `professional-agent` | 0.50 | 🆕 new |  |
 | 2026-10-27 | [Discovering and exploiting vulnerabilities in critical, real-world software with Claude](https://www.anthropic.com/research/discovering-vulnerabilities-with-claude) | `agent-eval-safety` `code-computer-use` | 0.27 | 🆕 new |  |
 | 2026-10-27 | [Early progress on accelerating drug development with Claude](https://www.anthropic.com/research/early-progress-drug-development) | `browser-use-agent` | 0.17 | 🆕 new |  |

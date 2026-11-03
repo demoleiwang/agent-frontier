@@ -3,6 +3,12 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-02 | [OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization](https://openai.com/index/dan-driscoll-joins-openai) | — | 0.00 | 🆕 new | Company |
+| 2026-11-02 | [Introducing the Grid Protectors Program](https://openai.com/index/grid-protectors-program) | — | 0.00 | 🆕 new | Global Affairs |
+| 2026-11-02 | [LifeVal](https://openai.com/index/lifeval) | — | 0.00 | 🆕 new | Research |
+| 2026-11-02 | [Preparing our next security sprint to harden OpenAI](https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai) | — | 0.00 | 🆕 new | Security |
+| 2026-11-02 | [Rewarding defenders with bigger bug bounties](https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties) | — | 0.00 | 🆕 new | Security |
+| 2026-11-02 | [Scaling Git at OpenAI](https://openai.com/index/scaling-git-at-openai) | — | 0.00 | 🆕 new | Engineering |
 | 2026-10-30 | [Community safety report and new protections for teens](https://openai.com/index/community-safety-report-and-new-protections-for-teens) | — | 0.00 | 🆕 new | Safety |
 | 2026-10-30 | [Fair use benefits everyone](https://openai.com/index/fair-use-benefits-everyone) | — | 0.00 | 🆕 new | Company |
 | 2026-10-30 | [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences) | — | 0.00 | 🆕 new | Company |

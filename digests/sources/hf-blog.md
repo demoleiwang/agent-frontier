@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-03 | [Transformers Model Integration Contracts](https://huggingface.co/blog/transformers-mic) | — | 0.00 | 🆕 new | transformers, guide |
 | 2026-10-29 | [Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready](https://huggingface.co/blog/announcing-project-protostar) | — | 0.00 | 🆕 new | open-source, science, datasets, research, community |
 | 2026-10-29 | [Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms](https://huggingface.co/blog/anydecisionmodel) | — | 0.00 | 🆕 new | swift, mlx, coreml, audio, speech, community, open-source |
 | 2026-10-29 | [Welcome Le Chonk: Mistral Large 4 on Hugging Face](https://huggingface.co/blog/mistral-large4) | `agent-infra` `agentic-rl` | 0.25 | 🆕 new | transformers, mistral, vllm, llamacpp, inference, open-source |
