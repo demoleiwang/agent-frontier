@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-03 | [CWE-bench v2: More coverage, quality, and transparency](https://huggingface.co/blog/cwe-bench) | `agent-infra` `agent-eval-safety` | 0.33 | 🆕 new | security, evaluation, benchmark, agents, rl, partnerships |
 | 2026-11-03 | [Transformers Model Integration Contracts](https://huggingface.co/blog/transformers-mic) | — | 0.00 | 🆕 new | transformers, guide |
 | 2026-10-29 | [Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready](https://huggingface.co/blog/announcing-project-protostar) | — | 0.00 | 🆕 new | open-source, science, datasets, research, community |
 | 2026-10-29 | [Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms](https://huggingface.co/blog/anydecisionmodel) | — | 0.00 | 🆕 new | swift, mlx, coreml, audio, speech, community, open-source |

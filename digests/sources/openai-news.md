@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-03 | [Accelerating engineering for the physical world](https://openai.com/index/accelerating-engineering-for-the-physical-world) | `professional-agent` | 0.17 | 🆕 new | Research |
+| 2026-11-03 | [How Cisco defends at machine speed with OpenAI](https://openai.com/index/cisco-cyber) | — | 0.00 | 🆕 new |  |
+| 2026-11-03 | [Heimstaden is changing residential real estate management with AI](https://openai.com/index/heimstaden) | — | 0.00 | 🆕 new |  |
+| 2026-11-03 | [OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer](https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer) | — | 0.00 | 🆕 new | Company |
 | 2026-11-02 | [OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization](https://openai.com/index/dan-driscoll-joins-openai) | — | 0.00 | 🆕 new | Company |
 | 2026-11-02 | [Introducing the Grid Protectors Program](https://openai.com/index/grid-protectors-program) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-02 | [LifeVal](https://openai.com/index/lifeval) | — | 0.00 | 🆕 new | Research |
@@ -16,6 +20,7 @@
 | 2026-10-29 | [How we detect frontier model misalignment](https://openai.com/index/how-we-detect-frontier-model-misalignment) | `agent-eval-safety` | 0.40 | 🆕 new | Security |
 | 2026-10-29 | [How Ropes & Gray is developing AI for transactional diligence](https://openai.com/index/ropes-gray-ai-diligence) | — | 0.00 | 🆕 new |  |
 | 2026-10-29 | [An updated Model Spec for more capable and beneficial AI](https://openai.com/index/updated-model-spec) | — | 0.00 | 🆕 new | Safety |
+| 2026-10-28 | [Evernote turns AI-driven discovery into paid subscriptions](https://openai.com/ads/customers/evernote) | — | 0.00 | 🆕 new |  |
 | 2026-10-28 | [Legora is building the agentic operating system for legal work](https://openai.com/index/legora) | `professional-agent` `agent-infra` | 0.67 | 🆕 new |  |
 | 2026-10-28 | [Legora is building the agentic operating system for legal work](https://openai.com/index/legora-agentic-operating-system-for-legal-work) | `professional-agent` `agent-infra` | 0.67 | 🆕 new |  |
 | 2026-10-28 | [OpenAI and ServiceNow expand partnership across enterprise workflows](https://openai.com/index/openai-servicenow-partnership-expansion) | `office-agent` `agent-infra` | 1.00 | 🆕 new | Company |
