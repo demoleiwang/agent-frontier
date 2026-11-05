@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-04 | [A thousand fewer paths to root](https://openai.com/index/a-thousand-fewer-paths-to-root) | — | 0.00 | 🆕 new | Security |
+| 2026-11-04 | [Daybreak Red is now available in AWS GovCloud (US-East)](https://openai.com/index/daybreak-red-aws-govcloud) | — | 0.00 | 🆕 new | Product |
+| 2026-11-04 | [Introducing Images 2.6](https://openai.com/index/introducing-images-2-6) | — | 0.00 | 🆕 new | Product |
+| 2026-11-04 | [OpenAI to acquire Pierre Computer Company, Inc.](https://openai.com/index/openai-to-acquire-pierre) | — | 0.00 | 🆕 new | Company |
 | 2026-11-03 | [Accelerating engineering for the physical world](https://openai.com/index/accelerating-engineering-for-the-physical-world) | `professional-agent` | 0.17 | 🆕 new | Research |
 | 2026-11-03 | [How Cisco defends at machine speed with OpenAI](https://openai.com/index/cisco-cyber) | — | 0.00 | 🆕 new |  |
 | 2026-11-03 | [Heimstaden is changing residential real estate management with AI](https://openai.com/index/heimstaden) | — | 0.00 | 🆕 new |  |
