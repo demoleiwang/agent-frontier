@@ -3,6 +3,13 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-05 | [Australian universities are creating AI-native graduates](https://openai.com/index/australian-universities-ai-native-graduates) | — | 0.00 | 🆕 new | Company |
+| 2026-11-05 | [Cult.fit builds operational muscle with Codex](https://openai.com/index/cultfit-builds-with-codex) | — | 0.00 | 🆕 new |  |
+| 2026-11-05 | [Flipsnack grows product signups with conversion optimization](https://openai.com/ads/customers/flipsnack) | — | 0.00 | 🆕 new |  |
+| 2026-11-05 | [Franklin Templeton uses OpenAI to support investment research](https://openai.com/index/franklin-templeton) | — | 0.00 | 🆕 new |  |
+| 2026-11-05 | [GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents](https://openai.com/index/introducing-gpt-6-cyber) | `agent-infra` `agent-eval-safety` | 0.50 | 🆕 new | Product |
+| 2026-11-05 | [Merge builds product and business tools with OpenAI technology](https://openai.com/index/merge-builds-with-openai) | — | 0.00 | 🆕 new |  |
+| 2026-11-05 | [Setting a new standard for responsible AI infrastructure](https://openai.com/index/setting-new-standard-responsible-ai-infrastructure) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-04 | [A thousand fewer paths to root](https://openai.com/index/a-thousand-fewer-paths-to-root) | — | 0.00 | 🆕 new | Security |
 | 2026-11-04 | [Daybreak Red is now available in AWS GovCloud (US-East)](https://openai.com/index/daybreak-red-aws-govcloud) | — | 0.00 | 🆕 new | Product |
 | 2026-11-04 | [Introducing Images 2.6](https://openai.com/index/introducing-images-2-6) | — | 0.00 | 🆕 new | Product |

@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-05 | [How scientists use Claude](https://www.anthropic.com/research/how-researchers-use-claude) | — | 0.00 | 🆕 new |  |
 | 2026-11-04 | [Investigating vault particles with Claude](https://www.anthropic.com/research/investigating-vault-particles-with-claude) | — | 0.00 | 🆕 new |  |
 | 2026-11-02 | [Progress on provable inference for large language models](https://www.anthropic.com/research/provable-inference) | — | 0.00 | 🆕 new |  |
 | 2026-10-27 | [How AI agents shape experts’ judgment calls](https://www.anthropic.com/research/agents-judgment-calls) | `agent-infra` `office-agent` `professional-agent` | 0.50 | 🆕 new |  |
