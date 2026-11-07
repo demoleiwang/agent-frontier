@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-06 | [Measuring how AI agents handle everyday wet-lab science](https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science) | `agent-infra` | 0.50 | 🆕 new | Publication |
+| 2026-11-06 | [Partnering with Hacktron to find vulnerabilities in OpenAI’s systems](https://openai.com/index/partnering-with-hacktron) | — | 0.00 | 🆕 new | Security |
 | 2026-11-05 | [Australian universities are creating AI-native graduates](https://openai.com/index/australian-universities-ai-native-graduates) | — | 0.00 | 🆕 new | Company |
 | 2026-11-05 | [Cult.fit builds operational muscle with Codex](https://openai.com/index/cultfit-builds-with-codex) | — | 0.00 | 🆕 new |  |
 | 2026-11-05 | [Flipsnack grows product signups with conversion optimization](https://openai.com/ads/customers/flipsnack) | — | 0.00 | 🆕 new |  |

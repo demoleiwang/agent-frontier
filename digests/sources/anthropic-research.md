@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-06 | [The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory) | `personal-agent` `agent-infra` | 0.50 | 🆕 new |  |
+| 2026-11-06 | [Project EVE: Claude plays MMORPGs](https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs) | `office-agent` `agent-infra` | 0.17 | 🆕 new |  |
+| 2026-11-06 | [Teaching AI to build scientific models](https://www.anthropic.com/research/teaching-ai-to-build-scientific-models) | — | 0.00 | 🆕 new |  |
 | 2026-11-05 | [How scientists use Claude](https://www.anthropic.com/research/how-researchers-use-claude) | — | 0.00 | 🆕 new |  |
 | 2026-11-04 | [Investigating vault particles with Claude](https://www.anthropic.com/research/investigating-vault-particles-with-claude) | — | 0.00 | 🆕 new |  |
 | 2026-11-02 | [Progress on provable inference for large language models](https://www.anthropic.com/research/provable-inference) | — | 0.00 | 🆕 new |  |
