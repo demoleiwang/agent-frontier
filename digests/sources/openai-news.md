@@ -3,6 +3,11 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-09 | [Build a retro handheld game with Codex and ModRetro Chromatic](https://developers.openai.com/blog/build-a-game-with-modretro-chromatic) | — | 0.00 | 🆕 new | Codex |
+| 2026-11-09 | [ChatGPT Enterprise now available in AWS Marketplace](https://openai.com/index/chatgpt-enterprise-aws-marketplace) | — | 0.00 | 🆕 new | Product |
+| 2026-11-09 | [Control Room: A central system to track and stop model workloads across our research infrastructure](https://openai.com/index/control-room) | — | 0.00 | 🆕 new | Safety |
+| 2026-11-09 | [Introducing Control Room: Human control over AI workloads](https://openai.com/index/introducing-control-room) | — | 0.00 | 🆕 new | Safety |
+| 2026-11-09 | [Kuken Industries searches 70 years of drawings in minutes](https://openai.com/index/kuken) | — | 0.00 | 🆕 new |  |
 | 2026-11-06 | [Measuring how AI agents handle everyday wet-lab science](https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science) | `agent-infra` | 0.50 | 🆕 new | Publication |
 | 2026-11-06 | [Partnering with Hacktron to find vulnerabilities in OpenAI’s systems](https://openai.com/index/partnering-with-hacktron) | — | 0.00 | 🆕 new | Security |
 | 2026-11-05 | [Australian universities are creating AI-native graduates](https://openai.com/index/australian-universities-ai-native-graduates) | — | 0.00 | 🆕 new | Company |

@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-09 | [Announcing Long-Context Training on TPUs with MaxText Context Parallelism](https://developers.googleblog.com/announcing-long-context-training-on-tpus-with-maxtext-context-parallelism/) | — | 0.00 | 🆕 new | AI |
+| 2026-11-09 | [From prompt to app: Build with Google Maps in AI Studio](https://developers.googleblog.com/from-prompt-to-app-build-with-google-maps-in-ai-studio/) | — | 0.00 | 🆕 new | Mobile |
+| 2026-11-09 | [What is Pathways? Single-controller training for large models](https://developers.googleblog.com/what-is-pathways-single-controller-training-for-large-models/) | — | 0.00 | 🆕 new | AI |
 | 2026-11-06 | [Agent Distraction](https://developers.googleblog.com/agent-distraction/) | `agent-infra` | 0.42 | 🆕 new | AI |
 | 2026-11-03 | [Cost per task: Using cheap classifiers to route across Gemini models and thinking levels](https://developers.googleblog.com/cost-per-task-using-cheap-classifiers-to-route-across-gemini-models-and-thinking-levels/) | `agent-infra` | 0.25 | 🆕 new | AI |
 | 2026-10-29 | [Build Generative UI Apps with A2UI & CopilotKit Agents](https://developers.googleblog.com/build-generative-ui-apps-with-a2ui-copilotkit-agents/) | `agent-infra` | 0.50 | 🆕 new | Mobile |
