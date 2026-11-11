@@ -3,7 +3,13 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
-| 2026-11-09 | [Build a retro handheld game with Codex and ModRetro Chromatic](https://developers.openai.com/blog/build-a-game-with-modretro-chromatic) | — | 0.00 | 🆕 new | Codex |
+| 2026-11-10 | [Work at the Frontier: AI’s effect on freelance work](https://openai.com/index/ai-effect-on-freelance-work) | — | 0.00 | 🆕 new | Company |
+| 2026-11-10 | [Closing the AI guidance gap in education](https://openai.com/index/closing-ai-guidance-gap-education) | — | 0.00 | 🆕 new | Company |
+| 2026-11-10 | [Helping caregivers use AI in everyday life](https://openai.com/index/helping-caregivers-use-ai-in-everyday-life) | — | 0.00 | 🆕 new | Company |
+| 2026-11-10 | [Introducing Businesses in ChatGPT](https://openai.com/index/introducing-businesses-chatgpt) | — | 0.00 | 🆕 new | Product |
+| 2026-11-10 | [Pushing voice agents further: inside four GPT-Live builds](https://developers.openai.com/blog/pushing-voice-agents-further) | `agent-infra` | 0.50 | 🆕 new | Audio |
+| 2026-11-10 | [Singapore Airlines elevates travel & work with OpenAI technology](https://openai.com/index/singapore-airlines-travel-work) | — | 0.00 | 🆕 new |  |
+| 2026-11-09 | [Building a retro handheld game with Codex and ModRetro Chromatic](https://developers.openai.com/blog/build-a-game-with-modretro-chromatic) | — | 0.00 | 🆕 new | Codex |
 | 2026-11-09 | [ChatGPT Enterprise now available in AWS Marketplace](https://openai.com/index/chatgpt-enterprise-aws-marketplace) | — | 0.00 | 🆕 new | Product |
 | 2026-11-09 | [Control Room: A central system to track and stop model workloads across our research infrastructure](https://openai.com/index/control-room) | — | 0.00 | 🆕 new | Safety |
 | 2026-11-09 | [Introducing Control Room: Human control over AI workloads](https://openai.com/index/introducing-control-room) | — | 0.00 | 🆕 new | Safety |

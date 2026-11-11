@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-10 | [On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery](https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-11-09 | [Announcing Long-Context Training on TPUs with MaxText Context Parallelism](https://developers.googleblog.com/announcing-long-context-training-on-tpus-with-maxtext-context-parallelism/) | — | 0.00 | 🆕 new | AI |
 | 2026-11-09 | [From prompt to app: Build with Google Maps in AI Studio](https://developers.googleblog.com/from-prompt-to-app-build-with-google-maps-in-ai-studio/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-11-09 | [What is Pathways? Single-controller training for large models](https://developers.googleblog.com/what-is-pathways-single-controller-training-for-large-models/) | — | 0.00 | 🆕 new | AI |

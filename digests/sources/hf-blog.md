@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-10 | [Decision Models in Hugging Face](https://huggingface.co/blog/decision) | — | 0.00 | 🆕 new | decision, jev, system one, open source |
+| 2026-11-10 | [Pay for Hugging Face Hub with your Google Cloud Account](https://huggingface.co/blog/hub-gcp-marketplace) | — | 0.00 | 🆕 new | guide, partnerships, gcp, hub, marketplace |
 | 2026-11-06 | [Egyptian and Nigerian English join the Open ASR Leaderboard](https://huggingface.co/blog/open-asr-leaderboard-liva) | — | 0.00 | 🆕 new | audio, speech, leaderboard, datasets, evaluation |
 | 2026-11-05 | [A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.](https://huggingface.co/blog/phonon-tts) | — | 0.00 | 🆕 new | audio, speech, leaderboard |
 | 2026-11-03 | [CWE-bench v2: More coverage, quality, and transparency](https://huggingface.co/blog/cwe-bench) | `agent-infra` `agent-eval-safety` | 0.33 | 🆕 new | security, evaluation, benchmark, agents, rl, partnerships |
