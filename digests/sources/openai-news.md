@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-12 | [Gilbert + Tobin rethinks the business of law with AI](https://openai.com/index/gilbert-tobin-sam-nickless) | — | 0.00 | 🆕 new |  |
+| 2026-11-11 | [ChatGPT Plus for veterans and servicemembers](https://openai.com/index/chatgpt-plus-for-veterans) | — | 0.00 | 🆕 new | Company |
+| 2026-11-11 | [JioStar’s chief architect on AI discovery at 500M-user scale](https://openai.com/index/jiostar-vijay-seshadri) | — | 0.00 | 🆕 new |  |
 | 2026-11-10 | [Work at the Frontier: AI’s effect on freelance work](https://openai.com/index/ai-effect-on-freelance-work) | — | 0.00 | 🆕 new | Company |
 | 2026-11-10 | [Closing the AI guidance gap in education](https://openai.com/index/closing-ai-guidance-gap-education) | — | 0.00 | 🆕 new | Company |
 | 2026-11-10 | [Helping caregivers use AI in everyday life](https://openai.com/index/helping-caregivers-use-ai-in-everyday-life) | — | 0.00 | 🆕 new | Company |

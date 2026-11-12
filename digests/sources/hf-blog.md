@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-11 | [Token Pooling-Aware Training for Multi-Vector Embedding Models](https://huggingface.co/blog/token-pooling) | — | 0.00 | 🆕 new | nlp, guide, community, open-source, embeddings, sentence-transformers |
 | 2026-11-10 | [Decision Models in Hugging Face](https://huggingface.co/blog/decision) | — | 0.00 | 🆕 new | decision, jev, system one, open source |
 | 2026-11-10 | [Pay for Hugging Face Hub with your Google Cloud Account](https://huggingface.co/blog/hub-gcp-marketplace) | — | 0.00 | 🆕 new | guide, partnerships, gcp, hub, marketplace |
 | 2026-11-06 | [Egyptian and Nigerian English join the Open ASR Leaderboard](https://huggingface.co/blog/open-asr-leaderboard-liva) | — | 0.00 | 🆕 new | audio, speech, leaderboard, datasets, evaluation |
