@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-12 | [Catch Go bugs that fuzzing misses with Gemini and a constraint solver](https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/) | — | 0.00 | 🆕 new | AI |
+| 2026-11-12 | [How Agent Anomaly Detection scores on benchmarks we didn't write](https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/) | `agent-infra` | 0.42 | 🆕 new | AI |
 | 2026-11-11 | [A2UI 1.0: Build delightful, fast, reliable, agentic experiences](https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/) | `agent-infra` | 0.50 | 🆕 new | Mobile |
 | 2026-11-10 | [On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery](https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-11-09 | [Announcing Long-Context Training on TPUs with MaxText Context Parallelism](https://developers.googleblog.com/announcing-long-context-training-on-tpus-with-maxtext-context-parallelism/) | — | 0.00 | 🆕 new | AI |

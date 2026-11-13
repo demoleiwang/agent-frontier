@@ -3,7 +3,11 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-12 | [How Amplitude ships product improvements in 1–2 days with OpenAI](https://openai.com/business/customer-stories/amplitude) | `agent-infra` `personal-agent` | 0.25 | 🆕 new |  |
+| 2026-11-12 | [Supporting research on AI and children’s safety](https://openai.com/index/children-first-declaration) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-12 | [Gilbert + Tobin rethinks the business of law with AI](https://openai.com/index/gilbert-tobin-sam-nickless) | — | 0.00 | 🆕 new |  |
+| 2026-11-12 | [Holiday Extras is rethinking what it can build with Codex](https://openai.com/business/customer-stories/holidays-extras-codex) | — | 0.00 | 🆕 new |  |
+| 2026-11-12 | [Securing persistent agents like OpenClaw at OpenAI](https://developers.openai.com/blog/securing-persistent-agents-like-openclaw-at-openai) | `personal-agent` `agent-infra` `env-construction` | 1.00 | 🆕 new | Codex |
 | 2026-11-11 | [ChatGPT Plus for veterans and servicemembers](https://openai.com/index/chatgpt-plus-for-veterans) | — | 0.00 | 🆕 new | Company |
 | 2026-11-11 | [JioStar’s chief architect on AI discovery at 500M-user scale](https://openai.com/index/jiostar-vijay-seshadri) | — | 0.00 | 🆕 new |  |
 | 2026-11-10 | [Work at the Frontier: AI’s effect on freelance work](https://openai.com/index/ai-effect-on-freelance-work) | — | 0.00 | 🆕 new | Company |
