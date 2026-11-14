@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-13 | [Introducing ChatGPT Wallet](https://openai.com/index/introducing-chatgpt-wallet) | `agent-infra` | 0.17 | 🆕 new | Product |
+| 2026-11-13 | [Shield helps technicians hand off legacy portal work with OpenAI](https://openai.com/business/customer-stories/shield) | `agent-infra` | 0.17 | 🆕 new |  |
 | 2026-11-12 | [How Amplitude ships product improvements in 1–2 days with OpenAI](https://openai.com/business/customer-stories/amplitude) | `agent-infra` `personal-agent` | 0.25 | 🆕 new |  |
 | 2026-11-12 | [Supporting research on AI and children’s safety](https://openai.com/index/children-first-declaration) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-12 | [Gilbert + Tobin rethinks the business of law with AI](https://openai.com/index/gilbert-tobin-sam-nickless) | — | 0.00 | 🆕 new |  |

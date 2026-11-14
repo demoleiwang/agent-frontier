@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-13 | [Building strong safety evaluations](https://www.anthropic.com/research/building-strong-safety-evaluations) | — | 0.00 | 🆕 new |  |
 | 2026-11-09 | [Claude can design electronic prototypes from start to finish](https://www.anthropic.com/research/claude-electronics-design) | — | 0.00 | 🆕 new |  |
 | 2026-11-06 | [The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory) | `personal-agent` `agent-infra` | 0.50 | 🆕 new |  |
 | 2026-11-06 | [Project EVE: Claude plays MMORPGs](https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs) | `office-agent` `agent-infra` | 0.17 | 🆕 new |  |
