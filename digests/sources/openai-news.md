@@ -3,6 +3,17 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-17 | [Strengthening NATO and allied cyber defenses with AI](https://openai.com/index/strengthening-nato-allied-cyber-defences-ai) | — | 0.00 | 🆕 new | Global Affairs |
+| 2026-11-16 | [Advancing computer-use agents for healthcare teams](https://openai.com/index/advancing-computer-use-for-healthcare-teams) | `computer-use-agent` `professional-agent` `agent-infra` | 1.00 | 🆕 new | Product |
+| 2026-11-16 | [Broadening access to AI for scientists](https://openai.com/index/expanding-chatgpt-for-academic-researchers) | — | 0.00 | 🆕 new | Research |
+| 2026-11-16 | [At Holiday Extras, dots get to work before anyone asks](https://openai.com/business/customer-stories/holiday-extras-dots) | — | 0.00 | 🆕 new |  |
+| 2026-11-16 | [LVMH’s Media Division announces strategic partnership with OpenAI](https://openai.com/index/lvmh-media-division-partnership) | — | 0.00 | 🆕 new | Company |
+| 2026-11-16 | [More ways to move care forward with ChatGPT for Healthcare](https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare) | `professional-agent` `computer-use-agent` `agent-infra` | 0.67 | 🆕 new | Product |
+| 2026-11-16 | [Our first phase of embedded assessments](https://openai.com/index/our-first-phase-of-embedded-assessments) | — | 0.00 | 🆕 new | Safety |
+| 2026-11-16 | [How Revolut raises ambition without lowering the bar](https://openai.com/business/customer-stories/revolut) | — | 0.00 | 🆕 new |  |
+| 2026-11-16 | [Science at the Frontier: How scientists use ChatGPT](https://openai.com/index/science-at-the-frontier) | `office-agent` | 0.17 | 🆕 new | Research |
+| 2026-11-16 | [Strengthening the fight against online child sexual abuse with new tools and support](https://openai.com/index/strengthening-online-child-safety) | — | 0.00 | 🆕 new | Safety |
+| 2026-11-16 | [The King’s Trust and OpenAI launch £1m partnership](https://openai.com/index/the-kings-trust-and-openai) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-15 | [Our new blog for science](https://openai.com/index/our-new-blog-for-science) | — | 0.00 | 🆕 new | Science |
 | 2026-11-15 | [A step toward defining the Standard Model on a lattice](https://openai.com/index/step-toward-defining-the-standard-model) | — | 0.00 | 🆕 new | Science |
 | 2026-11-13 | [Introducing ChatGPT Wallet](https://openai.com/index/introducing-chatgpt-wallet) | `agent-infra` | 0.17 | 🆕 new | Product |

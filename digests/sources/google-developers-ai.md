@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-16 | [Agents are sessions, not requests: size GKE node pools for AI agent sessions](https://developers.googleblog.com/agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-sessions/) | `agent-infra` | 0.50 | 🆕 new | AI |
+| 2026-11-16 | [Securing Your Agents: A Hands-On Guide to Agent Anomaly Detection](https://developers.googleblog.com/securing-your-agents-a-hands-on-guide-to-agent-anomaly-detection/) | `agent-infra` `personal-agent` | 0.50 | 🆕 new | AI |
+| 2026-11-16 | [TPU Model Design Considerations and Optimization Guide](https://developers.googleblog.com/tpu-model-design-considerations-and-optimization-guide/) | — | 0.00 | 🆕 new | AI |
+| 2026-11-16 | [Unlocking Stable On-Policy RL on TPU with Bitwise-Zero Train–Inference Mismatch](https://developers.googleblog.com/unlocking-stable-on-policy-rl-on-tpu-with-bitwise-zero-traininference-mismatch/) | — | 0.00 | 🆕 new | AI |
 | 2026-11-12 | [Catch Go bugs that fuzzing misses with Gemini and a constraint solver](https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/) | — | 0.00 | 🆕 new | AI |
 | 2026-11-12 | [How Agent Anomaly Detection scores on benchmarks we didn't write](https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/) | `agent-infra` | 0.42 | 🆕 new | AI |
 | 2026-11-11 | [A2UI 1.0: Build delightful, fast, reliable, agentic experiences](https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/) | `agent-infra` | 0.50 | 🆕 new | Mobile |

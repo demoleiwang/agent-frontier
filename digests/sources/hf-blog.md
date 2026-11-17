@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-16 | [Hugging Face and OpenRouter join forces to make open-weight models easy to run](https://huggingface.co/blog/openrouter) | `agent-infra` | 0.17 | 🆕 new | announcement, partnerships, hub, inference-providers, openrouter |
 | 2026-11-12 | [The Definitive Fine-Tuning Guide for 3D Generation Models](https://huggingface.co/blog/3d-lora-finetuning) | — | 0.00 | 🆕 new | guide, 3d, lora, finetuning, open-source |
 | 2026-11-11 | [Token Pooling-Aware Training for Multi-Vector Embedding Models](https://huggingface.co/blog/token-pooling) | — | 0.00 | 🆕 new | nlp, guide, community, open-source, embeddings, sentence-transformers |
 | 2026-11-10 | [Decision Models in Hugging Face](https://huggingface.co/blog/decision) | — | 0.00 | 🆕 new | decision, jev, system one, open source |
