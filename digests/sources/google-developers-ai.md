@@ -3,6 +3,9 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-17 | [Accelerating development for massive Git repositories](https://developers.googleblog.com/accelerating-development-for-massive-git-repositories/) | — | 0.00 | 🆕 new | Mobile |
+| 2026-11-17 | [Build full-stack Android apps with Gemini in Google AI Studio](https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/) | — | 0.00 | 🆕 new | Web |
+| 2026-11-17 | [Gemini 4 Hydrogen: a faster model for general purpose robotics](https://developers.googleblog.com/gemini-hydrogen-for-robotics/) | — | 0.00 | 🆕 new | AI |
 | 2026-11-16 | [Agents are sessions, not requests: size GKE node pools for AI agent sessions](https://developers.googleblog.com/agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-sessions/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-11-16 | [Securing Your Agents: A Hands-On Guide to Agent Anomaly Detection](https://developers.googleblog.com/securing-your-agents-a-hands-on-guide-to-agent-anomaly-detection/) | `agent-infra` `personal-agent` | 0.50 | 🆕 new | AI |
 | 2026-11-16 | [TPU Model Design Considerations and Optimization Guide](https://developers.googleblog.com/tpu-model-design-considerations-and-optimization-guide/) | — | 0.00 | 🆕 new | AI |

@@ -3,6 +3,10 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-17 | [Astra for Law leads in legal intelligence](https://openai.com/index/astra-law-6-2) | — | 0.00 | 🆕 new | Company |
+| 2026-11-17 | [Introducing ChatGPT for Sales](https://openai.com/index/introducing-chatgpt-for-sales) | — | 0.00 | 🆕 new | Product |
+| 2026-11-17 | [Introducing GPT-6.2 Astra and Sol](https://openai.com/index/introducing-gpt-6-2-astra-sol) | `computer-use-agent` | 0.17 | 🆕 new | Product |
+| 2026-11-17 | [Introducing OpenAI for Chile](https://openai.com/index/introducing-openai-for-chile) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-17 | [Strengthening NATO and allied cyber defenses with AI](https://openai.com/index/strengthening-nato-allied-cyber-defences-ai) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-16 | [Advancing computer-use agents for healthcare teams](https://openai.com/index/advancing-computer-use-for-healthcare-teams) | `computer-use-agent` `professional-agent` `agent-infra` | 1.00 | 🆕 new | Product |
 | 2026-11-16 | [Broadening access to AI for scientists](https://openai.com/index/expanding-chatgpt-for-academic-researchers) | — | 0.00 | 🆕 new | Research |
@@ -19,6 +23,7 @@
 | 2026-11-13 | [Introducing ChatGPT Wallet](https://openai.com/index/introducing-chatgpt-wallet) | `agent-infra` | 0.17 | 🆕 new | Product |
 | 2026-11-13 | [Shield helps technicians hand off legacy portal work with OpenAI](https://openai.com/business/customer-stories/shield) | `agent-infra` | 0.17 | 🆕 new |  |
 | 2026-11-12 | [How Amplitude ships product improvements in 1–2 days with OpenAI](https://openai.com/business/customer-stories/amplitude) | `agent-infra` `personal-agent` | 0.25 | 🆕 new |  |
+| 2026-11-12 | [ChatGPT Ads increases its market presence in 44 countries](https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence) | — | 0.00 | 🆕 new |  |
 | 2026-11-12 | [Supporting research on AI and children’s safety](https://openai.com/index/children-first-declaration) | — | 0.00 | 🆕 new | Global Affairs |
 | 2026-11-12 | [Gilbert + Tobin rethinks the business of law with AI](https://openai.com/index/gilbert-tobin-sam-nickless) | — | 0.00 | 🆕 new |  |
 | 2026-11-12 | [Holiday Extras is rethinking what it can build with Codex](https://openai.com/business/customer-stories/holidays-extras-codex) | — | 0.00 | 🆕 new |  |
@@ -36,6 +41,7 @@
 | 2026-11-09 | [Control Room: A central system to track and stop model workloads across our research infrastructure](https://openai.com/index/control-room) | — | 0.00 | 🆕 new | Safety |
 | 2026-11-09 | [Introducing Control Room: Human control over AI workloads](https://openai.com/index/introducing-control-room) | — | 0.00 | 🆕 new | Safety |
 | 2026-11-09 | [Kuken Industries searches 70 years of drawings in minutes](https://openai.com/index/kuken) | — | 0.00 | 🆕 new |  |
+| 2026-11-09 | [How VistaPrint helps small businesses get the word out](https://openai.com/ads/customers/vistaprint) | — | 0.00 | 🆕 new |  |
 | 2026-11-06 | [Measuring how AI agents handle everyday wet-lab science](https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science) | `agent-infra` | 0.50 | 🆕 new | Publication |
 | 2026-11-06 | [Partnering with Hacktron to find vulnerabilities in OpenAI’s systems](https://openai.com/index/partnering-with-hacktron) | — | 0.00 | 🆕 new | Security |
 | 2026-11-05 | [Australian universities are creating AI-native graduates](https://openai.com/index/australian-universities-ai-native-graduates) | — | 0.00 | 🆕 new | Company |
