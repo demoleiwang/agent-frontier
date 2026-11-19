@@ -3,6 +3,13 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-18 | [Advancing chip design with OpenAI models](https://openai.com/index/advancing-chip-design-with-our-models) | — | 0.00 | 🆕 new | Research |
+| 2026-11-18 | [Inside the Codex sandbox](https://openai.com/index/inside-the-codex-sandbox) | `agent-eval-safety` `agent-infra` | 0.40 | 🆕 new | Engineering |
+| 2026-11-18 | [Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT](https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership) | — | 0.00 | 🆕 new | Company |
+| 2026-11-18 | [Managing frontier AI risk: From training to deployment](https://openai.com/index/managing-frontier-ai-risk) | — | 0.00 | 🆕 new | Safety |
+| 2026-11-18 | [Research acceleration: The jagged frontier](https://openai.com/index/research-acceleration-jagged-frontier) | `agent-infra` | 0.25 | 🆕 new | Research |
+| 2026-11-18 | [How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise](https://openai.com/business/customer-stories/sumitomo-life) | — | 0.00 | 🆕 new |  |
+| 2026-11-18 | [The Silent Consensus](https://openai.com/index/the-silent-consensus) | — | 0.00 | 🆕 new | Intelligence Age |
 | 2026-11-17 | [Astra for Law leads in legal intelligence](https://openai.com/index/astra-law-6-2) | — | 0.00 | 🆕 new | Company |
 | 2026-11-17 | [Introducing ChatGPT for Sales](https://openai.com/index/introducing-chatgpt-for-sales) | — | 0.00 | 🆕 new | Product |
 | 2026-11-17 | [Introducing GPT-6.2 Astra and Sol](https://openai.com/index/introducing-gpt-6-2-astra-sol) | `computer-use-agent` | 0.17 | 🆕 new | Product |

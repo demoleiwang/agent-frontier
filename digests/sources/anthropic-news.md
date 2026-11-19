@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-18 | [Anthropic prices initial public offering](https://www.anthropic.com/news/anthropic-prices-initial-public-offering) | — | 0.00 | 🆕 new |  |
 | 2026-11-10 | [Anthropic launches roadshow for proposed initial public offering](https://www.anthropic.com/news/roadshow-launch) | — | 0.00 | 🆕 new |  |
 | 2026-10-28 | [AI for Science expands to foundations and institutions](https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions) | — | 0.00 | 🆕 new |  |
 | 2026-10-27 | [Expanding our partnership with GSA to bring Claude to all levels of government](https://www.anthropic.com/news/expanding-partnership-gsa) | — | 0.00 | 🆕 new |  |

@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-18 | [180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers](https://huggingface.co/blog/moe-expert-streaming) | — | 0.00 | 🆕 new | transformers, moe, inference, apple-silicon |
+| 2026-11-18 | [Rumble-2-Flash: an open 0.5B speech model for 40+ languages](https://huggingface.co/blog/rumble-2-flash) | — | 0.00 | 🆕 new | audio, speech, asr, open-source |
 | 2026-11-16 | [Hugging Face and OpenRouter join forces to make open-weight models easy to run](https://huggingface.co/blog/openrouter) | `agent-infra` | 0.17 | 🆕 new | announcement, partnerships, hub, inference-providers, openrouter |
 | 2026-11-12 | [The Definitive Fine-Tuning Guide for 3D Generation Models](https://huggingface.co/blog/3d-lora-finetuning) | — | 0.00 | 🆕 new | guide, 3d, lora, finetuning, open-source |
 | 2026-11-11 | [Token Pooling-Aware Training for Multi-Vector Embedding Models](https://huggingface.co/blog/token-pooling) | — | 0.00 | 🆕 new | nlp, guide, community, open-source, embeddings, sentence-transformers |

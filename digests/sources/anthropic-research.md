@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-17 | [Claude Fable 5.2 solves two open problems in the physics of black holes](https://www.anthropic.com/research/claude-black-hole-physics) | — | 0.00 | 🆕 new |  |
 | 2026-11-16 | [Updating our coordinated vulnerability disclosure policy timelines](https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines) | — | 0.00 | 🆕 new |  |
 | 2026-11-13 | [Building strong safety evaluations](https://www.anthropic.com/research/building-strong-safety-evaluations) | — | 0.00 | 🆕 new |  |
 | 2026-11-09 | [Claude can design electronic prototypes from start to finish](https://www.anthropic.com/research/claude-electronics-design) | — | 0.00 | 🆕 new |  |
