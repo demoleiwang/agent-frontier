@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-19 | [Distributed LLM Training Across Metros: Streaming DiLoCo in MaxText](https://developers.googleblog.com/distributed-llm-training-across-metros-streaming-diloco-in-maxtext/) | — | 0.00 | 🆕 new | AI |
+| 2026-11-19 | [Multi-Turn Agentic Reinforcement Learning with Tunix and Gemma 4 on Google TPUs](https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/) | `agentic-rl` `agent-infra` | 0.67 | 🆕 new | AI |
 | 2026-11-17 | [Accelerating development for massive Git repositories](https://developers.googleblog.com/accelerating-development-for-massive-git-repositories/) | — | 0.00 | 🆕 new | Mobile |
 | 2026-11-17 | [Build full-stack Android apps with Gemini in Google AI Studio](https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/) | — | 0.00 | 🆕 new | Web |
 | 2026-11-17 | [Gemini 4 Hydrogen: a faster model for general purpose robotics](https://developers.googleblog.com/gemini-hydrogen-for-robotics/) | — | 0.00 | 🆕 new | AI |

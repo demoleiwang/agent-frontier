@@ -3,6 +3,12 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-19 | [Explore the Codex Security Plugin](https://openai.com/business/learn/codex-security-plugin-demo) | — | 0.00 | 🆕 new | Demos |
+| 2026-11-19 | [Get started with Daybreak Blue](https://openai.com/business/learn/daybreak-blue-onboarding-demo) | — | 0.00 | 🆕 new | Demos |
+| 2026-11-19 | [Deploying Daybreak Red](https://openai.com/business/learn/deploying-daybreak-red) | — | 0.00 | 🆕 new | Guides |
+| 2026-11-19 | [How OpenAI’s Performance Factory keeps ChatGPT fast](https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast) | — | 0.00 | 🆕 new | Engineering |
+| 2026-11-19 | [See PR scans in action](https://openai.com/business/learn/pr-scans-demo) | — | 0.00 | 🆕 new | Demos |
+| 2026-11-19 | [Prompting GPT-Live for languages and regional accents](https://developers.openai.com/blog/prompting-multilingual-voice-agents) | `agent-infra` | 0.17 | 🆕 new | Audio |
 | 2026-11-18 | [Advancing chip design with OpenAI models](https://openai.com/index/advancing-chip-design-with-our-models) | — | 0.00 | 🆕 new | Research |
 | 2026-11-18 | [Inside the Codex sandbox](https://openai.com/index/inside-the-codex-sandbox) | `agent-eval-safety` `agent-infra` | 0.40 | 🆕 new | Engineering |
 | 2026-11-18 | [Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT](https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership) | — | 0.00 | 🆕 new | Company |
