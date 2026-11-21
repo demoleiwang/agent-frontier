@@ -3,6 +3,11 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-20 | [Combatting adversarial distillation](https://openai.com/index/combatting-adversarial-distillation) | — | 0.00 | 🆕 new |  |
+| 2026-11-20 | [Hebbia sees improvements in financial research with GPT-6 Astra](https://openai.com/business/customer-stories/hebbia) | — | 0.00 | 🆕 new |  |
+| 2026-11-20 | [How I stay in the flow with Ultrafast](https://developers.openai.com/blog/how-i-stay-in-the-flow-with-ultrafast) | — | 0.00 | 🆕 new | Codex |
+| 2026-11-20 | [Can AI help scientists identify promising drug candidates?](https://openai.com/index/introducing-medchembench) | — | 0.00 | 🆕 new | Research |
+| 2026-11-20 | [Time awareness and async input for personal agents](https://developers.openai.com/blog/time-awareness-and-async-input-for-personal-agents) | `personal-agent` `agent-infra` | 1.00 | 🆕 new | API |
 | 2026-11-19 | [Explore the Codex Security Plugin](https://openai.com/business/learn/codex-security-plugin-demo) | — | 0.00 | 🆕 new | Demos |
 | 2026-11-19 | [Get started with Daybreak Blue](https://openai.com/business/learn/daybreak-blue-onboarding-demo) | — | 0.00 | 🆕 new | Demos |
 | 2026-11-19 | [Deploying Daybreak Red](https://openai.com/business/learn/deploying-daybreak-red) | — | 0.00 | 🆕 new | Guides |

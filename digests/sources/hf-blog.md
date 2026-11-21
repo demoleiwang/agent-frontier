@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-20 | [Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost](https://huggingface.co/blog/harness-adapters-at-scale) | `agentic-rl` `agent-infra` `agent-eval-safety` `professional-agent` | 0.67 | 🆕 new | rl, trl, agents, lora, openenv |
+| 2026-11-20 | [Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup](https://huggingface.co/blog/inkling2mini) | — | 0.00 | 🆕 new | announcement, multimodal, transformers, inference, open-source |
 | 2026-11-18 | [180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers](https://huggingface.co/blog/moe-expert-streaming) | — | 0.00 | 🆕 new | transformers, moe, inference, apple-silicon |
 | 2026-11-18 | [Rumble-2-Flash: an open 0.5B speech model for 40+ languages](https://huggingface.co/blog/rumble-2-flash) | — | 0.00 | 🆕 new | audio, speech, asr, open-source |
 | 2026-11-16 | [Hugging Face and OpenRouter join forces to make open-weight models easy to run](https://huggingface.co/blog/openrouter) | `agent-infra` | 0.17 | 🆕 new | announcement, partnerships, hub, inference-providers, openrouter |

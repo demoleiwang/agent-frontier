@@ -3,6 +3,8 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-20 | [Agent Anomaly Detection: Safeguarding agents across other clouds](https://developers.googleblog.com/agent-anomaly-detection-safeguarding-agents-across-other-clouds/) | `agent-infra` | 0.50 | 🆕 new | AI |
+| 2026-11-20 | [Check what your AI agents do before they do it, with Semantic governance policies](https://developers.googleblog.com/check-what-your-ai-agents-do-before-they-do-it-with-semantic-governance-policies/) | `agent-infra` `professional-agent` | 0.50 | 🆕 new | Gemini |
 | 2026-11-19 | [Distributed LLM Training Across Metros: Streaming DiLoCo in MaxText](https://developers.googleblog.com/distributed-llm-training-across-metros-streaming-diloco-in-maxtext/) | — | 0.00 | 🆕 new | AI |
 | 2026-11-19 | [Multi-Turn Agentic Reinforcement Learning with Tunix and Gemma 4 on Google TPUs](https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/) | `agentic-rl` `agent-infra` | 0.67 | 🆕 new | AI |
 | 2026-11-17 | [Accelerating development for massive Git repositories](https://developers.googleblog.com/accelerating-development-for-massive-git-repositories/) | — | 0.00 | 🆕 new | Mobile |
