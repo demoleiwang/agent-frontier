@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-23 | [Attack policy selection can make monitor evaluations misleading](https://www.aisi.gov.uk/blog/attack-policy-selection-can-make-monitor-evaluations-misleading) | — | 0.00 | 🆕 new |  |
 | 2026-10-26 | [Can AI coding agents rebuild biological AI tools from a paper?](https://www.aisi.gov.uk/blog/can-ai-coding-agents-rebuild-biological-ai-tools-from-a-paper) | `agent-infra` | 0.50 | 🆕 new |  |
 | 2026-10-26 | [Pretraining data filtering in open-weight biological models](https://www.aisi.gov.uk/blog/pretraining-data-filtering-in-open-weight-biological-models) | — | 0.00 | 🆕 new |  |
 | 2026-10-23 | [Investigating alignment failures in AISI’s incident](https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident) | `agent-eval-safety` | 0.40 | 🆕 new |  |

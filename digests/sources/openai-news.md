@@ -3,6 +3,11 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-24 | [What makes a great ChatGPT app](https://developers.openai.com/blog/what-makes-a-great-chatgpt-app) | — | 0.00 | 🆕 new | Apps SDK |
+| 2026-11-23 | [Building security review into your SDLC with Codex Security](https://developers.openai.com/blog/building-security-review-into-your-sdlc-with-codex-security) | — | 0.00 | 🆕 new | Codex |
+| 2026-11-23 | [Connected intelligence for in-house legal](https://openai.com/business/learn/connected-intelligence-for-in-house-legal) | `professional-agent` | 0.50 | 🆕 new | Webinars |
+| 2026-11-23 | [OpenAI and Cisco introduce Shirudo](https://openai.com/index/introducing-shirudo) | — | 0.00 | 🆕 new | Security |
+| 2026-11-22 | [Perplexity and Intelligence](https://openai.com/index/perplexity-and-intelligence) | — | 0.00 | 🆕 new | Research |
 | 2026-11-20 | [Combatting adversarial distillation](https://openai.com/index/combatting-adversarial-distillation) | — | 0.00 | 🆕 new |  |
 | 2026-11-20 | [Hebbia sees improvements in financial research with GPT-6 Astra](https://openai.com/business/customer-stories/hebbia) | — | 0.00 | 🆕 new |  |
 | 2026-11-20 | [How I stay in the flow with Ultrafast](https://developers.openai.com/blog/how-i-stay-in-the-flow-with-ultrafast) | — | 0.00 | 🆕 new | Codex |
