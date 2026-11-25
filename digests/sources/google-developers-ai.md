@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-24 | [From Files to Cited Answers in One API Call: Managed Ingestion and SearchDocuments in Agent Retrieval](https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/) | `agent-infra` | 0.25 | 🆕 new | Gemini |
 | 2026-11-23 | [Did the user ask for this? Securing AI agents against intent hijacking with Semantic governance policies](https://developers.googleblog.com/did-the-user-ask-for-this-securing-ai-agents-against-intent-hijacking-with-semantic-governance-policies/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-11-20 | [Agent Anomaly Detection: Safeguarding agents across other clouds](https://developers.googleblog.com/agent-anomaly-detection-safeguarding-agents-across-other-clouds/) | `agent-infra` | 0.50 | 🆕 new | AI |
 | 2026-11-20 | [Check what your AI agents do before they do it, with Semantic governance policies](https://developers.googleblog.com/check-what-your-ai-agents-do-before-they-do-it-with-semantic-governance-policies/) | `agent-infra` `professional-agent` | 0.50 | 🆕 new | Gemini |

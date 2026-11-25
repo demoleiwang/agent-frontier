@@ -3,6 +3,12 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-24 | [Clay helps sales teams win with Codex and ChatGPT](https://openai.com/business/customer-stories/clay-plugins-openai) | — | 0.00 | 🆕 new |  |
+| 2026-11-24 | [GPT-6 models demonstrate intrinsic protein-design capabilities](https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities) | — | 0.00 | 🆕 new | Science |
+| 2026-11-24 | [How iFood scales coding agents across 15,000 repositories](https://openai.com/business/customer-stories/ifood) | `agent-infra` | 0.50 | 🆕 new |  |
+| 2026-11-24 | [How Intentful uses dots to make more time for growth](https://openai.com/business/customer-stories/intentful-dots) | — | 0.00 | 🆕 new |  |
+| 2026-11-24 | [Production monitoring with Codex](https://developers.openai.com/blog/production-monitoring-with-codex) | — | 0.00 | 🆕 new | Codex |
+| 2026-11-24 | [Searching for distant planets with Astra](https://openai.com/index/searching-for-distant-planets-with-astra) | — | 0.00 | 🆕 new | Science |
 | 2026-11-24 | [What makes a great ChatGPT app](https://developers.openai.com/blog/what-makes-a-great-chatgpt-app) | — | 0.00 | 🆕 new | Apps SDK |
 | 2026-11-23 | [Building security review into your SDLC with Codex Security](https://developers.openai.com/blog/building-security-review-into-your-sdlc-with-codex-security) | — | 0.00 | 🆕 new | Codex |
 | 2026-11-23 | [Connected intelligence for in-house legal](https://openai.com/business/learn/connected-intelligence-for-in-house-legal) | `professional-agent` | 0.50 | 🆕 new | Webinars |
