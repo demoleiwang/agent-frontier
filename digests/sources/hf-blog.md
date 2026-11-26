@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-25 | [Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000](https://huggingface.co/blog/inkling-2-mini-inference-hillclimb) | `agent-infra` | 0.50 | 🆕 new | inference, inference-endpoints, jobs, vllm, speculative-decoding, agents |
 | 2026-11-23 | [How to build and maintain an agentic evaluation](https://huggingface.co/blog/agentic-evals) | `agent-infra` `professional-agent` `agentic-rl` | 0.50 | 🆕 new | evaluation, agents, benchmark, open-source, research |
 | 2026-11-20 | [Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost](https://huggingface.co/blog/harness-adapters-at-scale) | `agentic-rl` `agent-infra` `agent-eval-safety` `professional-agent` | 0.67 | 🆕 new | rl, trl, agents, lora, openenv |
 | 2026-11-20 | [Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup](https://huggingface.co/blog/inkling2mini) | — | 0.00 | 🆕 new | announcement, multimodal, transformers, inference, open-source |

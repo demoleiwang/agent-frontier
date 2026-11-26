@@ -3,6 +3,7 @@
 
 | Date | Title | Topics | Score | Status | Source tags |
 |---|---|---|---|---|---|
+| 2026-11-25 | [Migrating our Messages API to Rust](https://www.anthropic.com/research/migrating-api-to-rust) | `env-construction` `agent-infra` | 0.17 | 🆕 new |  |
 | 2026-11-23 | [Working with AI](https://www.anthropic.com/research/working-with-ai) | — | 0.00 | 🆕 new |  |
 | 2026-11-17 | [Claude Fable 5.2 solves two open problems in the physics of black holes](https://www.anthropic.com/research/claude-black-hole-physics) | — | 0.00 | 🆕 new |  |
 | 2026-11-16 | [Updating our coordinated vulnerability disclosure policy timelines](https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines) | — | 0.00 | 🆕 new |  |
